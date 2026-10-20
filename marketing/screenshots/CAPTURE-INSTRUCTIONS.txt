@@ -1,0 +1,9 @@
+GAMEPLAY SCREENSHOTS - ACTUAL BUILD CAPTURE REQUIRED
+
+Do not fill this directory with illustrated or fabricated gameplay. Capture actual implemented game states after the app is runnable.
+Phone: portrait 1080x1920 target. Capture at least home/management, active play, and progression/collection states.
+7-inch tablet: portrait 1200x1920 target; capture actual layout at that viewport.
+10-inch tablet: portrait 1600x2560 target; capture actual layout at that viewport.
+Use the current Play Console upload requirements when preparing submission.
+Godot viewport captures are local-build evidence; identify the capture platform in capture-manifest.json and separately retain Android device/emulator captures when available. Do not label desktop/editor captures as phone hardware captures.
+The project owner performs final device and store submission review.

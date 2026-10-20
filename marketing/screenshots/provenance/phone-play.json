@@ -1,0 +1,27 @@
+{
+  "schema": "public-screenshot-summary-v1",
+  "scope": "Public image identity and previously recorded observations; this is not an original capture-validator receipt.",
+  "key": "phone-play",
+  "file": "phone-play.png",
+  "sha256": "70224920796677cadd970ed4b5aead6b7fc957fe348aefaef52462b5c0658afd",
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "raw_file": "raw/phone-play.png",
+  "raw_sha256": "70224920796677cadd970ed4b5aead6b7fc957fe348aefaef52462b5c0658afd",
+  "raw_dimensions": [
+    1080,
+    1920
+  ],
+  "package": "com.ethannyakabuski.finaloutlaw",
+  "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
+  "source_apk_bytes": 183886659,
+  "capture_method": "adb_shell_screencap_png",
+  "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
+  "game_state": "Actual ordinary first-trail attempt reached through the map and briefing, with normal steering and automatic fire; no fixture or forced result.",
+  "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+  "original_native_visual_review_recorded": true,
+  "physical_device_test": false,
+  "physical_tablet_test": false
+}

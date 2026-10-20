@@ -1,0 +1,134 @@
+{
+  "schema": "public-reviewed-screenshots-summary-v1",
+  "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
+  "scope": "Records the previous visual-review outcome for these exact unchanged PNGs; not the internal capture validator schema or a new approval.",
+  "capture_count": 9,
+  "captures": [
+    {
+      "key": "phone-home",
+      "file": "phone-home.png",
+      "sha256": "9d73cebbc4425485be24fd75898764dd761231741b542f80a3375d0635cd63c3",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "public_metadata_file": "provenance/phone-home.json",
+      "public_metadata_sha256": "b31c15fa674749e1f462120685aa2824bd400b97ca396d57448648b1d80a9c39",
+      "game_state": "Normal camp menu with genuine saved level, coins and campaign stars.",
+      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+      "original_native_visual_review_recorded": true
+    },
+    {
+      "key": "phone-play",
+      "file": "phone-play.png",
+      "sha256": "70224920796677cadd970ed4b5aead6b7fc957fe348aefaef52462b5c0658afd",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "public_metadata_file": "provenance/phone-play.json",
+      "public_metadata_sha256": "f27c2b9d3827655bc11dceb2c870772b1652204c1941acb00470c2af9eba44bd",
+      "game_state": "Actual ordinary first-trail attempt reached through the map and briefing, with normal steering and automatic fire; no fixture or forced result.",
+      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+      "original_native_visual_review_recorded": true
+    },
+    {
+      "key": "phone-collection",
+      "file": "phone-collection.png",
+      "sha256": "9aff9a35298b6f6fbb45827a591bb43e8810aaaf76b37e3a6f3f3ce1b14f0142",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "public_metadata_file": "provenance/phone-collection.json",
+      "public_metadata_sha256": "f5fa5cb783798f0d732e630007add8af9afafbd1b8fe3d5a49467b978d614a94",
+      "game_state": "The western trail campaign map reached normally, showing genuine completed and unlocked trails and best stars; this role is a map.",
+      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+      "original_native_visual_review_recorded": true
+    },
+    {
+      "key": "tablet-7-home",
+      "file": "tablet-7-home.png",
+      "sha256": "f811ad44ced3af00a3142d0eb7499340e15a5ee942b0b381861b247cc10c6841",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "public_metadata_file": "provenance/tablet-7-home.json",
+      "public_metadata_sha256": "225b8de84fa3e409f46b03354f81d3f84af5fc4a755ea547e8a8dcc7e89176c8",
+      "game_state": "Normal camp menu with genuine saved level, coins and campaign stars.",
+      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+      "original_native_visual_review_recorded": true
+    },
+    {
+      "key": "tablet-7-play",
+      "file": "tablet-7-play.png",
+      "sha256": "7c877e0f9bb5c9d75548d1960c9c42d05b56b3aa10dbe5edb4ad9e64399bf2be",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "public_metadata_file": "provenance/tablet-7-play.json",
+      "public_metadata_sha256": "7997c91d4b37b35fee9c701391d0ace153ed61dae3531c637a28b87a14c6ce7b",
+      "game_state": "Actual ordinary first-trail attempt reached through the map and briefing, with normal steering and automatic fire; no fixture or forced result.",
+      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+      "original_native_visual_review_recorded": true
+    },
+    {
+      "key": "tablet-7-collection",
+      "file": "tablet-7-collection.png",
+      "sha256": "0694b966149e68ac7e1cae24902827539f89a0c760a26d85d0739700d93b312e",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "public_metadata_file": "provenance/tablet-7-collection.json",
+      "public_metadata_sha256": "54187562beecb5ba63a98a50e34696ecc6955b2a0e45cc0be465aee54dfd8247",
+      "game_state": "The western trail campaign map reached normally, showing genuine completed and unlocked trails and best stars; this role is a map.",
+      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+      "original_native_visual_review_recorded": true
+    },
+    {
+      "key": "tablet-10-home",
+      "file": "tablet-10-home.png",
+      "sha256": "fdf52148480061688b8f87309f60e060eabcb85c5d54c757e76153d18bad205b",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "public_metadata_file": "provenance/tablet-10-home.json",
+      "public_metadata_sha256": "a25b101defb725464525f70e96ce78e5e781ab6b71e0dc762eafd71adad01d58",
+      "game_state": "Normal camp menu with genuine saved level, coins and campaign stars.",
+      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation. The tablet-10 Home capture naturally clips the nonessential lower label about offline play and optional online features in the reserved/scroll area. All six primary Home controls remain readable and usable; this minor local-package qualification does not establish flawless footer layout.",
+      "original_native_visual_review_recorded": true
+    },
+    {
+      "key": "tablet-10-play",
+      "file": "tablet-10-play.png",
+      "sha256": "57149d9550bb949c3f2bfea861c6fdcfa31e4048a1fd516e7efe9fd0060f2abe",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "public_metadata_file": "provenance/tablet-10-play.json",
+      "public_metadata_sha256": "38999a1a6d417b27ab69e166fc520ecfc18320fa4499bd8aa7fa3a1b0309a343",
+      "game_state": "Actual ordinary first-trail attempt reached through the map and briefing, with normal steering and automatic fire; no fixture or forced result.",
+      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+      "original_native_visual_review_recorded": true
+    },
+    {
+      "key": "tablet-10-collection",
+      "file": "tablet-10-collection.png",
+      "sha256": "af19cb10cdc587072a57a88bd36b153df0578ec65e47c9ff63cc2a58c5f6ee7b",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "public_metadata_file": "provenance/tablet-10-collection.json",
+      "public_metadata_sha256": "0bd21300235f74400586b36c71d0e628cc060d9a23b029b95d90c6c838ef2d64",
+      "game_state": "The western trail campaign map reached normally, showing genuine completed and unlocked trails and best stars; this role is a map.",
+      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation. The tablet-10 campaign-map capture naturally clips the nonessential footer \"Progress is saved on this device\" in the reserved/scroll area. The map heading, Back, chapter, all ten trails/progression and Follow lights remain readable; this is a minor local-package visual qualification, not a claim that every footer line is visible.",
+      "original_native_visual_review_recorded": true
+    }
+  ]
+}

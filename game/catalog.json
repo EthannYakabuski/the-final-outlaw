@@ -1,0 +1,188 @@
+{
+  "achievements": [
+    {
+      "key": "kills_1",
+      "name": "First spark",
+      "metric": "kills",
+      "threshold": 1,
+      "description": "Eliminate 1 foes across all modes."
+    },
+    {
+      "key": "kills_25",
+      "name": "Dust clearer",
+      "metric": "kills",
+      "threshold": 25,
+      "description": "Eliminate 25 foes across all modes."
+    },
+    {
+      "key": "kills_100",
+      "name": "Steady hand",
+      "metric": "kills",
+      "threshold": 100,
+      "description": "Eliminate 100 foes across all modes."
+    },
+    {
+      "key": "kills_500",
+      "name": "Frontier legend",
+      "metric": "kills",
+      "threshold": 500,
+      "description": "Eliminate 500 foes across all modes."
+    },
+    {
+      "key": "kills_2000",
+      "name": "The final outlaw",
+      "metric": "kills",
+      "threshold": 2000,
+      "description": "Eliminate 2,000 foes across all modes."
+    },
+    {
+      "key": "levels_1",
+      "name": "A small beginning",
+      "metric": "levels",
+      "threshold": 1,
+      "description": "Complete 1 different campaign trails."
+    },
+    {
+      "key": "levels_10",
+      "name": "Sunrise rider",
+      "metric": "levels",
+      "threshold": 10,
+      "description": "Complete 10 different campaign trails."
+    },
+    {
+      "key": "levels_25",
+      "name": "Trail finder",
+      "metric": "levels",
+      "threshold": 25,
+      "description": "Complete 25 different campaign trails."
+    },
+    {
+      "key": "levels_50",
+      "name": "Half the horizon",
+      "metric": "levels",
+      "threshold": 50,
+      "description": "Complete 50 different campaign trails."
+    },
+    {
+      "key": "levels_75",
+      "name": "Storm walker",
+      "metric": "levels",
+      "threshold": 75,
+      "description": "Complete 75 different campaign trails."
+    },
+    {
+      "key": "levels_100",
+      "name": "A quieter frontier",
+      "metric": "levels",
+      "threshold": 100,
+      "description": "Complete 100 different campaign trails."
+    },
+    {
+      "key": "stars_10",
+      "name": "Pocketful of starlight",
+      "metric": "stars",
+      "threshold": 10,
+      "description": "Earn 10 campaign stars."
+    },
+    {
+      "key": "stars_100",
+      "name": "Constellation",
+      "metric": "stars",
+      "threshold": 100,
+      "description": "Earn 100 campaign stars."
+    },
+    {
+      "key": "stars_300",
+      "name": "Every last star",
+      "metric": "stars",
+      "threshold": 300,
+      "description": "Earn 300 campaign stars."
+    },
+    {
+      "key": "level_3",
+      "name": "Finding your feet",
+      "metric": "level",
+      "threshold": 3,
+      "description": "Reach player level 3."
+    },
+    {
+      "key": "level_5",
+      "name": "Seasoned rider",
+      "metric": "level",
+      "threshold": 5,
+      "description": "Reach player level 5."
+    },
+    {
+      "key": "level_10",
+      "name": "The old hand",
+      "metric": "level",
+      "threshold": 10,
+      "description": "Reach player level 10."
+    },
+    {
+      "key": "survival_60",
+      "name": "One more minute",
+      "metric": "seconds",
+      "threshold": 60,
+      "description": "Last 60 seconds in endless survival."
+    },
+    {
+      "key": "survival_180",
+      "name": "Three sunsets",
+      "metric": "seconds",
+      "threshold": 180,
+      "description": "Last 180 seconds in endless survival."
+    },
+    {
+      "key": "workshop_8",
+      "name": "A better tomorrow",
+      "metric": "upgrades",
+      "threshold": 8,
+      "description": "Buy eight workshop upgrades in total."
+    },
+    {
+      "key": "streak_7",
+      "name": "Seven sunrises",
+      "metric": "streak",
+      "threshold": 7,
+      "description": "Collect seven consecutive UTC daily gifts."
+    }
+  ],
+  "leaderboards": [
+    {
+      "key": "eliminations",
+      "name": "Frontier eliminations",
+      "metric": "kills",
+      "order": "descending",
+      "unit": "foes"
+    },
+    {
+      "key": "survival_score",
+      "name": "Endless high score",
+      "metric": "survival",
+      "order": "descending",
+      "unit": "points"
+    },
+    {
+      "key": "campaign_stars",
+      "name": "Trail constellations",
+      "metric": "stars",
+      "order": "descending",
+      "unit": "stars"
+    },
+    {
+      "key": "player_level",
+      "name": "Seasoned riders",
+      "metric": "level",
+      "order": "descending",
+      "unit": "levels"
+    },
+    {
+      "key": "survival_seconds",
+      "name": "Longest sunset",
+      "metric": "seconds",
+      "order": "descending",
+      "unit": "seconds"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+trail_theme.wav: original procedural plucked melody and bass for The Final Outlaw. Apache-2.0. Other .ogg sounds: Kenney CC0, see KENNEY_LICENSE.txt.

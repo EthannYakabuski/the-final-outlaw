@@ -1,0 +1,434 @@
+[
+  {
+    "file": "achievements/kills_1.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "20e0aa4af595edc625a2c48368ae00cfbe58ec643a545f8db4fae3de6ebe87a9"
+  },
+  {
+    "file": "achievements/kills_100.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "49d4f0e01a2a805001a593f1bde60b6f9ea8104a200138cd61eacd523d017094"
+  },
+  {
+    "file": "achievements/kills_2000.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "6f1b53e844cba028f1b07793b16e37dbfb3d2b68d556e11be5ce5069b56ef84d"
+  },
+  {
+    "file": "achievements/kills_25.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "d441d4ef0958e0238a2bcf0201f7b1888cc385537882e8052e5e025643446d3d"
+  },
+  {
+    "file": "achievements/kills_500.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "9d3e176388defc52852e94df363003532a234ad789e0441d433b4d0af0d58007"
+  },
+  {
+    "file": "achievements/level_10.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "80f1683092acd8655e22fb2472afe0b1c6e40239161a20797e27dcbe881ba53a"
+  },
+  {
+    "file": "achievements/level_3.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "96cd22cf24be654d84e318f3fd3c9aba2bad89d6960e2a7f213f296c5b4dd322"
+  },
+  {
+    "file": "achievements/level_5.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "d0dcb35c49711d7e10420168c6d850a632d4deb354fe06e94820e30181ca0751"
+  },
+  {
+    "file": "achievements/levels_1.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "1e08e142d954ca59e7689406d6a5f8afdebf0f94ca7f68703e041937696c62ef"
+  },
+  {
+    "file": "achievements/levels_10.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "c7ee88f058d443c542ab2076fed966b23b20edaaa5a635c400c1ab998aa301d1"
+  },
+  {
+    "file": "achievements/levels_100.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "1bd85333b3d251f3756b452be8fdffa0fd92c3e333084b968eea3fd1c0d74452"
+  },
+  {
+    "file": "achievements/levels_25.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "c334a3c0ddc4b4265bd685585f754af8fda62c2055c240cc54db229e19917f72"
+  },
+  {
+    "file": "achievements/levels_50.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "16fea7886ea554004251599ef0234c34d18a40c9acce6c1e9485657f7eb97b29"
+  },
+  {
+    "file": "achievements/levels_75.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "f935bed3b8b0ee26be11b3980fe9b9946a3eb99a429632c2fbe3f327e66bb2cf"
+  },
+  {
+    "file": "achievements/stars_10.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "80f1683092acd8655e22fb2472afe0b1c6e40239161a20797e27dcbe881ba53a"
+  },
+  {
+    "file": "achievements/stars_100.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "2c1adefd91fcf1d3be75dce3112e99d9138737d23df65b60eed33355d55d90eb"
+  },
+  {
+    "file": "achievements/stars_300.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "5b5078c8c4f744b74718eb68cf59b533da393daeda3ab8c5c95990a0b9686005"
+  },
+  {
+    "file": "achievements/streak_7.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "b4ea1864db435d519e8d66430abc573d2ec2433bff3e91a5d4ccc2b499db0e69"
+  },
+  {
+    "file": "achievements/survival_180.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "3f1be9f0459692ca7f1c3c9814ed0ad0ef3719269a93266ba23b2981fffc2197"
+  },
+  {
+    "file": "achievements/survival_60.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "d0e8f38e78cb44b776eb7d9f7392686b53c84f40e62ad6755c1ac205b19c1650"
+  },
+  {
+    "file": "achievements/workshop_8.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "fba086b2e9483cb8a763aea5c4e418e6a8649efb538a6f5492d00ffe6a7530f9"
+  },
+  {
+    "file": "app-icon-192.png",
+    "dimensions": [
+      192,
+      192
+    ],
+    "mode": "RGB",
+    "sha256": "7c0193029e6fcb0a5d93544dee425097bdd29c4373b439b14a741d329140d3c2"
+  },
+  {
+    "file": "app-icon-512.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "79e242dce726c1cfacd432d4116fbe4a6ad3f371235cdfd3b03f8c2923302314"
+  },
+  {
+    "file": "feature-graphic-1024x500.png",
+    "dimensions": [
+      1024,
+      500
+    ],
+    "mode": "RGB",
+    "sha256": "cc7743356d5681ccd4577ad2c9e0407cc5a687b684bf1541b32c94fb8c62abd9"
+  },
+  {
+    "file": "leaderboards/campaign_stars.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "ea1137076f670f5c6a7f9ca30c5ae71e1d7f120f4f6ed60696b60696715ae949"
+  },
+  {
+    "file": "leaderboards/eliminations.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "bdfa9fad6bc18dce93b3f8d208af2c4d7264b863249f908d2c0b4ab53d18bbbf"
+  },
+  {
+    "file": "leaderboards/player_level.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "d5d1f32537739036ef2a5c92fac5e3afd5b51d198a103462d399a26c1a0f85b1"
+  },
+  {
+    "file": "leaderboards/survival_score.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "6080781d16f6a0c21295b917d39dd96d02d7ad5b6ecdb86de315063b17b980a0"
+  },
+  {
+    "file": "leaderboards/survival_seconds.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "mode": "RGB",
+    "sha256": "6c9e8a5e82aacbe927801daa09f596cd6d3f0d499f891dbe8c7aff621232bb7e"
+  },
+  {
+    "file": "screenshots/phone-collection.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "9aff9a35298b6f6fbb45827a591bb43e8810aaaf76b37e3a6f3f3ce1b14f0142"
+  },
+  {
+    "file": "screenshots/phone-home.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "9d73cebbc4425485be24fd75898764dd761231741b542f80a3375d0635cd63c3"
+  },
+  {
+    "file": "screenshots/phone-play.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "70224920796677cadd970ed4b5aead6b7fc957fe348aefaef52462b5c0658afd"
+  },
+  {
+    "file": "screenshots/raw/phone-collection.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "9aff9a35298b6f6fbb45827a591bb43e8810aaaf76b37e3a6f3f3ce1b14f0142"
+  },
+  {
+    "file": "screenshots/raw/phone-home.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "9d73cebbc4425485be24fd75898764dd761231741b542f80a3375d0635cd63c3"
+  },
+  {
+    "file": "screenshots/raw/phone-play.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "70224920796677cadd970ed4b5aead6b7fc957fe348aefaef52462b5c0658afd"
+  },
+  {
+    "file": "screenshots/raw/tablet-10-collection.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "af19cb10cdc587072a57a88bd36b153df0578ec65e47c9ff63cc2a58c5f6ee7b"
+  },
+  {
+    "file": "screenshots/raw/tablet-10-home.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "fdf52148480061688b8f87309f60e060eabcb85c5d54c757e76153d18bad205b"
+  },
+  {
+    "file": "screenshots/raw/tablet-10-play.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "57149d9550bb949c3f2bfea861c6fdcfa31e4048a1fd516e7efe9fd0060f2abe"
+  },
+  {
+    "file": "screenshots/raw/tablet-7-collection.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "0694b966149e68ac7e1cae24902827539f89a0c760a26d85d0739700d93b312e"
+  },
+  {
+    "file": "screenshots/raw/tablet-7-home.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "f811ad44ced3af00a3142d0eb7499340e15a5ee942b0b381861b247cc10c6841"
+  },
+  {
+    "file": "screenshots/raw/tablet-7-play.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "7c877e0f9bb5c9d75548d1960c9c42d05b56b3aa10dbe5edb4ad9e64399bf2be"
+  },
+  {
+    "file": "screenshots/tablet-10-collection.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "af19cb10cdc587072a57a88bd36b153df0578ec65e47c9ff63cc2a58c5f6ee7b"
+  },
+  {
+    "file": "screenshots/tablet-10-home.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "fdf52148480061688b8f87309f60e060eabcb85c5d54c757e76153d18bad205b"
+  },
+  {
+    "file": "screenshots/tablet-10-play.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "57149d9550bb949c3f2bfea861c6fdcfa31e4048a1fd516e7efe9fd0060f2abe"
+  },
+  {
+    "file": "screenshots/tablet-7-collection.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "0694b966149e68ac7e1cae24902827539f89a0c760a26d85d0739700d93b312e"
+  },
+  {
+    "file": "screenshots/tablet-7-home.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "f811ad44ced3af00a3142d0eb7499340e15a5ee942b0b381861b247cc10c6841"
+  },
+  {
+    "file": "screenshots/tablet-7-play.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "7c877e0f9bb5c9d75548d1960c9c42d05b56b3aa10dbe5edb4ad9e64399bf2be"
+  },
+  {
+    "file": "source_art/player.png",
+    "dimensions": [
+      21,
+      18
+    ],
+    "mode": "RGBA",
+    "sha256": "ada021abe9fc0a20b73aa983ad0014f4232819940925d3cb4b3abb926da9326b"
+  }
+]

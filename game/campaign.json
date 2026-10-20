@@ -1,0 +1,5196 @@
+[
+  {
+    "id": 1,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: First footprints",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Eliminate 3 foes",
+    "tip": "Drag to move. Your revolver aims automatically. Clear three slow drifters.",
+    "mode": "clear",
+    "target": 3,
+    "time_limit": 100,
+    "difficulty": 1.0,
+    "spawn": 2.5,
+    "enemies": [
+      "drifter"
+    ],
+    "hazard": "none",
+    "layout": 0,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 2.0,
+        "count": 1,
+        "gap": 2.5,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 6.5,
+        "count": 1,
+        "gap": 2.325,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 12.0,
+        "count": 1,
+        "gap": 2.15,
+        "roster": [
+          "drifter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: Keep your distance",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Survive 20 seconds",
+    "tip": "Keep moving for 20 seconds. Tap DASH to pass through danger safely.",
+    "mode": "survive",
+    "target": 20,
+    "time_limit": 100,
+    "difficulty": 1.038,
+    "spawn": 2.445,
+    "enemies": [
+      "drifter"
+    ],
+    "hazard": "none",
+    "layout": 1,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 2.0,
+        "count": 1,
+        "gap": 2.445,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 6.45,
+        "count": 2,
+        "gap": 2.274,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 14.34,
+        "count": 2,
+        "gap": 2.103,
+        "roster": [
+          "drifter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: Lost provisions",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Collect 4 supply crates",
+    "tip": "Read the field and keep moving. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 4,
+    "time_limit": 100,
+    "difficulty": 1.076,
+    "spawn": 2.39,
+    "enemies": [
+      "drifter",
+      "runner"
+    ],
+    "hazard": "none",
+    "layout": 2,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 3,
+        "gap": 2.39,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 9.97,
+        "count": 3,
+        "gap": 2.223,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      },
+      {
+        "at": 20.14,
+        "count": 3,
+        "gap": 2.055,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: Circle of trust",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Hold the green circle for 15 seconds",
+    "tip": "Read the field and keep moving. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 15,
+    "time_limit": 100,
+    "difficulty": 1.114,
+    "spawn": 2.335,
+    "enemies": [
+      "drifter",
+      "runner"
+    ],
+    "hazard": "none",
+    "layout": 3,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 3,
+        "gap": 2.335,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 9.8,
+        "count": 3,
+        "gap": 2.172,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      },
+      {
+        "at": 19.81,
+        "count": 4,
+        "gap": 2.008,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: The narrow way",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Eliminate 11 foes",
+    "tip": "Read the field and keep moving.",
+    "mode": "clear",
+    "target": 11,
+    "time_limit": 100,
+    "difficulty": 1.152,
+    "spawn": 2.28,
+    "enemies": [
+      "drifter",
+      "runner"
+    ],
+    "hazard": "none",
+    "layout": 4,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 3,
+        "gap": 2.28,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 9.64,
+        "count": 4,
+        "gap": 2.12,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      },
+      {
+        "at": 21.76,
+        "count": 4,
+        "gap": 1.961,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: The long breath",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Survive 32 seconds",
+    "tip": "Read the field and keep moving.",
+    "mode": "survive",
+    "target": 32,
+    "time_limit": 100,
+    "difficulty": 1.19,
+    "spawn": 2.225,
+    "enemies": [
+      "drifter",
+      "runner"
+    ],
+    "hazard": "none",
+    "layout": 5,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.225,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 11.7,
+        "count": 4,
+        "gap": 2.069,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      },
+      {
+        "at": 23.6,
+        "count": 4,
+        "gap": 1.913,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: Supply train",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Collect 5 supply crates",
+    "tip": "Read the field and keep moving. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 5,
+    "time_limit": 100,
+    "difficulty": 1.228,
+    "spawn": 2.17,
+    "enemies": [
+      "drifter",
+      "gunner"
+    ],
+    "hazard": "none",
+    "layout": 6,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.17,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 11.48,
+        "count": 4,
+        "gap": 2.018,
+        "roster": [
+          "drifter",
+          "gunner"
+        ]
+      },
+      {
+        "at": 23.16,
+        "count": 5,
+        "gap": 1.866,
+        "roster": [
+          "drifter",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: Last stand",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Hold the green circle for 19 seconds",
+    "tip": "Read the field and keep moving. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 19,
+    "time_limit": 100,
+    "difficulty": 1.266,
+    "spawn": 2.115,
+    "enemies": [
+      "drifter",
+      "gunner"
+    ],
+    "hazard": "none",
+    "layout": 7,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.115,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 11.26,
+        "count": 5,
+        "gap": 1.967,
+        "roster": [
+          "drifter",
+          "gunner"
+        ]
+      },
+      {
+        "at": 24.84,
+        "count": 5,
+        "gap": 1.819,
+        "roster": [
+          "drifter",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: A clean sweep",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Eliminate 15 foes",
+    "tip": "Read the field and keep moving.",
+    "mode": "clear",
+    "target": 15,
+    "time_limit": 100,
+    "difficulty": 1.304,
+    "spawn": 2.06,
+    "enemies": [
+      "drifter",
+      "gunner"
+    ],
+    "hazard": "none",
+    "layout": 8,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 2.06,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 13.1,
+        "count": 5,
+        "gap": 1.916,
+        "roster": [
+          "drifter",
+          "gunner"
+        ]
+      },
+      {
+        "at": 26.4,
+        "count": 5,
+        "gap": 1.772,
+        "roster": [
+          "drifter",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "chapter": 1,
+    "chapter_name": "Sunrise Flats",
+    "name": "Sunrise Flats: The guardian",
+    "description": "First light over the training trail. Read the field and keep moving.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "Read the field and keep moving.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 100,
+    "difficulty": 1.342,
+    "spawn": 2.005,
+    "enemies": [
+      "drifter",
+      "gunner"
+    ],
+    "hazard": "none",
+    "layout": 9,
+    "palette": 0,
+    "rule": "steady",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 2.005,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 12.82,
+        "count": 5,
+        "gap": 1.865,
+        "roster": [
+          "drifter",
+          "gunner"
+        ]
+      },
+      {
+        "at": 25.85,
+        "count": 6,
+        "gap": 1.724,
+        "roster": [
+          "drifter",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: First footprints",
+    "description": "Quick cactus critters roam the crossroads. Foes move 20% faster. Save your dash.",
+    "objective": "Eliminate 9 foes",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "clear",
+    "target": 9,
+    "time_limit": 104,
+    "difficulty": 1.38,
+    "spawn": 2.37,
+    "enemies": [
+      "runner",
+      "drifter",
+      "gunner"
+    ],
+    "hazard": "sandburst",
+    "layout": 10,
+    "palette": 1,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 3,
+        "gap": 2.37,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 9.91,
+        "count": 3,
+        "gap": 2.204,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 20.02,
+        "count": 3,
+        "gap": 2.038,
+        "roster": [
+          "runner",
+          "drifter",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: Keep your distance",
+    "description": "Quick cactus critters roam the crossroads. A power-up drops every third elimination.",
+    "objective": "Survive 27 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 27,
+    "time_limit": 104,
+    "difficulty": 1.418,
+    "spawn": 2.315,
+    "enemies": [
+      "gunner",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "sandburst",
+    "layout": 11,
+    "palette": 1,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 3,
+        "gap": 2.315,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 9.75,
+        "count": 3,
+        "gap": 2.153,
+        "roster": [
+          "gunner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 19.69,
+        "count": 4,
+        "gap": 1.991,
+        "roster": [
+          "gunner",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: Lost provisions",
+    "description": "Quick cactus critters roam the crossroads. Foes move 20% faster. Save your dash.",
+    "objective": "Collect 4 supply crates",
+    "tip": "Foes move 20% faster. Save your dash. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 4,
+    "time_limit": 104,
+    "difficulty": 1.456,
+    "spawn": 2.26,
+    "enemies": [
+      "runner",
+      "drifter",
+      "gunner"
+    ],
+    "hazard": "sandburst",
+    "layout": 12,
+    "palette": 1,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 3,
+        "gap": 2.26,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 9.58,
+        "count": 4,
+        "gap": 2.102,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 21.62,
+        "count": 4,
+        "gap": 1.944,
+        "roster": [
+          "runner",
+          "drifter",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: Circle of trust",
+    "description": "Quick cactus critters roam the crossroads. Foes move 20% faster. Save your dash.",
+    "objective": "Hold the green circle for 17 seconds",
+    "tip": "Foes move 20% faster. Save your dash. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 17,
+    "time_limit": 104,
+    "difficulty": 1.494,
+    "spawn": 2.205,
+    "enemies": [
+      "gunner",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "sandburst",
+    "layout": 13,
+    "palette": 1,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.205,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 11.62,
+        "count": 4,
+        "gap": 2.051,
+        "roster": [
+          "gunner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 23.44,
+        "count": 4,
+        "gap": 1.896,
+        "roster": [
+          "gunner",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: The narrow way",
+    "description": "Quick cactus critters roam the crossroads. Foes move 20% faster. Save your dash.",
+    "objective": "Eliminate 13 foes",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "clear",
+    "target": 13,
+    "time_limit": 104,
+    "difficulty": 1.532,
+    "spawn": 2.15,
+    "enemies": [
+      "runner",
+      "drifter",
+      "gunner"
+    ],
+    "hazard": "sandburst",
+    "layout": 14,
+    "palette": 1,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.15,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 11.4,
+        "count": 4,
+        "gap": 1.999,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 23.0,
+        "count": 5,
+        "gap": 1.849,
+        "roster": [
+          "runner",
+          "drifter",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: The long breath",
+    "description": "Quick cactus critters roam the crossroads. Foes move 20% faster. Save your dash.",
+    "objective": "Survive 35 seconds",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "survive",
+    "target": 35,
+    "time_limit": 105,
+    "difficulty": 1.57,
+    "spawn": 2.095,
+    "enemies": [
+      "gunner",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "sandburst",
+    "layout": 15,
+    "palette": 1,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.095,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 11.18,
+        "count": 5,
+        "gap": 1.948,
+        "roster": [
+          "gunner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 24.66,
+        "count": 5,
+        "gap": 1.802,
+        "roster": [
+          "gunner",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: Supply train",
+    "description": "Quick cactus critters roam the crossroads. A power-up drops every third elimination.",
+    "objective": "Collect 5 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 5,
+    "time_limit": 104,
+    "difficulty": 1.608,
+    "spawn": 2.04,
+    "enemies": [
+      "runner",
+      "drifter",
+      "gunner"
+    ],
+    "hazard": "sandburst",
+    "layout": 16,
+    "palette": 1,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 2.04,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.0,
+        "count": 5,
+        "gap": 1.897,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 26.2,
+        "count": 5,
+        "gap": 1.754,
+        "roster": [
+          "runner",
+          "drifter",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: Last stand",
+    "description": "Quick cactus critters roam the crossroads. Foes move 20% faster. Save your dash.",
+    "objective": "Hold the green circle for 21 seconds",
+    "tip": "Foes move 20% faster. Save your dash. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 21,
+    "time_limit": 104,
+    "difficulty": 1.646,
+    "spawn": 1.985,
+    "enemies": [
+      "gunner",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "sandburst",
+    "layout": 17,
+    "palette": 1,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.985,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 12.73,
+        "count": 5,
+        "gap": 1.846,
+        "roster": [
+          "gunner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 25.65,
+        "count": 6,
+        "gap": 1.707,
+        "roster": [
+          "gunner",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: A clean sweep",
+    "description": "Quick cactus critters roam the crossroads. Foes move 20% faster. Save your dash.",
+    "objective": "Eliminate 17 foes",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "clear",
+    "target": 17,
+    "time_limit": 104,
+    "difficulty": 1.684,
+    "spawn": 1.93,
+    "enemies": [
+      "runner",
+      "drifter",
+      "gunner"
+    ],
+    "hazard": "sandburst",
+    "layout": 18,
+    "palette": 1,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.93,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 12.45,
+        "count": 6,
+        "gap": 1.795,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 27.03,
+        "count": 6,
+        "gap": 1.66,
+        "roster": [
+          "runner",
+          "drifter",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "chapter": 2,
+    "chapter_name": "Cactus Junction",
+    "name": "Cactus Junction: The guardian",
+    "description": "Quick cactus critters roam the crossroads. Foes move 20% faster. Save your dash.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 104,
+    "difficulty": 1.722,
+    "spawn": 1.875,
+    "enemies": [
+      "gunner",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "sandburst",
+    "layout": 19,
+    "palette": 1,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.875,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 14.05,
+        "count": 6,
+        "gap": 1.744,
+        "roster": [
+          "gunner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 28.3,
+        "count": 6,
+        "gap": 1.613,
+        "roster": [
+          "gunner",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: First footprints",
+    "description": "Armored wanderers guard the copper mines. Foes have 25% more health. Upgrade your revolver.",
+    "objective": "Eliminate 11 foes",
+    "tip": "Foes have 25% more health. Upgrade your revolver.",
+    "mode": "clear",
+    "target": 11,
+    "time_limit": 108,
+    "difficulty": 1.76,
+    "spawn": 2.24,
+    "enemies": [
+      "tank",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "embers",
+    "layout": 20,
+    "palette": 2,
+    "rule": "armored",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 3,
+        "gap": 2.24,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 9.52,
+        "count": 4,
+        "gap": 2.083,
+        "roster": [
+          "tank",
+          "drifter"
+        ]
+      },
+      {
+        "at": 21.48,
+        "count": 4,
+        "gap": 1.926,
+        "roster": [
+          "tank",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: Keep your distance",
+    "description": "Armored wanderers guard the copper mines. A power-up drops every third elimination.",
+    "objective": "Survive 30 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 30,
+    "time_limit": 108,
+    "difficulty": 1.798,
+    "spawn": 2.185,
+    "enemies": [
+      "runner",
+      "drifter",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 21,
+    "palette": 2,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.185,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 11.54,
+        "count": 4,
+        "gap": 2.032,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 23.28,
+        "count": 4,
+        "gap": 1.879,
+        "roster": [
+          "runner",
+          "drifter",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: Lost provisions",
+    "description": "Armored wanderers guard the copper mines. Foes have 25% more health. Upgrade your revolver.",
+    "objective": "Collect 5 supply crates",
+    "tip": "Foes have 25% more health. Upgrade your revolver. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 5,
+    "time_limit": 108,
+    "difficulty": 1.836,
+    "spawn": 2.13,
+    "enemies": [
+      "tank",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "embers",
+    "layout": 22,
+    "palette": 2,
+    "rule": "armored",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.13,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 11.32,
+        "count": 4,
+        "gap": 1.981,
+        "roster": [
+          "tank",
+          "drifter"
+        ]
+      },
+      {
+        "at": 22.84,
+        "count": 5,
+        "gap": 1.832,
+        "roster": [
+          "tank",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: Circle of trust",
+    "description": "Armored wanderers guard the copper mines. Foes have 25% more health. Upgrade your revolver.",
+    "objective": "Hold the green circle for 19 seconds",
+    "tip": "Foes have 25% more health. Upgrade your revolver. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 19,
+    "time_limit": 108,
+    "difficulty": 1.874,
+    "spawn": 2.075,
+    "enemies": [
+      "runner",
+      "drifter",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 23,
+    "palette": 2,
+    "rule": "armored",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.075,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 11.1,
+        "count": 5,
+        "gap": 1.93,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 24.48,
+        "count": 5,
+        "gap": 1.785,
+        "roster": [
+          "runner",
+          "drifter",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: The narrow way",
+    "description": "Armored wanderers guard the copper mines. Foes have 25% more health. Upgrade your revolver.",
+    "objective": "Eliminate 15 foes",
+    "tip": "Foes have 25% more health. Upgrade your revolver.",
+    "mode": "clear",
+    "target": 15,
+    "time_limit": 108,
+    "difficulty": 1.912,
+    "spawn": 2.02,
+    "enemies": [
+      "tank",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "embers",
+    "layout": 24,
+    "palette": 2,
+    "rule": "armored",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 2.02,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 12.9,
+        "count": 5,
+        "gap": 1.879,
+        "roster": [
+          "tank",
+          "drifter"
+        ]
+      },
+      {
+        "at": 26.0,
+        "count": 5,
+        "gap": 1.737,
+        "roster": [
+          "tank",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: The long breath",
+    "description": "Armored wanderers guard the copper mines. Foes have 25% more health. Upgrade your revolver.",
+    "objective": "Survive 38 seconds",
+    "tip": "Foes have 25% more health. Upgrade your revolver.",
+    "mode": "survive",
+    "target": 38,
+    "time_limit": 114,
+    "difficulty": 1.95,
+    "spawn": 1.965,
+    "enemies": [
+      "runner",
+      "drifter",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 25,
+    "palette": 2,
+    "rule": "armored",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.965,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 12.63,
+        "count": 5,
+        "gap": 1.827,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 25.45,
+        "count": 6,
+        "gap": 1.69,
+        "roster": [
+          "runner",
+          "drifter",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: Supply train",
+    "description": "Armored wanderers guard the copper mines. A power-up drops every third elimination.",
+    "objective": "Collect 6 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 6,
+    "time_limit": 108,
+    "difficulty": 1.988,
+    "spawn": 1.91,
+    "enemies": [
+      "tank",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "embers",
+    "layout": 26,
+    "palette": 2,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.91,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 12.35,
+        "count": 6,
+        "gap": 1.776,
+        "roster": [
+          "tank",
+          "drifter"
+        ]
+      },
+      {
+        "at": 26.81,
+        "count": 6,
+        "gap": 1.643,
+        "roster": [
+          "tank",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: Last stand",
+    "description": "Armored wanderers guard the copper mines. Foes have 25% more health. Upgrade your revolver.",
+    "objective": "Hold the green circle for 23 seconds",
+    "tip": "Foes have 25% more health. Upgrade your revolver. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 23,
+    "time_limit": 108,
+    "difficulty": 2.026,
+    "spawn": 1.855,
+    "enemies": [
+      "runner",
+      "drifter",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 27,
+    "palette": 2,
+    "rule": "armored",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.855,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.93,
+        "count": 6,
+        "gap": 1.725,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 28.06,
+        "count": 6,
+        "gap": 1.595,
+        "roster": [
+          "runner",
+          "drifter",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: A clean sweep",
+    "description": "Armored wanderers guard the copper mines. Foes have 25% more health. Upgrade your revolver.",
+    "objective": "Eliminate 19 foes",
+    "tip": "Foes have 25% more health. Upgrade your revolver.",
+    "mode": "clear",
+    "target": 19,
+    "time_limit": 108,
+    "difficulty": 2.064,
+    "spawn": 1.8,
+    "enemies": [
+      "tank",
+      "drifter",
+      "runner"
+    ],
+    "hazard": "embers",
+    "layout": 28,
+    "palette": 2,
+    "rule": "armored",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.8,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.6,
+        "count": 6,
+        "gap": 1.674,
+        "roster": [
+          "tank",
+          "drifter"
+        ]
+      },
+      {
+        "at": 27.4,
+        "count": 7,
+        "gap": 1.548,
+        "roster": [
+          "tank",
+          "drifter",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "chapter": 3,
+    "chapter_name": "Copper Canyon",
+    "name": "Copper Canyon: The guardian",
+    "description": "Armored wanderers guard the copper mines. Foes have 25% more health. Upgrade your revolver.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "Foes have 25% more health. Upgrade your revolver.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 108,
+    "difficulty": 2.102,
+    "spawn": 1.745,
+    "enemies": [
+      "runner",
+      "drifter",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 29,
+    "palette": 2,
+    "rule": "armored",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.745,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.27,
+        "count": 7,
+        "gap": 1.623,
+        "roster": [
+          "runner",
+          "drifter"
+        ]
+      },
+      {
+        "at": 28.48,
+        "count": 7,
+        "gap": 1.501,
+        "roster": [
+          "runner",
+          "drifter",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: First footprints",
+    "description": "Ranged patrols haunt the dry riverbed. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Eliminate 13 foes",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "clear",
+    "target": 13,
+    "time_limit": 112,
+    "difficulty": 2.14,
+    "spawn": 2.11,
+    "enemies": [
+      "gunner",
+      "runner",
+      "drifter"
+    ],
+    "hazard": "geyser",
+    "layout": 30,
+    "palette": 3,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.11,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 11.24,
+        "count": 4,
+        "gap": 1.962,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 22.68,
+        "count": 5,
+        "gap": 1.815,
+        "roster": [
+          "gunner",
+          "runner",
+          "drifter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: Keep your distance",
+    "description": "Ranged patrols haunt the dry riverbed. A power-up drops every third elimination.",
+    "objective": "Survive 33 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 33,
+    "time_limit": 112,
+    "difficulty": 2.178,
+    "spawn": 2.055,
+    "enemies": [
+      "drifter",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "geyser",
+    "layout": 31,
+    "palette": 3,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 4,
+        "gap": 2.055,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 11.02,
+        "count": 5,
+        "gap": 1.911,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      },
+      {
+        "at": 24.3,
+        "count": 5,
+        "gap": 1.767,
+        "roster": [
+          "drifter",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: Lost provisions",
+    "description": "Ranged patrols haunt the dry riverbed. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Collect 5 supply crates",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 5,
+    "time_limit": 112,
+    "difficulty": 2.216,
+    "spawn": 2.0,
+    "enemies": [
+      "gunner",
+      "runner",
+      "drifter"
+    ],
+    "hazard": "geyser",
+    "layout": 32,
+    "palette": 3,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 2.0,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 12.8,
+        "count": 5,
+        "gap": 1.86,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 25.8,
+        "count": 5,
+        "gap": 1.72,
+        "roster": [
+          "gunner",
+          "runner",
+          "drifter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: Circle of trust",
+    "description": "Ranged patrols haunt the dry riverbed. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Hold the green circle for 21 seconds",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 21,
+    "time_limit": 112,
+    "difficulty": 2.254,
+    "spawn": 1.945,
+    "enemies": [
+      "drifter",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "geyser",
+    "layout": 33,
+    "palette": 3,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.945,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 12.53,
+        "count": 5,
+        "gap": 1.809,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      },
+      {
+        "at": 25.25,
+        "count": 6,
+        "gap": 1.673,
+        "roster": [
+          "drifter",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: The narrow way",
+    "description": "Ranged patrols haunt the dry riverbed. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Eliminate 17 foes",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "clear",
+    "target": 17,
+    "time_limit": 112,
+    "difficulty": 2.292,
+    "spawn": 1.89,
+    "enemies": [
+      "gunner",
+      "runner",
+      "drifter"
+    ],
+    "hazard": "geyser",
+    "layout": 34,
+    "palette": 3,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.89,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 12.25,
+        "count": 6,
+        "gap": 1.758,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 26.59,
+        "count": 6,
+        "gap": 1.625,
+        "roster": [
+          "gunner",
+          "runner",
+          "drifter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: The long breath",
+    "description": "Ranged patrols haunt the dry riverbed. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Survive 41 seconds",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "survive",
+    "target": 41,
+    "time_limit": 123,
+    "difficulty": 2.33,
+    "spawn": 1.835,
+    "enemies": [
+      "drifter",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "geyser",
+    "layout": 35,
+    "palette": 3,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.835,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 13.81,
+        "count": 6,
+        "gap": 1.707,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      },
+      {
+        "at": 27.82,
+        "count": 6,
+        "gap": 1.578,
+        "roster": [
+          "drifter",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: Supply train",
+    "description": "Ranged patrols haunt the dry riverbed. A power-up drops every third elimination.",
+    "objective": "Collect 6 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 6,
+    "time_limit": 112,
+    "difficulty": 2.368,
+    "spawn": 1.78,
+    "enemies": [
+      "gunner",
+      "runner",
+      "drifter"
+    ],
+    "hazard": "geyser",
+    "layout": 36,
+    "palette": 3,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.78,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.48,
+        "count": 6,
+        "gap": 1.655,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 27.16,
+        "count": 7,
+        "gap": 1.531,
+        "roster": [
+          "gunner",
+          "runner",
+          "drifter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: Last stand",
+    "description": "Ranged patrols haunt the dry riverbed. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Hold the green circle for 25 seconds",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 25,
+    "time_limit": 112,
+    "difficulty": 2.406,
+    "spawn": 1.725,
+    "enemies": [
+      "drifter",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "geyser",
+    "layout": 37,
+    "palette": 3,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.725,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 13.15,
+        "count": 7,
+        "gap": 1.604,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      },
+      {
+        "at": 28.23,
+        "count": 7,
+        "gap": 1.484,
+        "roster": [
+          "drifter",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: A clean sweep",
+    "description": "Ranged patrols haunt the dry riverbed. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Eliminate 21 foes",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "clear",
+    "target": 21,
+    "time_limit": 112,
+    "difficulty": 2.444,
+    "spawn": 1.67,
+    "enemies": [
+      "gunner",
+      "runner",
+      "drifter"
+    ],
+    "hazard": "geyser",
+    "layout": 38,
+    "palette": 3,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.67,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 14.49,
+        "count": 7,
+        "gap": 1.553,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 29.18,
+        "count": 7,
+        "gap": 1.436,
+        "roster": [
+          "gunner",
+          "runner",
+          "drifter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "chapter": 4,
+    "chapter_name": "Ghostwater Basin",
+    "name": "Ghostwater Basin: The guardian",
+    "description": "Ranged patrols haunt the dry riverbed. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 112,
+    "difficulty": 2.482,
+    "spawn": 1.615,
+    "enemies": [
+      "drifter",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "geyser",
+    "layout": 39,
+    "palette": 3,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.615,
+        "roster": [
+          "drifter"
+        ]
+      },
+      {
+        "at": 14.11,
+        "count": 7,
+        "gap": 1.502,
+        "roster": [
+          "drifter",
+          "runner"
+        ]
+      },
+      {
+        "at": 28.41,
+        "count": 8,
+        "gap": 1.389,
+        "roster": [
+          "drifter",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: First footprints",
+    "description": "Long shots echo across the purple stone. Enemy shots travel faster. Move across their aim.",
+    "objective": "Eliminate 15 foes",
+    "tip": "Enemy shots travel faster. Move across their aim.",
+    "mode": "clear",
+    "target": 15,
+    "time_limit": 116,
+    "difficulty": 2.52,
+    "spawn": 1.98,
+    "enemies": [
+      "sniper",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 40,
+    "palette": 4,
+    "rule": "longshot",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.98,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 12.7,
+        "count": 5,
+        "gap": 1.841,
+        "roster": [
+          "sniper",
+          "runner"
+        ]
+      },
+      {
+        "at": 25.6,
+        "count": 5,
+        "gap": 1.703,
+        "roster": [
+          "sniper",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: Keep your distance",
+    "description": "Long shots echo across the purple stone. A power-up drops every third elimination.",
+    "objective": "Survive 36 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 36,
+    "time_limit": 116,
+    "difficulty": 2.558,
+    "spawn": 1.925,
+    "enemies": [
+      "gunner",
+      "runner",
+      "sniper"
+    ],
+    "hazard": "lightning",
+    "layout": 41,
+    "palette": 4,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.925,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 12.43,
+        "count": 5,
+        "gap": 1.79,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 25.05,
+        "count": 6,
+        "gap": 1.655,
+        "roster": [
+          "gunner",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: Lost provisions",
+    "description": "Long shots echo across the purple stone. Enemy shots travel faster. Move across their aim.",
+    "objective": "Collect 6 supply crates",
+    "tip": "Enemy shots travel faster. Move across their aim. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 6,
+    "time_limit": 116,
+    "difficulty": 2.596,
+    "spawn": 1.87,
+    "enemies": [
+      "sniper",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 42,
+    "palette": 4,
+    "rule": "longshot",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.87,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 12.15,
+        "count": 6,
+        "gap": 1.739,
+        "roster": [
+          "sniper",
+          "runner"
+        ]
+      },
+      {
+        "at": 26.37,
+        "count": 6,
+        "gap": 1.608,
+        "roster": [
+          "sniper",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: Circle of trust",
+    "description": "Long shots echo across the purple stone. Enemy shots travel faster. Move across their aim.",
+    "objective": "Hold the green circle for 23 seconds",
+    "tip": "Enemy shots travel faster. Move across their aim. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 23,
+    "time_limit": 116,
+    "difficulty": 2.634,
+    "spawn": 1.815,
+    "enemies": [
+      "gunner",
+      "runner",
+      "sniper"
+    ],
+    "hazard": "lightning",
+    "layout": 43,
+    "palette": 4,
+    "rule": "longshot",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.815,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.69,
+        "count": 6,
+        "gap": 1.688,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 27.58,
+        "count": 6,
+        "gap": 1.561,
+        "roster": [
+          "gunner",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: The narrow way",
+    "description": "Long shots echo across the purple stone. Enemy shots travel faster. Move across their aim.",
+    "objective": "Eliminate 19 foes",
+    "tip": "Enemy shots travel faster. Move across their aim.",
+    "mode": "clear",
+    "target": 19,
+    "time_limit": 116,
+    "difficulty": 2.672,
+    "spawn": 1.76,
+    "enemies": [
+      "sniper",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 44,
+    "palette": 4,
+    "rule": "longshot",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.76,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 13.36,
+        "count": 6,
+        "gap": 1.637,
+        "roster": [
+          "sniper",
+          "runner"
+        ]
+      },
+      {
+        "at": 26.92,
+        "count": 7,
+        "gap": 1.514,
+        "roster": [
+          "sniper",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: The long breath",
+    "description": "Long shots echo across the purple stone. Enemy shots travel faster. Move across their aim.",
+    "objective": "Survive 44 seconds",
+    "tip": "Enemy shots travel faster. Move across their aim.",
+    "mode": "survive",
+    "target": 44,
+    "time_limit": 132,
+    "difficulty": 2.71,
+    "spawn": 1.705,
+    "enemies": [
+      "gunner",
+      "runner",
+      "sniper"
+    ],
+    "hazard": "lightning",
+    "layout": 45,
+    "palette": 4,
+    "rule": "longshot",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.705,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.03,
+        "count": 7,
+        "gap": 1.586,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 27.97,
+        "count": 7,
+        "gap": 1.466,
+        "roster": [
+          "gunner",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: Supply train",
+    "description": "Long shots echo across the purple stone. A power-up drops every third elimination.",
+    "objective": "Collect 7 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 7,
+    "time_limit": 116,
+    "difficulty": 2.748,
+    "spawn": 1.65,
+    "enemies": [
+      "sniper",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 46,
+    "palette": 4,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.65,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 14.35,
+        "count": 7,
+        "gap": 1.534,
+        "roster": [
+          "sniper",
+          "runner"
+        ]
+      },
+      {
+        "at": 28.9,
+        "count": 7,
+        "gap": 1.419,
+        "roster": [
+          "sniper",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: Last stand",
+    "description": "Long shots echo across the purple stone. Enemy shots travel faster. Move across their aim.",
+    "objective": "Hold the green circle for 27 seconds",
+    "tip": "Enemy shots travel faster. Move across their aim. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 27,
+    "time_limit": 116,
+    "difficulty": 2.786,
+    "spawn": 1.595,
+    "enemies": [
+      "gunner",
+      "runner",
+      "sniper"
+    ],
+    "hazard": "lightning",
+    "layout": 47,
+    "palette": 4,
+    "rule": "longshot",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.595,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.96,
+        "count": 7,
+        "gap": 1.483,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 28.13,
+        "count": 8,
+        "gap": 1.372,
+        "roster": [
+          "gunner",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: A clean sweep",
+    "description": "Long shots echo across the purple stone. Enemy shots travel faster. Move across their aim.",
+    "objective": "Eliminate 23 foes",
+    "tip": "Enemy shots travel faster. Move across their aim.",
+    "mode": "clear",
+    "target": 23,
+    "time_limit": 116,
+    "difficulty": 2.824,
+    "spawn": 1.54,
+    "enemies": [
+      "sniper",
+      "runner",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 48,
+    "palette": 4,
+    "rule": "longshot",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.54,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 13.58,
+        "count": 8,
+        "gap": 1.432,
+        "roster": [
+          "sniper",
+          "runner"
+        ]
+      },
+      {
+        "at": 28.9,
+        "count": 8,
+        "gap": 1.324,
+        "roster": [
+          "sniper",
+          "runner",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "chapter": 5,
+    "chapter_name": "Violet Mesa",
+    "name": "Violet Mesa: The guardian",
+    "description": "Long shots echo across the purple stone. Enemy shots travel faster. Move across their aim.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "Enemy shots travel faster. Move across their aim.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 116,
+    "difficulty": 2.862,
+    "spawn": 1.485,
+    "enemies": [
+      "gunner",
+      "runner",
+      "sniper"
+    ],
+    "hazard": "lightning",
+    "layout": 49,
+    "palette": 4,
+    "rule": "longshot",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.485,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 14.68,
+        "count": 8,
+        "gap": 1.381,
+        "roster": [
+          "gunner",
+          "runner"
+        ]
+      },
+      {
+        "at": 29.56,
+        "count": 8,
+        "gap": 1.277,
+        "roster": [
+          "gunner",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: First footprints",
+    "description": "Fast draw patrols watch the abandoned tracks. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Eliminate 17 foes",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "clear",
+    "target": 17,
+    "time_limit": 120,
+    "difficulty": 2.9,
+    "spawn": 1.85,
+    "enemies": [
+      "gunner",
+      "tank",
+      "runner"
+    ],
+    "hazard": "sparks",
+    "layout": 50,
+    "palette": 5,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 5,
+        "gap": 1.85,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 12.05,
+        "count": 6,
+        "gap": 1.72,
+        "roster": [
+          "gunner",
+          "tank"
+        ]
+      },
+      {
+        "at": 26.15,
+        "count": 6,
+        "gap": 1.591,
+        "roster": [
+          "gunner",
+          "tank",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: Keep your distance",
+    "description": "Fast draw patrols watch the abandoned tracks. A power-up drops every third elimination.",
+    "objective": "Survive 39 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 39,
+    "time_limit": 120,
+    "difficulty": 2.938,
+    "spawn": 1.795,
+    "enemies": [
+      "runner",
+      "tank",
+      "gunner"
+    ],
+    "hazard": "sparks",
+    "layout": 51,
+    "palette": 5,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.795,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.57,
+        "count": 6,
+        "gap": 1.669,
+        "roster": [
+          "runner",
+          "tank"
+        ]
+      },
+      {
+        "at": 27.34,
+        "count": 6,
+        "gap": 1.544,
+        "roster": [
+          "runner",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: Lost provisions",
+    "description": "Fast draw patrols watch the abandoned tracks. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Collect 6 supply crates",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 6,
+    "time_limit": 120,
+    "difficulty": 2.976,
+    "spawn": 1.74,
+    "enemies": [
+      "gunner",
+      "tank",
+      "runner"
+    ],
+    "hazard": "sparks",
+    "layout": 52,
+    "palette": 5,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.74,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.24,
+        "count": 6,
+        "gap": 1.618,
+        "roster": [
+          "gunner",
+          "tank"
+        ]
+      },
+      {
+        "at": 26.68,
+        "count": 7,
+        "gap": 1.496,
+        "roster": [
+          "gunner",
+          "tank",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: Circle of trust",
+    "description": "Fast draw patrols watch the abandoned tracks. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Hold the green circle for 25 seconds",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 25,
+    "time_limit": 120,
+    "difficulty": 3.014,
+    "spawn": 1.685,
+    "enemies": [
+      "runner",
+      "tank",
+      "gunner"
+    ],
+    "hazard": "sparks",
+    "layout": 53,
+    "palette": 5,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.685,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 12.91,
+        "count": 7,
+        "gap": 1.567,
+        "roster": [
+          "runner",
+          "tank"
+        ]
+      },
+      {
+        "at": 27.7,
+        "count": 7,
+        "gap": 1.449,
+        "roster": [
+          "runner",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: The narrow way",
+    "description": "Fast draw patrols watch the abandoned tracks. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Eliminate 21 foes",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "clear",
+    "target": 21,
+    "time_limit": 120,
+    "difficulty": 3.052,
+    "spawn": 1.63,
+    "enemies": [
+      "gunner",
+      "tank",
+      "runner"
+    ],
+    "hazard": "sparks",
+    "layout": 54,
+    "palette": 5,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.63,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 14.21,
+        "count": 7,
+        "gap": 1.516,
+        "roster": [
+          "gunner",
+          "tank"
+        ]
+      },
+      {
+        "at": 28.62,
+        "count": 7,
+        "gap": 1.402,
+        "roster": [
+          "gunner",
+          "tank",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: The long breath",
+    "description": "Fast draw patrols watch the abandoned tracks. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Survive 47 seconds",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "survive",
+    "target": 47,
+    "time_limit": 141,
+    "difficulty": 3.09,
+    "spawn": 1.575,
+    "enemies": [
+      "runner",
+      "tank",
+      "gunner"
+    ],
+    "hazard": "sparks",
+    "layout": 55,
+    "palette": 5,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.575,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.83,
+        "count": 7,
+        "gap": 1.465,
+        "roster": [
+          "runner",
+          "tank"
+        ]
+      },
+      {
+        "at": 27.85,
+        "count": 8,
+        "gap": 1.355,
+        "roster": [
+          "runner",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: Supply train",
+    "description": "Fast draw patrols watch the abandoned tracks. A power-up drops every third elimination.",
+    "objective": "Collect 7 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 7,
+    "time_limit": 120,
+    "difficulty": 3.128,
+    "spawn": 1.52,
+    "enemies": [
+      "gunner",
+      "tank",
+      "runner"
+    ],
+    "hazard": "sparks",
+    "layout": 56,
+    "palette": 5,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.52,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.44,
+        "count": 8,
+        "gap": 1.414,
+        "roster": [
+          "gunner",
+          "tank"
+        ]
+      },
+      {
+        "at": 28.6,
+        "count": 8,
+        "gap": 1.307,
+        "roster": [
+          "gunner",
+          "tank",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: Last stand",
+    "description": "Fast draw patrols watch the abandoned tracks. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Hold the green circle for 29 seconds",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 29,
+    "time_limit": 120,
+    "difficulty": 3.166,
+    "spawn": 1.465,
+    "enemies": [
+      "runner",
+      "tank",
+      "gunner"
+    ],
+    "hazard": "sparks",
+    "layout": 57,
+    "palette": 5,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.465,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 14.52,
+        "count": 8,
+        "gap": 1.362,
+        "roster": [
+          "runner",
+          "tank"
+        ]
+      },
+      {
+        "at": 29.24,
+        "count": 8,
+        "gap": 1.26,
+        "roster": [
+          "runner",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: A clean sweep",
+    "description": "Fast draw patrols watch the abandoned tracks. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Eliminate 25 foes",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "clear",
+    "target": 25,
+    "time_limit": 120,
+    "difficulty": 3.204,
+    "spawn": 1.41,
+    "enemies": [
+      "gunner",
+      "tank",
+      "runner"
+    ],
+    "hazard": "sparks",
+    "layout": 58,
+    "palette": 5,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.41,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 14.08,
+        "count": 8,
+        "gap": 1.311,
+        "roster": [
+          "gunner",
+          "tank"
+        ]
+      },
+      {
+        "at": 28.36,
+        "count": 9,
+        "gap": 1.213,
+        "roster": [
+          "gunner",
+          "tank",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "chapter": 6,
+    "chapter_name": "Railhead Outpost",
+    "name": "Railhead Outpost: The guardian",
+    "description": "Fast draw patrols watch the abandoned tracks. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 120,
+    "difficulty": 3.242,
+    "spawn": 1.355,
+    "enemies": [
+      "runner",
+      "tank",
+      "gunner"
+    ],
+    "hazard": "sparks",
+    "layout": 59,
+    "palette": 5,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.355,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.64,
+        "count": 9,
+        "gap": 1.26,
+        "roster": [
+          "runner",
+          "tank"
+        ]
+      },
+      {
+        "at": 28.84,
+        "count": 9,
+        "gap": 1.165,
+        "roster": [
+          "runner",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: First footprints",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Eliminate 19 foes",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "clear",
+    "target": 19,
+    "time_limit": 124,
+    "difficulty": 3.28,
+    "spawn": 1.72,
+    "enemies": [
+      "tank",
+      "gunner",
+      "sniper"
+    ],
+    "hazard": "embers",
+    "layout": 60,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.72,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.12,
+        "count": 6,
+        "gap": 1.6,
+        "roster": [
+          "tank",
+          "gunner"
+        ]
+      },
+      {
+        "at": 26.44,
+        "count": 7,
+        "gap": 1.479,
+        "roster": [
+          "tank",
+          "gunner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: Keep your distance",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Survive 42 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 42,
+    "time_limit": 126,
+    "difficulty": 3.318,
+    "spawn": 1.665,
+    "enemies": [
+      "sniper",
+      "gunner",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 61,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 6,
+        "gap": 1.665,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 12.79,
+        "count": 7,
+        "gap": 1.548,
+        "roster": [
+          "sniper",
+          "gunner"
+        ]
+      },
+      {
+        "at": 27.45,
+        "count": 7,
+        "gap": 1.432,
+        "roster": [
+          "sniper",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: Lost provisions",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Collect 7 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 7,
+    "time_limit": 124,
+    "difficulty": 3.356,
+    "spawn": 1.61,
+    "enemies": [
+      "tank",
+      "gunner",
+      "sniper"
+    ],
+    "hazard": "embers",
+    "layout": 62,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.61,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 14.07,
+        "count": 7,
+        "gap": 1.497,
+        "roster": [
+          "tank",
+          "gunner"
+        ]
+      },
+      {
+        "at": 28.34,
+        "count": 7,
+        "gap": 1.385,
+        "roster": [
+          "tank",
+          "gunner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: Circle of trust",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Hold the green circle for 27 seconds",
+    "tip": "A power-up drops every third elimination. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 27,
+    "time_limit": 124,
+    "difficulty": 3.394,
+    "spawn": 1.555,
+    "enemies": [
+      "sniper",
+      "gunner",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 63,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.555,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 13.69,
+        "count": 7,
+        "gap": 1.446,
+        "roster": [
+          "sniper",
+          "gunner"
+        ]
+      },
+      {
+        "at": 27.57,
+        "count": 8,
+        "gap": 1.337,
+        "roster": [
+          "sniper",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: The narrow way",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Eliminate 23 foes",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "clear",
+    "target": 23,
+    "time_limit": 124,
+    "difficulty": 3.432,
+    "spawn": 1.5,
+    "enemies": [
+      "tank",
+      "gunner",
+      "sniper"
+    ],
+    "hazard": "embers",
+    "layout": 64,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.5,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.3,
+        "count": 8,
+        "gap": 1.395,
+        "roster": [
+          "tank",
+          "gunner"
+        ]
+      },
+      {
+        "at": 28.3,
+        "count": 8,
+        "gap": 1.29,
+        "roster": [
+          "tank",
+          "gunner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: The long breath",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Survive 50 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 50,
+    "time_limit": 150,
+    "difficulty": 3.47,
+    "spawn": 1.445,
+    "enemies": [
+      "sniper",
+      "gunner",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 65,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.445,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 14.36,
+        "count": 8,
+        "gap": 1.344,
+        "roster": [
+          "sniper",
+          "gunner"
+        ]
+      },
+      {
+        "at": 28.92,
+        "count": 8,
+        "gap": 1.243,
+        "roster": [
+          "sniper",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: Supply train",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Collect 8 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 8,
+    "time_limit": 124,
+    "difficulty": 3.508,
+    "spawn": 1.39,
+    "enemies": [
+      "tank",
+      "gunner",
+      "sniper"
+    ],
+    "hazard": "embers",
+    "layout": 66,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.39,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.92,
+        "count": 8,
+        "gap": 1.293,
+        "roster": [
+          "tank",
+          "gunner"
+        ]
+      },
+      {
+        "at": 28.04,
+        "count": 9,
+        "gap": 1.195,
+        "roster": [
+          "tank",
+          "gunner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: Last stand",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Hold the green circle for 31 seconds",
+    "tip": "A power-up drops every third elimination. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 31,
+    "time_limit": 124,
+    "difficulty": 3.546,
+    "spawn": 1.335,
+    "enemies": [
+      "sniper",
+      "gunner",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 67,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.335,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 13.48,
+        "count": 9,
+        "gap": 1.242,
+        "roster": [
+          "sniper",
+          "gunner"
+        ]
+      },
+      {
+        "at": 28.5,
+        "count": 9,
+        "gap": 1.148,
+        "roster": [
+          "sniper",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: A clean sweep",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Eliminate 27 foes",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "clear",
+    "target": 27,
+    "time_limit": 124,
+    "difficulty": 3.584,
+    "spawn": 1.28,
+    "enemies": [
+      "tank",
+      "gunner",
+      "sniper"
+    ],
+    "hazard": "embers",
+    "layout": 68,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.28,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 14.32,
+        "count": 9,
+        "gap": 1.19,
+        "roster": [
+          "tank",
+          "gunner"
+        ]
+      },
+      {
+        "at": 28.84,
+        "count": 9,
+        "gap": 1.101,
+        "roster": [
+          "tank",
+          "gunner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "chapter": 7,
+    "chapter_name": "Dust Foundry",
+    "name": "Dust Foundry: The guardian",
+    "description": "Scavenge the old works under heavy pressure. A power-up drops every third elimination.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 124,
+    "difficulty": 3.622,
+    "spawn": 1.225,
+    "enemies": [
+      "sniper",
+      "gunner",
+      "tank"
+    ],
+    "hazard": "embers",
+    "layout": 69,
+    "palette": 6,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.225,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 13.83,
+        "count": 9,
+        "gap": 1.139,
+        "roster": [
+          "sniper",
+          "gunner"
+        ]
+      },
+      {
+        "at": 27.85,
+        "count": 10,
+        "gap": 1.054,
+        "roster": [
+          "sniper",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: First footprints",
+    "description": "Swift hunters wake beneath a silver moon. Foes move 20% faster. Save your dash.",
+    "objective": "Eliminate 21 foes",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "clear",
+    "target": 21,
+    "time_limit": 128,
+    "difficulty": 3.66,
+    "spawn": 1.59,
+    "enemies": [
+      "runner",
+      "sniper",
+      "tank"
+    ],
+    "hazard": "moonfall",
+    "layout": 70,
+    "palette": 7,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.59,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.93,
+        "count": 7,
+        "gap": 1.479,
+        "roster": [
+          "runner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 28.06,
+        "count": 7,
+        "gap": 1.367,
+        "roster": [
+          "runner",
+          "sniper",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: Keep your distance",
+    "description": "Swift hunters wake beneath a silver moon. A power-up drops every third elimination.",
+    "objective": "Survive 45 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 45,
+    "time_limit": 135,
+    "difficulty": 3.698,
+    "spawn": 1.535,
+    "enemies": [
+      "tank",
+      "sniper",
+      "runner"
+    ],
+    "hazard": "moonfall",
+    "layout": 71,
+    "palette": 7,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.535,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.54,
+        "count": 7,
+        "gap": 1.428,
+        "roster": [
+          "tank",
+          "sniper"
+        ]
+      },
+      {
+        "at": 27.29,
+        "count": 8,
+        "gap": 1.32,
+        "roster": [
+          "tank",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: Lost provisions",
+    "description": "Swift hunters wake beneath a silver moon. Foes move 20% faster. Save your dash.",
+    "objective": "Collect 7 supply crates",
+    "tip": "Foes move 20% faster. Save your dash. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 7,
+    "time_limit": 128,
+    "difficulty": 3.736,
+    "spawn": 1.48,
+    "enemies": [
+      "runner",
+      "sniper",
+      "tank"
+    ],
+    "hazard": "moonfall",
+    "layout": 72,
+    "palette": 7,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.48,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.16,
+        "count": 8,
+        "gap": 1.376,
+        "roster": [
+          "runner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 28.0,
+        "count": 8,
+        "gap": 1.273,
+        "roster": [
+          "runner",
+          "sniper",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: Circle of trust",
+    "description": "Swift hunters wake beneath a silver moon. Foes move 20% faster. Save your dash.",
+    "objective": "Hold the green circle for 29 seconds",
+    "tip": "Foes move 20% faster. Save your dash. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 29,
+    "time_limit": 128,
+    "difficulty": 3.774,
+    "spawn": 1.425,
+    "enemies": [
+      "tank",
+      "sniper",
+      "runner"
+    ],
+    "hazard": "moonfall",
+    "layout": 73,
+    "palette": 7,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.425,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 14.2,
+        "count": 8,
+        "gap": 1.325,
+        "roster": [
+          "tank",
+          "sniper"
+        ]
+      },
+      {
+        "at": 28.6,
+        "count": 8,
+        "gap": 1.226,
+        "roster": [
+          "tank",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: The narrow way",
+    "description": "Swift hunters wake beneath a silver moon. Foes move 20% faster. Save your dash.",
+    "objective": "Eliminate 25 foes",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "clear",
+    "target": 25,
+    "time_limit": 128,
+    "difficulty": 3.812,
+    "spawn": 1.37,
+    "enemies": [
+      "runner",
+      "sniper",
+      "tank"
+    ],
+    "hazard": "moonfall",
+    "layout": 74,
+    "palette": 7,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.37,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.76,
+        "count": 8,
+        "gap": 1.274,
+        "roster": [
+          "runner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 27.72,
+        "count": 9,
+        "gap": 1.178,
+        "roster": [
+          "runner",
+          "sniper",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: The long breath",
+    "description": "Swift hunters wake beneath a silver moon. Foes move 20% faster. Save your dash.",
+    "objective": "Survive 53 seconds",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "survive",
+    "target": 53,
+    "time_limit": 159,
+    "difficulty": 3.85,
+    "spawn": 1.315,
+    "enemies": [
+      "tank",
+      "sniper",
+      "runner"
+    ],
+    "hazard": "moonfall",
+    "layout": 75,
+    "palette": 7,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.315,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.32,
+        "count": 9,
+        "gap": 1.223,
+        "roster": [
+          "tank",
+          "sniper"
+        ]
+      },
+      {
+        "at": 28.16,
+        "count": 9,
+        "gap": 1.131,
+        "roster": [
+          "tank",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: Supply train",
+    "description": "Swift hunters wake beneath a silver moon. A power-up drops every third elimination.",
+    "objective": "Collect 8 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 8,
+    "time_limit": 128,
+    "difficulty": 3.888,
+    "spawn": 1.26,
+    "enemies": [
+      "runner",
+      "sniper",
+      "tank"
+    ],
+    "hazard": "moonfall",
+    "layout": 76,
+    "palette": 7,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.26,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 14.14,
+        "count": 9,
+        "gap": 1.172,
+        "roster": [
+          "runner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 28.48,
+        "count": 9,
+        "gap": 1.084,
+        "roster": [
+          "runner",
+          "sniper",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: Last stand",
+    "description": "Swift hunters wake beneath a silver moon. Foes move 20% faster. Save your dash.",
+    "objective": "Hold the green circle for 33 seconds",
+    "tip": "Foes move 20% faster. Save your dash. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 33,
+    "time_limit": 128,
+    "difficulty": 3.926,
+    "spawn": 1.205,
+    "enemies": [
+      "tank",
+      "sniper",
+      "runner"
+    ],
+    "hazard": "moonfall",
+    "layout": 77,
+    "palette": 7,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.205,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.65,
+        "count": 9,
+        "gap": 1.121,
+        "roster": [
+          "tank",
+          "sniper"
+        ]
+      },
+      {
+        "at": 27.49,
+        "count": 10,
+        "gap": 1.036,
+        "roster": [
+          "tank",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: A clean sweep",
+    "description": "Swift hunters wake beneath a silver moon. Foes move 20% faster. Save your dash.",
+    "objective": "Eliminate 29 foes",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "clear",
+    "target": 29,
+    "time_limit": 128,
+    "difficulty": 3.964,
+    "spawn": 1.15,
+    "enemies": [
+      "runner",
+      "sniper",
+      "tank"
+    ],
+    "hazard": "moonfall",
+    "layout": 78,
+    "palette": 7,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.15,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.15,
+        "count": 10,
+        "gap": 1.069,
+        "roster": [
+          "runner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 27.65,
+        "count": 10,
+        "gap": 0.989,
+        "roster": [
+          "runner",
+          "sniper",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "chapter": 8,
+    "chapter_name": "Moonlit Badlands",
+    "name": "Moonlit Badlands: The guardian",
+    "description": "Swift hunters wake beneath a silver moon. Foes move 20% faster. Save your dash.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "Foes move 20% faster. Save your dash.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 128,
+    "difficulty": 4.002,
+    "spawn": 1.095,
+    "enemies": [
+      "tank",
+      "sniper",
+      "runner"
+    ],
+    "hazard": "moonfall",
+    "layout": 79,
+    "palette": 7,
+    "rule": "swift",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 10,
+        "gap": 1.095,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.75,
+        "count": 10,
+        "gap": 1.018,
+        "roster": [
+          "tank",
+          "sniper"
+        ]
+      },
+      {
+        "at": 27.7,
+        "count": 10,
+        "gap": 0.942,
+        "roster": [
+          "tank",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: First footprints",
+    "description": "Crossfire and storms challenge every footstep. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Eliminate 23 foes",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "clear",
+    "target": 23,
+    "time_limit": 132,
+    "difficulty": 4.04,
+    "spawn": 1.46,
+    "enemies": [
+      "gunner",
+      "sniper",
+      "runner",
+      "tank"
+    ],
+    "hazard": "lightning",
+    "layout": 80,
+    "palette": 8,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 7,
+        "gap": 1.46,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.02,
+        "count": 8,
+        "gap": 1.358,
+        "roster": [
+          "gunner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 27.7,
+        "count": 8,
+        "gap": 1.256,
+        "roster": [
+          "gunner",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: Keep your distance",
+    "description": "Crossfire and storms challenge every footstep. A power-up drops every third elimination.",
+    "objective": "Survive 48 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 48,
+    "time_limit": 144,
+    "difficulty": 4.078,
+    "spawn": 1.405,
+    "enemies": [
+      "tank",
+      "runner",
+      "sniper",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 81,
+    "palette": 8,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.405,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 14.04,
+        "count": 8,
+        "gap": 1.307,
+        "roster": [
+          "tank",
+          "runner"
+        ]
+      },
+      {
+        "at": 28.28,
+        "count": 8,
+        "gap": 1.208,
+        "roster": [
+          "tank",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: Lost provisions",
+    "description": "Crossfire and storms challenge every footstep. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Collect 8 supply crates",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 8,
+    "time_limit": 132,
+    "difficulty": 4.116,
+    "spawn": 1.35,
+    "enemies": [
+      "gunner",
+      "sniper",
+      "runner",
+      "tank"
+    ],
+    "hazard": "lightning",
+    "layout": 82,
+    "palette": 8,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.35,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.6,
+        "count": 8,
+        "gap": 1.256,
+        "roster": [
+          "gunner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 27.4,
+        "count": 9,
+        "gap": 1.161,
+        "roster": [
+          "gunner",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: Circle of trust",
+    "description": "Crossfire and storms challenge every footstep. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Hold the green circle for 31 seconds",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 31,
+    "time_limit": 132,
+    "difficulty": 4.154,
+    "spawn": 1.295,
+    "enemies": [
+      "tank",
+      "runner",
+      "sniper",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 83,
+    "palette": 8,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.295,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.16,
+        "count": 9,
+        "gap": 1.204,
+        "roster": [
+          "tank",
+          "runner"
+        ]
+      },
+      {
+        "at": 27.81,
+        "count": 9,
+        "gap": 1.114,
+        "roster": [
+          "tank",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: The narrow way",
+    "description": "Crossfire and storms challenge every footstep. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Eliminate 27 foes",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "clear",
+    "target": 27,
+    "time_limit": 132,
+    "difficulty": 4.192,
+    "spawn": 1.24,
+    "enemies": [
+      "gunner",
+      "sniper",
+      "runner",
+      "tank"
+    ],
+    "hazard": "lightning",
+    "layout": 84,
+    "palette": 8,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.24,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.96,
+        "count": 9,
+        "gap": 1.153,
+        "roster": [
+          "gunner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 28.12,
+        "count": 9,
+        "gap": 1.066,
+        "roster": [
+          "gunner",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: The long breath",
+    "description": "Crossfire and storms challenge every footstep. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Survive 56 seconds",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "survive",
+    "target": 56,
+    "time_limit": 168,
+    "difficulty": 4.23,
+    "spawn": 1.185,
+    "enemies": [
+      "tank",
+      "runner",
+      "sniper",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 85,
+    "palette": 8,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.185,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.47,
+        "count": 9,
+        "gap": 1.102,
+        "roster": [
+          "tank",
+          "runner"
+        ]
+      },
+      {
+        "at": 27.13,
+        "count": 10,
+        "gap": 1.019,
+        "roster": [
+          "tank",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: Supply train",
+    "description": "Crossfire and storms challenge every footstep. A power-up drops every third elimination.",
+    "objective": "Collect 9 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 9,
+    "time_limit": 132,
+    "difficulty": 4.268,
+    "spawn": 1.13,
+    "enemies": [
+      "gunner",
+      "sniper",
+      "runner",
+      "tank"
+    ],
+    "hazard": "lightning",
+    "layout": 86,
+    "palette": 8,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.13,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 12.97,
+        "count": 10,
+        "gap": 1.051,
+        "roster": [
+          "gunner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 27.27,
+        "count": 10,
+        "gap": 0.972,
+        "roster": [
+          "gunner",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: Last stand",
+    "description": "Crossfire and storms challenge every footstep. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Hold the green circle for 35 seconds",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 35,
+    "time_limit": 132,
+    "difficulty": 4.306,
+    "spawn": 1.075,
+    "enemies": [
+      "tank",
+      "runner",
+      "sniper",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 87,
+    "palette": 8,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 10,
+        "gap": 1.075,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 13.55,
+        "count": 10,
+        "gap": 1.0,
+        "roster": [
+          "tank",
+          "runner"
+        ]
+      },
+      {
+        "at": 27.3,
+        "count": 10,
+        "gap": 0.924,
+        "roster": [
+          "tank",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: A clean sweep",
+    "description": "Crossfire and storms challenge every footstep. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Eliminate 31 foes",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "clear",
+    "target": 31,
+    "time_limit": 132,
+    "difficulty": 4.344,
+    "spawn": 1.02,
+    "enemies": [
+      "gunner",
+      "sniper",
+      "runner",
+      "tank"
+    ],
+    "hazard": "lightning",
+    "layout": 88,
+    "palette": 8,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 10,
+        "gap": 1.02,
+        "roster": [
+          "gunner"
+        ]
+      },
+      {
+        "at": 13.0,
+        "count": 10,
+        "gap": 0.949,
+        "roster": [
+          "gunner",
+          "sniper"
+        ]
+      },
+      {
+        "at": 26.2,
+        "count": 11,
+        "gap": 0.877,
+        "roster": [
+          "gunner",
+          "sniper",
+          "runner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "chapter": 9,
+    "chapter_name": "Storm Pass",
+    "name": "Storm Pass: The guardian",
+    "description": "Crossfire and storms challenge every footstep. Ranged foes fire a three-shot fan. Look for the gaps.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "Ranged foes fire a three-shot fan. Look for the gaps.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 132,
+    "difficulty": 4.382,
+    "spawn": 0.965,
+    "enemies": [
+      "tank",
+      "runner",
+      "sniper",
+      "gunner"
+    ],
+    "hazard": "lightning",
+    "layout": 89,
+    "palette": 8,
+    "rule": "crossfire",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 10,
+        "gap": 0.965,
+        "roster": [
+          "tank"
+        ]
+      },
+      {
+        "at": 12.45,
+        "count": 11,
+        "gap": 0.897,
+        "roster": [
+          "tank",
+          "runner"
+        ]
+      },
+      {
+        "at": 26.07,
+        "count": 11,
+        "gap": 0.83,
+        "roster": [
+          "tank",
+          "runner",
+          "sniper"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: First footprints",
+    "description": "Every lesson matters at the edge of the frontier. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Eliminate 25 foes",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "clear",
+    "target": 25,
+    "time_limit": 136,
+    "difficulty": 4.42,
+    "spawn": 1.33,
+    "enemies": [
+      "sniper",
+      "tank",
+      "gunner",
+      "runner"
+    ],
+    "hazard": "sunflare",
+    "layout": 90,
+    "palette": 9,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.33,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 13.44,
+        "count": 8,
+        "gap": 1.237,
+        "roster": [
+          "sniper",
+          "tank"
+        ]
+      },
+      {
+        "at": 27.08,
+        "count": 9,
+        "gap": 1.144,
+        "roster": [
+          "sniper",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: Keep your distance",
+    "description": "Every lesson matters at the edge of the frontier. A power-up drops every third elimination.",
+    "objective": "Survive 51 seconds",
+    "tip": "A power-up drops every third elimination.",
+    "mode": "survive",
+    "target": 51,
+    "time_limit": 153,
+    "difficulty": 4.458,
+    "spawn": 1.275,
+    "enemies": [
+      "runner",
+      "gunner",
+      "tank",
+      "sniper"
+    ],
+    "hazard": "sunflare",
+    "layout": 91,
+    "palette": 9,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 8,
+        "gap": 1.275,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.0,
+        "count": 9,
+        "gap": 1.186,
+        "roster": [
+          "runner",
+          "gunner"
+        ]
+      },
+      {
+        "at": 27.48,
+        "count": 9,
+        "gap": 1.096,
+        "roster": [
+          "runner",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: Lost provisions",
+    "description": "Every lesson matters at the edge of the frontier. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Collect 8 supply crates",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 8,
+    "time_limit": 136,
+    "difficulty": 4.496,
+    "spawn": 1.22,
+    "enemies": [
+      "sniper",
+      "tank",
+      "gunner",
+      "runner"
+    ],
+    "hazard": "sunflare",
+    "layout": 92,
+    "palette": 9,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.22,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 13.78,
+        "count": 9,
+        "gap": 1.135,
+        "roster": [
+          "sniper",
+          "tank"
+        ]
+      },
+      {
+        "at": 27.76,
+        "count": 9,
+        "gap": 1.049,
+        "roster": [
+          "sniper",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: Circle of trust",
+    "description": "Every lesson matters at the edge of the frontier. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Hold the green circle for 33 seconds",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 33,
+    "time_limit": 136,
+    "difficulty": 4.534,
+    "spawn": 1.165,
+    "enemies": [
+      "runner",
+      "gunner",
+      "tank",
+      "sniper"
+    ],
+    "hazard": "sunflare",
+    "layout": 93,
+    "palette": 9,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.165,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.29,
+        "count": 9,
+        "gap": 1.083,
+        "roster": [
+          "runner",
+          "gunner"
+        ]
+      },
+      {
+        "at": 26.77,
+        "count": 10,
+        "gap": 1.002,
+        "roster": [
+          "runner",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: The narrow way",
+    "description": "Every lesson matters at the edge of the frontier. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Eliminate 29 foes",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "clear",
+    "target": 29,
+    "time_limit": 136,
+    "difficulty": 4.572,
+    "spawn": 1.11,
+    "enemies": [
+      "sniper",
+      "tank",
+      "gunner",
+      "runner"
+    ],
+    "hazard": "sunflare",
+    "layout": 94,
+    "palette": 9,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 9,
+        "gap": 1.11,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 12.79,
+        "count": 10,
+        "gap": 1.032,
+        "roster": [
+          "sniper",
+          "tank"
+        ]
+      },
+      {
+        "at": 26.89,
+        "count": 10,
+        "gap": 0.955,
+        "roster": [
+          "sniper",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: The long breath",
+    "description": "Every lesson matters at the edge of the frontier. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Survive 59 seconds",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "survive",
+    "target": 59,
+    "time_limit": 177,
+    "difficulty": 4.61,
+    "spawn": 1.055,
+    "enemies": [
+      "runner",
+      "gunner",
+      "tank",
+      "sniper"
+    ],
+    "hazard": "sunflare",
+    "layout": 95,
+    "palette": 9,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 10,
+        "gap": 1.055,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 13.35,
+        "count": 10,
+        "gap": 0.981,
+        "roster": [
+          "runner",
+          "gunner"
+        ]
+      },
+      {
+        "at": 26.9,
+        "count": 10,
+        "gap": 0.907,
+        "roster": [
+          "runner",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: Supply train",
+    "description": "Every lesson matters at the edge of the frontier. A power-up drops every third elimination.",
+    "objective": "Collect 9 supply crates",
+    "tip": "A power-up drops every third elimination. Three crates await you; every second foe drops another.",
+    "mode": "supply",
+    "target": 9,
+    "time_limit": 136,
+    "difficulty": 4.648,
+    "spawn": 1.0,
+    "enemies": [
+      "sniper",
+      "tank",
+      "gunner",
+      "runner"
+    ],
+    "hazard": "sunflare",
+    "layout": 96,
+    "palette": 9,
+    "rule": "windfall",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 10,
+        "gap": 1.0,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 12.8,
+        "count": 10,
+        "gap": 0.93,
+        "roster": [
+          "sniper",
+          "tank"
+        ]
+      },
+      {
+        "at": 25.8,
+        "count": 11,
+        "gap": 0.86,
+        "roster": [
+          "sniper",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: Last stand",
+    "description": "Every lesson matters at the edge of the frontier. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Hold the green circle for 37 seconds",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover. The circle loses progress slowly while you step out to dodge.",
+    "mode": "hold",
+    "target": 37,
+    "time_limit": 136,
+    "difficulty": 4.686,
+    "spawn": 0.945,
+    "enemies": [
+      "runner",
+      "gunner",
+      "tank",
+      "sniper"
+    ],
+    "hazard": "sunflare",
+    "layout": 97,
+    "palette": 9,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 10,
+        "gap": 0.945,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 12.25,
+        "count": 11,
+        "gap": 0.879,
+        "roster": [
+          "runner",
+          "gunner"
+        ]
+      },
+      {
+        "at": 25.64,
+        "count": 11,
+        "gap": 0.813,
+        "roster": [
+          "runner",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: A clean sweep",
+    "description": "Every lesson matters at the edge of the frontier. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Eliminate 33 foes",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "clear",
+    "target": 33,
+    "time_limit": 136,
+    "difficulty": 4.724,
+    "spawn": 0.89,
+    "enemies": [
+      "sniper",
+      "tank",
+      "gunner",
+      "runner"
+    ],
+    "hazard": "sunflare",
+    "layout": 98,
+    "palette": 9,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 11,
+        "gap": 0.89,
+        "roster": [
+          "sniper"
+        ]
+      },
+      {
+        "at": 12.59,
+        "count": 11,
+        "gap": 0.828,
+        "roster": [
+          "sniper",
+          "tank"
+        ]
+      },
+      {
+        "at": 25.38,
+        "count": 11,
+        "gap": 0.765,
+        "roster": [
+          "sniper",
+          "tank",
+          "gunner"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "chapter": 10,
+    "chapter_name": "Last Horizon",
+    "name": "Last Horizon: The guardian",
+    "description": "Every lesson matters at the edge of the frontier. Ranged foes reload 28% faster. Use the crates for cover.",
+    "objective": "Defeat the chapter guardian",
+    "tip": "Ranged foes reload 28% faster. Use the crates for cover.",
+    "mode": "duel",
+    "target": 1,
+    "time_limit": 136,
+    "difficulty": 4.762,
+    "spawn": 0.835,
+    "enemies": [
+      "runner",
+      "gunner",
+      "tank",
+      "sniper"
+    ],
+    "hazard": "sunflare",
+    "layout": 99,
+    "palette": 9,
+    "rule": "quickdraw",
+    "waves": [
+      {
+        "at": 0.8,
+        "count": 11,
+        "gap": 0.835,
+        "roster": [
+          "runner"
+        ]
+      },
+      {
+        "at": 11.98,
+        "count": 11,
+        "gap": 0.777,
+        "roster": [
+          "runner",
+          "gunner"
+        ]
+      },
+      {
+        "at": 24.17,
+        "count": 12,
+        "gap": 0.718,
+        "roster": [
+          "runner",
+          "gunner",
+          "tank"
+        ]
+      }
+    ]
+  }
+]

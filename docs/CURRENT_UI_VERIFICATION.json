@@ -1,0 +1,15 @@
+{
+  "schema": "public-historical-test-summary-v1",
+  "scope": "Recorded pre-fullscreen UI rerun; filename retained for compatibility, not a claim these checks cover the latest lifecycle source.",
+  "engine_version": "4.5.1.stable.official.f62fdbde1",
+  "ui_checks": 1124,
+  "failures": 0,
+  "actual_exit_code": 0,
+  "source_hashes": {
+    "tests/test_ui.gd": "7F9B2AB70ECDD563133EE9AF7BBC4C06FF3D98E13FB9B55187EBA04681D492D1",
+    "game/main.gd": "84CEA324CAA64699859410A8C7467599D03477AD9E60A3C02E3E13A83F72DCA6",
+    "platform/services.gd": "4B4C6E6751524097DEE623825B3384192AC0BE5251F2829FCFAADD293CF03356"
+  },
+  "callbacks": "Explicit mocked Services; no production/native service claim.",
+  "historical_runs": "Earlier1,121-check and main1485D719 runs remain historical. Current lifecycle28-focused-check qualifications appear in LOCAL_TEST_RESULTS.json."
+}

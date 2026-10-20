@@ -1,0 +1,9 @@
+THE FINAL OUTLAW — RECORDED CORE QA SUMMARY
+
+Godot4.5.1 Compatibility. Model suite:1,763 checks,0 failures. All100 campaign simulations won with maximum legitimate gear and test invulnerability; both tutorials also passed with starting gear and ordinary damage. This is deterministic completion evidence, not human balance acceptance.
+
+The1,124-check UI rerun against main84CEA324 is recorded pre-fullscreen evidence; older1,121-check and main1485D719 runs remain historical. UI callbacks are mocked. The current lifecycle revision passed28 focused checks and exited0, but its Windows root-certificate-store startup error keeps strict_log_gate_passed=false. No warning was bypassed. Current Android/Web strict export checks passed separately.
+
+A360-frame scene smoke passed. Its initial nonverbose run emitted a resource-at-exit warning; a later verbose run and final UI fixture did not reproduce that warning. Seven desktop development views were rendered; fixtures are not normal native progression evidence.
+
+Actual current-APK Android observations, visual qualifications and unverified areas are summarized in docs/NATIVE_QA.json and docs/LOCAL_TEST_RESULTS.json. Production services, physical devices, audible sound, interactive Web and human acceptance remain unverified.

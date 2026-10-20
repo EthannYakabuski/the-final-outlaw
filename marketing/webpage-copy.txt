@@ -1,0 +1,20 @@
+The Final Outlaw
+One outlaw. A hundred trails. A longer legend.
+
+The Final Outlaw is a portrait top-down arcade shooter with 100 campaign challenges and an unlimited survival mode. Start with the first tutorial trails, then follow a winding level path through ten chapters of increasingly demanding encounters.
+
+THREE SELLING CARDS
+A trail worth following
+Work through 100 campaign challenges across ten chapters, with clear, survival, supply, hold and guardian objectives.
+
+Keep moving, keep your nerve
+Drag to move, let auto-aim handle the next target, and dash clear when the desert closes in.
+
+The frontier keeps going
+Improve your gear and player level, then see how long your outlaw can hold out in unlimited survival.
+
+TECHNICAL INFORMATION
+Made with Godot 4.5.1 Compatibility. Portrait Android is primary; a Web build is provided where feasible. Local saves support offline core play. Android services have graceful Web fallbacks. Original code is Apache-2.0; source-asset/plugin notices are preserved. Google Play Games and production ads require the owner's final configuration.
+
+FUTURE CONTENT IDEA (NOT IMPLEMENTED)
+The Dustline Express: a train-robber frontier chapter with new challenge objectives.

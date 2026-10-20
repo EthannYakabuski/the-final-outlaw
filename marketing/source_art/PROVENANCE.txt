@@ -1,0 +1,4 @@
+Player pixel artwork: supplied Kenney Desert Shooter pack. Creature artwork where present: supplied Kenney Creature Mixer output used by the game.
+The small marketing extracts preserve their source appearance; sprite-sheet extracts use one complete animation frame and remove only transparent margins.
+Commercial-use rights were reviewed by the project owner before this workflow began. Preserve the game and source-art license notices.
+Generated hats, lanterns, landscape/road/building illustrations and badge shapes are original project artwork.

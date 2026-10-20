@@ -1,0 +1,75 @@
+{
+  "title": "The Final Outlaw",
+  "display": [
+    "THE FINAL",
+    "OUTLAW"
+  ],
+  "kind": "outlaw",
+  "short": "Ride a trail of 100 desert challenges, then face an endless frontier.",
+  "palette": {
+    "ink": "#3D2D49",
+    "paper": "#F5E8C9",
+    "primary": "#287F7D",
+    "light": "#D7BEA9",
+    "gold": "#E8B86C",
+    "accent": "#A28BC4"
+  },
+  "strap": "One outlaw. A hundred trails. A longer legend.",
+  "feature_chips": [
+    "100 TRAILS",
+    "DODGE",
+    "SURVIVE"
+  ],
+  "achievements": [
+    "kills_1",
+    "kills_25",
+    "kills_100",
+    "kills_500",
+    "kills_2000",
+    "levels_1",
+    "levels_10",
+    "levels_25",
+    "levels_50",
+    "levels_75",
+    "levels_100",
+    "stars_10",
+    "stars_100",
+    "stars_300",
+    "level_3",
+    "level_5",
+    "level_10",
+    "survival_60",
+    "survival_180",
+    "workshop_8",
+    "streak_7"
+  ],
+  "leaderboards": [
+    "eliminations",
+    "survival_score",
+    "campaign_stars",
+    "player_level",
+    "survival_seconds"
+  ],
+  "cards": [
+    [
+      "A trail worth following",
+      "Work through 100 campaign challenges across ten chapters, with clear, survival, supply, hold and guardian objectives."
+    ],
+    [
+      "Keep moving, keep your nerve",
+      "Drag to move, let auto-aim handle the next target, and dash clear when the desert closes in."
+    ],
+    [
+      "The frontier keeps going",
+      "Improve your gear and player level, then see how long your outlaw can hold out in unlimited survival."
+    ]
+  ],
+  "category": "GAME_ACTION",
+  "tags": [
+    "Action",
+    "Arcade",
+    "Shooter",
+    "Single player",
+    "Offline"
+  ]
+}

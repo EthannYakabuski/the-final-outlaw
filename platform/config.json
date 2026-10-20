@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "admob": {
+    "test_mode": true,
+    "app_id": "ca-app-pub-3940256099942544~3347511713",
+    "banner_unit_id": "ca-app-pub-3940256099942544/6300978111",
+    "interstitial_unit_id": "ca-app-pub-3940256099942544/1033173712",
+    "rewarded_unit_id": "ca-app-pub-3940256099942544/5224354917",
+    "tag_for_under_age_of_consent": false
+  },
+  "play_games": {
+    "enabled": false,
+    "game_id": "",
+    "achievements": {
+      "kills_1": "",
+      "kills_25": "",
+      "kills_100": "",
+      "kills_500": "",
+      "kills_2000": "",
+      "levels_1": "",
+      "levels_10": "",
+      "levels_25": "",
+      "levels_50": "",
+      "levels_75": "",
+      "levels_100": "",
+      "stars_10": "",
+      "stars_100": "",
+      "stars_300": "",
+      "level_3": "",
+      "level_5": "",
+      "level_10": "",
+      "survival_60": "",
+      "survival_180": "",
+      "workshop_8": "",
+      "streak_7": ""
+    },
+    "leaderboards": {
+      "eliminations": "",
+      "survival_score": "",
+      "campaign_stars": "",
+      "player_level": "",
+      "survival_seconds": ""
+    }
+  }
+}

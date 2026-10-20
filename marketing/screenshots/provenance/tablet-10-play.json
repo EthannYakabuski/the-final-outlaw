@@ -1,0 +1,27 @@
+{
+  "schema": "public-screenshot-summary-v1",
+  "scope": "Public image identity and previously recorded observations; this is not an original capture-validator receipt.",
+  "key": "tablet-10-play",
+  "file": "tablet-10-play.png",
+  "sha256": "57149d9550bb949c3f2bfea861c6fdcfa31e4048a1fd516e7efe9fd0060f2abe",
+  "dimensions": [
+    1600,
+    2560
+  ],
+  "raw_file": "raw/tablet-10-play.png",
+  "raw_sha256": "57149d9550bb949c3f2bfea861c6fdcfa31e4048a1fd516e7efe9fd0060f2abe",
+  "raw_dimensions": [
+    1600,
+    2560
+  ],
+  "package": "com.ethannyakabuski.finaloutlaw",
+  "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
+  "source_apk_bytes": 183886659,
+  "capture_method": "adb_shell_screencap_png",
+  "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
+  "game_state": "Actual ordinary first-trail attempt reached through the map and briefing, with normal steering and automatic fire; no fixture or forced result.",
+  "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+  "original_native_visual_review_recorded": true,
+  "physical_device_test": false,
+  "physical_tablet_test": false
+}

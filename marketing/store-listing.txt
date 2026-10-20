@@ -1,0 +1,26 @@
+The Final Outlaw
+
+SHORT DESCRIPTION (69/80 characters)
+Ride a trail of 100 desert challenges, then face an endless frontier.
+
+LONG DESCRIPTION
+The desert has a hundred ways to test an outlaw.
+
+The Final Outlaw is a portrait top-down arcade shooter with 100 campaign challenges and an unlimited survival mode. Start with the first tutorial trails, then follow a winding level path through ten chapters of increasingly demanding encounters.
+
+Keep moving with touch-drag controls, auto-aim and a quick dash. Each trail has its own objective: clear the encounter, survive the clock, gather supplies, hold your ground, or defeat a guardian. Familiar enemies become more dangerous as the challenges grow.
+
+Earn experience, grow your player level, and improve three gear tracks between attempts. Collect campaign stars or step beyond the campaign to see how long your outlaw can last against continuously spawning enemies.
+
+Daily quests and a seven-day gift streak keep a little progress moving between sessions. Your campaign and progression save locally, and core play works offline.
+
+The Android edition supports optional rewarded continues or supply rewards and ads at between-round breaks. Google Play Games achievements and leaderboards require sign-in and the owner's final backend configuration. The Web edition remains playable with local progress and Android-service fallbacks.
+
+CATEGORY
+GAME_ACTION
+
+SUGGESTED TAGS
+Action, Arcade, Shooter, Single player, Offline
+
+PUBLICATION NOTE
+This is store copy for the implemented candidate, not a claim of publication or production-service verification. Check feature claims against the final build before uploading. The owner completes backend configuration, final testing, privacy/Data safety declarations, audience/content-rating questionnaires, support/privacy URLs, and Google Play publication.

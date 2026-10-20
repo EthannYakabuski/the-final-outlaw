@@ -1,0 +1,223 @@
+extends SceneTree
+## Isolated synthetic callbacks and headless frame stepping; no native-ad claim.
+
+class NoPersistenceServices extends Node:
+	signal availability_changed
+	var logic: Node
+	var available := true
+	var requests := 0
+	var persistence_calls := 0
+	var _reward_showing: bool:
+		get: return bool(logic.get("_reward_showing"))
+		set(value): logic.set("_reward_showing", value)
+	var _interstitial_showing: bool:
+		get: return bool(logic.get("_interstitial_showing"))
+		set(value): logic.set("_interstitial_showing", value)
+	var _reward_granted: bool:
+		get: return bool(logic.get("_reward_granted"))
+		set(value): logic.set("_reward_granted", value)
+	var _reward_callback: Callable:
+		get: return logic.get("_reward_callback")
+		set(value): logic.set("_reward_callback", value)
+	func fullscreen_ad_active() -> bool: return bool(logic.call("fullscreen_ad_active"))
+	func can_reward() -> bool: return available and not fullscreen_ad_active()
+	func reward_requested(context: String, action: Callable) -> void:
+		requests += 1
+		logic.set("_reward_context", context)
+		_reward_callback = action
+		_reward_granted = false
+		_reward_showing = true
+		availability_changed.emit()
+	func set_menu_visible(_visible: bool) -> void: pass
+	func round_finished() -> void: pass
+	func unlock(_key: String) -> void: pass
+	func submit(_key: String, _value: int) -> void: pass
+	func earn() -> void: logic.call("_earned_reward", null)
+	func close() -> void: logic.call("_rewarded_closed")
+
+var checks := 0
+var failures: Array[String] = []
+var labels: Array[String] = []
+var game
+var sdk: NoPersistenceServices
+var original_services: Node
+
+func check(ok: bool, label: String) -> void:
+	checks += 1
+	labels.append(label)
+	if not ok:
+		failures.append(label)
+		printerr("FAIL: " + label)
+
+func fingerprint() -> String:
+	var b = game.battle
+	return JSON.stringify({"elapsed": b.elapsed, "health": b.health, "invincible": b.invincible,
+		"player": b.player, "result": b.result, "revived": b.revived, "score": b.score,
+		"enemies": b.enemies, "bullets": b.bullets, "pickups": b.pickups,
+		"spawn": b.spawn_timer, "fire": b.fire_timer, "dash": b.dash_cooldown,
+		"rapid": b.rapid_time, "spread": b.spread_time, "shield": b.shield_time,
+		"rng": b.rng.state, "deadline": b.level.time_limit})
+
+func fresh_lost(level: int = 1) -> void:
+	sdk._reward_showing = false
+	sdk._interstitial_showing = false
+	sdk._reward_callback = Callable()
+	sdk._reward_granted = false
+	game.application_suspended = false
+	game._discard_next_combat_delta = false
+	game._waiting_for_neutral_movement = false
+	game.reward_pending = false
+	game.frame_count = 10
+	game._start_level(level, false)
+	game.battle.result = "lost"
+	game.battle.health = 0
+	game._show_result()
+
+func _initialize() -> void:
+	call_deferred("run")
+
+func run() -> void:
+	original_services = root.get_node_or_null("Services")
+	if is_instance_valid(original_services): original_services.name = "ServicesLifecycleTestOriginal"
+	sdk = NoPersistenceServices.new()
+	# Lazy load after PGS autoload registration; never add real Services to tree.
+	sdk.logic = load("res://platform/services.gd").new()
+	sdk.logic.availability_changed.connect(func(): sdk.availability_changed.emit())
+	sdk.name = "Services"
+	root.add_child(sdk)
+	sdk.set_process(false)
+	game = load("res://main.tscn").instantiate()
+	game.smoke = true
+	game.set_process(false)
+	root.add_child(game)
+	game.set_process(false)
+	# This headless lifecycle fixture does not exercise or retain audio playback.
+	game.music.stop()
+	game.music.stream = null
+	game.frame_count = 10
+	check(game.service == sdk, "no-persistence stub installed before game ready")
+	for flags in [[false, false], [true, false], [false, true], [true, true]]:
+		sdk._reward_showing = flags[0]
+		sdk._interstitial_showing = flags[1]
+		check(sdk.fullscreen_ad_active() == (flags[0] or flags[1]), "real Services accessor OR truth table " + str(flags))
+
+	fresh_lost()
+	game._request_revive()
+	game._request_revive()
+	check(sdk.requests == 1 and game.reward_pending and sdk.fullscreen_ad_active(), "one pending fullscreen continue request")
+	var requested_battle = game.battle
+	sdk.earn()
+	check(game.battle == requested_battle and game.screen == "play" and game.battle.revived and game.battle.invincible == 3.0, "earned callback revives the same battle once before close")
+	var frozen := fingerprint()
+	game.joystick_active = true
+	game.joystick_index = 7
+	game.dash_request = true
+	for frame in range(90): game._process(1.0)
+	check(fingerprint() == frozen, "ninety covered seconds preserve all combat state and revive protection")
+	check(not game.joystick_active and game.joystick_index == -1 and not game.dash_request, "coverage clears queued joystick and dash")
+	var space := InputEventKey.new()
+	space.keycode = KEY_SPACE
+	space.pressed = true
+	game._unhandled_input(space)
+	var touch := InputEventScreenTouch.new()
+	touch.pressed = true
+	touch.index = 9
+	touch.position = Vector2(120, 850)
+	game._unhandled_input(touch)
+	game.dash_button.pressed.emit()
+	check(not game.dash_request and not game.joystick_active, "covered SPACE touch and GUI DASH cannot queue arena input")
+	game._back()
+	game._notification(Node.NOTIFICATION_WM_GO_BACK_REQUEST)
+	var escape := InputEventKey.new()
+	escape.keycode = KEY_ESCAPE
+	escape.pressed = true
+	game._unhandled_input(escape)
+	game._pause()
+	check(game.screen == "play" and game.battle == requested_battle and not game.paused and not game.result_recorded, "covered direct ESC WM Back and pause preserve the run")
+	sdk.earn()
+	check(fingerprint() == frozen, "duplicate earned callback cannot grant or reset protection again")
+	Input.action_press("ui_right")
+	sdk.close()
+	game._process(80.0)
+	check(fingerprint() == frozen, "first uncovered large delta is discarded without even a zero-delta combat step")
+	check(game._movement() == Vector2.ZERO, "keyboard action held across coverage remains suppressed")
+	Input.action_release("ui_right")
+	game._movement()
+	Input.action_press("ui_right")
+	check(game._movement().x > 0.0, "fresh movement works after keyboard returns neutral")
+	Input.action_release("ui_right")
+	var elapsed: float = game.battle.elapsed
+	game._process(0.02)
+	check(game.battle.elapsed > elapsed and game.battle.invincible < 3.0, "ordinary subsequent frame resumes combat and protection countdown")
+
+	game.paused = true
+	sdk._interstitial_showing = true
+	frozen = fingerprint()
+	game._process(20.0)
+	sdk._interstitial_showing = false
+	game._process(20.0)
+	check(game.paused and fingerprint() == frozen, "preexisting user pause survives interstitial and dismissal")
+	game._back()
+	game._process(0.02)
+	check(not game.paused and fingerprint() != frozen, "ordinary user unpause remains functional")
+
+	sdk._interstitial_showing = true
+	frozen = fingerprint()
+	game._process(12.0)
+	check(fingerprint() == frozen, "interstitial alone freezes combat")
+	game._notification(Node.NOTIFICATION_APPLICATION_PAUSED)
+	sdk._interstitial_showing = false
+	game._process(20.0)
+	check(game.application_suspended and fingerprint() == frozen, "ad closure cannot release an overlapping application suspension")
+	game._notification(Node.NOTIFICATION_APPLICATION_RESUMED)
+	game._process(70.0)
+	check(fingerprint() == frozen, "resume discards covered delta after overlapping blockers")
+	game._process(0.02)
+	check(fingerprint() != frozen, "combat resumes after all blockers clear")
+
+	game._notification(Node.NOTIFICATION_APPLICATION_PAUSED)
+	frozen = fingerprint()
+	game._notification(Node.NOTIFICATION_APPLICATION_RESUMED)
+	check(game.paused and not game.application_suspended, "normal backgrounding retains the existing pause-overlay policy")
+	game._back()
+	game._process(100.0)
+	check(fingerprint() == frozen, "PAUSED and RESUMED between process calls still discard the return frame")
+
+	fresh_lost(2)
+	game._request_revive()
+	sdk.close()
+	sdk.close()
+	sdk.earn()
+	check(game.battle.result == "lost" and not game.battle.revived and not game.reward_pending, "unearned dismissal failure and late earn do not revive")
+	fresh_lost(2)
+	game._request_revive()
+	game._start_level(3, false)
+	var replacement_battle = game.battle
+	game.battle.result = "lost"
+	game._show_result()
+	sdk.earn()
+	check(game.battle == replacement_battle and not game.battle.revived, "stale callback cannot revive a different run")
+	sdk.close()
+	game.service = null
+	check(not game._external_gameplay_blocked(), "missing service preserves ordinary local gameplay")
+	game.service = sdk
+	check(sdk.persistence_calls == 0, "stub never persisted platform progress")
+	print("OUTLAW_FULLSCREEN_USER_DIR " + ProjectSettings.globalize_path("user://"))
+	var report := {"scope": "PRIVATE SYNTHETIC HEADLESS REGRESSION; no native ad acceptance claim", "checks": checks, "failures": failures, "labels": labels, "user_dir": ProjectSettings.globalize_path("user://")}
+	var path := ProjectSettings.globalize_path("res://").path_join("../evidence/focused-result.json").simplify_path()
+	var output := FileAccess.open(path, FileAccess.WRITE)
+	if output != null: output.store_string(JSON.stringify(report, "\t")); output.close()
+	requested_battle = null
+	replacement_battle = null
+	game.queue_free()
+	await process_frame
+	game = null
+	root.remove_child(sdk)
+	sdk.logic.free()
+	sdk.free()
+	sdk = null
+	if is_instance_valid(original_services): original_services.name = "Services"
+	await process_frame
+	await process_frame
+	print("OUTLAW_FULLSCREEN_CHECKS checks=%d failures=%d" % [checks, failures.size()])
+	quit(0 if failures.is_empty() else 1)

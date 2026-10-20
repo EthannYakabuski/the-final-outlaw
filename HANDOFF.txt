@@ -1,0 +1,51 @@
+THE FINAL OUTLAW - LOCAL TEST HANDOFF
+Status: READY FOR OWNER LOCAL TEST REVIEW (2026-10-20T14:08:10.231534+00:00).
+
+APK: build/android/game-debug.apk (183,886,659 bytes)
+SHA256: 8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e
+APK plus matching LICENSES: build/android/the-final-outlaw-test-package.zip
+ZIP SHA256: 02df40f35a57bc69fff216bc8b5ff817fdb13635351dfa7aa8d14d7f362c36ec
+Keep accompanying notices with redistributed binaries. README contains build/run
+instructions; docs/LOCAL_TEST_RESULTS.json records exact hashes and limitations.
+
+WHAT IS READY
+A portrait western shooter with a 100-level campaign, tutorial opening, distinct encounter objectives and endless survival. Touch movement, combat actions, equipment upgrades and light powerups support repeated runs, while player progression, daily rewards and the campaign trail record progress. Local offline saves remain usable when optional Android services are unavailable. Catalog: 21 achievement and 5 leaderboard definitions. Official Google test ads are integrated; production Play Games IDs remain disabled pending owner configuration.
+Store art/copy, nine actual normal-play emulator captures and local Web export
+are included. See marketing/screenshots/capture-manifest.json for provenance.
+
+VERIFICATION
+Recorded model suite: 1,763 checks, zero failures. Recorded pre-fullscreen UI rerun against main84CEA324: 1,124 checks, zero failures, actual exit 0. Separate scene smoke: 360 frames. Seven desktop development views were rendered. The fullscreen lifecycle revision passed 28 focused checks. The focused test engine exited0 with no script/parse/assertion failures; its log retains the Windows root-certificate-store startup error, so strict_log_gate_passed=false. No security warning was bypassed.
+Actual current-APK native continue earned once, then remained behind the earned Google test-ad endcard for 180.421 seconds. The displayed timer returned alive at the same 26 seconds with approximately 65% health, and ordinary movement/DASH worked afterward. Outlaw's live HUD does not expose a foe count; exact subsecond state and the protection countdown were not instrumented. Natural second defeat offered no second continue and banked exactly 46 coins/124 XP for 23 foes/39 seconds. A separate unearned dismissal granted nothing and preserved the unrecorded 25-foe/38-second result and all18 banked save groups. Two newly recorded results triggered a real presented/dismissed interstitial in the same process. Gift and crate were already claimed today; an eligible kills quest paid80 coins/30 XP once, repeat disabled. Power1->2 cost122 coins with no XP. Actual Android Back Pause/resume and subpage return Home passed. Initial and separately restored Home showed a labelled320x50 Google test banner below six usable primary controls.
+
+The original disconnected batch completed successfully across phone and logical7/10 profiles: three ordinary first-trail wins, each3 eliminations/12 seconds/21 coins/30 XP; total9 eliminations/36 seconds/63 coins/90 XP. All18 typed banked groups matched after installation, offline cold launch and restart. Twenty actual network-none observations and exact original network/display restoration passed. Nine current-APK raw guest PNGs were preserved without crop, resize, rotation or pixel editing; native operator reviewed all9, root reviewed phone play/logical7 Home/logical10 campaign map. Logical10 Home/map have documented nonessential lower-footer clipping; required map content and primary controls remain readable. Final ordinary restored Home ran in a distinct process, then the known game package was stopped with the genuine717 coins/799 XP/11 runs/110 eliminations/8 campaign wins/power2 save retained.
+
+One API30 Android11 x86 host-GPU emulator, official test IDs and logical display overrides only. Physical devices, audible sound, interactive Web, production services and human acceptance remain unverified. Godot4.5.1 exports minAPI24/targetAPI35 under the actual engine constraint; current release eligibility is owner work. The historical pre-fullscreen1,124 UI checks retain their main84CEA324 identity. The current fullscreen fixture passed28 focused checks but retained its certificate-store startup error/strict_log_gate_passed=false; no security warning was bypassed. Current Android/Web exports and all9 scoped before/after source bytes passed their separate strict validation.
+
+SOURCE / WEB EVIDENCE
+PASS local fullscreen-pause export/static PCK+9-sidecar validation. All9 scoped runtime inputs have byte-identical Android/Web before/after snapshots and match current source. Evidence: build/qa/android-fullscreen-pause-input-snapshots.json and web-fullscreen-pause-input-snapshots.json. Interactive browser unverified; hosted CI/Pages not run.
+
+LIMITS / OWNER WORK
+- Official Google test IDs only; production IDs/backend/consent/signing/store setup remain owner work.
+- One API30 Android11 x86 host-GPU emulator; actual guest PNG dimensions follow confirmed effective wm profiles, not physical phone/tablet acceptance.
+- Emulator audio disabled; audible Android output unverified.
+- Short QA does not establish human balance across100 trails, every gear/endless combination, long sessions, midnight rollover or multi-day login.
+- Unfinished combat is not a resumable saved run; durability checks cover genuine banked Home state.
+- Interactive Web/audio/WebGL, hosted CI/Pages and production services remain unverified; public publishing paused.
+- The tablet-10 Home capture naturally clips the nonessential lower label about offline play and optional online features in the reserved/scroll area. All six primary Home controls remain readable and usable; this minor local-package qualification does not establish flawless footer layout.
+- The tablet-10 campaign-map capture naturally clips the nonessential footer "Progress is saved on this device" in the reserved/scroll area. The map heading, Back, chapter, all ten trails/progression and Follow lights remain readable; this is a minor local-package visual qualification, not a claim that every footer line is visible.
+- The 100/100 simulated campaign victories used maximum legitimate gear and test invulnerability. Both tutorials separately completed with starting gear and normal damage. This is model completion evidence, not human difficulty balancing.
+- UI Services callbacks are mocked. Desktop capture fixtures may open selected later levels directly and do not establish normal player progression or Android/native reward acceptance.
+- Offline clocks and local saves are not anti-cheat secure. Production services, physical-device performance and human enjoyment are not established by these core tests.
+- Source/workflow presence does not establish hosted CI, browser acceptance or public deployment. The final static input references only the exact issued private native receipt and approved nine-frame selection; readiness and public documents require their separate guarded root review. Interactive Web/audio/WebGL remain unverified.
+- Fullscreen lifecycle fixture results remain separate from actual Android rewarded-ad callback, earned endcard freeze, alive usable return and one-continue limit. The latter are established only for this issued native session; production services and broader device, timing, long-session and human acceptance remain unverified.
+- Emulator audio output was disabled; audible Android output remains unverified. The three actual guest viewport profiles use one API30 Android11 x86 host-GPU emulator; they do not establish physical phone or tablet acceptance.
+- Native durability checks preserve all eighteen genuine banked save groups across installation, offline cold launch and restart. Unfinished combat is not a resumable saved run; multi-day login, midnight rollover, long-session and human balance remain separate.
+- This Godot 4.5.1 export uses min API 24 and target API 35 because of the actual engine export constraint. These local packages do not establish current Google Play release eligibility; the owner must verify current requirements and update the engine/export configuration if necessary.
+- The tablet-10 campaign-map capture naturally clips the nonessential footer "Progress is saved on this device" in the reserved/scroll area. The map heading, Back, chapter, all ten trails/progression and Follow lights remain readable; this is a minor local-package visual qualification, not a claim that every footer line is visible.
+- The tablet-10 Home capture naturally clips the nonessential lower label about offline play and optional online features in the reserved/scroll area. All six primary Home controls remain readable and usable; this minor local-package qualification does not establish flawless footer layout.
+- One API30 Android11 x86 host-GPU emulator; authenticated guest PNGs use confirmed effective wm dimensions: phone1080x1920, logical7 1200x1920, logical10 1600x2560. No physical phone/tablet acceptance.
+- Emulator audio is disabled (-no-audio); audible Android sound is unverified.
+- Interactive browser/audio/WebGL, hosted CI/Pages and production services remain unverified; public publishing remains paused.
+- Configure real AdMob and Play Games app/achievement/leaderboard IDs and backend/account settings; complete final consent and real-service verification.
+- Supply final release package/version/signing, support contact, privacy URL, audience/content rating, ads/Data safety and SDK disclosures; check current Play eligibility. This Godot 4.5.1 export uses min API 24 and target API 35 because of the actual engine export constraint. These local packages do not establish current Google Play release eligibility; the owner must verify current requirements and update the engine/export configuration if necessary.
+- Complete human gameplay/balance and physical-device review, then owner Google Play submission/publication. Keep accompanying third-party notices with redistributed builds.

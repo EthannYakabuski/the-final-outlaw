@@ -1,0 +1,27 @@
+{
+  "schema": "public-screenshot-summary-v1",
+  "scope": "Public image identity and previously recorded observations; this is not an original capture-validator receipt.",
+  "key": "tablet-7-home",
+  "file": "tablet-7-home.png",
+  "sha256": "f811ad44ced3af00a3142d0eb7499340e15a5ee942b0b381861b247cc10c6841",
+  "dimensions": [
+    1200,
+    1920
+  ],
+  "raw_file": "raw/tablet-7-home.png",
+  "raw_sha256": "f811ad44ced3af00a3142d0eb7499340e15a5ee942b0b381861b247cc10c6841",
+  "raw_dimensions": [
+    1200,
+    1920
+  ],
+  "package": "com.ethannyakabuski.finaloutlaw",
+  "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
+  "source_apk_bytes": 183886659,
+  "capture_method": "adb_shell_screencap_png",
+  "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
+  "game_state": "Normal camp menu with genuine saved level, coins and campaign stars.",
+  "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
+  "original_native_visual_review_recorded": true,
+  "physical_device_test": false,
+  "physical_tablet_test": false
+}
