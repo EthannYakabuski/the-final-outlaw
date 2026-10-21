@@ -4,6 +4,12 @@ One trail. A hundred last stands.
 
 A portrait western shooter with a 100-level campaign, tutorial opening, distinct challenges, endless survival, player progression and light powerups.
 
+## Current Round Two local package
+
+Runtime `671eee24adf18b615990951a46a5f5e0d921da6a` has accepted Android/Web exports under `build/round-two-671eee24-a1/`. Android SHA256 `1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9`. The final docs/screenshots commit is separate from this runtime identity. See [HANDOFF](HANDOFF.txt) for exact files and the two new distributions.
+
+The current APK passed affected native labels, sequential input/reload/Back, save retention and nine unmodified emulator screenshots. Critical169.315-second earned-ad and offline observations belong to the qualified CFC predecessor, not a replay on this labels-only successor. Synthetic pointer checks do not verify simultaneous Android multitouch. Production services, physical devices, audible Android, interactive Web and human balance remain owner testing.
+
 ## Play
 
 Choose a campaign challenge or endless survival. Move with your left thumb and hold the gun button to shoot; targeting assists toward a visible foe. The starting magazine holds 20 rounds. Tap RELOAD, or keep firing when empty to start reloading. DASH evades danger. Keyboard: WASD/arrows move, J fires, R reloads, Space dashes and Escape pauses.
@@ -32,17 +38,17 @@ Use Godot **4.5.1**, **Compatibility**, matching export templates, Java 17 and t
 godot --headless --editor --path . --import
 godot --headless --path . --script tests/test_models.gd
 godot --headless --path . --script platform/tests/services_smoke.gd
-godot --headless --path . --export-release Web build/web/index.html
-godot --headless --path . --install-android-build-template --export-debug Android build/android/game-debug.apk
+godot --headless --path . --export-release Web build/local-next/web/index.html
+godot --headless --path . --install-android-build-template --export-debug Android build/local-next/android/game-debug.apk
 ```
 
-Create build/web and build/android first. Android package: `com.ethannyakabuski.finaloutlaw`. Tests are documented under game/ and tests/. No Windows build is supplied.
+Choose a new unused build version directory and create its web/android subfolders first; local-next is only an example. Never overwrite the preserved original or accepted test artifacts. Android package: `com.ethannyakabuski.finaloutlaw`. Tests are documented under game/ and tests/. No Windows build is supplied.
 
 ## Integration and handoff
 
 AdMob uses Google's official test IDs. Menus support a banner, every two completed rounds create an interstitial opportunity, and rewarded benefits require the earned-reward callback. Unavailable ads or consent leave normal play usable. Google Play Games uses symbolic achievement/leaderboard maps with empty production IDs and is disabled until the owner configures them. See platform/config.json and docs/PLATFORM_SETUP.md.
 
-New illustrated app/feature and all 26 catalog images, exact originals/prompts and source-aligned store copy are in marketing/. The resize-only artwork packer is offline; old screenshot provenance remains dated first-pass evidence until fresh coordinator captures. The current evidence, limitations and exact next owner actions are in HANDOFF.txt. Production backend testing, human playtesting and Google Play publication are human-owned.
+New illustrated app/feature and all 26 catalog images, exact originals/prompts and source-aligned store copy are in marketing/. The resize-only artwork packer is offline; nine current native emulator screenshots are selected under screenshots/round-two/, with the dated first-pass images preserved separately. The current evidence, limitations and exact next owner actions are in HANDOFF.txt. Production backend testing, human playtesting and Google Play publication are human-owned.
 
 ## CI and Web
 
@@ -68,4 +74,4 @@ Pages remains disabled; no live deployment, Library action or Google Play public
 
 ## Screenshot verification
 
-Public screenshot metadata records PNG-relative filenames, SHA256 digests, dimensions and the original visual qualifications. Compare files in `marketing/screenshots/` and its `raw/` directory against `capture-manifest.json` with a SHA256 utility; matching hashes verify unchanged image bytes. These public summaries are not internal capture-validator receipts and do not create new device acceptance.
+Public screenshot metadata records PNG-relative filenames, SHA256 digests, dimensions and the original visual qualifications. Compare the nine files under `marketing/screenshots/round-two/` against the current `capture-manifest.json` with a SHA256 utility; matching hashes verify unchanged guest bytes. The dated first-pass manifest and original PNGs remain separate. These public summaries are not internal capture-validator receipts and do not create new device acceptance.

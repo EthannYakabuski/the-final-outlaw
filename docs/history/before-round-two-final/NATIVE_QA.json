@@ -1,0 +1,34 @@
+{
+  "schema": "public-local-qa-summary-v1",
+  "scope": "Dated local verification summary, not a machine ledger, original validation receipt or production acceptance.",
+  "package": "com.ethannyakabuski.finaloutlaw",
+  "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
+  "apk_bytes": 183886659,
+  "diagnostic_hooks_used": false,
+  "verified_observations": [
+    "Actual earned continue survived a180.421-second earned endcard with the same26-second HUD, restored health, usable movement/DASH and no second continue on the later natural defeat.",
+    "A separate unearned dismissal granted no continue and preserved banked progress. Two natural recorded results triggered an observed interstitial presentation and dismissal.",
+    "Natural results and source payouts, a once-only kills quest, a priced power upgrade, Android Back/pause/resume and normal subpage navigation were checked.",
+    "All18 banked groups matched across installation, offline cold launch and restart. Three normally played offline trail wins and nine unmodified guest frames were reviewed; network/display restoration and known-package stop were recorded."
+  ],
+  "saved_groups_checked": 18,
+  "reviewed_guest_screenshot_count": 9,
+  "physical_device_test": false,
+  "physical_tablet_test": false,
+  "limits": [
+    "One Android11/API30 x86 emulator with logical phone/tablet display profiles was tested; no physical phone or tablet acceptance.",
+    "Godot4.5.1 Compatibility exports use minAPI24/targetAPI35 under the recorded engine constraint; current Google Play release eligibility remains owner work.",
+    "Emulator audio was disabled. Audible Android sound, interactive Web/audio/WebGL, production services and human acceptance remain unverified.",
+    "Official Google test IDs only. Real backend/service IDs, consent, signing, production checks and Google Play publication remain owner work.",
+    "Short QA does not establish all content/equipment combinations, broad ad-fill reliability, long sessions, midnight rollover, multi-day login or human balance.",
+    "Source publication does not establish a successful hosted CI run or live deployment. Pages deployment remains explicitly disabled pending separate authorization.",
+    "The28 focused fullscreen callback checks exited0 without script/parse/assertion failures but retained a Windows root-certificate-store startup error; strict_log_gate_passed=false. No security warning was bypassed. Current Android/Web export strict checks passed separately.",
+    "The1,124 UI checks against main84CEA324 are a recorded pre-fullscreen rerun, separate from the current lifecycle revision; older1,121 and main1485D719 runs remain historical.",
+    "The100/100 simulated campaign victories used maximum legitimate gear and test invulnerability; both tutorials also completed with starting gear and ordinary damage. This does not establish human difficulty balance.",
+    "An initial scene smoke emitted a resource-at-exit warning; a subsequent verbose360-frame run and final UI fixture completed without that resource warning.",
+    "Native freeze observations use whole-second HUD and photos; exact subsecond simulation, live foe count and invincibility countdown were not instrumented.",
+    "The tablet-10 Home capture clips its nonessential lower label about offline play/optional online features. All six primary controls remain readable and usable.",
+    "The tablet-10 campaign map clips its nonessential saved-progress footer. Required heading, Back, chapter, all ten trails/progression and Follow lights remain readable.",
+    "Unfinished combat is not a resumable saved run; durability checks cover banked progress. Offline clocks/local saves are not anti-cheat secure. Desktop callbacks/captures are explicit fixtures and do not establish native acceptance."
+  ]
+}

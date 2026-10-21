@@ -1,0 +1,52 @@
+THE FINAL OUTLAW - CONTINUATION HANDOFF
+Updated 2026-10-21. Round Two source changes are implemented; illustrated marketing is integrated, while fresh exports and native QA remain with the coordinator. Production release remains owner work.
+
+A portrait western shooter with a 100-level campaign, tutorial opening, varied objectives, endless survival and permanent equipment progression.
+
+ROUND TWO SOURCE UPDATE
+Deliberate gun-button/keyboard-J firing replaces automatic fire. Starting capacity is20, with manual/empty-trigger reload, visible ammo and reload time. Seven upgrade tracks include magazine, speed loader, dash recovery and armor while retaining old power/heart/boots and completed campaign keys.
+
+One hundred explicit physical town layouts in game/arena_layouts.json share building/cover data between collision and pixel rendering. Ten districts contain houses, doors, road junctions, cover and props. Actor-clearance AStar routes replace direct collision sliding; ranged monsters require line of sight. Six stronger archetypes use12 supplied animated Creature Mixer sheets, with exact custom (not CC0) terms and source hashes included. Swept projectile collisions prevent contact-range overshoot and stop at the first wall/target.
+
+Source verification uses separate test-user data. The 100-stage max-equipment/invulnerable reachability simulation passes 100/100; opening tutorials also pass with starting equipment and normal damage. This establishes deterministic reachability, not human difficulty approval. Private actual GPU renders verify the running phone-layout scene, manual gun input, magazines, pause and town/monster rendering; output audio is muted, so no auditory-quality claim applies. Updated fullscreen tests include held/queued gun and reload controls and preserve combat/ammo/reload state behind the SDK endcard accessor. Desktop callbacks do not replace native ad QA.
+
+A subsequent actual engine Viewport test exposed mouse-emulation stealing touch ownership. The gameplay input router now captures independent touch IDs before GUI dispatch, with separate movement/gun owners and hit-tested reload/dash/pause actions. Twenty synthetic-pointer checks pass in both headless and actual OpenGL Viewports, including both finger orders, release/cancel, same-frame movement/fire, reload, pause/Back and fullscreen rejection. These are synthetic engine events; simultaneous Android multi-touch remains pending actual emulator/device verification.
+
+Audio shutdown now stops future callbacks, stops players and releases streams while the scene tree is alive, then allows the mixer to consume queued fade/delete commands before scene removal or exit. Active coin Ogg and theme WAV regression tests pass with the strict resource-error gate retained. The old hosted failure is preserved below; new hosted CI awaits publication of these source changes.
+
+The original APK, native record and screenshots below remain historical FIRST-PASS evidence. They do not verify the new gun controls, buildings, buffs, navigation or source audio change. Do not overwrite original artifacts. Coordinator must build new named Android/Web artifacts, verify manual multi-touch/reload, pause/reward/endcard/Back/save/offline, capture fresh screens before claiming a finished Round Two package.
+
+ROUND TWO ILLUSTRATED ART
+Twenty-one achievement and five leaderboard images are newly illustrated, individually generated for their semantic catalog keys, and reviewed at actual 64/512 sizes. A new app icon and titled feature match the physical town/monster palette; the runtime platform/app-icon-512.png uses the same app image. Exact original PNGs/prompts/provenance are preserved under marketing/source_art/round-two/. Standard resize-only packaging is offline and reproducible; screenshots remain dated first-pass evidence until the coordinator supplies fresh captures.
+
+WHERE TO CONTINUE
+Use this game folder as the single canonical Git working copy. Start a focused task here; read AGENTS.md, README.md and docs/PLATFORM_SETUP.md. New tasks must read these files and the requested change rather than assume earlier conversation context. Original folders and private QA records are retained separately by the local consolidation receipt, not inside public Git history.
+
+PUBLIC SOURCE / DATED HOSTED CI
+Repository: https://github.com/EthannYakabuski/the-final-outlaw
+Verified pre-consolidation source baseline: 41aa358d6bd765e90dcb28e2309dfbfa8cece0dc
+PASS: https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39529171557
+This run verifies that exact baseline. Later documentation or code commits require their own CI result. Pages deployment remains disabled; no live Pages/Library/Google Play publication is claimed.
+
+PRESERVED ORIGINAL LOCAL QA APK
+Local artifact, when restored: build/android/game-debug.apk
+SHA256: 8E7665A9F8F9A5A3A2D0573ED8A0D83961A201BAD1DEFFFC74899F2259F0414E
+Compare this hash before calling a local binary the native-tested original. Keep matching notices with redistributed builds. No prebuilt APK is tracked publicly. Hosted CI artifacts are separately built binaries and do not inherit this native QA. Documentation-only consolidation needs no rebuild.
+
+DATED NATIVE VERIFICATION
+Actual earned continue stayed behind its endcard for 180.421 seconds and returned alive at the same 26-second HUD with usable movement/DASH. A second continue was unavailable, separate unearned dismissal granted nothing, and two natural results triggered an interstitial. Quest/upgrade and Back flows passed. All 18 banked groups matched through offline cold launch/restart; nine unchanged captures were reviewed. Unfinished combat is not a resumable save. The logical-10 Home/map nonessential footer labels clip; primary controls remain usable. HUD evidence does not instrument subsecond state or protection countdown.
+See docs/NATIVE_QA.json and docs/LOCAL_TEST_RESULTS.json for public dated details; their original publication-status wording is historical and superseded by the dated source/CI section above. Nine selected emulator screenshots remain under marketing/screenshots with relative hashes.
+
+OUTLAW CI QUALIFICATION
+The initial run39526494445 on c92b27c4c4e8c29e83af38a441e157e9268a7c18 passed its assertions, then reported three resources still in use at exit. Diagnostic41aa358d6bd765e90dcb28e2309dfbfa8cece0dc only added --verbose; run39529171557 passed all 28 fullscreen/1763 model/1124 UI checks and both exports with no selected resource-leak diagnostics. This is non-reproduction, not a proven resource-lifetime repair. Preserve the earlier failure; do not weaken strict checks.
+
+OWNER CONFIGURATION / NEXT UPDATE
+- Map 21 achievement and 5 leaderboard keys from game/catalog.json in platform/config.json.
+- Supply the same numeric Play Games game ID in JSON and the Android preset export_presets.cfg; configure OAuth/package/signing fingerprints and testers before enabling play_games.
+- AdMob unit IDs are in platform/config.json. Set the manifest App ID separately through Godot Project Settings admob/general/android/app_id in project.godot; JSON app_id alone is insufficient.
+- test_mode changes wording only. Keep Google sample IDs for development; production unit IDs require separately configured test devices and appropriate owner consent/audience settings.
+- Preserve original local builds and real saves, isolate tests, implement the requested change, run affected strict tests and update this handoff with the actual result.
+
+LIMITATIONS / RELEASE WORK
+Godot4.5.1 Compatibility, Android primary and Web fallback; min API24/target API35 is the recorded engine export constraint, not current Google Play eligibility. One Android11/API30 x86 emulator and logical phone/tablet profiles were used. Physical devices, audible Android output (emulator audio was disabled), interactive Web/audio/WebGL, production services, broad ad-fill reliability, long sessions, multi-day/rollover behavior and human balance/content acceptance remain unverified. Offline saves and local clocks are not anti-cheat secure. Owner supplies real service/backend configuration, consent/privacy/audience declarations, signing and Google Play publication.
+Original work is Apache-2.0; retain LICENSE, NOTICE and complete LICENSES with source and distributions.

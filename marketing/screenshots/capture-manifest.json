@@ -1,262 +1,154 @@
 {
-  "schema": "public-screenshot-manifest-v1",
+  "schema": "public-screenshot-manifest-v2",
   "game": "The Final Outlaw",
-  "slug": "the-final-outlaw",
   "package": "com.ethannyakabuski.finaloutlaw",
-  "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-  "source_apk_bytes": 183886659,
-  "scope": "Public image identities and summarized original visual review. This schema is not the internal capture validator or its receipt. Original PNG bytes and canonical evidence remain unchanged.",
+  "runtime_commit": "671eee24adf18b615990951a46a5f5e0d921da6a",
+  "source_apk_sha256": "1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9",
+  "source_apk_bytes": 186143554,
   "capture_count": 9,
-  "capture_method": "adb_shell_screencap_png",
+  "capture_method": "Unmodified guest screencap PNG; normal application input, no screenshot hooks or state injection.",
+  "scope": "Nine current-binary native emulator views, three each for logical phone/seven/ten profiles; no physical-device claim.",
   "captures": [
     {
       "key": "phone-home",
-      "file": "phone-home.png",
-      "sha256": "9d73cebbc4425485be24fd75898764dd761231741b542f80a3375d0635cd63c3",
+      "file": "round-two/phone-home.png",
+      "sha256": "D7D7FB568184264258898E276AC70FD35791E59EB7B2857D446C73951392E98D",
+      "bytes": 92346,
       "dimensions": [
         1080,
         1920
       ],
-      "raw_file": "raw/phone-home.png",
-      "raw_sha256": "9d73cebbc4425485be24fd75898764dd761231741b542f80a3375d0635cd63c3",
-      "raw_dimensions": [
-        1080,
-        1920
-      ],
-      "package": "com.ethannyakabuski.finaloutlaw",
-      "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-      "source_apk_bytes": 183886659,
-      "capture_method": "adb_shell_screencap_png",
-      "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
-      "game_state": "Normal camp menu with genuine saved level, coins and campaign stars.",
-      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
-      "original_native_visual_review_recorded": true,
-      "physical_device_test": false,
-      "physical_tablet_test": false,
-      "public_metadata_file": "provenance/phone-home.json",
-      "public_metadata_sha256": "b31c15fa674749e1f462120685aa2824bd400b97ca396d57448648b1d80a9c39"
+      "mode": "RGBA",
+      "logical_emulator_profile": "phone",
+      "role": "Home",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Centered title, all six main actions and bank visible; capacity-agnostic reload guidance separately verified via normal scrolling/briefing. Noninteractive help/footer may extend below normal Home scroll reserve."
     },
     {
-      "key": "phone-play",
-      "file": "phone-play.png",
-      "sha256": "70224920796677cadd970ed4b5aead6b7fc957fe348aefaef52462b5c0658afd",
+      "key": "phone-campaign-map",
+      "file": "round-two/phone-campaign-map.png",
+      "sha256": "F401AC2DEE3272158EC81D2D5036A2760ADA544CACDF0F5DEB84FA1AC62EA929",
+      "bytes": 147843,
       "dimensions": [
         1080,
         1920
       ],
-      "raw_file": "raw/phone-play.png",
-      "raw_sha256": "70224920796677cadd970ed4b5aead6b7fc957fe348aefaef52462b5c0658afd",
-      "raw_dimensions": [
-        1080,
-        1920
-      ],
-      "package": "com.ethannyakabuski.finaloutlaw",
-      "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-      "source_apk_bytes": 183886659,
-      "capture_method": "adb_shell_screencap_png",
-      "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
-      "game_state": "Actual ordinary first-trail attempt reached through the map and briefing, with normal steering and automatic fire; no fixture or forced result.",
-      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
-      "original_native_visual_review_recorded": true,
-      "physical_device_test": false,
-      "physical_tablet_test": false,
-      "public_metadata_file": "provenance/phone-play.json",
-      "public_metadata_sha256": "f27c2b9d3827655bc11dceb2c870772b1652204c1941acb00470c2af9eba44bd"
+      "mode": "RGBA",
+      "logical_emulator_profile": "phone",
+      "role": "Campaign Map",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "All ten nodes, chapter controls and Back visible; existing genuine first-two-stage stars retained."
     },
     {
-      "key": "phone-collection",
-      "file": "phone-collection.png",
-      "sha256": "9aff9a35298b6f6fbb45827a591bb43e8810aaaf76b37e3a6f3f3ce1b14f0142",
+      "key": "phone-gameplay",
+      "file": "round-two/phone-gameplay.png",
+      "sha256": "442CC6DF797011F6B3A5FB79473AF0EB9FB868F9F869FB82A7CD4858A238AFE2",
+      "bytes": 93239,
       "dimensions": [
         1080,
         1920
       ],
-      "raw_file": "raw/phone-collection.png",
-      "raw_sha256": "9aff9a35298b6f6fbb45827a591bb43e8810aaaf76b37e3a6f3f3ce1b14f0142",
-      "raw_dimensions": [
-        1080,
-        1920
-      ],
-      "package": "com.ethannyakabuski.finaloutlaw",
-      "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-      "source_apk_bytes": 183886659,
-      "capture_method": "adb_shell_screencap_png",
-      "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
-      "game_state": "The western trail campaign map reached normally, showing genuine completed and unlocked trails and best stars; this role is a map.",
-      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
-      "original_native_visual_review_recorded": true,
-      "physical_device_test": false,
-      "physical_tablet_test": false,
-      "public_metadata_file": "provenance/phone-collection.json",
-      "public_metadata_sha256": "f5fa5cb783798f0d732e630007add8af9afafbd1b8fe3d5a49467b978d614a94"
+      "mode": "RGBA",
+      "logical_emulator_profile": "phone",
+      "role": "Live gameplay",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Manual ammo22/24, actor/enemy visible, two-line tutorial clearly above joystick; SHOOT/RELOAD/DASH/movement controls visible. Trail01 on phone/seven; Trail02 on ten."
     },
     {
-      "key": "tablet-7-home",
-      "file": "tablet-7-home.png",
-      "sha256": "f811ad44ced3af00a3142d0eb7499340e15a5ee942b0b381861b247cc10c6841",
+      "key": "seven-home",
+      "file": "round-two/seven-home.png",
+      "sha256": "202FAEBCF74E98349A897E26AD41323130C692C633CCB4AA489064CE37C30337",
+      "bytes": 111216,
       "dimensions": [
         1200,
         1920
       ],
-      "raw_file": "raw/tablet-7-home.png",
-      "raw_sha256": "f811ad44ced3af00a3142d0eb7499340e15a5ee942b0b381861b247cc10c6841",
-      "raw_dimensions": [
-        1200,
-        1920
-      ],
-      "package": "com.ethannyakabuski.finaloutlaw",
-      "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-      "source_apk_bytes": 183886659,
-      "capture_method": "adb_shell_screencap_png",
-      "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
-      "game_state": "Normal camp menu with genuine saved level, coins and campaign stars.",
-      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
-      "original_native_visual_review_recorded": true,
-      "physical_device_test": false,
-      "physical_tablet_test": false,
-      "public_metadata_file": "provenance/tablet-7-home.json",
-      "public_metadata_sha256": "225b8de84fa3e409f46b03354f81d3f84af5fc4a755ea547e8a8dcc7e89176c8"
+      "mode": "RGBA",
+      "logical_emulator_profile": "seven",
+      "role": "Home",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Centered title, all six main actions and bank visible; capacity-agnostic reload guidance separately verified via normal scrolling/briefing. Noninteractive help/footer may extend below normal Home scroll reserve."
     },
     {
-      "key": "tablet-7-play",
-      "file": "tablet-7-play.png",
-      "sha256": "7c877e0f9bb5c9d75548d1960c9c42d05b56b3aa10dbe5edb4ad9e64399bf2be",
+      "key": "seven-campaign-map",
+      "file": "round-two/seven-campaign-map.png",
+      "sha256": "8806FAD7B55DBF2D8B4F14D84E01227CF616845A28A2BA0DBC47816DD2F6BA97",
+      "bytes": 143351,
       "dimensions": [
         1200,
         1920
       ],
-      "raw_file": "raw/tablet-7-play.png",
-      "raw_sha256": "7c877e0f9bb5c9d75548d1960c9c42d05b56b3aa10dbe5edb4ad9e64399bf2be",
-      "raw_dimensions": [
-        1200,
-        1920
-      ],
-      "package": "com.ethannyakabuski.finaloutlaw",
-      "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-      "source_apk_bytes": 183886659,
-      "capture_method": "adb_shell_screencap_png",
-      "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
-      "game_state": "Actual ordinary first-trail attempt reached through the map and briefing, with normal steering and automatic fire; no fixture or forced result.",
-      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
-      "original_native_visual_review_recorded": true,
-      "physical_device_test": false,
-      "physical_tablet_test": false,
-      "public_metadata_file": "provenance/tablet-7-play.json",
-      "public_metadata_sha256": "7997c91d4b37b35fee9c701391d0ace153ed61dae3531c637a28b87a14c6ce7b"
+      "mode": "RGBA",
+      "logical_emulator_profile": "seven",
+      "role": "Campaign Map",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "All ten nodes, chapter controls and Back visible; existing genuine first-two-stage stars retained."
     },
     {
-      "key": "tablet-7-collection",
-      "file": "tablet-7-collection.png",
-      "sha256": "0694b966149e68ac7e1cae24902827539f89a0c760a26d85d0739700d93b312e",
+      "key": "seven-gameplay",
+      "file": "round-two/seven-gameplay.png",
+      "sha256": "3043225E3251CF20753143623887EBE365B6AA0B77B57807EBDCC00692A6032E",
+      "bytes": 92504,
       "dimensions": [
         1200,
         1920
       ],
-      "raw_file": "raw/tablet-7-collection.png",
-      "raw_sha256": "0694b966149e68ac7e1cae24902827539f89a0c760a26d85d0739700d93b312e",
-      "raw_dimensions": [
-        1200,
-        1920
-      ],
-      "package": "com.ethannyakabuski.finaloutlaw",
-      "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-      "source_apk_bytes": 183886659,
-      "capture_method": "adb_shell_screencap_png",
-      "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
-      "game_state": "The western trail campaign map reached normally, showing genuine completed and unlocked trails and best stars; this role is a map.",
-      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
-      "original_native_visual_review_recorded": true,
-      "physical_device_test": false,
-      "physical_tablet_test": false,
-      "public_metadata_file": "provenance/tablet-7-collection.json",
-      "public_metadata_sha256": "54187562beecb5ba63a98a50e34696ecc6955b2a0e45cc0be465aee54dfd8247"
+      "mode": "RGBA",
+      "logical_emulator_profile": "seven",
+      "role": "Live gameplay",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Manual ammo22/24, actor/enemy visible, two-line tutorial clearly above joystick; SHOOT/RELOAD/DASH/movement controls visible. Trail01 on phone/seven; Trail02 on ten."
     },
     {
-      "key": "tablet-10-home",
-      "file": "tablet-10-home.png",
-      "sha256": "fdf52148480061688b8f87309f60e060eabcb85c5d54c757e76153d18bad205b",
+      "key": "ten-home",
+      "file": "round-two/ten-home.png",
+      "sha256": "E7BF0AD28961DF1E569A6C50D37B71D97E6C3F4946EEEFBFB8B400D1ED6B3CFF",
+      "bytes": 162358,
       "dimensions": [
         1600,
         2560
       ],
-      "raw_file": "raw/tablet-10-home.png",
-      "raw_sha256": "fdf52148480061688b8f87309f60e060eabcb85c5d54c757e76153d18bad205b",
-      "raw_dimensions": [
-        1600,
-        2560
-      ],
-      "package": "com.ethannyakabuski.finaloutlaw",
-      "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-      "source_apk_bytes": 183886659,
-      "capture_method": "adb_shell_screencap_png",
-      "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
-      "game_state": "Normal camp menu with genuine saved level, coins and campaign stars.",
-      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation. The tablet-10 Home capture naturally clips the nonessential lower label about offline play and optional online features in the reserved/scroll area. All six primary Home controls remain readable and usable; this minor local-package qualification does not establish flawless footer layout.",
-      "original_native_visual_review_recorded": true,
-      "physical_device_test": false,
-      "physical_tablet_test": false,
-      "public_metadata_file": "provenance/tablet-10-home.json",
-      "public_metadata_sha256": "a25b101defb725464525f70e96ce78e5e781ab6b71e0dc762eafd71adad01d58"
+      "mode": "RGBA",
+      "logical_emulator_profile": "ten",
+      "role": "Home",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Centered title, all six main actions and bank visible; capacity-agnostic reload guidance separately verified via normal scrolling/briefing. Noninteractive help/footer may extend below normal Home scroll reserve."
     },
     {
-      "key": "tablet-10-play",
-      "file": "tablet-10-play.png",
-      "sha256": "57149d9550bb949c3f2bfea861c6fdcfa31e4048a1fd516e7efe9fd0060f2abe",
+      "key": "ten-campaign-map",
+      "file": "round-two/ten-campaign-map.png",
+      "sha256": "928C4AA41BF6520FCCA163FCCE56E8F15DE9B727B933ABC3CD4D930875C3E863",
+      "bytes": 196798,
       "dimensions": [
         1600,
         2560
       ],
-      "raw_file": "raw/tablet-10-play.png",
-      "raw_sha256": "57149d9550bb949c3f2bfea861c6fdcfa31e4048a1fd516e7efe9fd0060f2abe",
-      "raw_dimensions": [
-        1600,
-        2560
-      ],
-      "package": "com.ethannyakabuski.finaloutlaw",
-      "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-      "source_apk_bytes": 183886659,
-      "capture_method": "adb_shell_screencap_png",
-      "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
-      "game_state": "Actual ordinary first-trail attempt reached through the map and briefing, with normal steering and automatic fire; no fixture or forced result.",
-      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation.",
-      "original_native_visual_review_recorded": true,
-      "physical_device_test": false,
-      "physical_tablet_test": false,
-      "public_metadata_file": "provenance/tablet-10-play.json",
-      "public_metadata_sha256": "38999a1a6d417b27ab69e166fc520ecfc18320fa4499bd8aa7fa3a1b0309a343"
+      "mode": "RGBA",
+      "logical_emulator_profile": "ten",
+      "role": "Campaign Map",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "All ten nodes, chapter controls and Back visible; existing genuine first-two-stage stars retained."
     },
     {
-      "key": "tablet-10-collection",
-      "file": "tablet-10-collection.png",
-      "sha256": "af19cb10cdc587072a57a88bd36b153df0578ec65e47c9ff63cc2a58c5f6ee7b",
+      "key": "ten-gameplay",
+      "file": "round-two/ten-gameplay.png",
+      "sha256": "4C6279F3895104DDA57688FF8DC19A8E866A769D2177DBA56610FAEB7B0AA54A",
+      "bytes": 124534,
       "dimensions": [
         1600,
         2560
       ],
-      "raw_file": "raw/tablet-10-collection.png",
-      "raw_sha256": "af19cb10cdc587072a57a88bd36b153df0578ec65e47c9ff63cc2a58c5f6ee7b",
-      "raw_dimensions": [
-        1600,
-        2560
-      ],
-      "package": "com.ethannyakabuski.finaloutlaw",
-      "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-      "source_apk_bytes": 183886659,
-      "capture_method": "adb_shell_screencap_png",
-      "pixel_processing": "Exact copies of the original unmodified guest PNG; no resize/crop/rotation/overlays.",
-      "game_state": "The western trail campaign map reached normally, showing genuine completed and unlocked trails and best stars; this role is a map.",
-      "visual_review": "Native operator inspected this exact ordinary frame for legible required content, usable controls and absence of notification, ANR, fullscreen ad or modal obstruction. Logical tablet views are emulation. The tablet-10 campaign-map capture naturally clips the nonessential footer \"Progress is saved on this device\" in the reserved/scroll area. The map heading, Back, chapter, all ten trails/progression and Follow lights remain readable; this is a minor local-package visual qualification, not a claim that every footer line is visible.",
-      "original_native_visual_review_recorded": true,
-      "physical_device_test": false,
-      "physical_tablet_test": false,
-      "public_metadata_file": "provenance/tablet-10-collection.json",
-      "public_metadata_sha256": "0bd21300235f74400586b36c71d0e628cc060d9a23b029b95d90c6c838ef2d64"
+      "mode": "RGBA",
+      "logical_emulator_profile": "ten",
+      "role": "Live gameplay",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Manual ammo22/24, actor/enemy visible, two-line tutorial clearly above joystick; SHOOT/RELOAD/DASH/movement controls visible. Trail01 on phone/seven; Trail02 on ten."
     }
   ],
-  "physical_device_test": false,
-  "physical_tablet_test": false,
-  "limits": [
-    "One emulator with logical phone/tablet profiles, not physical-device testing.",
-    "No new capture, pixel editing or runtime acceptance is conferred by this metadata summary."
+  "historical_first_pass_manifest": "capture-manifest-first-pass-8e7665a9.json",
+  "qualifications": [
+    "Home noninteractive help/footer is scroll content; six primary actions remain usable.",
+    "Current native input observation used sequential single-pointer actions, not simultaneous Android multi-touch.",
+    "Initial black or raced menu frames were excluded; only the reviewed replacement frames are selected."
   ]
 }

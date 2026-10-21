@@ -1,34 +1,56 @@
 {
-  "schema": "public-local-qa-summary-v1",
-  "scope": "Dated local verification summary, not a machine ledger, original validation receipt or production acceptance.",
+  "schema": "public-native-qa-summary-v2",
+  "status": "Current affected UI/controls/save/captures passed; qualified predecessor ad/offline evidence retained separately.",
+  "runtime_commit": "671eee24adf18b615990951a46a5f5e0d921da6a",
   "package": "com.ethannyakabuski.finaloutlaw",
-  "source_apk_sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
-  "apk_bytes": 183886659,
+  "source_apk_sha256": "1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9",
+  "apk_bytes": 186143554,
   "diagnostic_hooks_used": false,
-  "verified_observations": [
-    "Actual earned continue survived a180.421-second earned endcard with the same26-second HUD, restored health, usable movement/DASH and no second continue on the later natural defeat.",
-    "A separate unearned dismissal granted no continue and preserved banked progress. Two natural recorded results triggered an observed interstitial presentation and dismissal.",
-    "Natural results and source payouts, a once-only kills quest, a priced power upgrade, Android Back/pause/resume and normal subpage navigation were checked.",
-    "All18 banked groups matched across installation, offline cold launch and restart. Three normally played offline trail wins and nine unmodified guest frames were reviewed; network/display restoration and known-package stop were recorded."
+  "current_binary_observations": [
+    "Normal APK update preserved all18 banked groups byte-identically before launch; no restore or injected state was used for this update.",
+    "Home and Trail01 briefing use capacity-agnostic reload guidance; actual upgraded24-round Trail01 HUD tutorial is two lines above the joystick. Trail02 DASH/RELOAD tutorial fits.",
+    "Sequential single-pointer movement and deliberate fire changed ammo; actual reload countdown and completion, Android Back/pause/resume and ReturnCamp were observed.",
+    "Three normal partial runs returned to camp once each with source-defined small XP progress; no reward or completed-campaign claim was replayed.",
+    "All ten campaign nodes and chapter/Back controls were visible on all three logical profiles.",
+    "Nine selected unmodified current-APK screenshots were visually reviewed. Raced menu and startup-black frames were excluded.",
+    "Restored-display normal cold launch preserved all18 banked groups byte-identically; final save and complete private backup matched.",
+    "Original display/radio settings and actual connected networks were restored, then the known game package was safely stopped."
   ],
   "saved_groups_checked": 18,
   "reviewed_guest_screenshot_count": 9,
-  "physical_device_test": false,
-  "physical_tablet_test": false,
+  "capture_manifest": "../marketing/screenshots/capture-manifest.json",
+  "qualified_predecessor": {
+    "runtime_commit": "cc275a3337b5d299067360a6839877d2ba57f341",
+    "apk_sha256": "CFC7E84E02CA657E4C14495F78E455E8EF1CBF070250DA77BBD9650EEE965F1B",
+    "scope": "Predecessor only; current successor changes only tutorial labels/layout and UI tests, with combat/services/save/hitboxes unchanged.",
+    "observations": [
+      "Ordinary first-trail replay completed in17 HUD seconds with3 eliminations; priced magazine upgrade, manual empty/reload and natural losses were observed.",
+      "A real earned continue stayed behind its SDK endcard for169.315 seconds; settled return recovered65%health/time0:15/full24-round magazine without a source fix. The first return frame was transient HUD/layout initialization.",
+      "Fresh movement/fire/reload/Back worked after return; natural second loss offered no second continue, banked once, and real interstitial dismissal left the bank unchanged.",
+      "Default-network-none offline cold launch, normal guest reboot and offline play/Back preserved the18 banked groups. Genuine prior progress had been explicitly restored earlier when the package was absent; that initial restore is not described as retention."
+    ]
+  },
+  "diagnostics": {
+    "current_scoped_godot_strict_errors_empty": true,
+    "current_scoped_android_fatal_count": 0,
+    "retained_qualifications": [
+      "Emulator VP9 decoder DynamicANWBuffer error -1010 occurred in SDK/WebView contexts.",
+      "Restored-session WebView missing-relro and denied vendor-property diagnostics were retained; Home loaded normally.",
+      "Ten-profile startup timeout/initial black resolved through passive observation; the final loaded Home was retaken without relaunch.",
+      "Force-stop does not exercise full Godot editor/export teardown. Accepted exports retain an editor-exit Orphan StringName Node warning, distinct from the historical three-audio-resource failure."
+    ]
+  },
   "limits": [
-    "One Android11/API30 x86 emulator with logical phone/tablet display profiles was tested; no physical phone or tablet acceptance.",
-    "Godot4.5.1 Compatibility exports use minAPI24/targetAPI35 under the recorded engine constraint; current Google Play release eligibility remains owner work.",
-    "Emulator audio was disabled. Audible Android sound, interactive Web/audio/WebGL, production services and human acceptance remain unverified.",
-    "Official Google test IDs only. Real backend/service IDs, consent, signing, production checks and Google Play publication remain owner work.",
-    "Short QA does not establish all content/equipment combinations, broad ad-fill reliability, long sessions, midnight rollover, multi-day login or human balance.",
-    "Source publication does not establish a successful hosted CI run or live deployment. Pages deployment remains explicitly disabled pending separate authorization.",
-    "The28 focused fullscreen callback checks exited0 without script/parse/assertion failures but retained a Windows root-certificate-store startup error; strict_log_gate_passed=false. No security warning was bypassed. Current Android/Web export strict checks passed separately.",
-    "The1,124 UI checks against main84CEA324 are a recorded pre-fullscreen rerun, separate from the current lifecycle revision; older1,121 and main1485D719 runs remain historical.",
-    "The100/100 simulated campaign victories used maximum legitimate gear and test invulnerability; both tutorials also completed with starting gear and ordinary damage. This does not establish human difficulty balance.",
-    "An initial scene smoke emitted a resource-at-exit warning; a subsequent verbose360-frame run and final UI fixture completed without that resource warning.",
-    "Native freeze observations use whole-second HUD and photos; exact subsecond simulation, live foe count and invincibility countdown were not instrumented.",
-    "The tablet-10 Home capture clips its nonessential lower label about offline play/optional online features. All six primary controls remain readable and usable.",
-    "The tablet-10 campaign map clips its nonessential saved-progress footer. Required heading, Back, chapter, all ten trails/progression and Follow lights remain readable.",
-    "Unfinished combat is not a resumable saved run; durability checks cover banked progress. Offline clocks/local saves are not anti-cheat secure. Desktop callbacks/captures are explicit fixtures and do not establish native acceptance."
-  ]
+    "One Android11/API30 x86 task emulator and logical phone/tablet display profiles; physical devices/tablets and human balance remain unverified.",
+    "Native simultaneous two-pointer operation remains unverified; synthetic engine Viewport pointer checks are separate.",
+    "Task emulator audio output was disabled. Audible Android output and interactive Web/WebGL/audio remain unverified.",
+    "Exact current APK ad/earned/interstitial/offline flows were not replayed for this labels-only successor. Qualified CFC predecessor evidence is separate.",
+    "Current-creative unearned displayed-and-dismissed reward remains unverified. First-pass unearned tests do not establish current acceptance.",
+    "Official test ads and placeholder PGS maps remain. Production IDs/backend, consent/audience, signing and Google Play publication remain owner work.",
+    "Godot4.5.1 Compatibility minAPI24/targetAPI35 is the tested engine constraint; current Play-release eligibility is not claimed.",
+    "Short tests do not establish all stages/equipment combinations, broad ad-fill reliability, long sessions or midnight/multi-day daily mechanisms.",
+    "Banked progress persists; unfinished combat is not resumed after cold launch. Local saves/offline clocks are not anti-cheat secure.",
+    "Public source update remains held after an approval denial; no new hosted Linux CI result, Pages deployment or Library action is claimed."
+  ],
+  "historical_first_pass": "history/before-round-two-final/NATIVE_QA.json"
 }

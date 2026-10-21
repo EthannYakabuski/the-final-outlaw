@@ -1,0 +1,66 @@
+{
+  "schema": "public-local-test-summary-v1",
+  "status": "Dated local package ready for owner local-test review; no production acceptance.",
+  "engine": "Godot4.5.1 Compatibility",
+  "android": {
+    "sha256": "8e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e",
+    "bytes": 183886659,
+    "debug": true
+  },
+  "web": {
+    "html_sha256": "da4aa031130164cde88a81c981ce1341e371ff7bdb87c36692a18465ebebec77",
+    "html_bytes": 5490,
+    "pck_sha256": "baa364b61e60bee8d4ac1eb66b27e639a0374060bcfde3911d062c131681616c",
+    "pck_bytes": 3293832,
+    "runtime_files": 9,
+    "packed_entries": 512,
+    "interactive_browser_verified": false,
+    "source_freeze_verified_as_recorded": true
+  },
+  "source_hashes": {
+    "export_presets.cfg": "2f9ce51289cf5251d5e74242377059e39e16861781d639a5aa5b95ccaf4a333f",
+    "game/campaign.json": "321c5b0171840833030e43a0ad0a59388891bc59c058d47109a87e124ab73944",
+    "game/catalog.json": "bb956cd50a03f54eac575b5dcc4d4cecffb5e63c5def15a014274edb6b074a96",
+    "game/combat.gd": "7ebb83e36629bc890e68786b9b96cbdea8a28710409f121b21c7437aa48ba118",
+    "game/main.gd": "a2c56d639b24897714710d787fa90b31f1adedaec00e61874143d15679c8077b",
+    "game/state.gd": "86b264c4f7271fb7148250e7fab59642dfd73e904367b4c047b53da756751e88",
+    "platform/config.json": "4338582beb084106e31652fec57ed763c170dfa152aa041f5dce550b95a9dda1",
+    "platform/services.gd": "138572ea2d624cc9fd7bc5d97ee27d6260db44a8a019eaddabbdade9dcb46218",
+    "project.godot": "6752cecdba3c9f4196b104a91d3ce9fc2dd57b825cbd892b3c935b8ed1d8e99c"
+  },
+  "source_coverage": "Recorded Android/Web strict export and static PCK/9-sidecar validation passed. Nine scoped runtime inputs were byte-identical before/after both exports.",
+  "core_test_summary": "Recorded model suite: 1,763 checks, zero failures. Recorded pre-fullscreen UI rerun against main84CEA324: 1,124 checks, zero failures, actual exit 0. Separate scene smoke: 360 frames. Seven desktop development views were rendered. The fullscreen lifecycle revision passed 28 focused checks. The focused test engine exited0 with no script/parse/assertion failures; its log retains the Windows root-certificate-store startup error, so strict_log_gate_passed=false. No security warning was bypassed.",
+  "test_scope": "Deterministic models, actual desktop scenes and explicit service/capture fixtures have their recorded scope; actual Android observations are summarized separately.",
+  "native_report": {
+    "file": "docs/NATIVE_QA.json",
+    "sha256": "997745b27ac90392f62ab427c2336b8423ee873971406a4641cd050a3665b878"
+  },
+  "captures": {
+    "manifest": "marketing/screenshots/capture-manifest.json",
+    "count": 9,
+    "raw_guest_pngs_unchanged": true,
+    "physical_device_test": false,
+    "physical_tablet_test": false
+  },
+  "licenses": {
+    "source_index": "LICENSES/INDEX.txt",
+    "recorded_packaged_notice_count": 15,
+    "third_party_terms_retained": true
+  },
+  "limits": [
+    "One Android11/API30 x86 emulator with logical phone/tablet display profiles was tested; no physical phone or tablet acceptance.",
+    "Godot4.5.1 Compatibility exports use minAPI24/targetAPI35 under the recorded engine constraint; current Google Play release eligibility remains owner work.",
+    "Emulator audio was disabled. Audible Android sound, interactive Web/audio/WebGL, production services and human acceptance remain unverified.",
+    "Official Google test IDs only. Real backend/service IDs, consent, signing, production checks and Google Play publication remain owner work.",
+    "Short QA does not establish all content/equipment combinations, broad ad-fill reliability, long sessions, midnight rollover, multi-day login or human balance.",
+    "Source publication does not establish a successful hosted CI run or live deployment. Pages deployment remains explicitly disabled pending separate authorization.",
+    "The28 focused fullscreen callback checks exited0 without script/parse/assertion failures but retained a Windows root-certificate-store startup error; strict_log_gate_passed=false. No security warning was bypassed. Current Android/Web export strict checks passed separately.",
+    "The1,124 UI checks against main84CEA324 are a recorded pre-fullscreen rerun, separate from the current lifecycle revision; older1,121 and main1485D719 runs remain historical.",
+    "The100/100 simulated campaign victories used maximum legitimate gear and test invulnerability; both tutorials also completed with starting gear and ordinary damage. This does not establish human difficulty balance.",
+    "An initial scene smoke emitted a resource-at-exit warning; a subsequent verbose360-frame run and final UI fixture completed without that resource warning.",
+    "Native freeze observations use whole-second HUD and photos; exact subsecond simulation, live foe count and invincibility countdown were not instrumented.",
+    "The tablet-10 Home capture clips its nonessential lower label about offline play/optional online features. All six primary controls remain readable and usable.",
+    "The tablet-10 campaign map clips its nonessential saved-progress footer. Required heading, Back, chapter, all ten trails/progression and Follow lights remain readable.",
+    "Unfinished combat is not a resumable saved run; durability checks cover banked progress. Offline clocks/local saves are not anti-cheat secure. Desktop callbacks/captures are explicit fixtures and do not establish native acceptance."
+  ]
+}

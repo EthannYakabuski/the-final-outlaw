@@ -1,6 +1,6 @@
 {
   "game": "The Final Outlaw",
-  "scope": "Round Two illustrated assets and source-aligned store copy; old native evidence is historical",
+  "scope": "Round Two illustrated assets/store copy plus current1D73 nine unmodified native emulator views",
   "checks": {
     "title_max_30": true,
     "short_max_80": true,
@@ -15,9 +15,25 @@
   },
   "packaged_main_visual_review": "PASS: final app512 and actual64 viewed; face/gun/teal silhouette readable. Final feature1024x500 viewed; title and tagline readable with safe margins, no clipping or UI claims.",
   "offline_packaging_rebuild": "PASS:29 store outputs byte-identical; existing screenshots unchanged",
-  "fresh_native_acceptance": false,
-  "fresh_android_web_export_acceptance": false,
+  "fresh_native_acceptance": "PASS_affected_UI_controls_save_nine_views; CFC_ad_offline_predecessor_qualified",
+  "fresh_android_web_export_acceptance": true,
   "production_services_acceptance": false,
   "old_native_metadata": "history/first-pass/",
-  "old_native_screenshots": "screenshots/capture-manifest.json"
+  "old_native_screenshots": "screenshots/capture-manifest-first-pass-8e7665a9.json",
+  "current_capture_count": 9,
+  "capture_apk_sha256": "1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9",
+  "capture_manifest": "screenshots/capture-manifest.json",
+  "native_simultaneous_multitouch": "unverified",
+  "remaining_limits": [
+    "One Android11/API30 x86 task emulator and logical phone/tablet display profiles; physical devices/tablets and human balance remain unverified.",
+    "Native simultaneous two-pointer operation remains unverified; synthetic engine Viewport pointer checks are separate.",
+    "Task emulator audio output was disabled. Audible Android output and interactive Web/WebGL/audio remain unverified.",
+    "Exact current APK ad/earned/interstitial/offline flows were not replayed for this labels-only successor. Qualified CFC predecessor evidence is separate.",
+    "Current-creative unearned displayed-and-dismissed reward remains unverified. First-pass unearned tests do not establish current acceptance.",
+    "Official test ads and placeholder PGS maps remain. Production IDs/backend, consent/audience, signing and Google Play publication remain owner work.",
+    "Godot4.5.1 Compatibility minAPI24/targetAPI35 is the tested engine constraint; current Play-release eligibility is not claimed.",
+    "Short tests do not establish all stages/equipment combinations, broad ad-fill reliability, long sessions or midnight/multi-day daily mechanisms.",
+    "Banked progress persists; unfinished combat is not resumed after cold launch. Local saves/offline clocks are not anti-cheat secure.",
+    "Public source update remains held after an approval denial; no new hosted Linux CI result, Pages deployment or Library action is claimed."
+  ]
 }

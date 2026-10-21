@@ -1,16 +1,15 @@
-THE FINAL OUTLAW - ROUND TWO ART / STORE HANDOFF
+THE FINAL OUTLAW - ROUND TWO STORE / LOCAL TEST PACKAGE
 
-CURRENT ILLUSTRATED ART
-28 individually generated original illustrations:21 achievements,5 leaderboards, app icon and feature. All exact catalog keys are retained. Original PNGs, exact prompts and source hashes are in source_art/round-two/manifest.json. Asset dimensions/hashes are in asset-manifest.json. The feature is an illustration, not a gameplay capture. Runtime launcher: ../platform/app-icon-512.png matches app-icon-512.png.
+Runtime 671eee24adf18b615990951a46a5f5e0d921da6a; Android SHA256 1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9.
+Current Android/Web builds and the two new complete/test ZIPs are under ../build/round-two-671eee24-a1/; exact selectors and limitations are in ../HANDOFF.txt. ZIP hashes are in the local packages/PACKAGE-RECEIPT.json.
 
-SOURCE / STORE COPY
-Manual gun control, 20-round starting magazine/reload, seven gear tracks and 100 saved physical town plans are reflected in store-listing.json/txt and webpage-copy.txt. Enemy routing, six stronger archetypes and twelve supplied animated monster sheets are implemented. Source tests and private actual-GPU fixtures do not establish native Android or human difficulty acceptance.
+28 distinct original illustrations:21 achievements,5 leaderboards, app and feature. Exact originals/prompts/source hashes are in source_art/round-two/manifest.json. Each badge was reviewed at 64/512; final app 512/64 and feature 1024x500 were reviewed. Runtime ../platform/app-icon-512.png matches app-icon-512.png. Illustrations are not gameplay captures. Store-listing.json/txt and webpage-copy.txt describe the manual gun/reload, seven upgrades,100 physical town plans and stronger monsters.
 
-FRESH BUILD / NATIVE / CAPTURE GATE
-Coordinator must export new Android/Web artifacts and verify ordinary input/reload/Back/pause, earned and unearned reward/endcard behavior, save/offline flows and fresh unchanged captures before the Round Two package is ready. Simultaneous engine Viewport pointer tests pass; actual native simultaneous Android multi-touch is not yet verified. No production backend, human balance, audible Android, interactive Web or physical-device acceptance is claimed.
+CURRENT SCREENSHOTS
+screenshots/capture-manifest.json selects nine unchanged raw guest PNGs under screenshots/round-two/ from exact1D73 APK. Three logical profiles each show Home/map/gameplay; logical tablets are emulator configurations, not physical-device acceptance. Home help/footer is normal scroll content. Metadata contains only relative image identities/qualified observations; no raw SDK/device logs or real save files.
 
-PRESERVED FIRST-PASS EVIDENCE
-screenshots/ and its capture manifest still describe APK SHA2568e7665a9f8f9a5a3a2d0573ed8a0d83961a201bad1defffc74899f2259f0414e, not this revised source. Historical handoff/QA metadata is retained under history/first-pass/. Preserve the original APK, notices and all old captures. Fresh screenshots must come from the actual new build and keep their own exact identity/provenance; never relabel an illustration or old capture.
+VERIFIED / QUALIFIED
+Accepted strict Android/Web source binding and affected native labels/sequential controls/reload/Back/save/screens. Critical169.315-second earned endcard/interstitial/offline observations are qualified CFC predecessor evidence; not a current 1D73 replay. Native simultaneous multitouch, current-creative unearned dismissal, audible Android, interactive Web, physical devices, human balance and production services remain unverified. See ../docs/NATIVE_QA.json and ../docs/LOCAL_TEST_RESULTS.json.
 
-OWNER RELEASE WORK
-Production service IDs/configuration, consent/privacy/audience declarations, signing, physical-device/human testing and Google Play publication remain owner tasks. PGS catalog 21/5 and platform IDs have not been changed. Keep complete LICENSE/NOTICE/LICENSES with source and distributions. Pages remains disabled; no store/Library deployment is performed here.
+HISTORY / RELEASE
+First-pass images/manifest and all previous APKs/archives are retained separately; never relabel them as current. Earlier store metadata remains under history/. Preserve all LICENSE/NOTICE/LICENSES, especially custom Creature Mixer terms (not CC0). Owner supplies production service IDs/configuration, consent/audience, release signing, current Play eligibility and publication. minAPI24/targetAPI35 is the tested engine constraint. Public source push remains held; no Pages/Library/Play deployment occurs here.

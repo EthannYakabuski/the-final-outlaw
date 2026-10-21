@@ -1,0 +1,23 @@
+{
+  "game": "The Final Outlaw",
+  "scope": "Round Two illustrated assets and source-aligned store copy; old native evidence is historical",
+  "checks": {
+    "title_max_30": true,
+    "short_max_80": true,
+    "long_max_4000": true,
+    "achievement_keys_exact_catalog": true,
+    "leaderboard_keys_exact_catalog": true,
+    "individual_generation_calls": true,
+    "all 26_badges_actual 64_and 512_reviewed": true,
+    "main_originals_coordinator_reviewed": true,
+    "portable_rebuild_29_byte_identical": true,
+    "main_final_512_64_and1024x500_reviewed": true
+  },
+  "packaged_main_visual_review": "PASS: final app512 and actual64 viewed; face/gun/teal silhouette readable. Final feature1024x500 viewed; title and tagline readable with safe margins, no clipping or UI claims.",
+  "offline_packaging_rebuild": "PASS:29 store outputs byte-identical; existing screenshots unchanged",
+  "fresh_native_acceptance": false,
+  "fresh_android_web_export_acceptance": false,
+  "production_services_acceptance": false,
+  "old_native_metadata": "history/first-pass/",
+  "old_native_screenshots": "screenshots/capture-manifest.json"
+}

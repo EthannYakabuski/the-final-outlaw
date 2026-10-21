@@ -369,6 +369,87 @@
     "sha256": "7c877e0f9bb5c9d75548d1960c9c42d05b56b3aa10dbe5edb4ad9e64399bf2be"
   },
   {
+    "file": "screenshots/round-two/phone-campaign-map.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "f401ac2dee3272158ec81d2d5036a2760ada544cacdf0f5deb84fa1ac62ea929"
+  },
+  {
+    "file": "screenshots/round-two/phone-gameplay.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "442cc6df797011f6b3a5fb79473af0eb9fb868f9f869fb82a7cd4858a238afe2"
+  },
+  {
+    "file": "screenshots/round-two/phone-home.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "d7d7fb568184264258898e276ac70fd35791e59eb7b2857d446c73951392e98d"
+  },
+  {
+    "file": "screenshots/round-two/seven-campaign-map.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "8806fad7b55dbf2d8b4f14d84e01227cf616845a28a2ba0dbc47816dd2f6ba97"
+  },
+  {
+    "file": "screenshots/round-two/seven-gameplay.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "3043225e3251cf20753143623887ebe365b6aa0b77b57807ebdcc00692a6032e"
+  },
+  {
+    "file": "screenshots/round-two/seven-home.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "202faebcf74e98349a897e26ad41323130c692c633ccb4aa489064ce37c30337"
+  },
+  {
+    "file": "screenshots/round-two/ten-campaign-map.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "928c4aa41bf6520fcca163fcce56e8f15de9b727b933abc3cd4d930875c3e863"
+  },
+  {
+    "file": "screenshots/round-two/ten-gameplay.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "4c6279f3895104dda57688ff8dc19a8e866a769d2177dba56610faeb7b0aa54a"
+  },
+  {
+    "file": "screenshots/round-two/ten-home.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "e7bf0ad28961df1e569a6c50d37b71d97e6c3f4946eeefbfb8b400d1ed6b3cff"
+  },
+  {
     "file": "screenshots/tablet-10-collection.png",
     "dimensions": [
       1600,
