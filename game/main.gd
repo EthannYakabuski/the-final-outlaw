@@ -37,6 +37,8 @@ var hud_time: Label
 var fire_button: Button
 var reload_button: Button
 var ammo_label: Label
+var fire_index: int = -1
+var pause_button: Button
 var fire_held: bool = false
 var fire_request: bool = false
 var reload_request: bool = false
@@ -443,7 +445,7 @@ func _start_level(number: int, endless: bool) -> void:
 func _build_hud() -> void:
 	_label("TRAIL %03d / %s" % [selected_level,str(battle.town.district).to_upper()] if selected_level > 0 else "ENDLESS BADLANDS", Vector2(23, 20), Vector2(382, 27), 16, CREAM)
 	hud_goal = _label("", Vector2(23, 55), Vector2(410, 37), 21, CREAM)
-	_button("Ⅱ", Vector2(454, 23), Vector2(63, 51), _pause)
+	pause_button = _button("Ⅱ", Vector2(454, 23), Vector2(63, 51), _pause)
 	hud_health = ProgressBar.new()
 	hud_health.position = Vector2(23, 103)
 	hud_health.size = Vector2(365, 16)
@@ -602,6 +604,7 @@ func _clear_arena_input() -> void:
 	joystick_index = -1
 	joystick_point = joystick_origin
 	dash_request = false
+	fire_index = -1
 	fire_held = false
 	fire_request = false
 	reload_request = false
@@ -623,8 +626,8 @@ func _press_fire() -> void:
 func _fire_input() -> bool:
 	var keyboard := Input.is_physical_key_pressed(KEY_J)
 	if _waiting_for_neutral_fire:
-		if not keyboard and not fire_held: _waiting_for_neutral_fire = false
-		return false
+		if not keyboard: _waiting_for_neutral_fire = false
+		keyboard = false
 	return fire_held or fire_request or keyboard
 
 func _update_ammo_hud() -> void:
@@ -652,6 +655,39 @@ func _movement() -> Vector2:
 	if joystick_active:
 		move = (joystick_point - joystick_origin) / 62.0
 	return move.limit_length(1.0)
+
+func _input(event: InputEvent) -> void:
+	# GUI BaseButton consumes emulated mouse clicks, not independent fingers.
+	# Own native touch IDs before GUI dispatch; one finger cannot release another.
+	if screen != "play" or paused: return
+	if event is InputEventScreenTouch or event is InputEventScreenDrag:
+		if _external_gameplay_blocked():
+			_hold_external_gameplay()
+			get_viewport().set_input_as_handled()
+			return
+		if event is InputEventScreenTouch:
+			if event.pressed:
+				if is_instance_valid(fire_button) and fire_button.get_global_rect().has_point(event.position):
+					if fire_index<0: fire_index=event.index;_press_fire()
+				elif is_instance_valid(reload_button) and reload_button.get_global_rect().has_point(event.position):
+					if not reload_button.disabled: reload_request=true
+				elif is_instance_valid(dash_button) and dash_button.get_global_rect().has_point(event.position):
+					_request_dash()
+				elif is_instance_valid(pause_button) and pause_button.get_global_rect().has_point(event.position):
+					_pause()
+				elif not joystick_active:
+					joystick_active=true;joystick_index=event.index
+					joystick_origin=event.position;joystick_point=event.position
+			else:
+				if event.index==fire_index: fire_held=false;fire_index=-1
+				if event.index==joystick_index: joystick_active=false;joystick_index=-1
+		elif event.index==joystick_index:
+			joystick_point=event.position
+		get_viewport().set_input_as_handled()
+	elif event is InputEventMouse and event.device==InputEvent.DEVICE_ID_EMULATION:
+		# A native touch already has an owner. Its synthetic mouse copy must not
+		# steal movement, click another control or release the other pointer.
+		get_viewport().set_input_as_handled()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if _external_gameplay_blocked():

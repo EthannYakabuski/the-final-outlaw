@@ -22,6 +22,7 @@ Import once with `godot --headless --editor --path . --import`. Run the affected
 godot --headless --path . --script tests/test_fullscreen_lifecycle.gd
 godot --headless --path . --script tests/test_models.gd
 godot --headless --path . --script tests/test_ui.gd
+godot --headless --path . --script tests/test_touch_input.gd
 ```
 
 For documentation-only changes, review text/links and the staged diff; do not rebuild or overwrite the preserved original QA APK. Runtime/service changes require relevant tests and an explicit native retest plan; desktop callbacks and CI exports do not establish native SDK behavior.
