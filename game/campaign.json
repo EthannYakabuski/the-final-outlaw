@@ -6,7 +6,7 @@
     "name": "Sunrise Flats: First footprints",
     "description": "First light over the training trail. Read the field and keep moving.",
     "objective": "Eliminate 3 foes",
-    "tip": "Left thumb moves. Hold the gun to shoot. Reload after 20 rounds.",
+    "tip": "Left thumb moves. Hold the gun to shoot. Reload when empty.",
     "mode": "clear",
     "target": 3,
     "time_limit": 100,

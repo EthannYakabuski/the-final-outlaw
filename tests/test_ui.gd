@@ -52,6 +52,12 @@ func check(condition: bool, label: String) -> void:
 	if not condition:
 		failures += 1; printerr("FAIL: " + label)
 
+func combat_hint() -> Label:
+	for child in game.ui.get_children():
+		if child is Label and (child.text.begins_with("Move left thumb;") or child.text.begins_with("DASH:")):
+			return child
+	return null
+
 func _initialize() -> void:
 	call_deferred("_run")
 
@@ -87,6 +93,32 @@ func _run() -> void:
 		game._show_brief(trail); await _settle()
 		for child in game.ui.get_children():
 			if child is Label: check(child.position.x + child.size.x <= 541 and child.position.y + child.size.y <= 961, "trail briefing fits %d" % trail)
+	# Native Trail 01 previously wrapped onto the joystick and claimed a fixed 20 rounds.
+	var previous_magazine: int = int(game.state.upgrades.get("magazine",0))
+	for upgrade in [0,1,8]:
+		game.state.upgrades.magazine = upgrade
+		game._start_level(1,false); await _settle()
+		var hint: Label = combat_hint()
+		print("HINT_UI magazine=%d lines=%d rect=%s minimum=%s" % [game.battle.magazine,hint.get_line_count(),hint.get_rect(),hint.get_minimum_size()])
+		check(hint.text.contains("%d-round magazine" % game.battle.magazine), "tutorial reflects actual magazine upgrade %d" % upgrade)
+		check(hint.get_line_count() == 2 and hint.get_rect().end.y <= 799, "tutorial stays two lines above joystick upgrade %d" % upgrade)
+		check(hint.mouse_filter == Control.MOUSE_FILTER_IGNORE, "tutorial never captures touch")
+	game.state.upgrades.magazine = previous_magazine
+	game._show_home(); await _settle()
+	var home_reload_hint: bool = false
+	for child in game.ui.get_children():
+		if child is Label and child.text.contains("Reload when empty"):
+			home_reload_hint = true
+	check(home_reload_hint, "home reload guidance remains correct for upgraded magazines")
+	game._show_brief(1); await _settle()
+	var brief_reload_hint: bool = false
+	for child in game.ui.get_children():
+		if child is Label and child.text.contains("Reload when empty"):
+			brief_reload_hint = true
+	check(brief_reload_hint, "Trail 01 briefing no longer claims fixed capacity")
+	game._start_level(2,false); await _settle()
+	var dash_hint: Label = combat_hint()
+	check(dash_hint.get_line_count() == 2 and dash_hint.get_rect().end.y <= 799, "dash tutorial stays above joystick")
 	game._show_rewards(); await _settle()
 	var coins: int = game.state.coins
 	game._request_crate(); game._request_crate()

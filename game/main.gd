@@ -258,7 +258,7 @@ func _show_home() -> void:
 	_button("Trail journal", Vector2(42, 646), Vector2(220, 54), _show_records)
 	_button("Options", Vector2(278, 646), Vector2(220, 54), _show_options)
 	_label("LEVEL %d   •   %d COINS   •   %d STARS" % [state.player_level(), state.coins, state.stars_total()], Vector2(30, 733), Vector2(480, 32), 18, CREAM, true)
-	_label("Move with your left thumb. Hold the gun to shoot.\n20 rounds, then reload. Use cover and dash through danger.", Vector2(40, 790), Vector2(460, 57), 18, CREAM, true)
+	_label("Move with your left thumb. Hold the gun to shoot.\nReload when empty. Use cover and dash through danger.", Vector2(40, 790), Vector2(460, 57), 18, CREAM, true)
 	_label("Offline play • Optional online features on Android", Vector2(20, 872), Vector2(500, 27), 14, CREAM, true)
 
 func _show_map() -> void:
@@ -469,7 +469,9 @@ func _build_hud() -> void:
 	dash_button = _button("DASH",Vector2(226,839),Vector2(112,61),_request_dash)
 	_update_ammo_hud()
 	if selected_level <= 2 and selected_level > 0:
-		_label(str(battle.level.tip), Vector2(22, 753), Vector2(224, 65), 15, CREAM, true)
+		var hint_text: String = "Move left thumb; hold SHOOT\nRELOAD: %d-round magazine" % battle.magazine if selected_level == 1 else "DASH: evade attackers\nRELOAD: use cover"
+		var hint: Label = _label(hint_text, Vector2(22, 753), Vector2(224, 44), 14, CREAM, true)
+		hint.size = Vector2(224, 44)
 
 func _pause() -> void:
 	if _external_gameplay_blocked():
