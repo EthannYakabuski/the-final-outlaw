@@ -1,0 +1,715 @@
+{
+  "schema": 1,
+  "game": "The Final Outlaw",
+  "generation": "28 distinct built-in imagegen calls, one per semantic asset; original bytes and exact prompts retained",
+  "packaging": "Pillow RGB conversion and LANCZOS standard-size resize only; no creative post-processing",
+  "license": "Original project artwork under Apache-2.0; existing supplied-asset notices are preserved separately",
+  "feature_text": {
+    "title": "THE FINAL OUTLAW",
+    "tagline": "ONE TRAIL. A HUNDRED LAST STANDS."
+  },
+  "illustrations_are_gameplay_screenshots": false,
+  "assets": [
+    {
+      "id": "kills_1",
+      "kind": "achievements",
+      "name": "First spark",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "aef67ff96a015832b84b9e415ef01d7575a1e487c98676083268d85b9dbf588a",
+      "png512_sha256": "c9611094c7e0f81260960595384449c1a948fc7b9ea10e40be828ec02d9b5df1",
+      "prompt_sha256": "a6bc0f137d7255c7a71ad06e80e8e0ee3241fe39fc013b9a4a42f90105688293",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/kills_1.png",
+      "prompt": "source_art/round-two/prompts/kills_1.txt",
+      "outputs": [
+        {
+          "file": "achievements/kills_1.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kills_25",
+      "kind": "achievements",
+      "name": "Dust clearer",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "016762bf5d8b0f93356fa298c58c56fdee15209d27fe021bfe54e05c03759187",
+      "png512_sha256": "20b37dc16c22af7d9a6a150c0588426d6e840c7e688ef5e090790b82249eeedc",
+      "prompt_sha256": "01cfb64cb9d475ef5f6fa70143816a7fba76238c943fd1a0e9d8a72ea172fc7d",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/kills_25.png",
+      "prompt": "source_art/round-two/prompts/kills_25.txt",
+      "outputs": [
+        {
+          "file": "achievements/kills_25.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kills_100",
+      "kind": "achievements",
+      "name": "Steady hand",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "bebbbae36da7bc833575e66ef3956379e0f1dea00a48837b5e02271471a18ec7",
+      "png512_sha256": "9c6e7286c548c78eeb1d761c95b934ed10c190c23613324eb90e613c3a396b2c",
+      "prompt_sha256": "36cb0355175fcecb5741692e7411b61b9b31f4cf079f32b3e1dbbfa0f3978394",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/kills_100.png",
+      "prompt": "source_art/round-two/prompts/kills_100.txt",
+      "outputs": [
+        {
+          "file": "achievements/kills_100.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kills_500",
+      "kind": "achievements",
+      "name": "Frontier legend",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "f3791a5cac96e74e2f88cde0b87b2a475a72ad2db95c025b0a5c15273103e2af",
+      "png512_sha256": "aa9915aa9ebaf1702cba4de5d42055eb3ef88c11af2fd2ee00a18ae0fa9fd04d",
+      "prompt_sha256": "fdc7214a7e6c4a35b4b041d186233857cde6184f0ebe475fc508740ed28e82de",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/kills_500.png",
+      "prompt": "source_art/round-two/prompts/kills_500.txt",
+      "outputs": [
+        {
+          "file": "achievements/kills_500.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kills_2000",
+      "kind": "achievements",
+      "name": "The final outlaw",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "cca43728680437809507de753da38cdd8dc62556f4e6868a2b3b71a04ae5db62",
+      "png512_sha256": "e03571f2a246377002b47995da656700189066d4efcddaad3520b2fe85e1afa7",
+      "prompt_sha256": "d4d436fa714e967419618df1f66dff45179e19ba0ba23303e63867706207e562",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/kills_2000.png",
+      "prompt": "source_art/round-two/prompts/kills_2000.txt",
+      "outputs": [
+        {
+          "file": "achievements/kills_2000.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "levels_1",
+      "kind": "achievements",
+      "name": "A small beginning",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "52018d28dc05b268ce06a361b29a7beb1b4337ed2f8d5384cc509b0ab29c59f5",
+      "png512_sha256": "585330caf922cf970a6f4831ffe918cf31fe1a203cefe0d7b44a369918a1d854",
+      "prompt_sha256": "b27a97c3e644a9c94ecaeb24943327c99d596e3ae63f0344ba07903213bebfc3",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/levels_1.png",
+      "prompt": "source_art/round-two/prompts/levels_1.txt",
+      "outputs": [
+        {
+          "file": "achievements/levels_1.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "levels_10",
+      "kind": "achievements",
+      "name": "Sunrise rider",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "303a5b49972f6f7370c3be9824507682d4819f8c1c379fabe43429a919b0a384",
+      "png512_sha256": "fa1650b9a51e9b06d9c8a76256252f854dbd893c5b3a3cedcafdbfd7a0ab0170",
+      "prompt_sha256": "eeb76cf7abfe47535dc2a5a203b69a78f15b94d2453f7157b7afd74c8dc4ab9e",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/levels_10.png",
+      "prompt": "source_art/round-two/prompts/levels_10.txt",
+      "outputs": [
+        {
+          "file": "achievements/levels_10.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "levels_25",
+      "kind": "achievements",
+      "name": "Trail finder",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "0ffa04ca42076972a4a22e55327b8a3446722eacdffdc4f4642d8554f0e07bb8",
+      "png512_sha256": "1c361cf628522ae87a350e2d753f74b7826175813329c4b6f14d72a5e56d9f73",
+      "prompt_sha256": "daeca8b8fbfa2e99bd375cb829997324f046eda06b499ed622e59dfbe323f526",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/levels_25.png",
+      "prompt": "source_art/round-two/prompts/levels_25.txt",
+      "outputs": [
+        {
+          "file": "achievements/levels_25.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "levels_50",
+      "kind": "achievements",
+      "name": "Half the horizon",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "71c6d7e607e9c02171cfbd215ed5231d8209c086e4dfa8f7cdacb22d2401fd58",
+      "png512_sha256": "2323782ac3f8ae1a814735bddfbf168af046e6eb846782a7ce9b9693e45c68e1",
+      "prompt_sha256": "87e728fee9941277d7b8259f3284af5d92884e2e99be33e7cb9bbbd76cf13a19",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/levels_50.png",
+      "prompt": "source_art/round-two/prompts/levels_50.txt",
+      "outputs": [
+        {
+          "file": "achievements/levels_50.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "levels_75",
+      "kind": "achievements",
+      "name": "Storm walker",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "99f0a2328c1c3aa2ecca3e1b36d429346ce7c1eb813df066c2542623f7c67d5d",
+      "png512_sha256": "390cb71ab18b4134d5a3e8228f0da8a23b557aa501cf6c1e3851b635b2102f1d",
+      "prompt_sha256": "bf693c63cb102c754055853b318d10184762b07a56b5127f666a0d59e75a53da",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/levels_75.png",
+      "prompt": "source_art/round-two/prompts/levels_75.txt",
+      "outputs": [
+        {
+          "file": "achievements/levels_75.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "levels_100",
+      "kind": "achievements",
+      "name": "A quieter frontier",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "985f104a67279e7efe9ef7341f4dca0d0beda46ad8fe84116fc91f50a4965baa",
+      "png512_sha256": "3a932a6237ef871a8d16faf172e7003b04920ae55ae7032629e3dd27ae6954c2",
+      "prompt_sha256": "f79d5afa21b8bd98aa11b79e43d25494bb78ebf49ae48cb4f75a21b7ca6f0502",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/levels_100.png",
+      "prompt": "source_art/round-two/prompts/levels_100.txt",
+      "outputs": [
+        {
+          "file": "achievements/levels_100.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stars_10",
+      "kind": "achievements",
+      "name": "Pocketful of starlight",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "45214208e63dc260854c66731737eefcb76e97c3d2d374473f872d958a9bbca3",
+      "png512_sha256": "110bd68c92740ae8646c5b915ce686979e3e38bac12007039bed90bf32a1f570",
+      "prompt_sha256": "086b5a03b2291b8fe59b66b2d72119c13dc9c8e891ca70149aa39db3fa500fe6",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/stars_10.png",
+      "prompt": "source_art/round-two/prompts/stars_10.txt",
+      "outputs": [
+        {
+          "file": "achievements/stars_10.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stars_100",
+      "kind": "achievements",
+      "name": "Constellation",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "1f438c8a471761f0b065c39bbb366107a068c94d9279c1b76182a06cdf93be09",
+      "png512_sha256": "8ac193bc00df3978f2142082e94ccfe4913c8c2ee7d8fe931e5f4ea95ce5008e",
+      "prompt_sha256": "ea116500004589c226c518b2ac4c342c82b67e2eca90771f9776559a57b3408a",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/stars_100.png",
+      "prompt": "source_art/round-two/prompts/stars_100.txt",
+      "outputs": [
+        {
+          "file": "achievements/stars_100.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stars_300",
+      "kind": "achievements",
+      "name": "Every last star",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "20135f5d6ed1694e10ec7b1ec14cdd1e42c68df2fd047767849760150c580e19",
+      "png512_sha256": "16a640a5c130216e30d45492a23a86d669007d5e873f0818ad01f4dcf1fb9479",
+      "prompt_sha256": "1331e1c0ad4bb06206fc665ad89cffdbaed0501c0e2a564e5a8b6faf6e5e4427",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/stars_300.png",
+      "prompt": "source_art/round-two/prompts/stars_300.txt",
+      "outputs": [
+        {
+          "file": "achievements/stars_300.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "level_3",
+      "kind": "achievements",
+      "name": "Finding your feet",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "0fd83fefb48543428d68c2aae30aba2290933a877fab3b15251aaf46a7b5c671",
+      "png512_sha256": "23fe27688f79c63d4f8ae7f78793c1fd38c93d3fd8df56f5896caeda76572ca1",
+      "prompt_sha256": "cafffa296b0024d3a041864eefbff9999431c0768d7d96c957746cccbeca6e29",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/level_3.png",
+      "prompt": "source_art/round-two/prompts/level_3.txt",
+      "outputs": [
+        {
+          "file": "achievements/level_3.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "level_5",
+      "kind": "achievements",
+      "name": "Seasoned rider",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "de9ccfd87070c5a31e8c45d5b9796657493ad3a6002b3439f6f8170c7a906952",
+      "png512_sha256": "f9c94dd8b826dbfc4524d2480dad4c0aa5c3001018cbb9a593894537023953ac",
+      "prompt_sha256": "236705b63848275648b6c9046aa576e7c2b677613efa88dcc8ea959df5cc2c1e",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/level_5.png",
+      "prompt": "source_art/round-two/prompts/level_5.txt",
+      "outputs": [
+        {
+          "file": "achievements/level_5.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "level_10",
+      "kind": "achievements",
+      "name": "The old hand",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "32de30ef8f26fd09b0d68d5bb95b2a3135b7879f8e6e534370c91d0546762d94",
+      "png512_sha256": "012e59405932f93ca93600c92785491587533b8f2560807134fbeced23f46dad",
+      "prompt_sha256": "68e47983ebf1c4784e76aa8569479598fb48a115c9d4faab911f3860fda85928",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/level_10.png",
+      "prompt": "source_art/round-two/prompts/level_10.txt",
+      "outputs": [
+        {
+          "file": "achievements/level_10.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "survival_60",
+      "kind": "achievements",
+      "name": "One more minute",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "b9eba188077105c4f274735e127dbabc1c1e5ff316097ee00ec2aa0aa835a11a",
+      "png512_sha256": "0b307530f2947cf419fc02a83562817cc730d2547d11622dc8923a437b7919c6",
+      "prompt_sha256": "bd2e01bf829fd5276deeb25464f0e3cc95761710c18888822393508624977a97",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/survival_60.png",
+      "prompt": "source_art/round-two/prompts/survival_60.txt",
+      "outputs": [
+        {
+          "file": "achievements/survival_60.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "survival_180",
+      "kind": "achievements",
+      "name": "Three sunsets",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "2a0f7d0b3b323f9b72738a53b2164f4b6520121a06534f62a8d87dcd162187e6",
+      "png512_sha256": "d95eeafff0791f5ee032c3ab15ae90ed3f92a6867e0e9982ced0d4c539793860",
+      "prompt_sha256": "78de21b3743e2e2e210879ace4da887d556aa3149b48934b0d738d24e2272d8e",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/survival_180.png",
+      "prompt": "source_art/round-two/prompts/survival_180.txt",
+      "outputs": [
+        {
+          "file": "achievements/survival_180.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workshop_8",
+      "kind": "achievements",
+      "name": "A better tomorrow",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "fe556ea236334477be85c6f3c9a9dd76ea1d29983a537908eb54f5a59974d201",
+      "png512_sha256": "51f0ea87b02f4c54e638fbe34ca22c711458000639310f8254d9adba7882e643",
+      "prompt_sha256": "ab561dff3d41fb1516af9083f86dec0aeff521fbeadb8c727b2dd3910e22e0c5",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/workshop_8.png",
+      "prompt": "source_art/round-two/prompts/workshop_8.txt",
+      "outputs": [
+        {
+          "file": "achievements/workshop_8.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "streak_7",
+      "kind": "achievements",
+      "name": "Seven sunrises",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "1ee2d2b320fc46ae71c830545a9d9bee108a465d99fe34fd752e212ee92558ca",
+      "png512_sha256": "fd3b2b3a407fdaa3fee14885fa4b03bd6845fe7d0a6be492951d157702b787b4",
+      "prompt_sha256": "a14745ba49886e8161f2a8fa07a1993d8f4667acc10625547c2cf1b87a9fe1f3",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/streak_7.png",
+      "prompt": "source_art/round-two/prompts/streak_7.txt",
+      "outputs": [
+        {
+          "file": "achievements/streak_7.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eliminations",
+      "kind": "leaderboards",
+      "name": "Frontier eliminations",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "14bda45e856ee1772d983377641077ec1978d438cce551a633fffe66de3dfea3",
+      "png512_sha256": "9eef6a430a121ac527e335cdacbd1a5d924956e7b6fd77e0c5807faf591e754b",
+      "prompt_sha256": "fda20a0ecc77f2e623b1c8d2b141d2b1e14e09b284fe11835e0f6c852f703ba4",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/eliminations.png",
+      "prompt": "source_art/round-two/prompts/eliminations.txt",
+      "outputs": [
+        {
+          "file": "leaderboards/eliminations.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "survival_score",
+      "kind": "leaderboards",
+      "name": "Endless high score",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "69b55255c3b86f69435aaf74d590a832652a6bacbf5a6f38521329633450ad51",
+      "png512_sha256": "3f70d9ed93336088f0011fb3da9ee3b844cc9870b0d605e890af29319d796d82",
+      "prompt_sha256": "97188155b4fcbab38e3fc23ad3371d61ac040eb741971d5c4ea4c1e103b53178",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/survival_score.png",
+      "prompt": "source_art/round-two/prompts/survival_score.txt",
+      "outputs": [
+        {
+          "file": "leaderboards/survival_score.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "campaign_stars",
+      "kind": "leaderboards",
+      "name": "Trail constellations",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "9c57f1272e16b76dc8529b5349004abd80dd0bf443e5bbbc2bb84557a61d4bb8",
+      "png512_sha256": "27751eeac4a1c5c1e342127a83a00b69e0d5def08c0ad6946b68529d25f53448",
+      "prompt_sha256": "db404437cd3a7767970ac71088df16f68c16b274b7b4576d6ec11786d6fd5c47",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/campaign_stars.png",
+      "prompt": "source_art/round-two/prompts/campaign_stars.txt",
+      "outputs": [
+        {
+          "file": "leaderboards/campaign_stars.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "player_level",
+      "kind": "leaderboards",
+      "name": "Seasoned riders",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "5f93c57b113513a6d35483baf13770aafd16d55c03b793133a9c1daa08a8c184",
+      "png512_sha256": "1a3cd9c10a0a1d2d6093c862fc15e347f891fcef036d60b306f5ced2afef5af1",
+      "prompt_sha256": "ebf010b8a90db612f49b2e30d72a40efbce814117e938bd57ac3e35878ba1c62",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/player_level.png",
+      "prompt": "source_art/round-two/prompts/player_level.txt",
+      "outputs": [
+        {
+          "file": "leaderboards/player_level.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "survival_seconds",
+      "kind": "leaderboards",
+      "name": "Longest sunset",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "32edd0040f40050edaa1d09c02b0c640f88081c332a6be9467ada69d41f175de",
+      "png512_sha256": "7f348dd38ab178603a2330575a131ed48a099d9f0d3449bee0df27bdcb4fc4c5",
+      "prompt_sha256": "a0f7b72ce9105f60db8d7a8987aa3583f1c56730b37860fe5962648b9aa491e0",
+      "generator": "built-in imagegen; one distinct call per catalog ID",
+      "visual_review_64_and_512": "PASS: actual64contact sheet and actual512tiles reviewed; clear semantic subject, no clipping or placeholder art",
+      "original": "source_art/round-two/originals/survival_seconds.png",
+      "prompt": "source_art/round-two/prompts/survival_seconds.txt",
+      "outputs": [
+        {
+          "file": "leaderboards/survival_seconds.png",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "app-icon",
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "original_sha256": "b766e8ea213e15c3a7feda24d307d06bd54220dc75adee6cf15363e8aec3b758",
+      "prompt_sha256": "e29ee6dff9c2235c25528b9449a8572544520a2614bb2fcb693981d7f0220116",
+      "generator": "built-in imagegen; one distinct call for this asset",
+      "original": "source_art/round-two/originals/app-icon.png",
+      "prompt": "source_art/round-two/prompts/app-icon.txt",
+      "outputs": [
+        {
+          "file": "app-icon-512.png",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "file": "app-icon-192.png",
+          "size": [
+            192,
+            192
+          ]
+        }
+      ],
+      "visual_review": "PASS: coordinator accepted original; author inspected final app512/64 or feature1024x500 standard packaging"
+    },
+    {
+      "id": "feature",
+      "original_dimensions": [
+        1794,
+        876
+      ],
+      "original_sha256": "603e17bec37b46e689cf98926e066245657daf6980b886b80705e015188b87a4",
+      "prompt_sha256": "a647a4d79195095766107e979e78f78b8865a0f7896aeeb7fd707a7611af42cd",
+      "generator": "built-in imagegen; one distinct call for this asset",
+      "original": "source_art/round-two/originals/feature.png",
+      "prompt": "source_art/round-two/prompts/feature.txt",
+      "outputs": [
+        {
+          "file": "feature-graphic-1024x500.png",
+          "size": [
+            1024,
+            500
+          ]
+        }
+      ],
+      "visual_review": "PASS: coordinator accepted original; author inspected final app512/64 or feature1024x500 standard packaging"
+    }
+  ]
+}

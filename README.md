@@ -42,7 +42,7 @@ Create build/web and build/android first. Android package: `com.ethannyakabuski.
 
 AdMob uses Google's official test IDs. Menus support a banner, every two completed rounds create an interstitial opportunity, and rewarded benefits require the earned-reward callback. Unavailable ads or consent leave normal play usable. Google Play Games uses symbolic achievement/leaderboard maps with empty production IDs and is disabled until the owner configures them. See platform/config.json and docs/PLATFORM_SETUP.md.
 
-Marketing text, icons, feature art and screenshot provenance are in marketing/. The current evidence, limitations and exact next owner actions are in HANDOFF.txt. Production backend testing, human playtesting and Google Play publication are human-owned.
+New illustrated app/feature and all 26 catalog images, exact originals/prompts and source-aligned store copy are in marketing/. The resize-only artwork packer is offline; old screenshot provenance remains dated first-pass evidence until fresh coordinator captures. The current evidence, limitations and exact next owner actions are in HANDOFF.txt. Production backend testing, human playtesting and Google Play publication are human-owned.
 
 ## CI and Web
 

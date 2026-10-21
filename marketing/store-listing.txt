@@ -4,17 +4,17 @@ SHORT DESCRIPTION (69/80 characters)
 Ride a trail of 100 desert challenges, then face an endless frontier.
 
 LONG DESCRIPTION
-The desert has a hundred ways to test an outlaw.
+One trail. A hundred last stands.
 
-The Final Outlaw is a portrait top-down arcade shooter with 100 campaign challenges and an unlimited survival mode. Start with the first tutorial trails, then follow a winding level path through ten chapters of increasingly demanding encounters.
+The Final Outlaw is a portrait top-down frontier monster shooter with 100 campaign stages and endless survival. Fight through ten districts of handcrafted street plans: adobe houses, narrow alleys, road junctions and cover make each saved town a different encounter.
 
-Keep moving with touch-drag controls, auto-aim and a quick dash. Each trail has its own objective: clear the encounter, survive the clock, gather supplies, hold your ground, or defeat a guardian. Familiar enemies become more dangerous as the challenges grow.
+Move with your left thumb and hold the gun control to fire. Assisted targeting follows a visible foe, but every shot is your decision. Your starting magazine holds 20 rounds. Reload deliberately, watch the ammo counter and dash out of danger.
 
-Earn experience, grow your player level, and improve three gear tracks between attempts. Collect campaign stars or step beyond the campaign to see how long your outlaw can last against continuously spawning enemies.
+Fast fragile runners, heavy tanks, ranged attackers and guardians route around town obstacles. Clear encounters, survive the clock, gather supplies, hold your ground or defeat a guardian. Earn campaign stars, experience and equipment between attempts.
 
-Daily quests and a seven-day gift streak keep a little progress moving between sessions. Your campaign and progression save locally, and core play works offline.
+Seven permanent gear tracks improve damage, health, movement speed, magazine capacity, reload speed, dash recovery and armor. Daily quests and a seven-day gift streak offer more progress. Core play and progression save locally and work offline.
 
-The Android edition supports optional rewarded continues or supply rewards and ads at between-round breaks. Google Play Games achievements and leaderboards require sign-in and the owner's final backend configuration. The Web edition remains playable with local progress and Android-service fallbacks.
+Android supports an optional earned continue after a loss, supply rewards and ads at between-round breaks. A continue is granted only after the earned callback and gameplay waits behind the ad endcard. Google Play Games achievements and leaderboards require sign-in and the owner's final backend configuration. The Web edition keeps local play with graceful Android-service fallbacks.
 
 CATEGORY
 GAME_ACTION
@@ -23,4 +23,4 @@ SUGGESTED TAGS
 Action, Arcade, Shooter, Single player, Offline
 
 PUBLICATION NOTE
-This is store copy for the implemented candidate, not a claim of publication or production-service verification. Check feature claims against the final build before uploading. The owner completes backend configuration, final testing, privacy/Data safety declarations, audience/content-rating questionnaires, support/privacy URLs, and Google Play publication.
+Source-aligned store draft, not a production release claim. Check the final native/Web builds and human balance before submitting. Owner configures backend IDs, signing, privacy/Data safety, audience/content rating, support/privacy URLs and Google Play publication.

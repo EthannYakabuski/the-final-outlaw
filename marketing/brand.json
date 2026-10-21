@@ -14,10 +14,10 @@
     "gold": "#E8B86C",
     "accent": "#A28BC4"
   },
-  "strap": "One outlaw. A hundred trails. A longer legend.",
+  "strap": "One trail. A hundred last stands.",
   "feature_chips": [
-    "100 TRAILS",
-    "DODGE",
+    "100 TOWNS",
+    "AIM · FIRE · RELOAD",
     "SURVIVE"
   ],
   "achievements": [
@@ -52,16 +52,16 @@
   ],
   "cards": [
     [
-      "A trail worth following",
-      "Work through 100 campaign challenges across ten chapters, with clear, survival, supply, hold and guardian objectives."
+      "A town around every corner",
+      "Fight through 100 saved town layouts, with adobe houses, roads, alleys and cover across ten districts."
     ],
     [
-      "Keep moving, keep your nerve",
-      "Drag to move, let auto-aim handle the next target, and dash clear when the desert closes in."
+      "Every shot is yours",
+      "Move with your left thumb, hold the gun control to fire, and manage a 20-round starting magazine with a clear reload."
     ],
     [
-      "The frontier keeps going",
-      "Improve your gear and player level, then see how long your outlaw can hold out in unlimited survival."
+      "Gear for the next last stand",
+      "Improve seven gear tracks and face runners, armored tanks, ranged monsters and guardians in campaign or endless survival."
     ]
   ],
   "category": "GAME_ACTION",
@@ -71,5 +71,6 @@
     "Shooter",
     "Single player",
     "Offline"
-  ]
+  ],
+  "artwork": "28 distinct original illustrated assets; originals and prompts in source_art/round-two/"
 }

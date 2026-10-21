@@ -1,20 +1,25 @@
 The Final Outlaw
-One outlaw. A hundred trails. A longer legend.
+One trail. A hundred last stands.
 
-The Final Outlaw is a portrait top-down arcade shooter with 100 campaign challenges and an unlimited survival mode. Start with the first tutorial trails, then follow a winding level path through ten chapters of increasingly demanding encounters.
+One trail. A hundred last stands.
+
+The Final Outlaw is a portrait top-down frontier monster shooter with 100 campaign stages and endless survival. Fight through ten districts of handcrafted street plans: adobe houses, narrow alleys, road junctions and cover make each saved town a different encounter.
+
+Move with your left thumb and hold the gun control to fire. Assisted targeting follows a visible foe, but every shot is your decision. Your starting magazine holds 20 rounds. Reload deliberately, watch the ammo counter and dash out of danger.
+
+Fast fragile runners, heavy tanks, ranged attackers and guardians route around town obstacles. Clear encounters, survive the clock, gather supplies, hold your ground or defeat a guardian. Earn campaign stars, experience and equipment between attempts.
+
+Seven permanent gear tracks improve damage, health, movement speed, magazine capacity, reload speed, dash recovery and armor. Daily quests and a seven-day gift streak offer more progress. Core play and progression save locally and work offline.
 
 THREE SELLING CARDS
-A trail worth following
-Work through 100 campaign challenges across ten chapters, with clear, survival, supply, hold and guardian objectives.
+A town around every corner
+Fight through 100 saved town layouts, with adobe houses, roads, alleys and cover across ten districts.
 
-Keep moving, keep your nerve
-Drag to move, let auto-aim handle the next target, and dash clear when the desert closes in.
+Every shot is yours
+Move with your left thumb, hold the gun control to fire, and manage a 20-round starting magazine with a clear reload.
 
-The frontier keeps going
-Improve your gear and player level, then see how long your outlaw can hold out in unlimited survival.
+Gear for the next last stand
+Improve seven gear tracks and face runners, armored tanks, ranged monsters and guardians in campaign or endless survival.
 
 TECHNICAL INFORMATION
-Made with Godot 4.5.1 Compatibility. Portrait Android is primary; a Web build is provided where feasible. Local saves support offline core play. Android services have graceful Web fallbacks. Original code is Apache-2.0; source-asset/plugin notices are preserved. Google Play Games and production ads require the owner's final configuration.
-
-FUTURE CONTENT IDEA (NOT IMPLEMENTED)
-The Dustline Express: a train-robber frontier chapter with new challenge objectives.
+Godot4.5.1 Compatibility; Android primary and Web fallback. Local offline progress. Original code/art is Apache-2.0; supplied assets/plugins retain exact third-party notices. Production Android services and signing remain owner configuration. Brand illustrations are not gameplay screenshots.

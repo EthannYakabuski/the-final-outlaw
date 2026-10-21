@@ -31,3 +31,5 @@ CHECKPOINT.txt
 
 # Generated imports for private capture evidence
 /marketing/screenshots/*.png.import
+# Generated imports for preserved illustrated originals
+/marketing/source_art/round-two/**/*.png.import

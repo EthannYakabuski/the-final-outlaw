@@ -1,15 +1,15 @@
-APP ICON
-app-icon-512.png: 512x512 RGB PNG, full-square source artwork. Platform/store supplies display mask.
-app-icon-192.png: 192x192 RGB launcher preview.
-
-FEATURE GRAPHIC
-feature-graphic-1024x500.png: 1024x500 RGB PNG. Original brand illustration; not a gameplay screenshot.
-
-ACHIEVEMENTS AND LEADERBOARDS
-Individual named 512x512 RGB PNGs under achievements/ and leaderboards/. Symbolic keys in store-listing.json must map to final console IDs.
+ILLUSTRATED ROUND TWO ART
+app-icon-512.png:512x512 RGB PNG, full-square illustration. Platform/store applies its mask.
+app-icon-192.png:192x192 RGB launcher preview.
+feature-graphic-1024x500.png:1024x500 RGB illustration with the title THE FINAL OUTLAW.
+21 achievement and 5 leaderboard illustrations: individual 512x512 RGB PNGs, exact catalog keys.
+All 26 badges were visually inspected at actual 64px and 512px. Main icon and feature originals were separately inspected by the coordinator. These illustrations are not gameplay screenshots.
 
 REBUILD
-Run python generate_assets.py from this marketing directory with Pillow installed in the existing environment. It reads brand.json and ../game/catalog.json when present; it does not use the network. source_art/ retains the small source extracts needed to regenerate this game artwork. Source fonts are read from the installed Windows font library for rendering and are not redistributed.
+Run python generate_assets.py with Pillow. It validates preserved original/prompt hashes and performs only RGB conversion and standard LANCZOS resizing. It neither calls an image service nor recreates the old procedural artwork. source_art/round-two/ retains 28 distinct imagegen originals and their exact prompts. Existing source_art provenance remains intact. The runtime launcher uses the same512 image at ../platform/app-icon-512.png; the packaging command intentionally does not modify files outside marketing/.
+
+SCREENSHOTS / CURRENT NATIVE GATE
+screenshots/ retains original first-pass native evidence. Those images verify only the APK identified by their capture manifest. Fresh Round Two captures and native QA are pending coordinator export/testing. Do not relabel or edit old evidence to claim current gameplay.
 
 LICENSING
-Generated branding/code is part of the original Apache-2.0 project work. Supplied Kenney source art remains under its own provenance/notices. Preserve source_art notices and the root project notices.
+Original illustrated artwork and code are Apache-2.0 project work. Supplied Kenney and Creature Mixer assets retain their own exact notices/terms under LICENSES/. No supplied source notice is replaced by the original-art license.
