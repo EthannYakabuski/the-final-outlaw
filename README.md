@@ -6,7 +6,9 @@ A portrait western shooter with a 100-level campaign, tutorial opening, distinct
 
 ## Play
 
-Choose a campaign challenge or endless survival, move using the lower touch area and use your available combat actions. Complete objectives, collect upgrades and return to the campaign trail.
+Choose a campaign challenge or endless survival. Move with your left thumb and hold the gun button to shoot; targeting assists toward a visible foe. The starting magazine holds 20 rounds. Tap RELOAD, or keep firing when empty to start reloading. DASH evades danger. Keyboard: WASD/arrows move, J fires, R reloads, Space dashes and Escape pauses.
+
+The 100 campaign stages have saved town street plans with buildings, doors, paths and cover. Fast fragile runners, heavy tanks, ranged attackers and guardians route around obstacles. Seven equipment tracks improve damage, health, speed, magazine capacity, reload speed, dash recovery and armor. Existing campaign progress and the original three upgrade tracks remain compatible.
 
 Touch/mouse portrait play and offline local saves are supported. Android is the primary target; Web retains gameplay and saves when Android services are unavailable. Browser play never grants pretend ad rewards.
 
@@ -16,7 +18,7 @@ This game folder is the canonical Git working copy for [The Final Outlaw](https:
 
 Verified pre-consolidation public baseline: `41aa358d6bd765e90dcb28e2309dfbfa8cece0dc`.
 [Hosted build/test run](https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39529171557): **PASS** on that exact commit.
-Later documentation commits require their own CI result; this dated result does not verify later binaries.
+Later commits require their own CI result; this dated result does not verify later binaries. The later documentation run39543094868 reproduced an audio shutdown ownership failure. Round Two adds an owned audio drain before scene deletion/exit; isolated active-audio regressions pass. A new hosted CI result is still required for the source changes.
 
 `game/catalog.json` defines 21 achievements and 5 leaderboards. `platform/config.json` maps their symbolic keys to owner-supplied console IDs; the numeric Play Games game ID must also match `export_presets.cfg`. See native setup for the separate AdMob manifest setting and the development test-ID rules.
 

@@ -54,6 +54,7 @@ func fingerprint() -> String:
 	return JSON.stringify({"elapsed": b.elapsed, "health": b.health, "invincible": b.invincible,
 		"player": b.player, "result": b.result, "revived": b.revived, "score": b.score,
 		"enemies": b.enemies, "bullets": b.bullets, "pickups": b.pickups,
+		"ammo":b.ammo,"reload":b.reload_time,
 		"spawn": b.spawn_timer, "fire": b.fire_timer, "dash": b.dash_cooldown,
 		"rapid": b.rapid_time, "spread": b.spread_time, "shield": b.shield_time,
 		"rng": b.rng.state, "deadline": b.level.time_limit})
@@ -66,6 +67,7 @@ func fresh_lost(level: int = 1) -> void:
 	game.application_suspended = false
 	game._discard_next_combat_delta = false
 	game._waiting_for_neutral_movement = false
+	game._waiting_for_neutral_fire = false
 	game.reward_pending = false
 	game.frame_count = 10
 	game._start_level(level, false)
@@ -112,9 +114,16 @@ func run() -> void:
 	game.joystick_active = true
 	game.joystick_index = 7
 	game.dash_request = true
+	game.fire_held = true
+	game.fire_request = true
+	game.reload_request = true
 	for frame in range(90): game._process(1.0)
 	check(fingerprint() == frozen, "ninety covered seconds preserve all combat state and revive protection")
 	check(not game.joystick_active and game.joystick_index == -1 and not game.dash_request, "coverage clears queued joystick and dash")
+	check(not game.fire_held and not game.fire_request and not game.reload_request,"coverage clears held/queued gun and reload input")
+	game.fire_button.button_down.emit()
+	game.reload_button.pressed.emit()
+	check(not game.fire_held and not game.reload_request and fingerprint()==frozen,"covered gun/reload buttons cannot shoot, reload or consume ammo")
 	var space := InputEventKey.new()
 	space.keycode = KEY_SPACE
 	space.pressed = true

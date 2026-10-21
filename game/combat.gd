@@ -1,14 +1,15 @@
 extends RefCounted
 ## Deterministic combat simulation, shared by the running game and model tests.
 
+const Town = preload("res://game/town.gd")
 const ARENA = Rect2(22, 140, 496, 608)
 const TYPES = {
-	"drifter": {"speed": 43.0, "hp": 9.0, "damage": 9.0, "sprite": 4, "shot": 0.0},
-	"runner": {"speed": 91.0, "hp": 6.0, "damage": 7.0, "sprite": 0, "shot": 0.0},
-	"gunner": {"speed": 32.0, "hp": 11.0, "damage": 9.0, "sprite": 12, "shot": 2.7},
-	"tank": {"speed": 28.0, "hp": 31.0, "damage": 15.0, "sprite": 8, "shot": 0.0},
-	"sniper": {"speed": 22.0, "hp": 13.0, "damage": 15.0, "sprite": 14, "shot": 3.8},
-	"boss": {"speed": 26.0, "hp": 95.0, "damage": 18.0, "sprite": 13, "shot": 2.4}
+	"drifter": {"speed": 64.0, "hp": 18.0, "damage": 9.0, "sprite": 4, "shot": 0.0},
+	"runner": {"speed": 128.0, "hp": 12.0, "damage": 7.0, "sprite": 0, "shot": 0.0},
+	"gunner": {"speed": 52.0, "hp": 25.0, "damage": 9.0, "sprite": 12, "shot": 2.7},
+	"tank": {"speed": 41.0, "hp": 68.0, "damage": 15.0, "sprite": 8, "shot": 0.0},
+	"sniper": {"speed": 43.0, "hp": 29.0, "damage": 15.0, "sprite": 14, "shot": 3.8},
+	"boss": {"speed": 40.0, "hp": 200.0, "damage": 18.0, "sprite": 13, "shot": 2.4}
 }
 var level: Dictionary = {}
 var stats: Dictionary = {}
@@ -22,6 +23,10 @@ var pickups: Array[Dictionary] = []
 var particles: Array[Dictionary] = []
 var events: Array[Dictionary] = []
 var obstacles: Array[Rect2] = []
+var town: Dictionary = {}
+var navigation: AStarGrid2D = AStarGrid2D.new()
+var free_cells: Array[Vector2i] = []
+var edge_points: Array[Vector2] = []
 var elapsed: float = 0.0
 var kills: int = 0
 var supplies: int = 0
@@ -29,6 +34,10 @@ var hold_time: float = 0.0
 var score: int = 0
 var result: String = ""
 var fire_timer: float = 0.0
+var magazine: int = 20
+var ammo: int = 20
+var reload_time: float = 0.0
+var reload_duration: float = 1.65
 var spawn_timer: float = 0.0
 var invincible: float = 0.0
 var dash_cooldown: float = 0.0
@@ -55,24 +64,68 @@ func start(definition: Dictionary, player_stats: Dictionary, seed_value: int = 1
 	rng.seed = seed_value
 	max_health = float(stats.get("health", 100.0))
 	health = max_health
+	magazine = int(stats.get("magazine", 20))
+	ammo = magazine
+	reload_duration = float(stats.get("reload_seconds", 1.65))
 	survival = endless
 	_build_obstacles()
 	if str(level.get("mode", "clear")) == "supply":
 		for i in range(3):
-			pickups.append({"p": Vector2(105 + i * 165, 355 + (i % 2) * 140), "kind": "supply", "life": 600.0})
+			pickups.append({"p": _free_point(Vector2(105 + i * 165, 355 + (i % 2) * 140)), "kind": "supply", "life": 600.0})
 	spawn_timer = 2.0 if int(level.get("id", 1)) < 3 else 0.8
 
 func _build_obstacles() -> void:
-	var shape: int = int(level.get("layout", 0))
-	for point in [[110, 290], [365, 310], [125, 620], [380, 610]]:
-		var offset: int = (shape * 17 + int(point[0])) % 35
-		obstacles.append(Rect2(float(point[0] + offset), float(point[1]), 38.0, 38.0))
-	if shape % 3 == 1:
-		obstacles.append(Rect2(228.0, 220.0, 84.0, 28.0))
-	if shape % 3 == 2:
-		obstacles.append(Rect2(225.0, 658.0, 90.0, 28.0))
+	town = Town.for_stage(int(level.get("id",1)) if int(level.get("id",1))>0 else 1+int(rng.seed)%100)
+	for parcel in town.buildings: obstacles.append(Town.rectangle(parcel))
+	for cell in town.cover: obstacles.append(Rect2(Town.center(cell)-Vector2(12,12),Vector2(24,24)))
+	navigation.region = Rect2i(0,0,48,58)
+	navigation.cell_size = Vector2(10,10)
+	navigation.offset = ARENA.position+Vector2(15,15)
+	navigation.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
+	navigation.update()
+	for y in range(58):
+		for x in range(48):
+			var cell := Vector2i(x,y)
+			var point := navigation.get_point_position(cell)
+			var solid := blocked(point,15.0) or not ARENA.grow(-15).has_point(point)
+			navigation.set_point_solid(cell,solid)
+			if not solid:
+				free_cells.append(cell)
+				if x==0 or x==46 or y==0 or y==57: edge_points.append(point)
+	player = _free_point(player)
 
-func step(delta: float, movement: Vector2, request_dash: bool = false) -> void:
+func _nearest_cell(point: Vector2) -> Vector2i:
+	var local := (point-navigation.offset)/navigation.cell_size
+	var cell := Vector2i(clampi(roundi(local.x),0,47),clampi(roundi(local.y),0,57))
+	if not navigation.is_point_solid(cell): return cell
+	var best := free_cells[0]
+	var distance := INF
+	for candidate in free_cells:
+		var d := navigation.get_point_position(candidate).distance_squared_to(point)
+		if d<distance: distance=d;best=candidate
+	return best
+
+func _free_point(point: Vector2) -> Vector2:
+	return navigation.get_point_position(_nearest_cell(point))
+
+func actor_line_clear(origin: Vector2,target: Vector2) -> bool:
+	var steps := maxi(1,ceili(origin.distance_to(target)/7.0))
+	for i in range(1,steps+1):
+		var point := origin.lerp(target,float(i)/steps)
+		if blocked(point,14.0) or not ARENA.grow(-14.0).has_point(point): return false
+	return true
+
+func route(origin: Vector2,target: Vector2) -> PackedVector2Array:
+	return navigation.get_point_path(_nearest_cell(origin),_nearest_cell(target))
+
+func route_direction(origin: Vector2,target: Vector2) -> Vector2:
+	if actor_line_clear(origin,target): return origin.direction_to(target)
+	var points := route(origin,target)
+	for point in points:
+		if origin.distance_to(point)>7.0: return origin.direction_to(point)
+	return Vector2.ZERO
+
+func step(delta: float, movement: Vector2, request_dash: bool = false, request_fire: bool = false, request_reload: bool = false) -> void:
 	events.clear()
 	if not result.is_empty():
 		return
@@ -89,7 +142,7 @@ func step(delta: float, movement: Vector2, request_dash: bool = false) -> void:
 		last_move = movement.normalized()
 	if request_dash and dash_cooldown <= 0.0:
 		dash_time = 0.2
-		dash_cooldown = 2.1
+		dash_cooldown = float(stats.get("dash_cooldown", 2.1))
 		invincible = maxf(invincible, 0.3)
 		dash_direction = last_move
 		events.append({"kind": "dash", "p": player})
@@ -102,9 +155,17 @@ func step(delta: float, movement: Vector2, request_dash: bool = false) -> void:
 		boss_spawned = true
 	_spawn_wave()
 	_update_enemies(delta)
-	fire_timer -= delta
-	if fire_timer <= 0.0:
-		_fire()
+	fire_timer = maxf(0.0, fire_timer - delta)
+	if reload_time > 0.0:
+		reload_time = maxf(0.0, reload_time - delta)
+		if reload_time <= 0.0:
+			ammo = magazine
+			events.append({"kind":"reload_ready", "p":player})
+	elif request_reload and ammo < magazine:
+		begin_reload()
+	elif request_fire and fire_timer <= 0.0:
+		if ammo > 0: _fire()
+		else: begin_reload()
 	_update_bullets(delta)
 	_update_pickups(delta)
 	_update_particles(delta)
@@ -147,7 +208,7 @@ func _spawn_wave() -> void:
 	spawn_timer = maxf(0.4, gap / ramp)
 
 func hold_center() -> Vector2:
-	return Vector2(270.0 + float(int(level.get("layout", 0)) % 3 - 1) * 28.0, 455.0)
+	return _free_point(Vector2(270.0 + float(int(level.get("layout", 0)) % 3 - 1) * 28.0, 455.0))
 
 func move_actor(origin: Vector2, change: Vector2, radius: float) -> Vector2:
 	var target: Vector2 = origin
@@ -168,14 +229,7 @@ func blocked(point: Vector2, radius: float) -> bool:
 	return false
 
 func _edge_spawn() -> Vector2:
-	var side: int = rng.randi_range(0, 3)
-	if side == 0:
-		return Vector2(rng.randf_range(45, 495), 158)
-	if side == 1:
-		return Vector2(rng.randf_range(45, 495), 728)
-	if side == 2:
-		return Vector2(40, rng.randf_range(180, 710))
-	return Vector2(500, rng.randf_range(180, 710))
+	return edge_points[rng.randi_range(0,edge_points.size()-1)]
 
 func _spawn_enemy(kind: String, point: Vector2) -> void:
 	if not TYPES.has(kind):
@@ -189,7 +243,7 @@ func _spawn_enemy(kind: String, point: Vector2) -> void:
 	if rule == "armored": health_multiplier *= 1.25
 	var hp: float = float(info.hp) * health_multiplier
 	var enemy_speed: float = float(info.speed) * minf(1.7, 1.0 + difficulty * 0.04) * (1.2 if rule == "swift" else 1.0)
-	enemies.append({"p": point, "kind": kind, "hp": hp, "max_hp": hp, "speed": enemy_speed, "damage": float(info.damage) * minf(2.0, 1.0 + difficulty * 0.07), "timer": rng.randf_range(0.8, 2.0), "flash": 0.0})
+	enemies.append({"p": point, "kind": kind, "hp": hp, "max_hp": hp, "speed": enemy_speed, "damage": float(info.damage) * minf(2.0, 1.0 + difficulty * 0.07), "timer": rng.randf_range(0.8, 2.0), "flash": 0.0, "path":PackedVector2Array(), "repath":0.0, "skin":rng.randi_range(0,1)})
 
 func _update_enemies(delta: float) -> void:
 	for enemy in enemies:
@@ -198,15 +252,25 @@ func _update_enemies(delta: float) -> void:
 		var distance: float = point.distance_to(player)
 		var info: Dictionary = TYPES[str(enemy.kind)]
 		var wanted: Vector2 = direction
-		if float(info.shot) > 0.0 and distance < 205.0:
-			wanted = direction.rotated(PI * 0.5) * 0.45 if distance > 100.0 else -direction
-		var next: Vector2 = move_actor(point, wanted * float(enemy.speed) * delta, 14.0)
-		if next.distance_to(point) < 0.02:
-			next = move_actor(point, wanted.rotated(PI * 0.5) * float(enemy.speed) * delta, 14.0)
+		var visible := actor_line_clear(point,player)
+		if visible and float(info.shot)>0.0 and distance<205.0:
+			wanted = direction.rotated(PI*0.5)*0.55 if distance>125.0 else -direction
+		if not visible or blocked(point+wanted*20.0,14.0):
+			enemy.repath = float(enemy.repath)-delta
+			if float(enemy.repath)<=0.0 or enemy.path.is_empty():
+				enemy.path = route(point,player)
+				enemy.repath = 0.35
+			while not enemy.path.is_empty() and point.distance_to(enemy.path[0])<8.0:
+				enemy.path.remove_at(0)
+			wanted = point.direction_to(enemy.path[0]) if not enemy.path.is_empty() else Vector2.ZERO
+		else:
+			enemy.path = PackedVector2Array()
+		var next: Vector2 = move_actor(point,wanted*float(enemy.speed)*delta,14.0)
+
 		enemy.p = next
 		enemy.flash = maxf(0.0, float(enemy.flash) - delta)
 		enemy.timer = float(enemy.timer) - delta
-		if float(info.shot) > 0.0 and float(enemy.timer) <= 0.0 and distance < 470.0:
+		if float(info.shot) > 0.0 and float(enemy.timer) <= 0.0 and distance < 470.0 and line_clear(next,player):
 			enemy.timer = float(info.shot) * (0.72 if str(level.get("rule", "")) == "quickdraw" else 1.0)
 			var angles: Array = [-0.25, 0.0, 0.25] if str(enemy.kind) == "boss" or str(level.get("rule", "")) == "crossfire" else [0.0]
 			for offset in angles:
@@ -223,14 +287,20 @@ func _fire() -> void:
 		if test_distance < distance and line_clear(player, enemy.p):
 			distance = test_distance
 			closest = enemy
-	if closest.is_empty():
-		return
-	aim = player.direction_to(closest.p)
+	if not closest.is_empty(): aim = player.direction_to(closest.p)
+	elif last_move.length() > 0.1: aim = last_move
+	ammo -= 1
 	var angles: Array = [-0.16, 0.0, 0.16] if spread_time > 0.0 else [0.0]
 	for offset in angles:
-		bullets.append({"p": player + aim * 18, "v": aim.rotated(float(offset)) * 520.0, "enemy": false, "damage": float(stats.get("damage", 5.0)), "life": 1.0})
+		bullets.append({"p": player + aim * 10, "v": aim.rotated(float(offset)) * 520.0, "enemy": false, "damage": float(stats.get("damage", 5.0)), "life": 1.0})
 	fire_timer = float(stats.get("fire_interval", 0.36)) * (0.5 if rapid_time > 0.0 else 1.0)
 	events.append({"kind": "shot", "p": player})
+
+func begin_reload() -> bool:
+	if reload_time > 0.0 or ammo >= magazine: return false
+	reload_time = reload_duration
+	events.append({"kind":"reload", "p":player})
+	return true
 
 func line_clear(origin: Vector2, target: Vector2) -> bool:
 	var length: float = origin.distance_to(target)
@@ -239,32 +309,60 @@ func line_clear(origin: Vector2, target: Vector2) -> bool:
 		if blocked(origin.lerp(target, float(i) / steps), 0.0): return false
 	return true
 
-func _update_bullets(delta: float) -> void:
-	for i in range(bullets.size() - 1, -1, -1):
-		var bullet: Dictionary = bullets[i]
-		bullet.p = Vector2(bullet.p) + Vector2(bullet.v) * delta
-		bullet.life = float(bullet.life) - delta
-		var remove: bool = float(bullet.life) <= 0.0 or not ARENA.grow(30).has_point(bullet.p)
-		for wall in obstacles:
-			if wall.has_point(bullet.p):
-				remove = true
-		if not remove and bool(bullet.enemy):
-			if Vector2(bullet.p).distance_to(player) < 16:
-				_damage(float(bullet.damage))
-				remove = true
-		elif not remove:
-			for index in range(enemies.size() - 1, -1, -1):
-				var enemy: Dictionary = enemies[index]
-				if Vector2(bullet.p).distance_to(enemy.p) < (27.0 if str(enemy.kind) == "boss" else 18.0):
-					enemy.hp = float(enemy.hp) - float(bullet.damage)
-					enemy.flash = 0.11
-					remove = true
-					_burst(enemy.p, Color("f5d486"), 3)
-					if float(enemy.hp) <= 0.0:
-						_defeat(index)
-					break
-		if remove:
+func _segment_circle_t(origin:Vector2,end:Vector2,center:Vector2,radius:float) -> float:
+	var direction:=end-origin
+	var offset:=origin-center
+	var c:=offset.length_squared()-radius*radius
+	if c<=0.0:return 0.0
+	var a:=direction.length_squared()
+	if a<0.00001:return INF
+	var b:=offset.dot(direction)
+	var discriminant:=b*b-a*c
+	if discriminant<0.0:return INF
+	var time:=(-b-sqrt(discriminant))/a
+	return time if time>=0.0 and time<=1.0 else INF
+
+func _segment_wall_t(origin:Vector2,end:Vector2,wall:Rect2) -> float:
+	var direction:=end-origin
+	var near:=0.0
+	var far:=1.0
+	for axis in range(2):
+		if absf(direction[axis])<0.00001:
+			if origin[axis]<wall.position[axis] or origin[axis]>wall.end[axis]:return INF
+		else:
+			var first:float=(wall.position[axis]-origin[axis])/direction[axis]
+			var second:float=(wall.end[axis]-origin[axis])/direction[axis]
+			near=maxf(near,minf(first,second));far=minf(far,maxf(first,second))
+			if near>far:return INF
+	return near
+
+func _update_bullets(delta:float) -> void:
+	for i in range(bullets.size()-1,-1,-1):
+		var bullet:Dictionary=bullets[i]
+		var origin:Vector2=bullet.p
+		var end:Vector2=origin+Vector2(bullet.v)*delta
+		bullet.life=float(bullet.life)-delta
+		var nearest:=INF
+		var hit_enemy:=-1
+		for wall in obstacles:nearest=minf(nearest,_segment_wall_t(origin,end,wall))
+		if bool(bullet.enemy):
+			var time:=_segment_circle_t(origin,end,player,16.0)
+			if time<nearest:nearest=time;hit_enemy=-2
+		else:
+			for index in range(enemies.size()):
+				var enemy:Dictionary=enemies[index]
+				var time:=_segment_circle_t(origin,end,enemy.p,27.0 if str(enemy.kind)=="boss" else 18.0)
+				if time<nearest:nearest=time;hit_enemy=index
+		bullet.p=origin.lerp(end,nearest) if nearest<=1.0 else end
+		if nearest<=1.0:
+			if hit_enemy==-2:_damage(float(bullet.damage))
+			elif hit_enemy>=0:
+				var enemy:Dictionary=enemies[hit_enemy]
+				enemy.hp=float(enemy.hp)-float(bullet.damage);enemy.flash=.11
+				_burst(enemy.p,Color("f5d486"),3)
+				if float(enemy.hp)<=0.0:_defeat(hit_enemy)
 			bullets.remove_at(i)
+		elif float(bullet.life)<=0.0 or not ARENA.grow(30).has_point(end):bullets.remove_at(i)
 
 func _defeat(index: int) -> void:
 	var enemy: Dictionary = enemies[index]
@@ -284,7 +382,7 @@ func _defeat(index: int) -> void:
 func _damage(amount: float) -> void:
 	if invincible > 0.0 or shield_time > 0.0:
 		return
-	health = maxf(0.0, health - amount)
+	health = maxf(0.0, health - amount * (1.0 - float(stats.get("armor", 0.0))))
 	invincible = 0.7
 	events.append({"kind": "hurt", "p": player})
 	_burst(player, Color("ed8973"), 7)
@@ -366,6 +464,8 @@ func revive() -> bool:
 		if Vector2(enemies[i].p).distance_to(player) < 100:
 			enemies[i].p = _edge_spawn()
 	bullets.clear()
+	ammo = magazine
+	reload_time = 0.0
 	# A timed-out contract needs a real second chance, not an immediate second loss.
 	level.time_limit = maxf(float(level.get("time_limit", 150.0)), elapsed + 30.0)
 	return true

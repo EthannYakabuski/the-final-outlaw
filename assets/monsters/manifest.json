@@ -1,0 +1,110 @@
+[
+  {
+    "file": "dust_rabbit.png",
+    "source_sha256": "b364c0213b7fab4767704c768d4abb8edd00866b57721df3f08b22a15594258a",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "ashplate_rusher.png",
+    "source_sha256": "21f61151c4031f6df7413221a3c3df1160fe68f48bf50a9ea4c341c524408b52",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "rust_rampart.png",
+    "source_sha256": "10d15d10eca74dffb10c4bd2ecf34ef8715ee4595bf21aa69704c68d13f3dc58",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "cinder_sandman.png",
+    "source_sha256": "eb78974cd3e72e7cc591c030b9e1d0905d773a467c9f708e156dadfa2798ad9b",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "goldtongue_seer.png",
+    "source_sha256": "734a6ea5a28b2481c25e4845a521c9cf4c27d498d8855da610d7a1c416f6d2a9",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "ember_bishop.png",
+    "source_sha256": "6d5991458230cd925bca828fd32b4b196c8f78698486ab18abcad5b7a8d61411",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "acorn_king.png",
+    "source_sha256": "2d875d6fe1a7363e75f8b6c482b9e41455a015fe7843abb8b77d58b7ffe8a739",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "rust_moonfang.png",
+    "source_sha256": "b0267f03483562f92170506f3e2fb406f2a852fc76d2c8baa9b68d52abd6b002",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "scarlet_sleepless.png",
+    "source_sha256": "ae3c17fdf59a28325788635ce233e8bb29c1f255b7745eaf7943b2acc0fa4739",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "golden_gnome.png",
+    "source_sha256": "dd84743ee20134701b4b35953e7653e24d94506ae6b4b33b402a28b92cf86475",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "moss_minotaur.png",
+    "source_sha256": "aabab3b5834cc4fd183ead1bf7f2f2a2d6cb107d9493bccee640ee3351e03c4a",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  },
+  {
+    "file": "ember_claw.png",
+    "source_sha256": "0ee0a14470cc3a549f6240aca65cde300c7b422d84ddf1598061ebeb298d3a85",
+    "frames": 4,
+    "source_dimensions": [
+      768,
+      192
+    ]
+  }
+]

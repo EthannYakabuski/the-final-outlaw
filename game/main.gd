@@ -26,12 +26,21 @@ var reward_pending: bool = false
 var textures: Dictionary = {}
 var players: Array[Texture2D] = []
 var enemy_art: Array[Texture2D] = []
+var monster_sheets: Dictionary = {}
+const MONSTER_SKINS = {"drifter":["cinder_sandman","golden_gnome"],"runner":["dust_rabbit","ashplate_rusher"],"tank":["rust_rampart","moss_minotaur"],"gunner":["goldtongue_seer","ember_claw"],"sniper":["scarlet_sleepless","ember_bishop"],"boss":["acorn_king","rust_moonfang"]}
 var weapon: Texture2D
 var sounds: Dictionary = {}
 var music: AudioStreamPlayer
 var hud_health: ProgressBar
 var hud_goal: Label
 var hud_time: Label
+var fire_button: Button
+var reload_button: Button
+var ammo_label: Label
+var fire_held: bool = false
+var fire_request: bool = false
+var reload_request: bool = false
+var _waiting_for_neutral_fire: bool = false
 var dash_button: Button
 var reward_button: Button
 var toast: Label
@@ -58,6 +67,7 @@ var _audio_drained: bool = false
 var _quit_pending: bool = false
 
 func _ready() -> void:
+	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	get_tree().auto_accept_quit = false
 	for arg in OS.get_cmdline_user_args():
 		if arg == "--smoke-test": smoke = true
@@ -71,6 +81,9 @@ func _ready() -> void:
 	catalog = JSON.parse_string(FileAccess.get_file_as_string("res://game/catalog.json"))
 	for file in [55, 59, 60, 61, 62, 63, 64, 65, 68, 77, 80, 81, 82, 83, 84, 87, 105, 122, 155, 172, 173, 174, 175, 176, 192, 193, 202, 203, 217, 218, 220, 222, 225, 226, 227, 228]:
 		textures[file] = load("res://assets/tiles/tile_%04d.png" % file)
+	for file in range(54): textures[file] = load("res://assets/tiles/tile_%04d.png" % file)
+	for names in MONSTER_SKINS.values():
+		for name in names: monster_sheets[name] = load("res://assets/monsters/"+name+".png")
 	for i in range(16):
 		players.append(load("res://assets/players/tile_%04d.png" % i))
 		enemy_art.append(load("res://assets/enemies/tile_%04d.png" % i))
@@ -243,7 +256,7 @@ func _show_home() -> void:
 	_button("Trail journal", Vector2(42, 646), Vector2(220, 54), _show_records)
 	_button("Options", Vector2(278, 646), Vector2(220, 54), _show_options)
 	_label("LEVEL %d   •   %d COINS   •   %d STARS" % [state.player_level(), state.coins, state.stars_total()], Vector2(30, 733), Vector2(480, 32), 18, CREAM, true)
-	_label("Drag to move. Aim is automatic.\nDash through danger, and bring the frontier home.", Vector2(40, 790), Vector2(460, 57), 18, CREAM, true)
+	_label("Move with your left thumb. Hold the gun to shoot.\n20 rounds, then reload. Use cover and dash through danger.", Vector2(40, 790), Vector2(460, 57), 18, CREAM, true)
 	_label("Offline play • Optional online features on Android", Vector2(20, 872), Vector2(500, 27), 14, CREAM, true)
 
 func _show_map() -> void:
@@ -291,21 +304,20 @@ func _show_workshop() -> void:
 	_clear("workshop")
 	_header("The workshop", _show_home)
 	_label("A little better prepared", Vector2(36, 137), Vector2(468, 36), 24)
-	var names: Dictionary = {"power": "Polished revolver", "heart": "Reinforced vest", "boots": "Trail-worn boots"}
-	var desc: Dictionary = {"power": "+1 damage per shot", "heart": "+12 maximum health", "boots": "+8 movement speed"}
-	var index: int = 0
-	for key in ["power", "heart", "boots"]:
-		var y: float = 198 + index * 179
-		_card(Rect2(28, y, 484, 155))
-		_label(names[key], Vector2(47, y + 16), Vector2(310, 34), 24)
-		_label("LEVEL %d / 8   •   %s" % [int(state.upgrades[key]), desc[key]], Vector2(47, y + 62), Vector2(442, 32), 16)
+	var names := {"power":"Polished revolver", "heart":"Reinforced vest", "boots":"Trail boots", "magazine":"Extended cylinder", "reload":"Speed loader", "dash":"Quick spurs", "armor":"Layered armor"}
+	var desc := {"power":"+1 damage", "heart":"+12 health", "boots":"+8 speed", "magazine":"+4 rounds", "reload":"-0.12s reload", "dash":"-0.13s dash recovery", "armor":"3.5% damage reduction"}
+	var index := 0
+	for key in ["power", "heart", "boots", "magazine", "reload", "dash", "armor"]:
+		var y := 185.0 + index * 92.0
+		_card(Rect2(28, y, 484, 82))
+		_label(names[key], Vector2(44,y+8), Vector2(292,29), 22)
+		_label("%d/8  %s" % [int(state.upgrades[key]),desc[key]], Vector2(44,y+43), Vector2(305,26), 16)
 		var cost: int = state.upgrade_cost(key)
-		_button("Upgrade · %d" % cost if cost >= 0 else "Masterwork", Vector2(282, y + 102), Vector2(207, 42), func():
+		_button("%d coins" % cost if cost >= 0 else "MAX", Vector2(354,y+20),Vector2(143,44),func():
 			if state.buy_upgrade(key):
-				_save(); _sync_progress(); _sound("coin"); _show_workshop(), cost < 0 or state.coins < cost)
+				_save(); _sync_progress(); _sound("coin"); _show_workshop(),cost<0 or state.coins<cost)
 		index += 1
-	_label("Earn coins on the trail. No purchase is required.", Vector2(38, 771), Vector2(464, 48), 19, INK, true)
-	_label("PLAYER LEVEL %d   •   %d XP" % [state.player_level(), state.xp], Vector2(40, 824), Vector2(460, 32), 18, TEAL, true)
+	_label("Coins come from play. Your original upgrades are preserved.",Vector2(35,825),Vector2(470,35),16,INK,true)
 
 func _show_rewards() -> void:
 	state.roll_day(_today())
@@ -400,7 +412,7 @@ func _show_options() -> void:
 	_header("A quieter camp", _show_home)
 	_card(Rect2(28, 155, 484, 446))
 	_label("HOW TO RIDE", Vector2(48, 179), Vector2(440, 34), 17, TEAL)
-	_label("Drag your thumb anywhere in the field to move. Your revolver aims at the nearest foe. Tap DASH to slip through a tight spot.\n\nKeyboard: WASD / arrows. SPACE dashes. ESC pauses.\n\nCollect hearts, shields, rapid-fire and fan-shot badges. Amber rings warn before a hazard strikes.", Vector2(48, 228), Vector2(440, 270), 20)
+	_label("Use the left thumb to move. Hold the GUN button to fire; aim assists toward a visible enemy. Each magazine holds 20 rounds. Tap RELOAD before you run dry. DASH slips through danger.\n\nKeyboard: WASD / arrows move. J shoots, R reloads, SPACE dashes. ESC pauses.\n\nCollect hearts, shields, rapid-fire and fan-shot badges. Amber rings warn before a hazard strikes.", Vector2(48, 228), Vector2(440, 270), 20)
 	_button("Sound: " + ("ON" if state.settings.sound else "OFF"), Vector2(48, 523), Vector2(213, 52), func(): state.settings.sound = not state.settings.sound; _save(); _show_options())
 	_button("Music: " + ("ON" if state.settings.music else "OFF"), Vector2(279, 523), Vector2(213, 52), func():
 		state.settings.music = not state.settings.music
@@ -429,7 +441,7 @@ func _start_level(number: int, endless: bool) -> void:
 	_build_hud()
 
 func _build_hud() -> void:
-	_label("TRAIL %03d" % selected_level if selected_level > 0 else "ENDLESS BADLANDS", Vector2(23, 20), Vector2(382, 27), 16, CREAM)
+	_label("TRAIL %03d / %s" % [selected_level,str(battle.town.district).to_upper()] if selected_level > 0 else "ENDLESS BADLANDS", Vector2(23, 20), Vector2(382, 27), 16, CREAM)
 	hud_goal = _label("", Vector2(23, 55), Vector2(410, 37), 21, CREAM)
 	_button("Ⅱ", Vector2(454, 23), Vector2(63, 51), _pause)
 	hud_health = ProgressBar.new()
@@ -444,10 +456,18 @@ func _build_hud() -> void:
 	ui.add_child(hud_health)
 	hud_time = _label("0:00", Vector2(405, 96), Vector2(110, 30), 18, CREAM, true)
 	_label("DRAG TO MOVE", Vector2(26, 902), Vector2(232, 25), 16, CREAM, true)
-	_label("AUTO AIM", Vector2(276, 781), Vector2(238, 24), 16, CREAM, true)
-	dash_button = _button("DASH", Vector2(358, 820), Vector2(145, 70), _request_dash)
+	ammo_label = _label("", Vector2(278,763),Vector2(235,32),20,CREAM,true)
+	fire_button = _button("SHOOT",Vector2(359,805),Vector2(153,89),func():pass)
+	fire_button.icon = weapon
+	fire_button.expand_icon = true
+	fire_button.add_theme_constant_override("icon_max_width",64)
+	fire_button.button_down.connect(_press_fire)
+	fire_button.button_up.connect(func():fire_held = false)
+	reload_button = _button("RELOAD",Vector2(359,908),Vector2(153,40),func():reload_request = true)
+	dash_button = _button("DASH",Vector2(226,839),Vector2(112,61),_request_dash)
+	_update_ammo_hud()
 	if selected_level <= 2 and selected_level > 0:
-		_label(str(battle.level.tip), Vector2(42, 760), Vector2(291, 60), 17, CREAM, true)
+		_label(str(battle.level.tip), Vector2(22, 753), Vector2(224, 65), 15, CREAM, true)
 
 func _pause() -> void:
 	if _external_gameplay_blocked():
@@ -455,7 +475,8 @@ func _pause() -> void:
 		return
 	if screen != "play": return
 	paused = true
-	joystick_active = false
+	_clear_arena_input()
+	_waiting_for_neutral_fire = true
 	_card(Rect2(47, 300, 446, 357))
 	_label("A moment by the fire", Vector2(65, 327), Vector2(410, 50), 29, INK, true)
 	_button("Keep riding", Vector2(79, 408), Vector2(382, 58), func():
@@ -538,7 +559,10 @@ func _process(delta: float) -> void:
 		var movement: Vector2 = _movement()
 		if smoke or not capture_screen.is_empty():
 			movement = Vector2(cos(total_time), sin(total_time)) * 0.45
-		battle.step(1.0 / 60.0 if smoke else delta, movement, dash_request)
+		battle.step(1.0 / 60.0 if smoke else delta, movement, dash_request, _fire_input() or smoke or not capture_screen.is_empty(), reload_request)
+		fire_request = false
+		reload_request = false
+		_update_ammo_hud()
 		dash_request = false
 		for event in battle.events:
 			match str(event.kind):
@@ -578,11 +602,37 @@ func _clear_arena_input() -> void:
 	joystick_index = -1
 	joystick_point = joystick_origin
 	dash_request = false
+	fire_held = false
+	fire_request = false
+	reload_request = false
 
 func _hold_external_gameplay() -> void:
 	_clear_arena_input()
+	_waiting_for_neutral_fire = true
 	_waiting_for_neutral_movement = true
 	_discard_next_combat_delta = true
+
+func _press_fire() -> void:
+	if _external_gameplay_blocked():
+		_hold_external_gameplay()
+		return
+	if screen == "play" and not paused:
+		fire_held = true
+		fire_request = true
+
+func _fire_input() -> bool:
+	var keyboard := Input.is_physical_key_pressed(KEY_J)
+	if _waiting_for_neutral_fire:
+		if not keyboard and not fire_held: _waiting_for_neutral_fire = false
+		return false
+	return fire_held or fire_request or keyboard
+
+func _update_ammo_hud() -> void:
+	if not is_instance_valid(ammo_label) or battle == null: return
+	ammo_label.text = "RELOADING %.1fs" % battle.reload_time if battle.reload_time > 0 else "%02d / %02d ROUNDS" % [battle.ammo,battle.magazine]
+	reload_button.text = "%.1fs" % battle.reload_time if battle.reload_time>0 else "RELOAD"
+	reload_button.disabled = battle.reload_time>0 or battle.ammo==battle.magazine
+	fire_button.modulate = Color(0.65,0.65,0.65) if battle.reload_time>0 else Color.WHITE
 
 func _request_dash() -> void:
 	if _external_gameplay_blocked():
@@ -611,6 +661,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.keycode == KEY_ESCAPE:
 			_back(); get_viewport().set_input_as_handled()
 		if event.keycode == KEY_SPACE: _request_dash()
+		if event.keycode == KEY_R and screen == "play" and not paused: reload_request = true
 	if screen != "play" or paused: return
 	if event is InputEventScreenTouch:
 		if event.pressed and not joystick_active:
@@ -691,11 +742,29 @@ func _draw_arena() -> void:
 	draw_rect(rect, tint)
 	for row in range(19):
 		for col in range(16):
-			var index: int = [64, 64, 64, 65, 64, 55][(row * 17 + col * 11 + int(battle.level.get("layout", 0))) % 6]
-			_tex(index, Rect2(rect.position + Vector2(col * 31, row * 32), Vector2(32, 32)), Color(1, 1, 1, 0.32))
-	for wall in battle.obstacles:
-		draw_rect(Rect2(wall.position + Vector2(3, 5), wall.size), Color(0.2, 0.1, 0.2, 0.25))
-		_tex(220 if int(wall.position.x) % 2 == 0 else 59, wall)
+			_tex(65 if (col*13+row*7+selected_level)%7==0 else 64,Rect2(rect.position+Vector2(col*31,row*32),Vector2(31,32)))
+	for cell in battle.town.roads:
+		var p: Vector2 = Combat.Town.center(cell)-Vector2(15.5,16)
+		_tex(64,Rect2(p,Vector2(31,32)),Color(1.09,1.06,0.99))
+	for prop in battle.town.props:
+		var point: Vector2 = Combat.Town.center([prop.x,prop.y])
+		_tex(int(prop.tile),Rect2(point-Vector2(15.5,16),Vector2(31,32)))
+	for parcel in battle.town.buildings:
+		var footprint: Rect2 = Combat.Town.rectangle(parcel)
+		draw_rect(Rect2(footprint.position+Vector2(4,6),footprint.size),Color(0.20,0.12,0.24,0.28))
+		var roof: int = [0,5,10][int(parcel.roof)]
+		for y in range(int(parcel.h)):
+			for x in range(int(parcel.w)):
+				var tile := roof+19
+				if y==0: tile=roof+(0 if x==0 else 2 if x==int(parcel.w)-1 else 1)
+				elif y==int(parcel.h)-2: tile=roof+(36 if x==0 else 38 if x==int(parcel.w)-1 else 37)
+				elif y==int(parcel.h)-1: tile=77 if x==int(parcel.door) else 55
+				else: tile=roof+(18 if x==0 else 20 if x==int(parcel.w)-1 else 19)
+				_tex(tile,Rect2(footprint.position+Vector2(x*31,y*32),Vector2(31,32)))
+	for cell in battle.town.cover:
+		var point: Vector2 = Combat.Town.center(cell)
+		draw_circle(point+Vector2(3,9),14,Color(0.2,0.1,0.2,0.25))
+		_tex(59,Rect2(point-Vector2(13,13),Vector2(26,26)))
 	if str(battle.level.mode) == "hold":
 		var center: Vector2 = battle.hold_center()
 		draw_circle(center, 66, Color(0.22, 0.6, 0.53, 0.22))
@@ -713,10 +782,12 @@ func _draw_arena() -> void:
 		_tex(icon, Rect2(p - Vector2(18, 18 + sin(total_time * 4) * 2), Vector2(36, 36)))
 	for enemy in battle.enemies:
 		var point: Vector2 = enemy.p
-		var size: float = 64.0 if str(enemy.kind) == "boss" else 42.0
+		var size: float = 66.0 if str(enemy.kind) == "boss" else 50.0 if str(enemy.kind)=="tank" else 43.0
 		draw_circle(point + Vector2(0, size * 0.27), size * 0.26, Color(0.2, 0.1, 0.2, 0.17))
 		var color: Color = Color(1.8, 1.4, 1.4) if float(enemy.flash) > 0 else Color.WHITE
-		draw_texture_rect(enemy_art[int(Combat.TYPES[str(enemy.kind)].sprite)], Rect2(point - Vector2.ONE * size * 0.5, Vector2.ONE * size), false, color)
+		var sheet: Texture2D = monster_sheets[MONSTER_SKINS[str(enemy.kind)][int(enemy.skin)]]
+		var frame := int(total_time*(9.0 if str(enemy.kind)=="runner" else 6.0)+float(enemy.timer))%4
+		draw_texture_rect_region(sheet,Rect2(point-Vector2(size*0.5,size*0.57),Vector2.ONE*size),Rect2(frame*192,0,192,192),color)
 		if float(enemy.hp) < float(enemy.max_hp):
 			draw_rect(Rect2(point + Vector2(-20, -size * 0.62), Vector2(40, 4)), INK)
 			draw_rect(Rect2(point + Vector2(-20, -size * 0.62), Vector2(40 * float(enemy.hp) / float(enemy.max_hp), 4)), Color("edb26c"))

@@ -12,7 +12,7 @@ var campaign_wins: int = 0
 var best_survival: int = 0
 var best_seconds: int = 0
 var completed: Dictionary = {}
-var upgrades: Dictionary = {"power": 0, "heart": 0, "boots": 0}
+var upgrades: Dictionary = {"power": 0, "heart": 0, "boots": 0, "magazine": 0, "reload": 0, "dash": 0, "armor": 0}
 var unlocked: Dictionary = {}
 var day: String = ""
 var login_day: String = ""
@@ -36,7 +36,7 @@ func add_xp(amount: int) -> int:
 	return bonus
 
 func stats() -> Dictionary:
-	return {"health": 100.0 + 12.0 * int(upgrades.heart), "damage": 5.0 + float(upgrades.power), "speed": 165.0 + 8.0 * int(upgrades.boots), "fire_interval": 0.36}
+	return {"health": 100.0 + 12.0 * int(upgrades.heart), "damage": 5.0 + float(upgrades.power), "speed": 165.0 + 8.0 * int(upgrades.boots), "fire_interval": 0.30, "magazine": 20 + 4 * int(upgrades.magazine), "reload_seconds": 1.65 - 0.12 * int(upgrades.reload), "dash_cooldown": 2.1 - 0.13 * int(upgrades.dash), "armor": 0.035 * int(upgrades.armor)}
 
 func upgrade_cost(key: String) -> int:
 	if not upgrades.has(key) or int(upgrades[key]) >= UPGRADE_CAP:
@@ -128,7 +128,7 @@ func reward_crate(today: String) -> bool:
 	return true
 
 func metrics() -> Dictionary:
-	return {"kills": eliminations, "levels": completed.size(), "stars": stars_total(), "level": player_level(), "survival": best_survival, "seconds": best_seconds, "runs": runs, "upgrades": int(upgrades.power) + int(upgrades.heart) + int(upgrades.boots), "streak": streak}
+	return {"kills": eliminations, "levels": completed.size(), "stars": stars_total(), "level": player_level(), "survival": best_survival, "seconds": best_seconds, "runs": runs, "upgrades": _total_upgrades(), "streak": streak}
 
 func data() -> Dictionary:
 	return {"version": VERSION, "coins": coins, "xp": xp, "eliminations": eliminations, "runs": runs, "campaign_wins": campaign_wins, "best_survival": best_survival, "best_seconds": best_seconds, "completed": completed.duplicate(true), "upgrades": upgrades.duplicate(true), "unlocked": unlocked.duplicate(true), "day": day, "login_day": login_day, "streak": streak, "daily": daily.duplicate(true), "daily_claimed": daily_claimed.duplicate(true), "rewarded_day": rewarded_day, "settings": settings.duplicate(true)}
@@ -188,3 +188,8 @@ func _valid_day(value: String) -> String:
 	if year < 1970 or year > 9999 or month < 1 or month > 12: return ""
 	var lengths: Array = [31, 29 if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0) else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 	return value if date >= 1 and date <= int(lengths[month - 1]) else ""
+
+func _total_upgrades() -> int:
+	var total := 0
+	for value in upgrades.values(): total += int(value)
+	return total

@@ -11,7 +11,7 @@ Noto Sans CJK SC Regular: ThirdParty/NOTO-CJK-SC-NOTICE.txt and
 ThirdParty/NOTO-CJK-OFL-1.1.txt (Adobe copyright plus full SIL OFL).
 
 Asset map
-Player/enemy/terrain/weapon art and OGG effects: Kenney Desert Shooter Pack 1.0, CC0. Original trail_theme.wav, icon and code: Apache-2.0. No Creature Mixer runtime artwork identified in the loaded asset paths.
+Player/enemy/terrain/weapon art and OGG effects: Kenney Desert Shooter Pack 1.0, CC0. Original trail_theme.wav, icon and code: Apache-2.0. Twelve supplied Creature Mixer sheets animate the frontier monsters. Their custom terms (NOT CC0) accompany this project at Assets/CREATURE-MIXER-TERMS.txt. See assets/monsters/manifest.json for original sheet hashes.
 Pack notices are reproduced under Assets using relative source paths.
 
 This accompanying bundle must travel with the software when this package is
