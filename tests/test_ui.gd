@@ -130,6 +130,17 @@ func _run() -> void:
 	game._start_level(11,false); game.battle.elapsed = 30
 	game._record_result(false)
 	check(sdk.rounds == rounds_before + 1, "pause abandonment is not a completed-round interstitial")
+	# Reproduce the observed exit ownership: active reward Ogg + looping WAV.
+	game.state.settings.sound = true
+	game._sound("coin")
+	game.music.play()
+	check(game.sounds.coin.playing and game.music.playing, "shutdown fixture actually starts both audio streams")
+	await game.shutdown_audio()
+	check(not game.sounds.coin.playing and game.sounds.coin.stream == null and not game.music.playing and game.music.stream == null, "owned audio releases before scene deletion")
+	game._sound("coin")
+	game._restart_music()
+	check(not game.sounds.coin.playing and not game.music.playing, "shutdown rejects late SFX and music restart callbacks")
+	await game.shutdown_audio()
 	game.queue_free(); await _settle()
 	_restore_test_services()
 	await _settle()

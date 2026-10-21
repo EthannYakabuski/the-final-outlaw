@@ -53,6 +53,9 @@ var capture_path: String = ""
 var capture_level: int = 10
 var capture_done: bool = false
 var smoke: bool = false
+var _audio_shutting_down: bool = false
+var _audio_drained: bool = false
+var _quit_pending: bool = false
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
@@ -82,8 +85,7 @@ func _ready() -> void:
 	music.stream = load("res://assets/audio/trail_theme.wav")
 	music.volume_db = -25
 	add_child(music)
-	music.finished.connect(func():
-		if state.settings.music: music.play())
+	music.finished.connect(_restart_music)
 	if state.settings.music:
 		music.play()
 	service = get_node_or_null("/root/Services")
@@ -518,6 +520,7 @@ func _refresh_reward_button() -> void:
 	reward_button.disabled = not ready
 
 func _process(delta: float) -> void:
+	if _quit_pending: return
 	var covered := _external_gameplay_blocked()
 	var discard_delta := _discard_next_combat_delta
 	if covered:
@@ -561,7 +564,7 @@ func _process(delta: float) -> void:
 		_save()
 	if smoke and frame_count >= 360:
 		print("OUTLAW_RUNTIME_PASS frames=%d" % frame_count)
-		get_tree().quit(0)
+		_quit_cleanly(0)
 	if not capture_screen.is_empty() and not capture_done and frame_count > (210 if capture_screen == "play" else 30):
 		capture_done = true
 		_capture()
@@ -637,7 +640,7 @@ func _back() -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		if battle != null and not result_recorded: _record_result(false)
-		_save(); get_tree().quit()
+		_save(); _quit_cleanly(0)
 	elif what == NOTIFICATION_WM_GO_BACK_REQUEST:
 		_back()
 	elif what == NOTIFICATION_APPLICATION_PAUSED:
@@ -744,7 +747,7 @@ func _tex(index: int, rectangle: Rect2, color: Color = Color.WHITE) -> void:
 		draw_texture_rect(textures[index], rectangle, false, color)
 
 func _sound(key: String) -> void:
-	if state.settings.sound and sounds.has(key):
+	if not _audio_shutting_down and state.settings.sound and sounds.has(key):
 		sounds[key].play()
 
 func _show_toast(message: String) -> void:
@@ -788,14 +791,47 @@ func _capture() -> void:
 	var image = get_viewport().get_texture().get_image()
 	if capture_path.is_empty() or image.is_empty():
 		push_error("Capture requires a rendered viewport and explicit output path")
-		get_tree().quit(1)
+		_quit_cleanly(1)
 		return
 	DirAccess.make_dir_recursive_absolute(capture_path.get_base_dir())
 	var result: int = image.save_png(capture_path)
 	print("OUTLAW_CAPTURE screen=%s level=%d output=%s error=%d" % [capture_screen, capture_level, capture_path, result])
-	get_tree().quit(0 if result == OK else 1)
+	_quit_cleanly(0 if result == OK else 1)
+
+func _restart_music() -> void:
+	if not _audio_shutting_down and state.settings.music:
+		music.play()
+
+func _stop_owned_audio() -> void:
+	_audio_shutting_down = true
+	if is_instance_valid(music) and music.finished.is_connected(_restart_music):
+		music.finished.disconnect(_restart_music)
+	for player in sounds.values():
+		if is_instance_valid(player):
+			player.stop()
+			player.stream = null
+	if is_instance_valid(music):
+		music.stop()
+		music.stream = null
+
+func shutdown_audio() -> void:
+	# AudioServer.stop_playback_stream schedules FADE_OUT_TO_DELETION; stopping
+	# nodes in _exit_tree alone can leave Ogg/WAV playbacks owned by the mixer.
+	# Release our streams while the tree is alive, then give the mixer real time
+	# to consume its stop commands before deleting the scene or quitting.
+	if _audio_drained: return
+	_stop_owned_audio()
+	var drain_seconds := clampf(AudioServer.get_time_to_next_mix() * 3.0, 0.1, 0.25)
+	await get_tree().create_timer(drain_seconds, true, false, true).timeout
+	await get_tree().process_frame
+	_audio_drained = true
+
+func _quit_cleanly(code: int) -> void:
+	if _quit_pending: return
+	_quit_pending = true
+	await shutdown_audio()
+	get_tree().quit(code)
 
 func _exit_tree() -> void:
-	for player in sounds.values():
-		if is_instance_valid(player): player.stop(); player.stream = null
-	if is_instance_valid(music): music.stop(); music.stream = null
+	# Fallback for owners that remove this scene without using shutdown_audio.
+	_stop_owned_audio()
