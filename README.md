@@ -10,6 +10,16 @@ Choose a campaign challenge or endless survival, move using the lower touch area
 
 Touch/mouse portrait play and offline local saves are supported. Android is the primary target; Web retains gameplay and saves when Android services are unavailable. Browser play never grants pretend ad rewards.
 
+## Continue this project
+
+This game folder is the canonical Git working copy for [The Final Outlaw](https://github.com/EthannYakabuski/the-final-outlaw). Open this folder as its own Codex project and use one focused task per update. Read `AGENTS.md`, `HANDOFF.txt` and `docs/PLATFORM_SETUP.md` first; a new task must recover context from these files rather than assume access to an earlier chat. Check existing user changes before editing.
+
+Verified pre-consolidation public baseline: `41aa358d6bd765e90dcb28e2309dfbfa8cece0dc`.
+[Hosted build/test run](https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39529171557): **PASS** on that exact commit.
+Later documentation commits require their own CI result; this dated result does not verify later binaries.
+
+`game/catalog.json` defines 21 achievements and 5 leaderboards. `platform/config.json` maps their symbolic keys to owner-supplied console IDs; the numeric Play Games game ID must also match `export_presets.cfg`. See native setup for the separate AdMob manifest setting and the development test-ID rules.
+
 ## Development
 
 Original code: Apache-2.0. Developer: [EthannYakabuski](https://github.com/EthannYakabuski). Included assets/plugins retain their own licenses and notices.
@@ -34,7 +44,7 @@ Marketing text, icons, feature art and screenshot provenance are in marketing/. 
 
 ## CI and Web
 
-Hosted GitHub Actions imports resources, runs game/service tests, exports Web and an Android debug APK, and deploys Web through Pages. Build outputs, caches and signing keys are excluded from source. Confirm actual run results in HANDOFF.txt; workflow presence alone is not a passing CI claim.
+Hosted GitHub Actions imports resources, runs game/service tests, exports Web and an Android debug APK, and retains export artifacts. Pages deployment remains explicitly disabled. Build outputs, caches and signing keys are excluded from source. Confirm actual run results in HANDOFF.txt; workflow presence alone is not a passing CI claim.
 
 ## Future extension
 
@@ -50,11 +60,9 @@ Android artifact.
 
 ## Public source and deployment status
 
-This repository publishes the existing local-test source package. The recorded HANDOFF and docs describe their dated local verification; they do not establish production service, physical-device, audio, browser or human acceptance.
+The public repository contains source, assets, notices and sanitized verification summaries. Original local QA APKs, raw SDK logs, real saves, signing material and private evidence stay outside tracked public content. Local restored build outputs remain ignored. Hosted export artifacts are separate binaries from the APK named in HANDOFF.txt and have not received that original native QA.
 
-GitHub-hosted build/test/artifact CI is configured. The Pages deployment job is explicitly skipped pending separate authorization; no live Pages site is claimed. No real saves, private coordinator evidence, credentials, signing identities or prebuilt APK/Web exports are committed. Build outputs remain CI artifacts.
-
-Apache-2.0 covers original project work. Third-party assets, fonts, engine and plugins retain their own terms in LICENSES and source notices; where present, Creature Mixer custom terms exclude NFT/blockchain projects and are not CC0.
+Pages remains disabled; no live deployment, Library action or Google Play publication is part of this handoff. Keep the complete third-party notices with redistributed source and builds.
 
 ## Screenshot verification
 
