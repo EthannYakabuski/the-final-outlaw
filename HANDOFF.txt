@@ -1,11 +1,36 @@
-ROUND THREE SOURCE UPDATE - BUILD/NATIVE ACCEPTANCE PENDING
+THE FINAL OUTLAW - ROUND THREE EXPORT CANDIDATE
+Updated2026-10-22. EXPORTS VERIFIED; NATIVE ACCEPTANCE NOT COMPLETE. This is an incremental build receipt, not a completed Round Three gameplay/store handoff.
+
+Runtime/source commit: 5e3588a6540dbc2dc3a64f831a521eb0fc7ebb5f
+Android: build/round-three-5e3588a6-a1/android/the-final-outlaw-debug.apk
+SHA256 F292447F9150695FD6F2FF3BC6A44598A3F630E4BFCF5B811248D0117332296F
+Bytes: 186140886; debug/test build; minAPI24/targetAPI35.
+Web: build/round-three-5e3588a6-a1/web/index.html
+HTML SHA256 4FF830FFA3C1FD3CC913EDB603967BAB5778CC109B3C9B8F4036C7F56CFD9DB5
+PCK SHA256 0961E77FD41C5B24295240607C4C10A4E922901191DCB4A96649420437373645
+Keep the complete Web bundle and matching LICENSE/NOTICE/LICENSES with both exports.
+
+EXACT RUNTIME SOURCE CI: SUCCESS
+https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39793134077
+The completed hosted build/test run matches runtime commit 5e3588a6540dbc2dc3a64f831a521eb0fc7ebb5f. Later documentation commits and hosted artifacts have their own identities; this result does not certify their native behavior.
+
+BUILD BINDING
+Both local exports exited0 with stable before/after runtime inputs, verified frozen committed-source binding, empty strict error/bundle-error lists and complete accompanying notices. They use the pinned committed export settings. Preserved owner working-tree settings and unrelated local files were not injected into the build. A later owner build using changed backend/signing/export settings is a distinct binary requiring its own checks.
+
+NATIVE / REMAINING ACCEPTANCE
+Early attempts on this APK were blocked by task-emulator System UI failure. Its cause is unproved; this does not establish an Outlaw application defect. No Round Three gameplay or screenshots are accepted.
+Affected native gameplay, controls/layout, reward-return, Back/save/offline checks and six genuine screenshots per phone/7-inch/10-inch profile remain pending. Old Round Two APK observations and captures are historical evidence for those binaries only. Interactive Web/WebGL/audio, audible Android output, physical devices/tablets, production backend/services and human balance remain unverified. API24/35 is the tested engine constraint, not current Play-release eligibility.
+No Pages activation, Library action or Google Play publication is included.
+
+ROUND THREE SOURCE BEHAVIOR AND CHECKS
 Enemy health adds15 after existing difficulty/endless/armored scaling: three extra baseline five-damage shots for every archetype. Final enemy movement is1.25x and spawned damage1.15x, applied once to both contact and projectiles before armor. Environmental hazard damage is unchanged. Whole player health is0.60x and speed0.88x at every equipment rank; workshop benefits now show+7.2 health and+7.04 speed. Manual firing, magazines/reload, pathfinding, reward/banking rules and saved ranks remain intact.
 Home/Workshop use compact spacing above the menu banner and actual viewport bottom, preserving fonts/button sizes with scrolling below800 logical units. Home help now has at least72 units for its observed three lines; decorative art follows the compact layout.
-This is source work. The preserved Round Two APK, native evidence and screenshots below remain tied to their original build. Replacement Android/Web artifacts and affected native gameplay/layout checks, six screenshots per profile and hosted exact-commit CI must be accepted separately before Round Three is a complete handoff. Production/backend/auditory/physical-device limitations remain unchanged.
+The verified export candidate above contains these changes. The preserved Round Two APK, native evidence and screenshots below retain their original build scope. Affected native checks and six screenshots per profile remain necessary before Round Three is a complete handoff. Production/backend/auditory/physical-device limitations remain unchanged.
 
 ISOLATED ROUND THREE SOURCE CHECKS
-Godot4.5.1 Windows headless import and all five game suites passed with no strict script/parse/assertion/engine errors or audio-resource leaks observed. 18,980 existing model checks;5,337 Round Three checks;2,508 UI checks;31 fullscreen/audio checks;20 synthetic pointer checks, all zero failures. Service fallback smoke also passed. Each process used separate temporary app-data/pending-service roots. All100 campaign stages remain reachable under the existing maximum-gear/test-invulnerability fixture; both tutorials separately passed their unchanged starting-gear damage-taking checks. The new projectile-count fixture isolates swept hits with direct firing; complete magazine/reload behavior is covered by the unchanged model/input suites. Two initial test-only annotation/reference-arithmetic defects were corrected; prior failed logs are retained privately. No test gate was weakened and no runtime audio behavior changed. Hosted exact-commit Linux CI, GPU/native layouts and human balance remain pending.
+Godot4.5.1 Windows headless import and all five game suites passed with no strict script/parse/assertion/engine errors or audio-resource leaks observed. 18,980 existing model checks;5,337 Round Three checks;2,508 UI checks;31 fullscreen/audio checks;20 synthetic pointer checks, all zero failures. Service fallback smoke also passed. Each process used separate temporary app-data/pending-service roots. All100 campaign stages remain reachable under the existing maximum-gear/test-invulnerability fixture; both tutorials separately passed their unchanged starting-gear damage-taking checks. The new projectile-count fixture isolates swept hits with direct firing; complete magazine/reload behavior is covered by the unchanged model/input suites. Two initial test-only annotation/reference-arithmetic defects were corrected; prior failed logs are retained privately. No test gate was weakened and no runtime audio behavior changed. Exact-runtime hosted Linux CI passed as linked above; native layouts, gameplay and human balance remain pending.
 
+PRESERVED DATED ROUND TWO HANDOFF
 THE FINAL OUTLAW - ROUND TWO LOCAL TEST HANDOFF
 Updated 2026-10-22. Qualified current9673 package for owner local testing; retain all evidence limits below. Production release remains owner work.
 
