@@ -78,6 +78,43 @@ func fresh_lost(level: int = 1) -> void:
 func _initialize() -> void:
 	call_deferred("run")
 
+func _audio_watch() -> Dictionary:
+	# Keep only weak observers; no audio object survives this helper's return.
+	var shot: AudioStreamPlayer = game.sounds["shoot"]
+	return {"start_us": Time.get_ticks_usec(), "player": weakref(shot),
+		"stream": weakref(shot.stream),
+		"playback": weakref(shot.get_stream_playback()) if shot.has_stream_playback() else null}
+
+func _audio_ref_snapshot(observer: Variant) -> Dictionary:
+	var value: Variant = observer.get_ref() if observer != null else null
+	if value == null: return {"alive": false}
+	var snapshot := {"alive": true, "type": value.get_class()}
+	if value is RefCounted:
+		# This includes the temporary reference used only inside this helper.
+		snapshot["refcount_during_observation"] = value.get_reference_count()
+	if value is Resource and value.resource_path.begins_with("res://"):
+		snapshot["source"] = value.resource_path
+	if value is AudioStreamPlayback: snapshot["playing"] = value.is_playing()
+	if value is AudioStreamPlayer:
+		snapshot["playing"] = value.playing
+		snapshot["has_playback"] = value.has_stream_playback()
+		snapshot["stream_is_null"] = value.stream == null
+	value = null
+	return snapshot
+
+func _audio_diagnostic(boundary: String, watch: Dictionary) -> void:
+	# Observations can perturb timing; an exit without leaks is not a repair.
+	var snapshot := {"boundary": boundary,
+		"elapsed_us": Time.get_ticks_usec() - int(watch.start_us),
+		"since_last_mix_s": AudioServer.get_time_since_last_mix(),
+		"to_next_mix_s": AudioServer.get_time_to_next_mix(),
+		"output_latency_s": AudioServer.get_output_latency(),
+		"shoot_cached": ResourceLoader.has_cached("res://assets/audio/shoot.ogg"),
+		"player": _audio_ref_snapshot(watch.player),
+		"stream": _audio_ref_snapshot(watch.stream),
+		"latest_playback": _audio_ref_snapshot(watch.playback)}
+	print("OUTLAW_AUDIO_DIAGNOSTIC " + JSON.stringify(snapshot))
+
 func run() -> void:
 	original_services = root.get_node_or_null("Services")
 	if is_instance_valid(original_services): original_services.name = "ServicesLifecycleTestOriginal"
@@ -220,10 +257,14 @@ func run() -> void:
 	if output != null: output.store_string(JSON.stringify(report, "\t")); output.close()
 	requested_battle = null
 	replacement_battle = null
+	var audio_watch := _audio_watch()
+	_audio_diagnostic("before_shutdown", audio_watch)
 	await game.shutdown_audio()
+	_audio_diagnostic("after_shutdown", audio_watch)
 	game.queue_free()
 	await process_frame
 	game = null
+	_audio_diagnostic("after_game_free", audio_watch)
 	root.remove_child(sdk)
 	sdk.logic.free()
 	sdk.free()
@@ -231,5 +272,7 @@ func run() -> void:
 	if is_instance_valid(original_services): original_services.name = "Services"
 	await process_frame
 	await process_frame
+	_audio_diagnostic("before_quit", audio_watch)
+	audio_watch.clear()
 	print("OUTLAW_FULLSCREEN_CHECKS checks=%d failures=%d" % [checks, failures.size()])
 	quit(0 if failures.is_empty() else 1)
