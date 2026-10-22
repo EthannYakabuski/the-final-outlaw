@@ -1,53 +1,51 @@
 {
-  "schema": "local-test-results-v4",
-  "runtime_commit": "e22050edf4787f550dc74e8b1b8777a00077f661",
-  "status": "QUALIFIED_LOCAL_TEST_PACKAGE_NATIVE_LIMITS_RETAINED",
+  "schema": "local-test-results-v5",
+  "status": "QUALIFIED_ROUND_THREE_LOCAL_TEST_BUILD",
+  "runtime_commit": "5e3588a6540dbc2dc3a64f831a521eb0fc7ebb5f",
   "engine": "Godot4.5.1 Compatibility",
   "android": {
-    "path": "build/round-two-e22050ed-a2/android/the-final-outlaw-debug.apk",
-    "sha256": "9673417D958EAEE02349D8A9299C17DA48EDE8A3FB286D304A334B71E7F47212",
-    "bytes": 186143170,
+    "path": "build/round-three-5e3588a6-a1/android/the-final-outlaw-debug.apk",
+    "sha256": "F292447F9150695FD6F2FF3BC6A44598A3F630E4BFCF5B811248D0117332296F",
+    "bytes": 186140886,
     "min_api": 24,
     "target_api": 35
   },
   "web": {
-    "directory": "build/round-two-e22050ed-a2/web",
-    "html_sha256": "1D2A09B80F4F5DE0BCF90636DCD87AD4F6BAAEBB15BCB94216595D1102442764",
-    "pck_sha256": "0FAA27870214E280CB63C6D2CBE64465FD52278A7000D8C6F305B015435C84EA",
+    "directory": "build/round-three-5e3588a6-a1/web",
+    "html_sha256": "4FF830FFA3C1FD3CC913EDB603967BAB5778CC109B3C9B8F4036C7F56CFD9DB5",
+    "pck_sha256": "0961E77FD41C5B24295240607C4C10A4E922901191DCB4A96649420437373645",
     "interactive_acceptance": false
   },
-  "source_build_binding": "Exact frozen committed Git source/test-build preset verified before/after exports; local preset edit preserved and excluded. Finaldoc sourceZIP uses exact raw committed blobs.",
+  "source_build_binding": "Exact frozen committed runtime inputs/test-build preset verified before and after accepted exports. Owner preset edits preserved and excluded. Final complete source archive must use exact audited Git blobs.",
   "source_tests": {
     "models": 18980,
-    "UI": 1150,
-    "fullscreen_final_stdout_and_exit": 31,
-    "early_focused_JSON_subset": 30,
+    "round_three": 5337,
+    "UI": 2508,
+    "fullscreen_audio": 31,
     "synthetic_pointer": 20,
+    "total_assertions": 26876,
     "services": "PASS",
     "strict_errors": [],
-    "campaign_scope": "100/100 maxgear/test-invulnerable source coverage; opening ordinary-damage tutorial acceptance is separate, human balance remains open.",
-    "historical_GPU_scope": "Earlier29scene/22hint and20Viewport pointer source fixtures remain qualified predecessor evidence; no newauditory or simultaneous nativeMT claim."
+    "campaign_scope": "100/100 campaign reachability uses maximum gear and test invulnerability; starting-gear ordinary-damage tutorial fixtures are separate. Human balance remains unverified."
   },
-  "hosted_CI": {
-    "url": "https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39719414433",
-    "head": "e22050edf4787f550dc74e8b1b8777a00077f661",
-    "conclusion": "SUCCESS",
-    "later_docs_CI": "separate pending identity/result"
+  "runtime_CI": {
+    "url": "https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39793134077",
+    "head": "5e3588a6540dbc2dc3a64f831a521eb0fc7ebb5f",
+    "conclusion": "SUCCESS"
   },
   "native_report": "NATIVE_QA.json",
   "captures": {
-    "count": 9,
-    "manifest": "marketing/screenshots/round-two-9673417d/capture-manifest.json",
-    "scope": "currentmenuviews; footerclippingqualified"
+    "count": 18,
+    "required": "6phone/6logical7inch/6logical10inch",
+    "manifest": "marketing/screenshots/round-three-f292447f/capture-manifest.json",
+    "acceptance": "Qualified independent hash/dimension/profile and complete visual acceptance"
   },
-  "broad_native_log_gate": false,
   "limits": [
-    "Native graceful audio shutdown/resource cleanup was not exercised: AndroidBack returns to Home and force-stop is not a graceful quit.",
-    "Broad native log gate remains false: Chromium cache, AdMob header and VP9 codec diagnostics remain unattributed; scoped logs had no observed Godot script/ObjectDB/resource/audio/VAO, fatal or ANR matches.",
-    "Secondary help/footer text is partly clipped on7-inchHome/Workshop and10-inchHome;10-inchWorkshop main footer is readable but extra lower secondary content is clipped. Primary titles/actions remain usable. This known presentation limit is retained.",
-    "Loaded Home took about23–25seconds in these observations; no performance acceptance.",
-    "No current9673 combat, movement/reload, rewarded/interstitial, earned benefit or offline session was replayed. Older1D73/CFC evidence remains distinct.",
-    "Audio output was disabled; audible Android, physical devices, native simultaneous multitouch, production services/signing/Play, interactive Web and human balance remain unverified.",
-    "MinimumAPI24/targetAPI35 is the tested engine constraint; release-policy verification remains owner work."
-  ]
+    "Native simultaneous two-finger input, audible Android output, physical devices, interactive Web, production services and human balance remain unverified.",
+    "Actual offline remains UNVERIFIED because the validated default network remained active. No new current-build rewarded-ad or graceful native audio exit was exercised; predecessor observations remain separately qualified.",
+    "MinimumAPI24/targetAPI35 is the tested engine constraint; current Play-release eligibility remains owner work."
+  ],
+  "broad_native_log_gate": false,
+  "historical_report": "history/before-round-three-native/LOCAL_TEST_RESULTS.json",
+  "later_documentation_capture_CI": "Track the actual final commit through repository Actions; exact-runtime CI does not certify later commits or native behavior."
 }

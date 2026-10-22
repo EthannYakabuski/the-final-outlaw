@@ -33,3 +33,6 @@ CHECKPOINT.txt
 /marketing/screenshots/*.png.import
 # Generated imports for preserved illustrated originals
 /marketing/source_art/round-two/**/*.png.import
+
+# Generated imports for accepted Round Three raw captures
+/marketing/screenshots/round-three-f292447f/**/*.png.import

@@ -1,36 +1,34 @@
 {
-  "schema": "native-qa-sanitized-v4",
-  "status": "QUALIFIED_CURRENT9673_COMPLETE_ROOT9_ACCEPTED",
-  "runtime_commit": "e22050edf4787f550dc74e8b1b8777a00077f661",
+  "schema": "native-qa-sanitized-v5",
+  "status": "QUALIFIED_ROUND_THREE_LIMITED_NATIVE_AND_18_CAPTURES_ACCEPTED",
+  "runtime_commit": "5e3588a6540dbc2dc3a64f831a521eb0fc7ebb5f",
   "package": "com.ethannyakabuski.finaloutlaw",
-  "source_apk_sha256": "9673417D958EAEE02349D8A9299C17DA48EDE8A3FB286D304A334B71E7F47212",
-  "apk_bytes": 186143170,
-  "current_scope": [
-    "Initially absent package installed once; genuine prior primary/profile-pending files explicitly restored. This is restoration, not retention across a lost emulator session.",
-    "First launch changed only normal UTCday/daily fields. Later stopped-profile/restored-display cold launches preserved all18 banked groups byte-identically.",
-    "Home/Workshop/Campaignmap navigation and AndroidBack; Back returned Home/kept process and save, not graceful quit.",
-    "Nine unchanged current menu views Root-accepted with footer-clipping qualifications. Original display/radio/actual connectivity restored; stopped full backup preserved."
+  "source_apk_sha256": "F292447F9150695FD6F2FF3BC6A44598A3F630E4BFCF5B811248D0117332296F",
+  "apk_bytes": 186140886,
+  "observed_current_scope": [
+    "Genuine main/pending progress explicitly restored before launch after temporary emulator-session loss; restoration, not retention across that host exit.",
+    "Held SHOOT spent ammunition and defeated actual foes. Manual reload entered its countdown; subsequent firing used replenished ammunition.",
+    "Sequential joystick then Dash inputs moved the player; individual Dash distance/cooldown and simultaneous native two-finger input were not separately verified.",
+    "AndroidBack paused live combat. Paused time, health and ammo remained stable through background return and additional waiting.",
+    "Two genuine partial runs banked source-defined rewards once:2foes/17seconds defeat gave4coins/14XP;1foe/9seconds Return to camp gave2coins/7XP. No optional ad button, reward claim or purchase was used; test banners were visible.",
+    "Back/background did not reaward the first bank. That resulting stopped save survived cold launch byte-identically; later observation reached loaded Home. Final second-bank stopped progress and genuine backup were separately verified; no second-bank cold test claimed.",
+    "All18 raw screenshots independently accepted. Important Home/Workshop text and combat controls fit; all10 campaign nodes visible. Generic map/brief save footer is available by normal scrolling.",
+    "Original display/radio settings and actual normal Launcher restored. Game stopped and fresh genuine backup verified."
   ],
-  "saved_groups_checked": 18,
-  "reviewed_guest_screenshot_count": 9,
-  "capture_manifest": "../marketing/screenshots/round-two-9673417d/capture-manifest.json",
-  "campaign_progress_qualification": "Two distinct3-star trails and nine total campaign wins including replays; no newclears/rewards/purchases injected.",
-  "known_ui_limit": "Secondary help/footer text is partly clipped on7-inchHome/Workshop and10-inchHome;10-inchWorkshop main footer is readable but extra lower secondary content is clipped. Primary titles/actions remain usable. This known presentation limit is retained.",
-  "graceful_native_audio_exit": "UNEXERCISED",
+  "reviewed_guest_screenshot_count": 18,
+  "capture_manifest": "../marketing/screenshots/round-three-f292447f/capture-manifest.json",
+  "capture_acceptance": "ACCEPTED_WITH_QUALIFICATIONS",
   "broad_native_log_gate": false,
-  "diagnostics": "Scoped Godot/script/ObjectDB/resource/audio/VAO/fatal/ANR matches absent; unattributed Chromium cache, AdMob header and VP9 codec diagnostics remain. This is not a full native log pass.",
-  "qualified_predecessor": [
-    "Older1D73 affected controls/save/nineviews remain historical.",
-    "CFC169.315-second earned-endcard and offline observations are not current9673 replays."
-  ],
+  "diagnostics": "Bounded final recent-log scan found no script/fatal/leak/resource-shutdown/tree-lifecycle matches; this is not whole-session absence or an entirely clean native gate.",
+  "current_reward_ad_and_offline_scope": "Rewarded-ad presentation and earned benefit were not exercised on this APK. Actual offline UNVERIFIED: disabling-setting/UI observations did not remove the actual validated default network.",
+  "graceful_native_audio_exit": "UNEXERCISED",
   "limits": [
-    "Native graceful audio shutdown/resource cleanup was not exercised: AndroidBack returns to Home and force-stop is not a graceful quit.",
-    "Broad native log gate remains false: Chromium cache, AdMob header and VP9 codec diagnostics remain unattributed; scoped logs had no observed Godot script/ObjectDB/resource/audio/VAO, fatal or ANR matches.",
-    "Secondary help/footer text is partly clipped on7-inchHome/Workshop and10-inchHome;10-inchWorkshop main footer is readable but extra lower secondary content is clipped. Primary titles/actions remain usable. This known presentation limit is retained.",
-    "Loaded Home took about23–25seconds in these observations; no performance acceptance.",
-    "No current9673 combat, movement/reload, rewarded/interstitial, earned benefit or offline session was replayed. Older1D73/CFC evidence remains distinct.",
-    "Audio output was disabled; audible Android, physical devices, native simultaneous multitouch, production services/signing/Play, interactive Web and human balance remain unverified.",
-    "MinimumAPI24/targetAPI35 is the tested engine constraint; release-policy verification remains owner work."
+    "Simultaneous native two-finger control remains UNVERIFIED; sequential single-pointer actions are not proof.",
+    "Audio output was disabled. Audible Android output, physical phones/tablets, interactive Web, production services and human balance remain unverified.",
+    "AndroidBack/menu return and force-stop do not establish graceful audio cleanup.",
+    "MinimumAPI24/targetAPI35 is the engine test constraint; current release-policy verification remains owner work.",
+    "Two bounded sequential-input partial runs do not approve human difficulty; the first upgraded profile lost at2of3 foes."
   ],
-  "historical_report": "history/before-audio-clock-successor/NATIVE_QA.json"
+  "historical_report": "history/before-round-three-native/NATIVE_QA.json",
+  "private_records_distributed": false
 }

@@ -1,0 +1,36 @@
+{
+  "schema": "native-qa-sanitized-v4",
+  "status": "QUALIFIED_CURRENT9673_COMPLETE_ROOT9_ACCEPTED",
+  "runtime_commit": "e22050edf4787f550dc74e8b1b8777a00077f661",
+  "package": "com.ethannyakabuski.finaloutlaw",
+  "source_apk_sha256": "9673417D958EAEE02349D8A9299C17DA48EDE8A3FB286D304A334B71E7F47212",
+  "apk_bytes": 186143170,
+  "current_scope": [
+    "Initially absent package installed once; genuine prior primary/profile-pending files explicitly restored. This is restoration, not retention across a lost emulator session.",
+    "First launch changed only normal UTCday/daily fields. Later stopped-profile/restored-display cold launches preserved all18 banked groups byte-identically.",
+    "Home/Workshop/Campaignmap navigation and AndroidBack; Back returned Home/kept process and save, not graceful quit.",
+    "Nine unchanged current menu views Root-accepted with footer-clipping qualifications. Original display/radio/actual connectivity restored; stopped full backup preserved."
+  ],
+  "saved_groups_checked": 18,
+  "reviewed_guest_screenshot_count": 9,
+  "capture_manifest": "../marketing/screenshots/round-two-9673417d/capture-manifest.json",
+  "campaign_progress_qualification": "Two distinct3-star trails and nine total campaign wins including replays; no newclears/rewards/purchases injected.",
+  "known_ui_limit": "Secondary help/footer text is partly clipped on7-inchHome/Workshop and10-inchHome;10-inchWorkshop main footer is readable but extra lower secondary content is clipped. Primary titles/actions remain usable. This known presentation limit is retained.",
+  "graceful_native_audio_exit": "UNEXERCISED",
+  "broad_native_log_gate": false,
+  "diagnostics": "Scoped Godot/script/ObjectDB/resource/audio/VAO/fatal/ANR matches absent; unattributed Chromium cache, AdMob header and VP9 codec diagnostics remain. This is not a full native log pass.",
+  "qualified_predecessor": [
+    "Older1D73 affected controls/save/nineviews remain historical.",
+    "CFC169.315-second earned-endcard and offline observations are not current9673 replays."
+  ],
+  "limits": [
+    "Native graceful audio shutdown/resource cleanup was not exercised: AndroidBack returns to Home and force-stop is not a graceful quit.",
+    "Broad native log gate remains false: Chromium cache, AdMob header and VP9 codec diagnostics remain unattributed; scoped logs had no observed Godot script/ObjectDB/resource/audio/VAO, fatal or ANR matches.",
+    "Secondary help/footer text is partly clipped on7-inchHome/Workshop and10-inchHome;10-inchWorkshop main footer is readable but extra lower secondary content is clipped. Primary titles/actions remain usable. This known presentation limit is retained.",
+    "Loaded Home took about23–25seconds in these observations; no performance acceptance.",
+    "No current9673 combat, movement/reload, rewarded/interstitial, earned benefit or offline session was replayed. Older1D73/CFC evidence remains distinct.",
+    "Audio output was disabled; audible Android, physical devices, native simultaneous multitouch, production services/signing/Play, interactive Web and human balance remain unverified.",
+    "MinimumAPI24/targetAPI35 is the tested engine constraint; release-policy verification remains owner work."
+  ],
+  "historical_report": "history/before-audio-clock-successor/NATIVE_QA.json"
+}

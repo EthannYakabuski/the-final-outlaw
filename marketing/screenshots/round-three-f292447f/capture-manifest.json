@@ -1,0 +1,301 @@
+{
+  "schema": "native-raw-capture-selection-v3",
+  "game": "The Final Outlaw",
+  "package": "com.ethannyakabuski.finaloutlaw",
+  "runtime_commit": "5e3588a6540dbc2dc3a64f831a521eb0fc7ebb5f",
+  "source_apk_sha256": "F292447F9150695FD6F2FF3BC6A44598A3F630E4BFCF5B811248D0117332296F",
+  "source_apk_bytes": 186140886,
+  "capture_count": 18,
+  "capture_method": "Unmodified genuine Android guest PNGs from ordinary menus and two genuine partial combat runs. No crop, rescale, overlay, fixture state or illustration.",
+  "profile_readbacks": {
+    "phone": {
+      "size": "Physical size:1080x1920; no override",
+      "density": "Physical density:420; no override"
+    },
+    "7-inch": {
+      "size": "Physical size: 1080x1920\nOverride size: 1200x1920",
+      "density": "Physical density: 420\nOverride density: 320"
+    },
+    "10-inch": {
+      "size": "Physical size: 1080x1920\nOverride size: 1600x2560",
+      "density": "Physical density: 420\nOverride density: 300"
+    }
+  },
+  "scope": "One Android11/API30 x86 emulator. Logical phone/7-inch/10-inch profiles are not physical-device/tablet acceptance.",
+  "root_visual_review": "ACCEPTED_WITH_QUALIFICATIONS: all18 raw originals independently reviewed. Important Home/Workshop text and combat controls readable; all10 map nodes visible. Generic campaign/briefing save footer is ordinary scroll content.",
+  "images": [
+    {
+      "file": "phone/01-home.png",
+      "profile": "phone",
+      "view": "home",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "density": 420,
+      "bytes": 149256,
+      "sha256": "234F77F6C9E26E6D9CDAD927A5A08B4886A333BCB8B84590920C24B1D5DADE16",
+      "captured_utc": "2026-10-22T17:50:49.678239+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "phone/02-workshop.png",
+      "profile": "phone",
+      "view": "workshop",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "density": 420,
+      "bytes": 227188,
+      "sha256": "B343B7E35498D13D85384ECDD899FD9F28320D2701F1E5FEAC7BAB668CCAFD3A",
+      "captured_utc": "2026-10-22T17:37:50.071598+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "phone/03-campaign.png",
+      "profile": "phone",
+      "view": "campaign",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "density": 420,
+      "bytes": 148748,
+      "sha256": "FC1270DB1E8868E6347C6437847CD85E5B3D5B353CE23834AA5CDA45FFDD2B31",
+      "captured_utc": "2026-10-22T17:40:26.727837+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "phone/04-briefing.png",
+      "profile": "phone",
+      "view": "briefing",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "density": 420,
+      "bytes": 134611,
+      "sha256": "C8DD9FE3075E781E9927E08DDEF705ED1CF37EF62A38E8ED7217A8C022E547E3",
+      "captured_utc": "2026-10-22T17:41:05.159720+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "phone/05-combat.png",
+      "profile": "phone",
+      "view": "combat",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "density": 420,
+      "bytes": 93434,
+      "sha256": "1AC08F3ACB00B8AEFBEC048B1B22301248277C7F872F56C5B8D8CD6DF8F1A577",
+      "captured_utc": "2026-10-22T17:47:25.597071+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "phone/06-pause.png",
+      "profile": "phone",
+      "view": "pause",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "density": 420,
+      "bytes": 123524,
+      "sha256": "AF62FD430B79C9380C2117F90ABD3E18FDDAC890210F2F40B4BB9E61C6587860",
+      "captured_utc": "2026-10-22T17:46:36.575399+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "7inch/01-home.png",
+      "profile": "7-inch",
+      "view": "home",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "density": 320,
+      "bytes": 136180,
+      "sha256": "C1C41826149769256A02EFF6BF0E34F88CF74E0E441C99F49B68EF23AE93980B",
+      "captured_utc": "2026-10-22T17:51:32.491044+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "7inch/02-workshop.png",
+      "profile": "7-inch",
+      "view": "workshop",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "density": 320,
+      "bytes": 218605,
+      "sha256": "FE8B53016153E79D49A7F512B5ADE19943A25654EC623332433C17D010EC4E44",
+      "captured_utc": "2026-10-22T17:52:05.650338+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "7inch/03-campaign.png",
+      "profile": "7-inch",
+      "view": "campaign",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "density": 320,
+      "bytes": 143229,
+      "sha256": "75E0D76F14746FCBCDDC87E24C17B495D55A082F05C28897BB65162C93C99BFB",
+      "captured_utc": "2026-10-22T17:52:09.642126+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "7inch/04-briefing.png",
+      "profile": "7-inch",
+      "view": "briefing",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "density": 320,
+      "bytes": 134137,
+      "sha256": "9DD9039E7109BBEC5BCB4F9F013AB94408926F2903F4B3F613BE39A27E8942E2",
+      "captured_utc": "2026-10-22T17:52:36.550877+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "7inch/05-combat.png",
+      "profile": "7-inch",
+      "view": "combat",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "density": 320,
+      "bytes": 93484,
+      "sha256": "FA5202332A3CF7DEC19B84BFF9F0E313669EECABAB7CE42C56532BB07B0891B9",
+      "captured_utc": "2026-10-22T17:53:50.523701+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "7inch/06-pause.png",
+      "profile": "7-inch",
+      "view": "pause",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "density": 320,
+      "bytes": 124232,
+      "sha256": "54310BAFBC07209CD5C9ADFC1776A1DE24653F4B7C51F0E2282BD30458B01030",
+      "captured_utc": "2026-10-22T17:53:51.915700+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "10inch/01-home.png",
+      "profile": "10-inch",
+      "view": "home",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "density": 300,
+      "bytes": 189811,
+      "sha256": "FB221131F7D0C8247EA11AE5374D432A7178CD9D3B980604F2D856CA526F8060",
+      "captured_utc": "2026-10-22T18:00:48.488089+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "10inch/02-workshop.png",
+      "profile": "10-inch",
+      "view": "workshop",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "density": 300,
+      "bytes": 306270,
+      "sha256": "975E58E8A07A15F042F053DEB8C445F7B0BAA8938E888957152686A0AC7E9694",
+      "captured_utc": "2026-10-22T18:01:24.179510+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "10inch/03-campaign-scrolled.png",
+      "profile": "10-inch",
+      "view": "campaign-scrolled",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "density": 300,
+      "bytes": 194738,
+      "sha256": "3172AD3279545C87D8D8F6293A795BB9E0F331BE1239DF8C788BC28728B6ADF6",
+      "captured_utc": "2026-10-22T18:04:34.944286+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted ordinary small scroll exposing generic save footer; outer heading legitimately above fold."
+    },
+    {
+      "file": "10inch/04-briefing-scrolled.png",
+      "profile": "10-inch",
+      "view": "briefing-scrolled",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "density": 300,
+      "bytes": 178843,
+      "sha256": "7CDF9801E6BF2EF584630850C6AE55E436B505AD5CC8D6F67EEF7076FE0CC2B6",
+      "captured_utc": "2026-10-22T18:05:50.280369+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted ordinary small scroll exposing generic save footer; outer heading legitimately above fold."
+    },
+    {
+      "file": "10inch/05-combat.png",
+      "profile": "10-inch",
+      "view": "combat",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "density": 300,
+      "bytes": 129930,
+      "sha256": "4925CAE0AA0D4C5131E64803077321280AD28AAAE50AC9668269A6F13A7499D7",
+      "captured_utc": "2026-10-22T17:57:00.578438+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    },
+    {
+      "file": "10inch/06-pause.png",
+      "profile": "10-inch",
+      "view": "pause",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "density": 300,
+      "bytes": 173038,
+      "sha256": "378D1925D46DFF703F27BCB10120744A89F3DD1EFACD0DA5F4EEEEF5EFE5750D",
+      "captured_utc": "2026-10-22T17:57:03.547814+00:00",
+      "raw_guest_png_unchanged": true,
+      "visual_review": "Accepted unchanged native original; important controls/text readable."
+    }
+  ],
+  "progress_qualification": "Frames show genuine evolving progress; no progression or screenshot state was fabricated.",
+  "native_qualification": "Limited affected checks accepted. Actual offline and simultaneous native two-finger input unverified; no new rewarded-ad or graceful-audio-exit exercise.",
+  "private_records_distributed": false
+}
