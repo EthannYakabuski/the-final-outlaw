@@ -218,6 +218,7 @@ func run() -> void:
 	if output != null: output.store_string(JSON.stringify(report, "\t")); output.close()
 	requested_battle = null
 	replacement_battle = null
+	await game.shutdown_audio()
 	game.queue_free()
 	await process_frame
 	game = null
