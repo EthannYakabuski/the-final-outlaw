@@ -93,10 +93,12 @@ func run() -> void:
 	game.set_process(false)
 	root.add_child(game)
 	game.set_process(false)
-	# This headless lifecycle fixture does not exercise or retain audio playback.
+	# Synthetic lifecycle callbacks are not auditory or native SDK acceptance.
+	# Smoke combat can play effects; teardown drains owned players before removal.
 	game.music.stop()
 	game.music.stream = null
 	game.frame_count = 10
+	await process_frame
 	check(game.service == sdk, "no-persistence stub installed before game ready")
 	for flags in [[false, false], [true, false], [false, true], [true, true]]:
 		sdk._reward_showing = flags[0]
