@@ -931,7 +931,10 @@ func shutdown_audio() -> void:
 	if _audio_drained: return
 	_stop_owned_audio()
 	var drain_seconds := clampf(AudioServer.get_time_to_next_mix() * 3.0, 0.1, 0.25)
-	await get_tree().create_timer(drain_seconds, true, false, true).timeout
+	# Frame timers can include time from before creation during a long frame.
+	var deadline_us := Time.get_ticks_usec() + int(drain_seconds * 1000000.0)
+	while Time.get_ticks_usec() < deadline_us:
+		await get_tree().process_frame
 	await get_tree().process_frame
 	_audio_drained = true
 

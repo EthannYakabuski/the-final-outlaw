@@ -259,7 +259,10 @@ func run() -> void:
 	replacement_battle = null
 	var audio_watch := _audio_watch()
 	_audio_diagnostic("before_shutdown", audio_watch)
+	var shutdown_started_us := Time.get_ticks_usec()
 	await game.shutdown_audio()
+	var shutdown_elapsed_us := Time.get_ticks_usec() - shutdown_started_us
+	check(shutdown_elapsed_us >= 100000, "owned audio shutdown preserves its minimum 100 ms of real time")
 	_audio_diagnostic("after_shutdown", audio_watch)
 	game.queue_free()
 	await process_frame
