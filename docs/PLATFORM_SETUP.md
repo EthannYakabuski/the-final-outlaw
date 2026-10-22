@@ -88,3 +88,9 @@ For documentation-only changes, review the diff and links; do not rebuild or ove
 Verified pre-consolidation public baseline: `41aa358d6bd765e90dcb28e2309dfbfa8cece0dc`.
 [Hosted build/test run](https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39529171557): **PASS** on that exact commit.
 Later documentation commits require their own CI result; this dated result does not verify later binaries.
+
+## Current audio-clock successor build binding
+
+Runtime `e22050edf4787f550dc74e8b1b8777a00077f661` passed exact-source hosted CI39719414433. The Android/Web test artifacts were compiled from frozen raw committed Git files, including the committed test-build preset. A separately edited local export preset was preserved and excluded from compilation and source packaging. Keep that local edit; do not reset or stage it merely to make the tree clean. A later owner build using changed IDs/settings is a distinct binary and needs its own verification.
+
+The owned audio drain now measures its existing target against monotonic elapsed time. The31-check fixture verifies the minimum real duration; the early focused-result JSON remains the original30-check subset. Current native Back returns Home and does not exercise graceful audio shutdown. Passing CI does not replace audible Android or graceful-exit verification.

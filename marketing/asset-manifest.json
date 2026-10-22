@@ -369,6 +369,87 @@
     "sha256": "7c877e0f9bb5c9d75548d1960c9c42d05b56b3aa10dbe5edb4ad9e64399bf2be"
   },
   {
+    "file": "screenshots/round-two-9673417d/phone-campaign-map.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "12499531f621f80b063a58912bb74b0e53bab598e99ed45d196a6b0f716133f3"
+  },
+  {
+    "file": "screenshots/round-two-9673417d/phone-home.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "2aa9f36c5109c059e1071d9f4bced095b73bcafa62c564cfdbe6fef3e029b684"
+  },
+  {
+    "file": "screenshots/round-two-9673417d/phone-workshop.png",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "56b0a5b0e2226dd5fb65253e59818b4fc0ddef7ad75add94a1182f2258725852"
+  },
+  {
+    "file": "screenshots/round-two-9673417d/seven-campaign-map.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "4b09cf30b131d16627c0e0e8a6446ab4790f4fbdfc7856b77bac16237a4605a0"
+  },
+  {
+    "file": "screenshots/round-two-9673417d/seven-home.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "4717435c9d1cf4d8188d7176688b01c1451f54493881f5d579e7f7cd9a7c7cd8"
+  },
+  {
+    "file": "screenshots/round-two-9673417d/seven-workshop.png",
+    "dimensions": [
+      1200,
+      1920
+    ],
+    "mode": "RGBA",
+    "sha256": "e4ba4aa8525a45740452196668612b17d1506144c0b9023245cc29255cdb1679"
+  },
+  {
+    "file": "screenshots/round-two-9673417d/ten-campaign-map.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "c48fc27dedf4a95af9247c91bd6b88a9bc9e4db0a3783c6f730b1ce9baa137ba"
+  },
+  {
+    "file": "screenshots/round-two-9673417d/ten-home.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "f0ef4224ae49f327b147f75aa020eb267985a014d02d00148adde84c971f7548"
+  },
+  {
+    "file": "screenshots/round-two-9673417d/ten-workshop.png",
+    "dimensions": [
+      1600,
+      2560
+    ],
+    "mode": "RGBA",
+    "sha256": "e262620b7837a841e79f8a277252610247c77c59dc1f43f67c11161a9854a434"
+  },
+  {
     "file": "screenshots/round-two/phone-campaign-map.png",
     "dimensions": [
       1080,

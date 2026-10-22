@@ -6,9 +6,9 @@ A portrait western shooter with a 100-level campaign, tutorial opening, distinct
 
 ## Current Round Two local package
 
-Runtime `671eee24adf18b615990951a46a5f5e0d921da6a` has accepted Android/Web exports under `build/round-two-671eee24-a1/`. Android SHA256 `1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9`. The final docs/screenshots commit is separate from this runtime identity. See [HANDOFF](HANDOFF.txt) for exact files and the two new distributions.
+Runtime `e22050edf4787f550dc74e8b1b8777a00077f661` has Root-accepted Android/Web test exports under `build/round-two-e22050ed-a2/`. Android SHA256 `9673417D958EAEE02349D8A9299C17DA48EDE8A3FB286D304A334B71E7F47212`. Exact-source [CI39719414433](https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39719414433) passed. Final handoff/docs identity and its hosted result are separate.
 
-The current APK passed affected native labels, sequential input/reload/Back, save retention and nine unmodified emulator screenshots. Critical169.315-second earned-ad and offline observations belong to the qualified CFC predecessor, not a replay on this labels-only successor. Synthetic pointer checks do not verify simultaneous Android multitouch. Production services, physical devices, audible Android, interactive Web and human balance remain owner testing.
+Current9673 passed qualified native menu/Back and subsequent18-group cold retention after an explicit genuine-profile restoration. Nine current Home/Workshop/Campaignmap images were Root-accepted with secondary-footer clipping retained as a known limit. Native graceful audio exit was not exercised; the broad log gate is false. Older1D73 controls and CFC169.315-second earned-ad/offline observations remain predecessor evidence. See HANDOFF for exact scope and limits.
 
 ## Play
 
@@ -24,7 +24,7 @@ This game folder is the canonical Git working copy for [The Final Outlaw](https:
 
 Verified pre-consolidation public baseline: `41aa358d6bd765e90dcb28e2309dfbfa8cece0dc`.
 [Hosted build/test run](https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39529171557): **PASS** on that exact commit.
-Later commits require their own CI result; this dated result does not verify later binaries. The later documentation run39543094868 reproduced an audio shutdown ownership failure. Round Two adds an owned audio drain before scene deletion/exit; isolated active-audio regressions pass. A new hosted CI result is still required for the source changes.
+Later commits require their own CI result; this dated result does not verify later binaries. The later historical audio-retention failures are preserved. The current monotonic drain helper enforces real elapsed duration rather than a frame timer that could count pre-creation time. The31-check fixture and exacte220 hosted Linux CI passed; this does not establish native graceful audio shutdown. The test exports/source bundle use committed build settings; the separately edited local preset was preserved and excluded.
 
 `game/catalog.json` defines 21 achievements and 5 leaderboards. `platform/config.json` maps their symbolic keys to owner-supplied console IDs; the numeric Play Games game ID must also match `export_presets.cfg`. See native setup for the separate AdMob manifest setting and the development test-ID rules.
 
@@ -48,7 +48,7 @@ Choose a new unused build version directory and create its web/android subfolder
 
 AdMob uses Google's official test IDs. Menus support a banner, every two completed rounds create an interstitial opportunity, and rewarded benefits require the earned-reward callback. Unavailable ads or consent leave normal play usable. Google Play Games uses symbolic achievement/leaderboard maps with empty production IDs and is disabled until the owner configures them. See platform/config.json and docs/PLATFORM_SETUP.md.
 
-New illustrated app/feature and all 26 catalog images, exact originals/prompts and source-aligned store copy are in marketing/. The resize-only artwork packer is offline; nine current native emulator screenshots are selected under screenshots/round-two/, with the dated first-pass images preserved separately. The current evidence, limitations and exact next owner actions are in HANDOFF.txt. Production backend testing, human playtesting and Google Play publication are human-owned.
+New illustrated app/feature and all 26 catalog images, exact originals/prompts and source-aligned store copy are in marketing/. The resize-only artwork packer is offline; nine current native menu images are selected under marketing/screenshots/round-two-9673417d/, while first-pass and1D73 images remain separate. The current evidence, limitations and exact next owner actions are in HANDOFF.txt. Production backend testing, human playtesting and Google Play publication are human-owned.
 
 ## CI and Web
 
@@ -74,4 +74,4 @@ Pages remains disabled; no live deployment, Library action or Google Play public
 
 ## Screenshot verification
 
-Public screenshot metadata records PNG-relative filenames, SHA256 digests, dimensions and the original visual qualifications. Compare the nine files under `marketing/screenshots/round-two/` against the current `capture-manifest.json` with a SHA256 utility; matching hashes verify unchanged guest bytes. The dated first-pass manifest and original PNGs remain separate. These public summaries are not internal capture-validator receipts and do not create new device acceptance.
+Public screenshot metadata records PNG-relative filenames, SHA256 digests, dimensions and the original visual qualifications. Compare the nine files under `marketing/screenshots/round-two-9673417d/` against its `capture-manifest.json` with a SHA256 utility; matching hashes verify unchanged guest bytes. The dated first-pass manifest and original PNGs remain separate. These public summaries are not internal capture-validator receipts and do not create new device acceptance.

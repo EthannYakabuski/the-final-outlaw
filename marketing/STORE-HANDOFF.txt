@@ -1,15 +1,7 @@
-THE FINAL OUTLAW - ROUND TWO STORE / LOCAL TEST PACKAGE
-
-Runtime 671eee24adf18b615990951a46a5f5e0d921da6a; Android SHA256 1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9.
-Current Android/Web builds and the two new complete/test ZIPs are under ../build/round-two-671eee24-a1/; exact selectors and limitations are in ../HANDOFF.txt. ZIP hashes are in the local packages/PACKAGE-RECEIPT.json.
-
-28 distinct original illustrations:21 achievements,5 leaderboards, app and feature. Exact originals/prompts/source hashes are in source_art/round-two/manifest.json. Each badge was reviewed at 64/512; final app 512/64 and feature 1024x500 were reviewed. Runtime ../platform/app-icon-512.png matches app-icon-512.png. Illustrations are not gameplay captures. Store-listing.json/txt and webpage-copy.txt describe the manual gun/reload, seven upgrades,100 physical town plans and stronger monsters.
-
-CURRENT SCREENSHOTS
-screenshots/capture-manifest.json selects nine unchanged raw guest PNGs under screenshots/round-two/ from exact1D73 APK. Three logical profiles each show Home/map/gameplay; logical tablets are emulator configurations, not physical-device acceptance. Home help/footer is normal scroll content. Metadata contains only relative image identities/qualified observations; no raw SDK/device logs or real save files.
-
-VERIFIED / QUALIFIED
-Accepted strict Android/Web source binding and affected native labels/sequential controls/reload/Back/save/screens. Critical169.315-second earned endcard/interstitial/offline observations are qualified CFC predecessor evidence; not a current 1D73 replay. Native simultaneous multitouch, current-creative unearned dismissal, audible Android, interactive Web, physical devices, human balance and production services remain unverified. See ../docs/NATIVE_QA.json and ../docs/LOCAL_TEST_RESULTS.json.
-
-HISTORY / RELEASE
-First-pass images/manifest and all previous APKs/archives are retained separately; never relabel them as current. Earlier store metadata remains under history/. Preserve all LICENSE/NOTICE/LICENSES, especially custom Creature Mixer terms (not CC0). Owner supplies production service IDs/configuration, consent/audience, release signing, current Play eligibility and publication. minAPI24/targetAPI35 is the tested engine constraint. Public source push remains held; no Pages/Library/Play deployment occurs here.
+THE FINAL OUTLAW - CURRENT9673 LOCAL STORE/HANDOFF PACKET
+Existing illustrated app/feature and21achievement/5leaderboard outputs remain unchanged; marketing illustrations are not screenshots.
+Runtime e22050edf4787f550dc74e8b1b8777a00077f661; exact-source hosted CI39719414433 passed. Current Android test build: build/round-two-e22050ed-a2/android/the-final-outlaw-debug.apk
+SHA2569673417D958EAEE02349D8A9299C17DA48EDE8A3FB286D304A334B71E7F47212;186143170bytes. Matching Web/notices are under build/round-two-e22050ed-a2/web/.
+Current nine raw emulator menu screenshots and sanitized manifest: screenshots/round-two-9673417d/. Old1D73/first-pass screenshots, archives and provenance remain separate. Current views cover Home/Workshop/Campaignmap, not newcombat/ad evidence.
+Primaryactions are usable;7-inchHome/Workshop and10-inchHome/lowerWorkshop secondaryfooter clipping is a known limitation. Broad native log gate is FALSE; native graceful audio exit and auditory output were not verified. See ../HANDOFF.txt and ../docs/NATIVE_QA.json for precise restoration/retention and predecessor scope.
+The test build/source bundle uses committed build settings. A separate local preset edit was preserved and excluded. ProductionPGS/AdMobIDs, signing/Playpublication, physical/auditory/nativeMT/interactiveWeb and humanbalance remain owner work. Keep complete LICENSE/NOTICE/LICENSES with redistributed builds.

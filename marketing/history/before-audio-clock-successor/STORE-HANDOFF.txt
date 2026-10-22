@@ -1,0 +1,15 @@
+THE FINAL OUTLAW - ROUND TWO STORE / LOCAL TEST PACKAGE
+
+Runtime 671eee24adf18b615990951a46a5f5e0d921da6a; Android SHA256 1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9.
+Current Android/Web builds and the two new complete/test ZIPs are under ../build/round-two-671eee24-a1/; exact selectors and limitations are in ../HANDOFF.txt. ZIP hashes are in the local packages/PACKAGE-RECEIPT.json.
+
+28 distinct original illustrations:21 achievements,5 leaderboards, app and feature. Exact originals/prompts/source hashes are in source_art/round-two/manifest.json. Each badge was reviewed at 64/512; final app 512/64 and feature 1024x500 were reviewed. Runtime ../platform/app-icon-512.png matches app-icon-512.png. Illustrations are not gameplay captures. Store-listing.json/txt and webpage-copy.txt describe the manual gun/reload, seven upgrades,100 physical town plans and stronger monsters.
+
+CURRENT SCREENSHOTS
+screenshots/capture-manifest.json selects nine unchanged raw guest PNGs under screenshots/round-two/ from exact1D73 APK. Three logical profiles each show Home/map/gameplay; logical tablets are emulator configurations, not physical-device acceptance. Home help/footer is normal scroll content. Metadata contains only relative image identities/qualified observations; no raw SDK/device logs or real save files.
+
+VERIFIED / QUALIFIED
+Accepted strict Android/Web source binding and affected native labels/sequential controls/reload/Back/save/screens. Critical169.315-second earned endcard/interstitial/offline observations are qualified CFC predecessor evidence; not a current 1D73 replay. Native simultaneous multitouch, current-creative unearned dismissal, audible Android, interactive Web, physical devices, human balance and production services remain unverified. See ../docs/NATIVE_QA.json and ../docs/LOCAL_TEST_RESULTS.json.
+
+HISTORY / RELEASE
+First-pass images/manifest and all previous APKs/archives are retained separately; never relabel them as current. Earlier store metadata remains under history/. Preserve all LICENSE/NOTICE/LICENSES, especially custom Creature Mixer terms (not CC0). Owner supplies production service IDs/configuration, consent/audience, release signing, current Play eligibility and publication. minAPI24/targetAPI35 is the tested engine constraint. Public source push remains held; no Pages/Library/Play deployment occurs here.

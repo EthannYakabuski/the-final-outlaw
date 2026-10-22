@@ -1,66 +1,53 @@
 {
-  "schema": "public-local-test-summary-v2",
-  "runtime_commit": "671eee24adf18b615990951a46a5f5e0d921da6a",
-  "status": "Round Two local package ready for owner testing within stated limitations.",
+  "schema": "local-test-results-v4",
+  "runtime_commit": "e22050edf4787f550dc74e8b1b8777a00077f661",
+  "status": "QUALIFIED_LOCAL_TEST_PACKAGE_NATIVE_LIMITS_RETAINED",
   "engine": "Godot4.5.1 Compatibility",
   "android": {
-    "path": "build/round-two-671eee24-a1/android/the-final-outlaw-debug.apk",
-    "sha256": "1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9",
-    "bytes": 186143554,
-    "debug": true
+    "path": "build/round-two-e22050ed-a2/android/the-final-outlaw-debug.apk",
+    "sha256": "9673417D958EAEE02349D8A9299C17DA48EDE8A3FB286D304A334B71E7F47212",
+    "bytes": 186143170,
+    "min_api": 24,
+    "target_api": 35
   },
   "web": {
-    "directory": "build/round-two-671eee24-a1/web",
-    "html_sha256": "B41056815A9E455BC125286BC9E9293499DC0DAF07E3BC630423BA7729905653",
-    "pck_sha256": "C7AB9CDF3E31B176EFCBE523A4B521160EAD2A7E455BD3D20B26FB3966AE2130",
-    "runtime_files": 9,
-    "interactive_browser_verified": false
+    "directory": "build/round-two-e22050ed-a2/web",
+    "html_sha256": "1D2A09B80F4F5DE0BCF90636DCD87AD4F6BAAEBB15BCB94216595D1102442764",
+    "pck_sha256": "0FAA27870214E280CB63C6D2CBE64465FD52278A7000D8C6F305B015435C84EA",
+    "interactive_acceptance": false
   },
-  "source_build_binding": {
-    "before_after_exact_committed_runtime_inputs": true,
-    "android_and_web_exit": 0,
-    "strict_error_lists_empty": true,
-    "complete_matching_notices": true,
-    "original_apk_preserved": true
-  },
+  "source_build_binding": "Exact frozen committed Git source/test-build preset verified before/after exports; local preset edit preserved and excluded. Finaldoc sourceZIP uses exact raw committed blobs.",
   "source_tests": {
-    "model_checks": 18980,
-    "model_failures": 0,
-    "campaign_reachability": "100/100 stages with maximum gear and test invulnerability; separate opening2 tutorials used starting gear and ordinary damage. Human balance is not established.",
-    "ui_checks": 1150,
-    "fullscreen_checks": 30,
-    "synthetic_viewport_pointer_checks": 20,
-    "strict_logs_passed": true,
-    "audio": "Active Ogg/WAV owned-stream shutdown regressions pass with strict errors enabled; no fresh hosted Linux result.",
-    "private_gpu": "29 prior source-scene checks plus22 focused hint checks, actual OpenGL, muted audio and synthetic fixture states. Twenty pointer checks also passed through an actual OpenGL Viewport. These are not native Android multi-touch proof.",
-    "labels": "Actual20/24/52-round hints remain two lines above joystick; Home/brief reload wording has no fixed-capacity claim."
+    "models": 18980,
+    "UI": 1150,
+    "fullscreen_final_stdout_and_exit": 31,
+    "early_focused_JSON_subset": 30,
+    "synthetic_pointer": 20,
+    "services": "PASS",
+    "strict_errors": [],
+    "campaign_scope": "100/100 maxgear/test-invulnerable source coverage; opening ordinary-damage tutorial acceptance is separate, human balance remains open.",
+    "historical_GPU_scope": "Earlier29scene/22hint and20Viewport pointer source fixtures remain qualified predecessor evidence; no newauditory or simultaneous nativeMT claim."
   },
-  "native_report": {
-    "file": "docs/NATIVE_QA.json",
-    "sha256": "AABD8E77E5A4B06045DD2046CACCFB83CF33D3E410427D334D99399F96584570"
+  "hosted_CI": {
+    "url": "https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39719414433",
+    "head": "e22050edf4787f550dc74e8b1b8777a00077f661",
+    "conclusion": "SUCCESS",
+    "later_docs_CI": "separate pending identity/result"
   },
+  "native_report": "NATIVE_QA.json",
   "captures": {
-    "manifest": "marketing/screenshots/capture-manifest.json",
     "count": 9,
-    "raw_current_guest_pngs_unchanged": true,
-    "physical_device_test": false
+    "manifest": "marketing/screenshots/round-two-9673417d/capture-manifest.json",
+    "scope": "currentmenuviews; footerclippingqualified"
   },
-  "licenses": {
-    "index": "LICENSES/INDEX.txt",
-    "packaged_notice_count": 15,
-    "all_terms_retained": true,
-    "creature_mixer_terms": "Custom supplied terms; not CC0."
-  },
+  "broad_native_log_gate": false,
   "limits": [
-    "One Android11/API30 x86 task emulator and logical phone/tablet display profiles; physical devices/tablets and human balance remain unverified.",
-    "Native simultaneous two-pointer operation remains unverified; synthetic engine Viewport pointer checks are separate.",
-    "Task emulator audio output was disabled. Audible Android output and interactive Web/WebGL/audio remain unverified.",
-    "Exact current APK ad/earned/interstitial/offline flows were not replayed for this labels-only successor. Qualified CFC predecessor evidence is separate.",
-    "Current-creative unearned displayed-and-dismissed reward remains unverified. First-pass unearned tests do not establish current acceptance.",
-    "Official test ads and placeholder PGS maps remain. Production IDs/backend, consent/audience, signing and Google Play publication remain owner work.",
-    "Godot4.5.1 Compatibility minAPI24/targetAPI35 is the tested engine constraint; current Play-release eligibility is not claimed.",
-    "Short tests do not establish all stages/equipment combinations, broad ad-fill reliability, long sessions or midnight/multi-day daily mechanisms.",
-    "Banked progress persists; unfinished combat is not resumed after cold launch. Local saves/offline clocks are not anti-cheat secure.",
-    "Public source update remains held after an approval denial; no new hosted Linux CI result, Pages deployment or Library action is claimed."
+    "Native graceful audio shutdown/resource cleanup was not exercised: AndroidBack returns to Home and force-stop is not a graceful quit.",
+    "Broad native log gate remains false: Chromium cache, AdMob header and VP9 codec diagnostics remain unattributed; scoped logs had no observed Godot script/ObjectDB/resource/audio/VAO, fatal or ANR matches.",
+    "Secondary help/footer text is partly clipped on7-inchHome/Workshop and10-inchHome;10-inchWorkshop main footer is readable but extra lower secondary content is clipped. Primary titles/actions remain usable. This known presentation limit is retained.",
+    "Loaded Home took about23–25seconds in these observations; no performance acceptance.",
+    "No current9673 combat, movement/reload, rewarded/interstitial, earned benefit or offline session was replayed. Older1D73/CFC evidence remains distinct.",
+    "Audio output was disabled; audible Android, physical devices, native simultaneous multitouch, production services/signing/Play, interactive Web and human balance remain unverified.",
+    "MinimumAPI24/targetAPI35 is the tested engine constraint; release-policy verification remains owner work."
   ]
 }

@@ -1,0 +1,103 @@
+{
+  "schema": "native-raw-capture-selection-v2",
+  "runtime_commit": "e22050edf4787f550dc74e8b1b8777a00077f661",
+  "source_apk_sha256": "9673417D958EAEE02349D8A9299C17DA48EDE8A3FB286D304A334B71E7F47212",
+  "scope": "Nine unchanged current9673 emulator menu images:Home/Workshop/Campaignmap on phone,7-inch,10-inch logical profiles. Not physical-device views.",
+  "root_visual_review": "ACCEPTED_WITH_QUALIFICATIONS",
+  "known_ui_limit": "Secondary help/footer text is partly clipped on7-inchHome/Workshop and10-inchHome;10-inchWorkshop main footer is readable but extra lower secondary content is clipped. Primary titles/actions remain usable. This known presentation limit is retained.",
+  "broad_native_log_gate": false,
+  "graceful_native_audio_exit": "UNEXERCISED",
+  "images": [
+    {
+      "file": "phone-home.png",
+      "profile": "phone",
+      "view": "Home",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "sha256": "2AA9F36C5109C059E1071D9F4BCED095B73BCAFA62C564CFDBE6FEF3E029B684"
+    },
+    {
+      "file": "phone-workshop.png",
+      "profile": "phone",
+      "view": "Workshop; preservedP2/Mag1 and669coins, no purchases",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "sha256": "56B0A5B0E2226DD5FB65253E59818B4FC0DDEF7AD75ADD94A1182F2258725852"
+    },
+    {
+      "file": "phone-campaign-map.png",
+      "profile": "phone",
+      "view": "Campaignmap; genuinecleared1+2, no trailstarted",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "sha256": "12499531F621F80B063A58912BB74B0E53BAB598E99ED45D196A6B0F716133F3"
+    },
+    {
+      "file": "seven-home.png",
+      "profile": "seven",
+      "view": "Home; secondaryhelpendsbelowlabelregion",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "sha256": "4717435C9D1CF4D8188D7176688B01C1451F54493881F5D579E7F7CD9A7C7CD8"
+    },
+    {
+      "file": "seven-workshop.png",
+      "profile": "seven",
+      "view": "Workshop;7upgradesfit,secondaryfooterpartiallycut",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "sha256": "E4BA4AA8525A45740452196668612B17D1506144C0B9023245CC29255CDB1679"
+    },
+    {
+      "file": "seven-campaign-map.png",
+      "profile": "seven",
+      "view": "Campaignmap;genuine2clearedtrails",
+      "dimensions": [
+        1200,
+        1920
+      ],
+      "sha256": "4B09CF30B131D16627C0E0E8A6446AB4790F4FBDFC7856B77BAC16237A4605A0"
+    },
+    {
+      "file": "ten-home.png",
+      "profile": "ten",
+      "view": "Home;helplinecomplete,secondaryofflinefooterpartiallycut",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "sha256": "F0EF4224AE49F327B147F75AA020EB267985A014D02D00148ADDE84C971F7548"
+    },
+    {
+      "file": "ten-workshop.png",
+      "profile": "ten",
+      "view": "Workshop;all7upgradesandfooterreadable",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "sha256": "E262620B7837A841E79F8A277252610247C77C59DC1F43F67C11161A9854A434"
+    },
+    {
+      "file": "ten-campaign-map.png",
+      "profile": "ten",
+      "view": "Campaignmap;genuine2clearedtrails",
+      "dimensions": [
+        1600,
+        2560
+      ],
+      "sha256": "C48FC27DEDF4A95AF9247C91BD6B88A9BC9E4DB0A3783C6F730B1CE9BAA137BA"
+    }
+  ],
+  "qualification": "Old1D73 nine views and first-pass views/manifests remain unchanged and separately qualified."
+}

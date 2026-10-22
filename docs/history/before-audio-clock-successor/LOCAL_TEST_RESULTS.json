@@ -1,0 +1,66 @@
+{
+  "schema": "public-local-test-summary-v2",
+  "runtime_commit": "671eee24adf18b615990951a46a5f5e0d921da6a",
+  "status": "Round Two local package ready for owner testing within stated limitations.",
+  "engine": "Godot4.5.1 Compatibility",
+  "android": {
+    "path": "build/round-two-671eee24-a1/android/the-final-outlaw-debug.apk",
+    "sha256": "1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9",
+    "bytes": 186143554,
+    "debug": true
+  },
+  "web": {
+    "directory": "build/round-two-671eee24-a1/web",
+    "html_sha256": "B41056815A9E455BC125286BC9E9293499DC0DAF07E3BC630423BA7729905653",
+    "pck_sha256": "C7AB9CDF3E31B176EFCBE523A4B521160EAD2A7E455BD3D20B26FB3966AE2130",
+    "runtime_files": 9,
+    "interactive_browser_verified": false
+  },
+  "source_build_binding": {
+    "before_after_exact_committed_runtime_inputs": true,
+    "android_and_web_exit": 0,
+    "strict_error_lists_empty": true,
+    "complete_matching_notices": true,
+    "original_apk_preserved": true
+  },
+  "source_tests": {
+    "model_checks": 18980,
+    "model_failures": 0,
+    "campaign_reachability": "100/100 stages with maximum gear and test invulnerability; separate opening2 tutorials used starting gear and ordinary damage. Human balance is not established.",
+    "ui_checks": 1150,
+    "fullscreen_checks": 30,
+    "synthetic_viewport_pointer_checks": 20,
+    "strict_logs_passed": true,
+    "audio": "Active Ogg/WAV owned-stream shutdown regressions pass with strict errors enabled; no fresh hosted Linux result.",
+    "private_gpu": "29 prior source-scene checks plus22 focused hint checks, actual OpenGL, muted audio and synthetic fixture states. Twenty pointer checks also passed through an actual OpenGL Viewport. These are not native Android multi-touch proof.",
+    "labels": "Actual20/24/52-round hints remain two lines above joystick; Home/brief reload wording has no fixed-capacity claim."
+  },
+  "native_report": {
+    "file": "docs/NATIVE_QA.json",
+    "sha256": "AABD8E77E5A4B06045DD2046CACCFB83CF33D3E410427D334D99399F96584570"
+  },
+  "captures": {
+    "manifest": "marketing/screenshots/capture-manifest.json",
+    "count": 9,
+    "raw_current_guest_pngs_unchanged": true,
+    "physical_device_test": false
+  },
+  "licenses": {
+    "index": "LICENSES/INDEX.txt",
+    "packaged_notice_count": 15,
+    "all_terms_retained": true,
+    "creature_mixer_terms": "Custom supplied terms; not CC0."
+  },
+  "limits": [
+    "One Android11/API30 x86 task emulator and logical phone/tablet display profiles; physical devices/tablets and human balance remain unverified.",
+    "Native simultaneous two-pointer operation remains unverified; synthetic engine Viewport pointer checks are separate.",
+    "Task emulator audio output was disabled. Audible Android output and interactive Web/WebGL/audio remain unverified.",
+    "Exact current APK ad/earned/interstitial/offline flows were not replayed for this labels-only successor. Qualified CFC predecessor evidence is separate.",
+    "Current-creative unearned displayed-and-dismissed reward remains unverified. First-pass unearned tests do not establish current acceptance.",
+    "Official test ads and placeholder PGS maps remain. Production IDs/backend, consent/audience, signing and Google Play publication remain owner work.",
+    "Godot4.5.1 Compatibility minAPI24/targetAPI35 is the tested engine constraint; current Play-release eligibility is not claimed.",
+    "Short tests do not establish all stages/equipment combinations, broad ad-fill reliability, long sessions or midnight/multi-day daily mechanisms.",
+    "Banked progress persists; unfinished combat is not resumed after cold launch. Local saves/offline clocks are not anti-cheat secure.",
+    "Public source update remains held after an approval denial; no new hosted Linux CI result, Pages deployment or Library action is claimed."
+  ]
+}

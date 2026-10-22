@@ -1,56 +1,36 @@
 {
-  "schema": "public-native-qa-summary-v2",
-  "status": "Current affected UI/controls/save/captures passed; qualified predecessor ad/offline evidence retained separately.",
-  "runtime_commit": "671eee24adf18b615990951a46a5f5e0d921da6a",
+  "schema": "native-qa-sanitized-v4",
+  "status": "QUALIFIED_CURRENT9673_COMPLETE_ROOT9_ACCEPTED",
+  "runtime_commit": "e22050edf4787f550dc74e8b1b8777a00077f661",
   "package": "com.ethannyakabuski.finaloutlaw",
-  "source_apk_sha256": "1D73BCE70B6A0E37FB5DC164F6C1AC02AE026F67FF6560C386C3AEA01D4F7AA9",
-  "apk_bytes": 186143554,
-  "diagnostic_hooks_used": false,
-  "current_binary_observations": [
-    "Normal APK update preserved all18 banked groups byte-identically before launch; no restore or injected state was used for this update.",
-    "Home and Trail01 briefing use capacity-agnostic reload guidance; actual upgraded24-round Trail01 HUD tutorial is two lines above the joystick. Trail02 DASH/RELOAD tutorial fits.",
-    "Sequential single-pointer movement and deliberate fire changed ammo; actual reload countdown and completion, Android Back/pause/resume and ReturnCamp were observed.",
-    "Three normal partial runs returned to camp once each with source-defined small XP progress; no reward or completed-campaign claim was replayed.",
-    "All ten campaign nodes and chapter/Back controls were visible on all three logical profiles.",
-    "Nine selected unmodified current-APK screenshots were visually reviewed. Raced menu and startup-black frames were excluded.",
-    "Restored-display normal cold launch preserved all18 banked groups byte-identically; final save and complete private backup matched.",
-    "Original display/radio settings and actual connected networks were restored, then the known game package was safely stopped."
+  "source_apk_sha256": "9673417D958EAEE02349D8A9299C17DA48EDE8A3FB286D304A334B71E7F47212",
+  "apk_bytes": 186143170,
+  "current_scope": [
+    "Initially absent package installed once; genuine prior primary/profile-pending files explicitly restored. This is restoration, not retention across a lost emulator session.",
+    "First launch changed only normal UTCday/daily fields. Later stopped-profile/restored-display cold launches preserved all18 banked groups byte-identically.",
+    "Home/Workshop/Campaignmap navigation and AndroidBack; Back returned Home/kept process and save, not graceful quit.",
+    "Nine unchanged current menu views Root-accepted with footer-clipping qualifications. Original display/radio/actual connectivity restored; stopped full backup preserved."
   ],
   "saved_groups_checked": 18,
   "reviewed_guest_screenshot_count": 9,
-  "capture_manifest": "../marketing/screenshots/capture-manifest.json",
-  "qualified_predecessor": {
-    "runtime_commit": "cc275a3337b5d299067360a6839877d2ba57f341",
-    "apk_sha256": "CFC7E84E02CA657E4C14495F78E455E8EF1CBF070250DA77BBD9650EEE965F1B",
-    "scope": "Predecessor only; current successor changes only tutorial labels/layout and UI tests, with combat/services/save/hitboxes unchanged.",
-    "observations": [
-      "Ordinary first-trail replay completed in17 HUD seconds with3 eliminations; priced magazine upgrade, manual empty/reload and natural losses were observed.",
-      "A real earned continue stayed behind its SDK endcard for169.315 seconds; settled return recovered65%health/time0:15/full24-round magazine without a source fix. The first return frame was transient HUD/layout initialization.",
-      "Fresh movement/fire/reload/Back worked after return; natural second loss offered no second continue, banked once, and real interstitial dismissal left the bank unchanged.",
-      "Default-network-none offline cold launch, normal guest reboot and offline play/Back preserved the18 banked groups. Genuine prior progress had been explicitly restored earlier when the package was absent; that initial restore is not described as retention."
-    ]
-  },
-  "diagnostics": {
-    "current_scoped_godot_strict_errors_empty": true,
-    "current_scoped_android_fatal_count": 0,
-    "retained_qualifications": [
-      "Emulator VP9 decoder DynamicANWBuffer error -1010 occurred in SDK/WebView contexts.",
-      "Restored-session WebView missing-relro and denied vendor-property diagnostics were retained; Home loaded normally.",
-      "Ten-profile startup timeout/initial black resolved through passive observation; the final loaded Home was retaken without relaunch.",
-      "Force-stop does not exercise full Godot editor/export teardown. Accepted exports retain an editor-exit Orphan StringName Node warning, distinct from the historical three-audio-resource failure."
-    ]
-  },
-  "limits": [
-    "One Android11/API30 x86 task emulator and logical phone/tablet display profiles; physical devices/tablets and human balance remain unverified.",
-    "Native simultaneous two-pointer operation remains unverified; synthetic engine Viewport pointer checks are separate.",
-    "Task emulator audio output was disabled. Audible Android output and interactive Web/WebGL/audio remain unverified.",
-    "Exact current APK ad/earned/interstitial/offline flows were not replayed for this labels-only successor. Qualified CFC predecessor evidence is separate.",
-    "Current-creative unearned displayed-and-dismissed reward remains unverified. First-pass unearned tests do not establish current acceptance.",
-    "Official test ads and placeholder PGS maps remain. Production IDs/backend, consent/audience, signing and Google Play publication remain owner work.",
-    "Godot4.5.1 Compatibility minAPI24/targetAPI35 is the tested engine constraint; current Play-release eligibility is not claimed.",
-    "Short tests do not establish all stages/equipment combinations, broad ad-fill reliability, long sessions or midnight/multi-day daily mechanisms.",
-    "Banked progress persists; unfinished combat is not resumed after cold launch. Local saves/offline clocks are not anti-cheat secure.",
-    "Public source update remains held after an approval denial; no new hosted Linux CI result, Pages deployment or Library action is claimed."
+  "capture_manifest": "../marketing/screenshots/round-two-9673417d/capture-manifest.json",
+  "campaign_progress_qualification": "Two distinct3-star trails and nine total campaign wins including replays; no newclears/rewards/purchases injected.",
+  "known_ui_limit": "Secondary help/footer text is partly clipped on7-inchHome/Workshop and10-inchHome;10-inchWorkshop main footer is readable but extra lower secondary content is clipped. Primary titles/actions remain usable. This known presentation limit is retained.",
+  "graceful_native_audio_exit": "UNEXERCISED",
+  "broad_native_log_gate": false,
+  "diagnostics": "Scoped Godot/script/ObjectDB/resource/audio/VAO/fatal/ANR matches absent; unattributed Chromium cache, AdMob header and VP9 codec diagnostics remain. This is not a full native log pass.",
+  "qualified_predecessor": [
+    "Older1D73 affected controls/save/nineviews remain historical.",
+    "CFC169.315-second earned-endcard and offline observations are not current9673 replays."
   ],
-  "historical_first_pass": "history/before-round-two-final/NATIVE_QA.json"
+  "limits": [
+    "Native graceful audio shutdown/resource cleanup was not exercised: AndroidBack returns to Home and force-stop is not a graceful quit.",
+    "Broad native log gate remains false: Chromium cache, AdMob header and VP9 codec diagnostics remain unattributed; scoped logs had no observed Godot script/ObjectDB/resource/audio/VAO, fatal or ANR matches.",
+    "Secondary help/footer text is partly clipped on7-inchHome/Workshop and10-inchHome;10-inchWorkshop main footer is readable but extra lower secondary content is clipped. Primary titles/actions remain usable. This known presentation limit is retained.",
+    "Loaded Home took about23–25seconds in these observations; no performance acceptance.",
+    "No current9673 combat, movement/reload, rewarded/interstitial, earned benefit or offline session was replayed. Older1D73/CFC evidence remains distinct.",
+    "Audio output was disabled; audible Android, physical devices, native simultaneous multitouch, production services/signing/Play, interactive Web and human balance remain unverified.",
+    "MinimumAPI24/targetAPI35 is the tested engine constraint; release-policy verification remains owner work."
+  ],
+  "historical_report": "history/before-audio-clock-successor/NATIVE_QA.json"
 }
