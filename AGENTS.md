@@ -21,6 +21,7 @@ Import once with `godot --headless --editor --path . --import`. Run the affected
 ```sh
 godot --headless --path . --script tests/test_fullscreen_lifecycle.gd
 godot --headless --path . --script tests/test_models.gd
+godot --headless --path . --script tests/test_round_three.gd
 godot --headless --path . --script tests/test_ui.gd
 godot --headless --path . --script tests/test_touch_input.gd
 ```

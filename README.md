@@ -4,6 +4,12 @@ One trail. A hundred last stands.
 
 A portrait western shooter with a 100-level campaign, tutorial opening, distinct challenges, endless survival, player progression and light powerups.
 
+## Round Three source update
+
+Enemies take three additional unupgraded five-damage shots after stage/endless and armored-stage health scaling. Their final movement speed is25% higher and contact/projectile damage15% higher; environmental hazards keep their existing damage. Player health is40% lower and movement12% slower across all equipment ranks. Reinforced vests add7.2 effective health per rank and Trail boots add7.04 effective speed. Equipment ranks, saves, manual fire,20+4/rank magazines, reloads and earned-only rewards retain their existing contracts.
+
+Home and Workshop compact vertical spacing when the actual viewport/banner leaves less room. Fonts and touch targets retain their sizes, the decorative Home hero follows the compact layout, and help has room for three lines. Viewports below800 logical units retain scrolling rather than squeezing controls. Rebuilt Android/Web exports, affected native checks and refreshed screenshots are still pending; the Round Two package below does not contain these changes.
+
 ## Current Round Two local package
 
 Runtime `e22050edf4787f550dc74e8b1b8777a00077f661` has Root-accepted Android/Web test exports under `build/round-two-e22050ed-a2/`. Android SHA256 `9673417D958EAEE02349D8A9299C17DA48EDE8A3FB286D304A334B71E7F47212`. Exact-source [CI39719414433](https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/39719414433) passed. Final handoff/docs identity and its hosted result are separate.

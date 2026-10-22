@@ -36,7 +36,7 @@ func add_xp(amount: int) -> int:
 	return bonus
 
 func stats() -> Dictionary:
-	return {"health": 100.0 + 12.0 * int(upgrades.heart), "damage": 5.0 + float(upgrades.power), "speed": 165.0 + 8.0 * int(upgrades.boots), "fire_interval": 0.30, "magazine": 20 + 4 * int(upgrades.magazine), "reload_seconds": 1.65 - 0.12 * int(upgrades.reload), "dash_cooldown": 2.1 - 0.13 * int(upgrades.dash), "armor": 0.035 * int(upgrades.armor)}
+	return {"health": (100.0 + 12.0 * int(upgrades.heart)) * 0.60, "damage": 5.0 + float(upgrades.power), "speed": (165.0 + 8.0 * int(upgrades.boots)) * 0.88, "fire_interval": 0.30, "magazine": 20 + 4 * int(upgrades.magazine), "reload_seconds": 1.65 - 0.12 * int(upgrades.reload), "dash_cooldown": 2.1 - 0.13 * int(upgrades.dash), "armor": 0.035 * int(upgrades.armor)}
 
 func upgrade_cost(key: String) -> int:
 	if not upgrades.has(key) or int(upgrades[key]) >= UPGRADE_CAP:

@@ -80,6 +80,7 @@ func _run() -> void:
 	game.set_process(false)
 	check(game.service == sdk and sdk.scores.has("player_level"), "initial progress sync uses test adapter")
 	await _settle()
+	await _test_responsive_menus()
 	for screen in ["home","map","workshop","rewards","records","boards","options"]:
 		game.call("_show_" + screen)
 		await _settle()
@@ -178,3 +179,52 @@ func _run() -> void:
 	await _settle()
 	print("OUTLAW_UI_TESTS checks=%d failures=%d (mock service callbacks; no production integration claim)" % [checks,failures])
 	quit(0 if failures == 0 else 1)
+
+func _test_responsive_menus() -> void:
+	var original_size: Vector2i = root.size
+	var profile: Dictionary = game.state.data().duplicate(true)
+	for viewport_height in [960, 864]:
+		root.size = Vector2i(540, viewport_height)
+		await _settle()
+		for view in ["home", "workshop"]:
+			game.call("_show_" + view)
+			await _settle()
+			for reserve in [0.0, 100.0, 160.0, 400.0]:
+				game._apply_banner_layout(reserve)
+				await _settle()
+				var available: float = minf(960.0, game.get_viewport_rect().size.y) - reserve
+				check(is_equal_approx(game.menu_scroll.size.y, available), "actual viewport minus banner %s/%d/%s" % [view, viewport_height, reserve])
+				var buttons: Array[Button] = []
+				var heart_copy := false
+				var boots_copy := false
+				for child in game.ui.get_children():
+					if child is Label:
+						check(child.size.y + 0.1 >= child.get_minimum_size().y, "label contains all wrapped lines " + child.text.left(30))
+						if child.text.contains("+7.2 health"): heart_copy = true
+						if child.text.contains("+7.04 speed"): boots_copy = true
+						if child.text.contains("Reload when empty"):
+							check(child.size.y >= 72.0, "Home help has room for three actual font lines")
+					if child is Control:
+						check(child.get_rect().end.y <= game.ui.custom_minimum_size.y + 0.1, "content fits declared scroll extent " + view)
+						if available >= 800.0:
+							check(child.get_rect().end.y <= available + 0.1, "all menu content visible without scrolling " + view)
+					if child is Button:
+						buttons.append(child)
+						check(child.size.y >= 44.0, "menu action retains touch target height")
+				for first in range(buttons.size()):
+					for second in range(first + 1, buttons.size()):
+						check(not buttons[first].get_rect().intersects(buttons[second].get_rect()), "menu actions never overlap")
+				check(buttons.size() == (6 if view == "home" else 8), "all primary controls preserved " + view)
+				if available < 800.0:
+					check(game.menu_scroll.vertical_scroll_mode == ScrollContainer.SCROLL_MODE_AUTO, "short viewport retains scrolling fallback")
+				if view == "workshop": check(heart_copy and boots_copy, "workshop lists actual effective upgrade benefits")
+				if view == "home" and game._menu_compaction() >= 1.0:
+					check(256.0 + 106.0 * 0.5 < 315.0, "compact hero clears first subtitle/control band")
+	root.size = original_size
+	game._start_level(1, false)
+	await _settle()
+	game._apply_banner_layout(400.0)
+	check(game.menu_scroll.size == Vector2(540, 960) and game.ui.custom_minimum_size == Vector2(540, 960), "gameplay geometry ignores menu compaction and banner reserve")
+	check(game.state.data() == profile, "responsive menus do not alter progression")
+	game._show_home()
+	await _settle()

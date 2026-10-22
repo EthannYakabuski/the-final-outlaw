@@ -15,6 +15,7 @@ var battle = null
 var campaign: Array = []
 var catalog: Dictionary = {}
 var ui: Control
+var compact_menu_controls: Array[Dictionary] = []
 var menu_scroll: ScrollContainer
 var service: Node
 var screen: String = "home"
@@ -166,11 +167,27 @@ func _apply_banner_layout(reserve_override: float = -1.0) -> void:
 		reserve = float(service.call("menu_bottom_reserve", self)) if is_instance_valid(service) and service.has_method("menu_bottom_reserve") else 0.0
 	if screen == "play": reserve = 0.0
 	reserve = clampf(reserve, 0.0, 400.0)
-	menu_scroll.size = Vector2(540.0, 960.0 - reserve)
-	menu_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO if reserve > 0.0 else ScrollContainer.SCROLL_MODE_SHOW_NEVER
-	menu_scroll.mouse_filter = Control.MOUSE_FILTER_PASS if reserve > 0.0 else Control.MOUSE_FILTER_IGNORE
-	if reserve <= 0.0: menu_scroll.scroll_vertical = 0
+	# Tablets can expose fewer than 960 logical units even before the banner.
+	var viewport_height := minf(H, get_viewport_rect().size.y) if screen != "play" else float(H)
+	menu_scroll.size = Vector2(W, maxf(1.0, viewport_height - reserve))
+	var compact := screen in ["home", "workshop"]
+	ui.custom_minimum_size.y = clampf(menu_scroll.size.y, 800.0, H) if compact else float(H)
+	for entry in compact_menu_controls:
+		var control: Control = entry.control
+		if not is_instance_valid(control): continue
+		control.position.y = lerpf(float(entry.y), float(entry.compact_y), _menu_compaction())
+		control.size.y = lerpf(float(entry.height), float(entry.compact_height), _menu_compaction())
+	var scrolling := ui.custom_minimum_size.y > menu_scroll.size.y
+	menu_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO if scrolling else ScrollContainer.SCROLL_MODE_SHOW_NEVER
+	menu_scroll.mouse_filter = Control.MOUSE_FILTER_PASS if scrolling else Control.MOUSE_FILTER_IGNORE
+	if not scrolling: menu_scroll.scroll_vertical = 0
 	queue_redraw()
+
+func _menu_compaction() -> float:
+	return clampf((H - ui.custom_minimum_size.y) / 160.0, 0.0, 1.0) if screen in ["home", "workshop"] else 0.0
+
+func _compact_menu_control(control: Control, compact_y: float, compact_height: float = -1.0) -> void:
+	compact_menu_controls.append({"control": control, "y": control.position.y, "height": control.size.y, "compact_y": compact_y, "compact_height": control.size.y if compact_height < 0.0 else compact_height})
 
 func _menu_draw_offset() -> Vector2:
 	return Vector2(0, -float(menu_scroll.scroll_vertical)) if is_instance_valid(menu_scroll) else Vector2.ZERO
@@ -178,6 +195,7 @@ func _menu_draw_offset() -> Vector2:
 
 func _clear(next: String) -> void:
 	screen = next
+	compact_menu_controls.clear()
 	for child in ui.get_children():
 		child.queue_free()
 	hud_health = null
@@ -244,22 +262,24 @@ func _header(title: String, back_action: Callable) -> void:
 	_footer()
 
 func _footer() -> void:
-	_label("Progress is saved on this device", Vector2(30, 872), Vector2(480, 25), 15, INK, true)
+	var label := _label("Progress is saved on this device", Vector2(30, 872), Vector2(480, 25), 15, INK, true)
+	if screen == "workshop": _compact_menu_control(label, 773.0)
 
 func _show_home() -> void:
 	_clear("home")
 	_label("A LITTLE COURAGE. A LONG WAY WEST.", Vector2(25, 34), Vector2(490, 26), 15, CREAM, true)
 	_label("THE FINAL\nOUTLAW", Vector2(30, 73), Vector2(480, 128), 49, CREAM, true)
-	_label("100 trails to a quieter frontier", Vector2(35, 365), Vector2(470, 35), 20, CREAM, true)
-	_button("Ride the campaign", Vector2(42, 426), Vector2(456, 62), _show_map)
-	_button("Endless badlands", Vector2(42, 503), Vector2(456, 56), func(): _show_brief(0))
-	_button("Workshop", Vector2(42, 576), Vector2(220, 54), _show_workshop)
-	_button("Daily camp", Vector2(278, 576), Vector2(220, 54), _show_rewards)
-	_button("Trail journal", Vector2(42, 646), Vector2(220, 54), _show_records)
-	_button("Options", Vector2(278, 646), Vector2(220, 54), _show_options)
-	_label("LEVEL %d   •   %d COINS   •   %d STARS" % [state.player_level(), state.coins, state.stars_total()], Vector2(30, 733), Vector2(480, 32), 18, CREAM, true)
-	_label("Move with your left thumb. Hold the gun to shoot.\nReload when empty. Use cover and dash through danger.", Vector2(40, 790), Vector2(460, 57), 18, CREAM, true)
-	_label("Offline play • Optional online features on Android", Vector2(20, 872), Vector2(500, 27), 14, CREAM, true)
+	_compact_menu_control(_label("100 trails to a quieter frontier", Vector2(35, 365), Vector2(470, 35), 20, CREAM, true), 315.0)
+	_compact_menu_control(_button("Ride the campaign", Vector2(42, 426), Vector2(456, 62), _show_map), 364.0)
+	_compact_menu_control(_button("Endless badlands", Vector2(42, 503), Vector2(456, 56), func(): _show_brief(0)), 438.0)
+	_compact_menu_control(_button("Workshop", Vector2(42, 576), Vector2(220, 54), _show_workshop), 509.0)
+	_compact_menu_control(_button("Daily camp", Vector2(278, 576), Vector2(220, 54), _show_rewards), 509.0)
+	_compact_menu_control(_button("Trail journal", Vector2(42, 646), Vector2(220, 54), _show_records), 575.0)
+	_compact_menu_control(_button("Options", Vector2(278, 646), Vector2(220, 54), _show_options), 575.0)
+	_compact_menu_control(_label("LEVEL %d   •   %d COINS   •   %d STARS" % [state.player_level(), state.coins, state.stars_total()], Vector2(30, 733), Vector2(480, 32), 18, CREAM, true), 646.0)
+	_compact_menu_control(_label("Move with your left thumb. Hold the gun to shoot.\nReload when empty. Use cover and dash through danger.", Vector2(40, 790), Vector2(460, 72), 18, CREAM, true), 690.0)
+	_compact_menu_control(_label("Offline play • Optional online features on Android", Vector2(20, 872), Vector2(500, 27), 14, CREAM, true), 773.0)
+	_apply_banner_layout()
 
 func _show_map() -> void:
 	_clear("map")
@@ -307,19 +327,21 @@ func _show_workshop() -> void:
 	_header("The workshop", _show_home)
 	_label("A little better prepared", Vector2(36, 137), Vector2(468, 36), 24)
 	var names := {"power":"Polished revolver", "heart":"Reinforced vest", "boots":"Trail boots", "magazine":"Extended cylinder", "reload":"Speed loader", "dash":"Quick spurs", "armor":"Layered armor"}
-	var desc := {"power":"+1 damage", "heart":"+12 health", "boots":"+8 speed", "magazine":"+4 rounds", "reload":"-0.12s reload", "dash":"-0.13s dash recovery", "armor":"3.5% damage reduction"}
+	var desc := {"power":"+1 damage", "heart":"+7.2 health", "boots":"+7.04 speed", "magazine":"+4 rounds", "reload":"-0.12s reload", "dash":"-0.13s dash recovery", "armor":"3.5% damage reduction"}
 	var index := 0
 	for key in ["power", "heart", "boots", "magazine", "reload", "dash", "armor"]:
 		var y := 185.0 + index * 92.0
-		_card(Rect2(28, y, 484, 82))
-		_label(names[key], Vector2(44,y+8), Vector2(292,29), 22)
-		_label("%d/8  %s" % [int(state.upgrades[key]),desc[key]], Vector2(44,y+43), Vector2(305,26), 16)
+		_compact_menu_control(_card(Rect2(28, y, 484, 82)), 185.0 + index * 78.0, 74.0)
+		_compact_menu_control(_label(names[key], Vector2(44,y+8), Vector2(292,29), 22), 193.0 + index * 78.0)
+		_compact_menu_control(_label("%d/8  %s" % [int(state.upgrades[key]),desc[key]], Vector2(44,y+43), Vector2(305,26), 16), 228.0 + index * 78.0)
 		var cost: int = state.upgrade_cost(key)
-		_button("%d coins" % cost if cost >= 0 else "MAX", Vector2(354,y+20),Vector2(143,44),func():
+		var buy := _button("%d coins" % cost if cost >= 0 else "MAX", Vector2(354,y+20),Vector2(143,44),func():
 			if state.buy_upgrade(key):
 				_save(); _sync_progress(); _sound("coin"); _show_workshop(),cost<0 or state.coins<cost)
+		_compact_menu_control(buy, 205.0 + index * 78.0)
 		index += 1
-	_label("Coins come from play. Your original upgrades are preserved.",Vector2(35,825),Vector2(470,35),16,INK,true)
+	_compact_menu_control(_label("Play earns coins. Your upgrades are preserved.",Vector2(35,825),Vector2(470,25),16,INK,true), 735.0)
+	_apply_banner_layout()
 
 func _show_rewards() -> void:
 	state.roll_day(_today())
@@ -755,22 +777,28 @@ func _draw() -> void:
 		_tex(63, Rect2(33, 418, 64, 64))
 		_tex(62, Rect2(448, 620, 64, 64))
 	elif screen == "home":
-		draw_circle(Vector2(270, 285), 106, Color("74608c"))
-		draw_circle(Vector2(270, 285), 89, Color("c59b80"))
+		var compaction := _menu_compaction()
+		var hero_scale := lerpf(1.0, 0.5, compaction)
+		var hero_center := Vector2(270, lerpf(285.0, 256.0, compaction))
+		draw_circle(hero_center, 106 * hero_scale, Color("74608c"))
+		draw_circle(hero_center, 89 * hero_scale, Color("c59b80"))
 		for i in range(18):
 			var x: float = fmod(float(i * 79), 520) + 10
 			var y: float = fmod(float(i * 131), 890) + 20
 			draw_circle(Vector2(x, y), 1.6, Color("ae88a0"))
-		_tex(63, Rect2(57, 261, 64, 64))
-		_tex(80, Rect2(418, 242, 64, 64))
+		_tex(63, _home_hero_rect(Rect2(57, 261, 64, 64), hero_center, hero_scale))
+		_tex(80, _home_hero_rect(Rect2(418, 242, 64, 64), hero_center, hero_scale))
 		if not players.is_empty():
-			draw_texture_rect(players[0], Rect2(222, 227, 96, 96), false)
-			draw_texture_rect(weapon, Rect2(294, 276, 48, 48), false)
+			draw_texture_rect(players[0], _home_hero_rect(Rect2(222, 227, 96, 96), hero_center, hero_scale), false)
+			draw_texture_rect(weapon, _home_hero_rect(Rect2(294, 276, 48, 48), hero_center, hero_scale), false)
 	elif screen == "results":
 		for i in range(24):
 			draw_circle(Vector2(fmod(i * 97.0, 540), fmod(i * 149.0, 960)), 2, Color("967c9f"))
 
 	draw_set_transform(Vector2.ZERO)
+
+func _home_hero_rect(rect: Rect2, center: Vector2, factor: float) -> Rect2:
+	return Rect2(center + (rect.position - Vector2(270, 285)) * factor, rect.size * factor)
 
 func _draw_arena() -> void:
 	var rect: Rect2 = Combat.ARENA

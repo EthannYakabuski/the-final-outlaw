@@ -241,9 +241,10 @@ func _spawn_enemy(kind: String, point: Vector2) -> void:
 	var health_multiplier: float = 1.0 + (difficulty - 1.0) * 0.22
 	var rule: String = str(level.get("rule", "steady"))
 	if rule == "armored": health_multiplier *= 1.25
-	var hp: float = float(info.hp) * health_multiplier
-	var enemy_speed: float = float(info.speed) * minf(1.7, 1.0 + difficulty * 0.04) * (1.2 if rule == "swift" else 1.0)
-	enemies.append({"p": point, "kind": kind, "hp": hp, "max_hp": hp, "speed": enemy_speed, "damage": float(info.damage) * minf(2.0, 1.0 + difficulty * 0.07), "timer": rng.randf_range(0.8, 2.0), "flash": 0.0, "path":PackedVector2Array(), "repath":0.0, "skin":rng.randi_range(0,1)})
+	# Three additional unupgraded five-damage shots, after stage/endless/armor scaling.
+	var hp: float = float(info.hp) * health_multiplier + 15.0
+	var enemy_speed: float = float(info.speed) * minf(1.7, 1.0 + difficulty * 0.04) * (1.2 if rule == "swift" else 1.0) * 1.25
+	enemies.append({"p": point, "kind": kind, "hp": hp, "max_hp": hp, "speed": enemy_speed, "damage": float(info.damage) * minf(2.0, 1.0 + difficulty * 0.07) * 1.15, "timer": rng.randf_range(0.8, 2.0), "flash": 0.0, "path":PackedVector2Array(), "repath":0.0, "skin":rng.randi_range(0,1)})
 
 func _update_enemies(delta: float) -> void:
 	for enemy in enemies:
