@@ -1,6 +1,6 @@
 # The Final Outlaw: working agreement
 
-This folder is the canonical Git working copy. Work only on this game and the requested update; do not launch another game or treat archived publication copies as parallel development locations. The ten-game review cap is already reached.
+This folder is the canonical Git working copy. Work only on this game and the requested update; do not launch another game or treat archived publication copies as parallel development locations. Round Four is authorized; this requested task is build-only. Do not add gameplay changes or another game without a new request.
 
 Before editing, read README.md, HANDOFF.txt and docs/PLATFORM_SETUP.md, then inspect git status, branch/upstream and origin. A fresh task must load these files; prior chat history is not assumed. Preserve user edits and local artifacts. Do not reset/clean an existing worktree or delete backups.
 
@@ -14,7 +14,7 @@ Before editing, read README.md, HANDOFF.txt and docs/PLATFORM_SETUP.md, then ins
 
 ## Build and verify
 
-Godot4.5.1 Compatibility, Android primary plus Web, Java17 and matching export templates/SDK. Retain min API24/target API35 as the current engine test constraint; verify current store requirements before release. Keep current Android shader-cache and remote-run settings unless separately justified.
+Godot4.5.1 Compatibility, Android primary plus Web, Java17 and matching export templates/SDK. The accepted Round Four AAB uses min API24/target API36; old API35 native records remain historical, not a fixed engine constraint; verify current store requirements before release. Keep current Android shader-cache and remote-run settings unless separately justified.
 
 Import once with `godot --headless --editor --path . --import`. Run the affected tests below, plus `platform/tests/services_smoke.gd` when services change. Use a process-scoped temporary user-data root (APPDATA and LOCALAPPDATA on Windows; XDG_DATA_HOME on Linux) so tests and service pending queues never touch genuine saves. Keep existing timeouts and strict script/parse/assertion/engine-error checks.
 

@@ -1,3 +1,26 @@
+ROUND FOUR - QUALIFIED ANDROID BUILD-ONLY HANDOFF
+Updated 2026-10-24. Local bundle validation passed; public exact-commit CI and native/device acceptance remain pending.
+
+Build source commit: c9c600099db3f381202f0e5c240d7cc22bd4940c
+AAB: build/round-four-aab-002/the-final-outlaw-debug.aab
+Bytes: 95934834
+SHA256: 3BA42538514249C8EFC905C98DFB056ED665EDEB9C40232F0D9189AD04CBFF7D
+Export: Godot4.5.1 Compatibility; minAPI24/targetAPI36; package com.ethannyakabuski.finaloutlaw; version code 1 unchanged from the owner preset.
+Actual native payload: arm64-v8a, x86, x86_64, each with libgodot_android.so and libc++_shared.so. Six ELF class/machine checks passed; every 32-bit native library has its matching 64-bit counterpart.
+Godot exit0, strict build diagnostics empty, runtime input hashes unchanged and ABI validation PASS. This is not a blanket warning-free, Play acceptance or native-runtime claim.
+
+Round Four scope is the Android build correction only; gameplay, service IDs and genuine saves were not changed by this delivery.
+
+Qualified bundle package: build/round-four-aab-002/packages/the-final-outlaw-round-four-aab-test.zip
+Check sibling PACKAGE-RECEIPT.json and the ZIP PACKAGE-MANIFEST.json for actual archive hash, member integrity and the separate documentation commit. This package preserves the exact AAB and complete accompanying LICENSE/NOTICE/LICENSES; private logs, saves, SDK caches and signing material are excluded.
+
+The bundle is debug/test signed, not a release-signed submission. The owner must supply their private release signing configuration outside Git, choose an unused higher version code, verify current target/API and other Play requirements, and perform intended-device/internal-test validation. AABs are not directly installed like APKs. This task did not generate/install device APKs, upload a release or change any production IDs. Round Four public source/CI is pending publication; earlier passing CI URLs below prove only their named historical commits.
+
+No new screenshots are required for this build-only change. Existing native gameplay/ad/offline/audio, physical-device and Web qualifications remain unchanged. In particular, old native-tested APK hashes do not transfer QA to this newly exported AAB. Preserve all previous builds, archives, genuine profiles and owner configuration.
+
+PRESERVED DATED PRE-ROUND-FOUR HANDOFF
+All current/successor statements below belong to the named older binaries and dates, not the AAB identified above.
+
 THE FINAL OUTLAW - ROUND THREE LOCAL TEST HANDOFF
 Updated2026-10-22. Qualified F292 Android/Web test build with18 accepted genuine screenshots. Limited affected native checks passed; this is not an entirely clean native gate.
 

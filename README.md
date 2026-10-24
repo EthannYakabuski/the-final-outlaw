@@ -1,5 +1,13 @@
 # The Final Outlaw
 
+## Round Four: qualified Android App Bundle
+
+The accepted debug/test AAB is `build/round-four-aab-002/the-final-outlaw-debug.aab` (95934834 bytes), SHA256 `3BA42538514249C8EFC905C98DFB056ED665EDEB9C40232F0D9189AD04CBFF7D`. Build source: `c9c600099db3f381202f0e5c240d7cc22bd4940c`. The preset used minimum API 24/target API 36; Godot 4.5.1 Compatibility exported it successfully. The actual bundle passed six native ELF-header checks and matching 32/64-bit library coverage for ARM64, x86 and x86_64.
+
+Round Four scope is the Android build correction only; gameplay, service IDs and genuine saves were not changed by this delivery.
+
+This AAB has not been installed/native-tested, production-signed or uploaded to Play. Earlier native QA and screenshots below remain tied to their named older APKs. The Round Four source/documentation has not yet received verified exact-commit public CI; publication/CI remains pending. Owner release signing, an unused version code, current Play checks and real-service/device testing remain separate. See [Android changes](docs/ROUND_FOUR_ANDROID.md), [platform setup](docs/PLATFORM_SETUP.md) and [handoff](HANDOFF.txt).
+
 One trail. A hundred last stands.
 
 A portrait western shooter with a 100-level campaign, tutorial opening, distinct challenges, endless survival, player progression and light powerups.
@@ -38,14 +46,15 @@ Later commits require their own CI result; this dated result does not verify lat
 
 Original code: Apache-2.0. Developer: [EthannYakabuski](https://github.com/EthannYakabuski). Included assets/plugins retain their own licenses and notices.
 
-Use Godot **4.5.1**, **Compatibility**, matching export templates, Java 17 and the Android SDK. The test preset uses minimum API 24 and target API 35. This is a test-configured build; final release signing, current Play requirements and production backend verification remain with the owner. See [native setup](docs/PLATFORM_SETUP.md).
+Use Godot **4.5.1**, **Compatibility**, matching export templates, Java 17 and the Android SDK. The test preset uses minimum API 24 and target API 36. This is a test-configured build; final release signing, current Play requirements and production backend verification remain with the owner. See [native setup](docs/PLATFORM_SETUP.md).
 
 ```sh
 godot --headless --editor --path . --import
 godot --headless --path . --script tests/test_models.gd
 godot --headless --path . --script platform/tests/services_smoke.gd
 godot --headless --path . --export-release Web build/local-next/web/index.html
-godot --headless --path . --install-android-build-template --export-debug Android build/local-next/android/game-debug.apk
+godot --headless --path . --install-android-build-template --export-debug Android build/local-next/android/game-debug.aab
+python tools/verify_android_bundle.py build/local-next/android/game-debug.aab --preset export_presets.cfg
 ```
 
 Choose a new unused build version directory and create its web/android subfolders first; local-next is only an example. Never overwrite the preserved original or accepted test artifacts. Android package: `com.ethannyakabuski.finaloutlaw`. Tests are documented under game/ and tests/. No Windows build is supplied.
@@ -58,7 +67,7 @@ New illustrated app/feature and all 26 catalog images, exact originals/prompts a
 
 ## CI and Web
 
-Hosted GitHub Actions imports resources, runs game/service tests, exports Web and an Android debug APK, and retains export artifacts. Pages deployment remains explicitly disabled. Build outputs, caches and signing keys are excluded from source. Confirm actual run results in HANDOFF.txt; workflow presence alone is not a passing CI claim.
+Hosted GitHub Actions imports resources, runs game/service tests, exports Web and an Android debug AAB, and retains export artifacts. Pages deployment remains explicitly disabled. Build outputs, caches and signing keys are excluded from source. Confirm actual run results in HANDOFF.txt; workflow presence alone is not a passing CI claim.
 
 ## Future extension
 
