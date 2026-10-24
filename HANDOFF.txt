@@ -1,5 +1,5 @@
 ROUND FOUR - QUALIFIED ANDROID BUILD-ONLY HANDOFF
-Updated 2026-10-24. Local bundle validation passed; public exact-commit CI and native/device acceptance remain pending.
+Updated 2026-10-24. Local bundle validation passed. Public source revision 9bb2d806a2389b39162dafe9ad6c26df475ea7f9 has exact-commit hosted CI SUCCESS: https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/40125506666. Native/device acceptance remains pending.
 
 Build source commit: c9c600099db3f381202f0e5c240d7cc22bd4940c
 AAB: build/round-four-aab-002/the-final-outlaw-debug.aab
@@ -14,7 +14,7 @@ Round Four scope is the Android build correction only; gameplay, service IDs and
 Qualified bundle package: build/round-four-aab-002/packages/the-final-outlaw-round-four-aab-test.zip
 Check sibling PACKAGE-RECEIPT.json and the ZIP PACKAGE-MANIFEST.json for actual archive hash, member integrity and the separate documentation commit. This package preserves the exact AAB and complete accompanying LICENSE/NOTICE/LICENSES; private logs, saves, SDK caches and signing material are excluded.
 
-The bundle is debug/test signed, not a release-signed submission. The owner must supply their private release signing configuration outside Git, choose an unused higher version code, verify current target/API and other Play requirements, and perform intended-device/internal-test validation. AABs are not directly installed like APKs. This task did not generate/install device APKs, upload a release or change any production IDs. Round Four public source/CI is pending publication; earlier passing CI URLs below prove only their named historical commits.
+The bundle is debug/test signed, not a release-signed submission. The owner must supply their private release signing configuration outside Git, choose an unused higher version code, verify current target/API and other Play requirements, and perform intended-device/internal-test validation. AABs are not directly installed like APKs. This task did not generate/install device APKs, upload a release or change any production IDs. Round Four source revision 9bb2d806a2389b39162dafe9ad6c26df475ea7f9 is public with exact-commit CI SUCCESS at https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/40125506666. The local AAB above remains bound to its original build-source commit and hash; this CI result does not transfer native QA or change its bytes.
 
 No new screenshots are required for this build-only change. Existing native gameplay/ad/offline/audio, physical-device and Web qualifications remain unchanged. In particular, old native-tested APK hashes do not transfer QA to this newly exported AAB. Preserve all previous builds, archives, genuine profiles and owner configuration.
 

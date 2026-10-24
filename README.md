@@ -6,7 +6,7 @@ The accepted debug/test AAB is `build/round-four-aab-002/the-final-outlaw-debug.
 
 Round Four scope is the Android build correction only; gameplay, service IDs and genuine saves were not changed by this delivery.
 
-This AAB has not been installed/native-tested, production-signed or uploaded to Play. Earlier native QA and screenshots below remain tied to their named older APKs. The Round Four source/documentation has not yet received verified exact-commit public CI; publication/CI remains pending. Owner release signing, an unused version code, current Play checks and real-service/device testing remain separate. See [Android changes](docs/ROUND_FOUR_ANDROID.md), [platform setup](docs/PLATFORM_SETUP.md) and [handoff](HANDOFF.txt).
+This AAB has not been installed/native-tested, production-signed or uploaded to Play. Earlier native QA and screenshots below remain tied to their named older APKs. Round Four source revision `9bb2d806a2389b39162dafe9ad6c26df475ea7f9` is public and its [exact-commit hosted CI](https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/40125506666) passed. This source result does not native-test the frozen AAB above. Owner release signing, an unused version code, current Play checks and real-service/device testing remain separate. See [Android changes](docs/ROUND_FOUR_ANDROID.md), [platform setup](docs/PLATFORM_SETUP.md) and [handoff](HANDOFF.txt).
 
 One trail. A hundred last stands.
 
