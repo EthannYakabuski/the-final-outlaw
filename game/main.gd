@@ -111,6 +111,8 @@ func _ready() -> void:
 	if service != null and service.has_signal("availability_changed"):
 		service.availability_changed.connect(_refresh_reward_button)
 	_build_theme()
+	if is_instance_valid(service) and service.has_signal("play_games_notice"):
+		service.connect("play_games_notice", _show_toast)
 	_show_home()
 	if not capture_screen.is_empty():
 		match capture_screen:
@@ -427,8 +429,8 @@ func _show_boards() -> void:
 		_label(str(board.name), Vector2(47, y + 14), Vector2(420, 31), 23)
 		_label("Your record: %d" % int(metrics.get(str(board.metric), 0)), Vector2(47, y + 60), Vector2(250, 30), 18)
 		_button("Online", Vector2(366, y + 54), Vector2(121, 44), func():
-			if service != null: service.open_leaderboards(str(board.key))
-			_show_toast("Online records require Play Games on Android."))
+			_show_toast("Connecting to Play Games in the Android app...")
+			if service != null: service.open_leaderboards(str(board.key)))
 		i += 1
 
 func _show_options() -> void:
@@ -450,10 +452,10 @@ func _show_options() -> void:
 	_label("Your save is local to this device.\nOnline services are optional; the whole campaign works offline.", Vector2(43, 790), Vector2(454, 62), 17, INK, true)
 
 func _online(kind: String) -> void:
+	_show_toast("Connecting to Play Games in the Android app...")
 	if service != null:
 		if kind == "sign_in": service.sign_in()
 		else: service.open_achievements()
-	_show_toast("Online features use Play Games in the Android app.")
 
 func _start_level(number: int, endless: bool) -> void:
 	selected_level = number
@@ -899,10 +901,18 @@ func _today() -> String:
 func _sync_progress() -> void:
 	if catalog.is_empty(): return
 	var metrics: Dictionary = state.metrics()
+	var changed := false
 	for achievement in catalog.get("achievements", []):
-		if int(metrics.get(str(achievement.metric), 0)) >= int(achievement.threshold) and not state.unlocked.has(str(achievement.key)):
-			state.unlocked[str(achievement.key)] = true
-			if service != null: service.unlock(str(achievement.key))
+		var key := str(achievement.key)
+		if int(metrics.get(str(achievement.metric), 0)) >= int(achievement.threshold) and state.unlocked.get(key, false) != true:
+			state.unlocked[key] = true
+			changed = true
+		# Backfill genuine saved unlocks even if the retry file is absent and a
+		# transient metric (for example a seven-day streak) has since rolled over.
+		if state.unlocked.get(key, false) == true and service != null:
+			service.unlock(key)
+	if changed:
+		_save()
 	if service != null:
 		for board in catalog.get("leaderboards", []):
 			service.submit(str(board.key), int(metrics.get(str(board.metric), 0)))

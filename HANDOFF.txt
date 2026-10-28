@@ -1,3 +1,23 @@
+THE FINAL OUTLAW - PLAY GAMES SOURCE INTEGRATION
+Updated 2026-10-28. Current source integration passes local Godot 4.5.1 checks. No local replacement binary or real signed-in Play Games acceptance is claimed. Match hosted Android/Web results to the containing commit in Actions; all older artifact identities and results are preserved below.
+
+CONFIGURATION AND SAVE SCOPE
+The owner has supplied all 21 achievement IDs and five leaderboard IDs in platform/config.json, set play_games.enabled=true and supplied the matching Android export game ID. Preserve these IDs and unrelated export/signing edits. enabled gates the app's Play Games authentication, achievements and leaderboards; it is not a Saved Games switch. The game save remains user://outlaw_save_v1.json. Backend Saved Games enablement does not implement Snapshot upload/download, conflict handling or cross-device saves.
+
+SUBMISSION CONTRACT
+All 21 achievements are Standard, with local thresholds rather than Google incremental steps. All five leaderboards are Numeric, zero decimals, Larger is better. survival_seconds sends whole seconds; Time formatting expects milliseconds and is incompatible without a coordinated code change. The catalog and ID-map locations and all five score meanings are documented in docs/PLATFORM_SETUP.md.
+
+The game backfills legitimate saved unlock flags, including a previously earned seven-day streak after its current counter rolls over, without granting gameplay rewards. Validated desired unlocks and maximum scores remain in the primary/bak/tmp retry journal. Native result signals, session-only acknowledgements, request coalescing and bounded 30-second retry preserve pending progress through failure, timeout and reconnect. Authentication is rechecked on resume; interactive sign-in follows a player action and a queued online view opens after success. Old callbacks do not acknowledge newer score values. AdMob configuration, consent and gameplay reward rules are unchanged.
+
+LOCAL VERIFICATION AND DEVICE LIMITS
+The focused tests/test_play_games.gd fixture uses synthetic adapters. It requires isolated process-scoped user data, OUTLAW_PGS_TEST_ISOLATED=1 and OUTLAW_PGS_TEST_ROOT, verifies the actual data path, refuses Android, and must end with an OUTLAW_PLAY_GAMES_TESTS summary showing zero failures plus a successful exit and the strict clean diagnostic gate. Follow the safe invocation in docs/PLATFORM_SETUP.md and run the affected game/service tests. A model test or successful export is not a real Google submission test. The final focused fixture passed 96 checks. Existing source suites passed: models 18980, fullscreen lifecycle 31, Round Three balance 5337, touch input 20 and UI 2508; service smoke and import also passed with no strict errors. The configured Android AAB preset check passed. Sanitized evidence: docs/PLAY_GAMES_VALIDATION.json. Hosted exports are separate from local source tests; no real SDK/backend or newly built native acceptance is claimed.
+
+OWNER DEVICE/BACKEND CHECKLIST
+Use a newly built Android app with matching package, game ID, OAuth/signing fingerprints, authorized testers and correctly configured Play Games resources. Verify sign-in success/cancellation/failure; previously and newly earned achievements; all five score values/formatting; offline progress followed by online retry; resume and relaunch; and unchanged local save/reward totals. Release signing, real-device/backend acceptance and Google Play publication remain owner actions. Preserve current and historical artifacts; their dated QA does not transfer to the changed integration.
+
+PRESERVED PRE-INTEGRATION ARTIFACT HISTORY
+The complete text below belongs to its dated source revisions and binaries. Historical placeholder/disabled-ID statements describe those builds, not the owner's enabled 2026-10-28 configuration.
+
 ROUND FOUR - QUALIFIED ANDROID BUILD-ONLY HANDOFF
 Updated 2026-10-24. Local bundle validation passed. Public source revision 9bb2d806a2389b39162dafe9ad6c26df475ea7f9 has exact-commit hosted CI SUCCESS: https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/40125506666. Native/device acceptance remains pending.
 

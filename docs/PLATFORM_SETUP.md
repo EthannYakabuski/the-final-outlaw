@@ -1,5 +1,62 @@
 # Android integrations and build handoff
 
+## 2026-10-28 Play Games integration
+
+The source configuration now contains the owner's 21 achievement IDs and five leaderboard IDs, `play_games.enabled=true`, and a game ID matching `godot_play_game_services/game_id` in the Android export preset. Preserve these values and symbolic keys. The JSON flag enables the app's Play Games authentication, achievement and leaderboard adapter. It is not a Saved Games switch. The device save remains `user://outlaw_save_v1.json`; enabling Saved Games in the backend does not add Snapshot upload, download, conflict resolution or cross-device save synchronization.
+
+### Console value contract
+
+- All 21 achievements are **Standard**. Their local `threshold` fields are conditions for one-time unlocks, not Google incremental step totals. Names/descriptions are in `game/catalog.json`; IDs belong in `platform/config.json` under `play_games.achievements`.
+- All five leaderboards are **Numeric**, **0 decimal places**, **Larger is better**. Map IDs under `play_games.leaderboards`.
+
+| Key | Submitted value |
+| --- | --- |
+| `eliminations` | Cumulative kills across all modes, in foes |
+| `survival_score` | Best single endless-run score, in points |
+| `campaign_stars` | Sum of the best stars earned on each campaign trail |
+| `player_level` | Current in-game player level |
+| `survival_seconds` | Longest endless run, in whole seconds |
+
+No decimal or currency scaling is applied. Do not choose Time formatting for `survival_seconds` with this code: Google expects milliseconds for Time, while this game sends seconds. Changing that representation requires a coordinated code and console change.
+
+### Synchronization and offline behavior
+
+`game/main.gd` backfills legitimate saved unlock flags on load and progress changes, including `streak_7` after the current streak has reset. Qualifying existing metrics can mark an achievement earned without adding coins, XP or other rewards. Existing local best-score metrics supply the five boards.
+
+`platform/services.gd` retains desired unlocks and maximum scores in `user://platform_pending_v1.json`. Startup validates and merges the primary, `.bak` and `.tmp` records; writes flush a temporary file and replace the primary, retaining the last readable backup. The adapter connects native authentication, achievement and score result signals. Acknowledgements are session-only, requests are coalesced, and each remote ID has at most one active request. Failed, timed-out or ambiguous callbacks retain desired progress; an old score callback cannot acknowledge a newer score. Reconnect and unchanged failed/ambiguous retries use a 30-second backoff. Authentication is rechecked on Android resume; interactive sign-in follows an explicit Connect/Online action, and a queued online view opens after authentication succeeds. Failure or cancellation leaves local play available. A successful SDK callback is not proof supplied by a synthetic fixture.
+
+### Source checks and remaining owner validation
+
+The focused fixture is `tests/test_play_games.gd`. It requires fresh process-scoped user-data directories, `OUTLAW_PGS_TEST_ISOLATED=1`, and `OUTLAW_PGS_TEST_ROOT` matching the parent of those directories. It verifies the actual Godot user-data path is inside that root and refuses Android execution. It uses synthetic clients rather than a real Google account. Run the service smoke test and affected game tests under the same isolation. Require exit zero, the `OUTLAW_PLAY_GAMES_TESTS` summary with zero failures, and no strict script/parse/assertion/engine-error diagnostics. Record the actual source revision and local/hosted results in `HANDOFF.txt`; these tests cannot establish real signed-in Google acceptance.
+
+PowerShell, from the project root with the configured `godot` executable:
+
+```powershell
+$testRoot = Join-Path ([IO.Path]::GetTempPath()) ('outlaw-pgs-' + [Guid]::NewGuid().ToString('N'))
+$previousAppData = $env:APPDATA
+$previousLocalAppData = $env:LOCALAPPDATA
+$previousGuard = $env:OUTLAW_PGS_TEST_ISOLATED
+$previousTestRoot = $env:OUTLAW_PGS_TEST_ROOT
+try {
+    $env:APPDATA = Join-Path $testRoot 'Roaming'
+    $env:LOCALAPPDATA = Join-Path $testRoot 'Local'
+    New-Item -ItemType Directory -Path $env:APPDATA, $env:LOCALAPPDATA -Force | Out-Null
+    $env:OUTLAW_PGS_TEST_ISOLATED = '1'
+    $env:OUTLAW_PGS_TEST_ROOT = $testRoot
+    godot --headless --path . --script tests/test_play_games.gd
+    if ($LASTEXITCODE -ne 0) { throw 'Play Games fixture failed; inspect the full log.' }
+} finally {
+    $env:APPDATA = $previousAppData
+    $env:LOCALAPPDATA = $previousLocalAppData
+    $env:OUTLAW_PGS_TEST_ISOLATED = $previousGuard
+    $env:OUTLAW_PGS_TEST_ROOT = $previousTestRoot
+}
+```
+
+On Linux, use a fresh `XDG_DATA_HOME` for each fixture process, for example `pgs_test_root="$(mktemp -d)"` followed by `XDG_DATA_HOME="$pgs_test_root/data" XDG_CONFIG_HOME="$pgs_test_root/config" OUTLAW_PGS_TEST_ISOLATED=1 OUTLAW_PGS_TEST_ROOT="$pgs_test_root" godot --headless --path . --script tests/test_play_games.gd`. Do not run synthetic fixtures against genuine saves or treat the opt-in guard as isolation by itself.
+
+The owner still needs to validate a newly built Android app with matching `com.ethannyakabuski.finaloutlaw`, game ID, OAuth client and actual signing-certificate fingerprints, authorized testers and configured/published-for-testing Play Games resources. On the intended signed-in device, verify existing earned achievements, a newly earned Standard achievement, the five correctly formatted board values (including whole seconds), sign-in cancellation/failure, offline progress followed by online retry, background/resume and relaunch. Confirm the device save and earned rewards remain unchanged by synchronization. Verify the existing AdMob behavior separately; this integration does not change its app/unit IDs, consent or reward rules. CI and old artifacts cannot establish real-service acceptance. Release signing and Play publication remain owner actions.
+
 ## Current Round Four build
 
 The Android preset defaults to Gradle AAB with matched ARM64/x86/x86_64 native coverage. The accepted local export used minimum API 24/target API 36; SHA256 `3BA42538514249C8EFC905C98DFB056ED665EDEB9C40232F0D9189AD04CBFF7D` from build source `c9c600099db3f381202f0e5c240d7cc22bd4940c`. Public source revision `9bb2d806a2389b39162dafe9ad6c26df475ea7f9` has [passing exact-commit hosted CI](https://github.com/EthannYakabuski/the-final-outlaw/actions/runs/40125506666); release signing and native/device acceptance remain pending. The accepted local bundle retains its original build-source/hash provenance. Older native/API35 observations below are dated evidence only; they do not impose a fixed engine constraint on this new export. Read [the build correction](ROUND_FOUR_ANDROID.md) and [the artifact handoff](../HANDOFF.txt) before distribution.
@@ -14,7 +71,7 @@ This project targets Godot **4.5.1 Compatibility**, Android (API36 target, min24
 - Interstitials: every second naturally completed round, when an ad is loaded; no added fixed-time throttle. Failed/unavailable ads do not prevent play.
 - Rewarded: opt-in, available only after a real native rewarded ad loads; benefits granted only on the earned-reward callback, once per request. Dismissal/failure grants nothing.
 - Consent: refresh UMP consent at Android launch, show a required form, and initialize advertising only after `OBTAINED` or `NOT_REQUIRED`. A privacy-options action is exposed. Without configured/available consent information, requests pause and gameplay continues. Google's sample AdMob app does not prove the publisher's eventual privacy-message configuration; this requires human final configuration/testing.
-- Play Games: disabled until real app configuration is provided. Local unlocks and best scores are retained in `user://platform_pending_v1.json` and resubmitted idempotently after sign-in. Only the configured symbolic keys map to remote IDs.
+- Play Games: owner-supplied achievement/leaderboard IDs are enabled in the current source configuration. Desired unlocks and best scores are retained in `user://platform_pending_v1.json` and resubmitted idempotently after sign-in. Only the configured symbolic keys map to remote IDs; native backend acceptance remains to be verified.
 
 ### Menu geometry
 
@@ -31,7 +88,7 @@ Coordinate references: https://docs.godotengine.org/en/4.5/classes/class_canvasi
 Android debug builds log `NATIVE_AD_EVENT` only from actual SDK presentation, dismissal, failure, and accepted earned-reward callbacks. `rewarded_earned` is logged after the game's successful callback and only once, with its event context. Request attempts are not presentation proof. Editor/Web unit callback exercises never emit these native diagnostics; no analytics or network calls were added.
 
 1. Keep test IDs in use during development. Google's Android sample app ID and banner/interstitial/rewarded units are recorded in `platform/config.json`. The native SDK's manifest app ID comes from the project setting `admob/general/android/app_id`, with the plugin's same Google sample ID as its default. An absent `[admob]` section in `project.godot` is normal when this default is unchanged; the editor can omit default-valued settings. For production, set the real app ID in Godot Project Settings (serialized under `[admob]` as `general/android/app_id`) and update the JSON reference value too. JSON `admob.app_id` alone does not change the Android manifest. Source: `addons/admob/internal/exporters/android/export_plugin.gd:112-125` and `internal/services/project_settings_service.gd:27,62-63,124-130`.
-2. In `platform/config.json`, fill `play_games.game_id`, set `enabled` to true, and map every game/catalog achievement and leaderboard key to its console ID. Set the same numeric game ID in `export_presets.cfg` (`godot_play_game_services/game_id`). The export's value `0` is a deliberate inactive placeholder, not a working Google project.
+2. The owner has filled `platform/config.json`'s `play_games.game_id`, enabled Play Games and supplied all catalog achievement/leaderboard mappings. Keep the same numeric game ID in `export_presets.cfg` (`godot_play_game_services/game_id`); this export option supplies Android manifest metadata, while JSON supplies the runtime adapter's configuration. Preserve the owner's IDs and unrelated export/signing edits.
 3. Configure package name, OAuth clients/signing fingerprints, authorized testers, Play Games resources, AdMob app/privacy messages, audience and production ad IDs in the owner's consoles. Supply signing material outside source control. Confirm applicable consent/audience settings before production.
 4. Test real sign-in cancellation/failure, score/achievement submission, consent/privacy options, all test-ad formats, save persistence, offline behavior, and suspend/resume on the intended devices. Human production-ID/backend testing is distinct from passing local/CI tests.
 5. Google Play publication remains the owner's responsibility. No workflow submits to Google Play or uses production signing keys.
@@ -74,7 +131,7 @@ Achievement keys: `kills_1`, `kills_25`, `kills_100`, `kills_500`, `kills_2000`,
 
 Leaderboard keys: `eliminations`, `survival_score`, `campaign_stars`, `player_level`, `survival_seconds`.
 
-`play_games.enabled` is currently false and all production mappings are empty. Supply `play_games.game_id`, achievement and leaderboard IDs in JSON and the matching `godot_play_game_services/game_id` in the Android section of `export_presets.cfg`. The current `0` preset value is inactive. Configure matching package, OAuth/signing fingerprints and authorized testers in the owner consoles before enabling Play Games.
+`play_games.enabled` is now true with owner-supplied achievement/leaderboard mappings and a matching Android export game ID. This enables the Play Games adapter, not cloud saves. Retain matching package, OAuth/signing fingerprints, authorized testers and resource configuration in the owner consoles, then verify actual submissions on the intended signed-in Android build. Preserve these owner edits during future updates.
 
 For AdMob, `banner_unit_id`, `interstitial_unit_id` and `rewarded_unit_id` are the actual requested unit IDs. Set the manifest App ID in Godot Project Settings `admob/general/android/app_id` (the `[admob]` section of `project.godot`), and keep JSON `admob.app_id` consistent as a reference. No platform/game code reads JSON `app_id` to set the manifest. An absent `[admob]` override uses the plugin sample default. `test_mode` only changes status wording; it does not configure test devices or override production unit IDs. Retain Google sample IDs during ordinary development.
 

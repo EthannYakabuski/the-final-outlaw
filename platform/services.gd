@@ -4,6 +4,7 @@ extends Node
 signal availability_changed
 signal service_notice(message: String)
 signal menu_bottom_reserve_changed
+signal play_games_notice(message: String)
 
 var settings: Dictionary = {}
 var _native_ads := false
@@ -25,12 +26,31 @@ var _achievements_client: PlayGamesAchievementsClient
 var _leaderboards_client: PlayGamesLeaderboardsClient
 var _pending_unlocks: Dictionary = {}
 var _pending_scores: Dictionary = {}
+var _submitted_unlocks: Dictionary = {}
+var _submitted_scores: Dictionary = {}
+var _inflight_unlocks: Dictionary = {}
+var _inflight_scores: Dictionary = {}
+var _uncertain_score_ids: Dictionary = {}
+var _uncertain_unlock_ids: Dictionary = {}
+var _last_unlock_attempts: Dictionary = {}
+var _last_score_attempts: Dictionary = {}
+var _progress_flush_scheduled := false
+var _pgs_clock := 0.0
+var _pgs_retry_at := 30.0
+var _pgs_auth_pending := false
+var _pgs_auth_interactive := false
+var _pgs_manual_sign_in_requested := false
+var _pgs_auth_started := 0.0
+var _pgs_needs_auth_check := false
+var _pgs_pending_view := ""
 var _notice := "Offline progress is available."
 var _menu_metric_elapsed := 0.0
 var _menu_metric_key := ""
 var _menu_metric_signal_pending := false
 
 const PENDING_PATH := "user://platform_pending_v1.json"
+const PGS_RETRY_SECONDS := 30.0
+const PGS_REQUEST_TIMEOUT_SECONDS := 20.0
 
 func _ready() -> void:
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://platform/config.json"))
@@ -50,6 +70,7 @@ func _ready() -> void:
 	_refresh_consent()
 
 func _process(delta: float) -> void:
+	_process_play_games(delta)
 	if OS.get_name() != "Android" or not _menu_visible:
 		return
 	_menu_metric_elapsed += delta
@@ -60,6 +81,7 @@ func _process(delta: float) -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_RESUMED and OS.get_name() == "Android":
 		_refresh_menu_metrics.call_deferred()
+		_refresh_play_games_connection.call_deferred()
 
 ## Bottom margin in reference-local units. Use the unscaled owner/root when
 ## fitting a child stage, to avoid feeding a stage's changed scale back into itself.
@@ -336,93 +358,309 @@ func _rewarded_closed() -> void:
 	availability_changed.emit()
 
 func _start_play_games() -> void:
-	var pgs: Dictionary = settings.get("play_games", {})
-	if not bool(pgs.get("enabled", false)) or str(pgs.get("game_id", "")).is_empty():
-		_set_notice("Play Games configuration is pending; achievements and scores are saved locally.")
+	if _pgs_ready:
+		return
+	var pgs := _play_games_settings()
+	var game_id := str(pgs.get("game_id", "")).strip_edges()
+	if not bool(pgs.get("enabled", false)) or not game_id.is_valid_int() or game_id.to_int() <= 0:
+		_pgs_notice("Play Games is not configured. Achievements and records remain local.")
+		return
+	if OS.get_name() != "Android":
+		_pgs_notice("Play Games sign-in is available in the Android app. Your local progress is safe.")
 		return
 	var plugin := get_node_or_null("/root/GodotPlayGameServices")
 	if plugin == null or not Engine.has_singleton("GodotPlayGameServices"):
+		_pgs_notice("Play Games is unavailable in this Android build. Your local progress is safe.")
 		return
-	if plugin.initialize() != 0:
+	# The supplied plugin's initialize() returns an error on a second call.
+	if plugin.get("android_plugin") == null and plugin.initialize() != 0:
+		_pgs_notice("Play Games could not start. Your local progress is safe.")
 		return
-	_sign_in_client = PlayGamesSignInClient.new()
-	_achievements_client = PlayGamesAchievementsClient.new()
-	_leaderboards_client = PlayGamesLeaderboardsClient.new()
+	_bind_play_games_clients(PlayGamesSignInClient.new(), PlayGamesAchievementsClient.new(), PlayGamesLeaderboardsClient.new())
+
+func _bind_play_games_clients(sign_in_client: PlayGamesSignInClient, achievements_client: PlayGamesAchievementsClient, leaderboards_client: PlayGamesLeaderboardsClient) -> void:
+	_sign_in_client = sign_in_client
+	_achievements_client = achievements_client
+	_leaderboards_client = leaderboards_client
+	_sign_in_client.user_authenticated.connect(_authentication_changed)
+	_achievements_client.achievement_unlocked.connect(_achievement_submitted)
+	_leaderboards_client.score_submitted.connect(_score_submitted)
 	add_child(_sign_in_client)
 	add_child(_achievements_client)
 	add_child(_leaderboards_client)
 	_pgs_ready = true
-	_sign_in_client.user_authenticated.connect(_authentication_changed)
-	_sign_in_client.is_authenticated()
+	_request_play_games_auth(false)
 
 func sign_in() -> void:
+	if not _pgs_ready:
+		_start_play_games()
+	if not _pgs_ready:
+		_pgs_pending_view = ""
+		return
+	_request_play_games_auth(true)
+
+func _refresh_play_games_connection() -> void:
 	if _pgs_ready:
+		_request_play_games_auth(false)
+
+func _request_play_games_auth(interactive: bool) -> void:
+	if not _pgs_ready:
+		return
+	if _pgs_auth_pending:
+		_pgs_manual_sign_in_requested = _pgs_manual_sign_in_requested or (interactive and not _pgs_auth_interactive)
+		return
+	_invalidate_play_games_requests()
+	_signed_in = false
+	_pgs_auth_pending = true
+	_pgs_auth_interactive = interactive
+	_pgs_auth_started = _pgs_clock
+	_pgs_retry_at = _pgs_clock + PGS_RETRY_SECONDS
+	if interactive:
+		_pgs_notice("Connecting to Google Play Games...")
 		_sign_in_client.sign_in()
 	else:
-		_set_notice("Play Games requires your app ID, credentials and tester configuration. Local progress is saved.")
+		_sign_in_client.is_authenticated()
+
+func _invalidate_play_games_requests() -> void:
+	# Native score callbacks contain only an ID, not the submitted value/token.
+	# A timed-out/previous-session callback must not acknowledge a newer score.
+	for remote_id in _inflight_scores:
+		_uncertain_score_ids[remote_id] = true
+	for remote_id in _inflight_unlocks:
+		_uncertain_unlock_ids[remote_id] = true
+	_inflight_unlocks.clear()
+	_inflight_scores.clear()
 
 func _authentication_changed(authenticated: bool) -> void:
+	_pgs_auth_pending = false
+	_pgs_needs_auth_check = false
+	_pgs_retry_at = _pgs_clock + PGS_RETRY_SECONDS
+	_invalidate_play_games_requests()
 	_signed_in = authenticated
+	if not authenticated and _pgs_manual_sign_in_requested:
+		_pgs_manual_sign_in_requested = false
+		_request_play_games_auth(true)
+		return
+	_pgs_manual_sign_in_requested = false
 	if authenticated:
-		_flush_pending()
-		_set_notice("Signed in to Google Play Games.")
+		# Acknowledgements are deliberately session-only: another account must be
+		# able to receive this device's legitimate retained progress after sign-in.
+		_submitted_unlocks.clear()
+		_submitted_scores.clear()
+		_last_unlock_attempts.clear()
+		_last_score_attempts.clear()
+		_queue_progress_flush()
+		_pgs_notice("Signed in to Google Play Games. Syncing achievements and records.")
+		var view := _pgs_pending_view
+		_pgs_pending_view = ""
+		if view == "achievements":
+			open_achievements()
+		elif view.begins_with("leaderboard:"):
+			open_leaderboards(view.trim_prefix("leaderboard:"))
 	else:
-		_set_notice("Play Games sign-in was unavailable or cancelled; local progress is safe.")
+		_pgs_pending_view = ""
+		_pgs_notice("Play Games sign-in was unavailable or cancelled. Your local progress is safe.")
+
+func _process_play_games(delta: float) -> void:
+	if not _pgs_ready:
+		return
+	_pgs_clock += maxf(delta, 0.0)
+	if _pgs_auth_pending and _pgs_clock - _pgs_auth_started >= PGS_REQUEST_TIMEOUT_SECONDS:
+		var manual_requested := _pgs_manual_sign_in_requested
+		_pgs_auth_pending = false
+		_pgs_manual_sign_in_requested = false
+		_signed_in = false
+		if manual_requested:
+			_request_play_games_auth(true)
+		else:
+			_pgs_pending_view = ""
+			_pgs_notice("Play Games did not respond. Your local progress is safe; you can reconnect.")
+	if _pgs_clock < _pgs_retry_at:
+		return
+	_pgs_retry_at = _pgs_clock + PGS_RETRY_SECONDS
+	if not _signed_in or _pgs_needs_auth_check:
+		_request_play_games_auth(false)
+		return
+	for remote_id in _inflight_unlocks.keys():
+		if _pgs_clock - float(_inflight_unlocks[remote_id].started) >= PGS_REQUEST_TIMEOUT_SECONDS:
+			_uncertain_unlock_ids[remote_id] = true
+			_inflight_unlocks.erase(remote_id)
+	for remote_id in _inflight_scores.keys():
+		if _pgs_clock - float(_inflight_scores[remote_id].started) >= PGS_REQUEST_TIMEOUT_SECONDS:
+			_uncertain_score_ids[remote_id] = true
+			_inflight_scores.erase(remote_id)
+	_queue_progress_flush()
+
+func _play_games_settings() -> Dictionary:
+	var value: Variant = settings.get("play_games", {})
+	return value if value is Dictionary else {}
+
+func _play_games_ids(section: String) -> Dictionary:
+	var value: Variant = _play_games_settings().get(section, {})
+	return value if value is Dictionary else {}
+
+func _pgs_notice(message: String) -> void:
+	_set_notice(message)
+	play_games_notice.emit(message)
 
 func unlock(key: String) -> void:
-	_pending_unlocks[key] = true
-	_save_pending()
-	_flush_pending()
+	if not _play_games_ids("achievements").has(key):
+		return
+	if not _pending_unlocks.has(key):
+		_pending_unlocks[key] = true
+		_save_pending()
+	_queue_progress_flush()
 
 func submit(key: String, value: int) -> void:
-	_pending_scores[key] = maxi(value, int(_pending_scores.get(key, value)))
-	_save_pending()
-	_flush_pending()
+	if value < 0 or not _play_games_ids("leaderboards").has(key):
+		return
+	if not _pending_scores.has(key) or value > int(_pending_scores[key]):
+		_pending_scores[key] = value
+		_save_pending()
+	_queue_progress_flush()
+
+func _queue_progress_flush() -> void:
+	if not _progress_flush_scheduled:
+		_progress_flush_scheduled = true
+		_flush_pending.call_deferred()
 
 func _flush_pending() -> void:
-	if not _pgs_ready or not _signed_in:
+	_progress_flush_scheduled = false
+	if not _pgs_ready or not _signed_in or _pgs_needs_auth_check:
 		return
-	var pgs: Dictionary = settings.get("play_games", {})
-	var achievements: Dictionary = pgs.get("achievements", {})
-	var leaderboards: Dictionary = pgs.get("leaderboards", {})
-	for key in _pending_unlocks:
-		var remote_id := str(achievements.get(key, ""))
-		if not remote_id.is_empty():
-			_achievements_client.unlock_achievement(remote_id)
-	for key in _pending_scores:
-		var remote_id := str(leaderboards.get(key, ""))
-		if not remote_id.is_empty():
-			_leaderboards_client.submit_score(remote_id, int(_pending_scores[key]))
-	# Retain best scores and unlocks locally; resubmission is idempotent and survives failed uploads.
+	var achievements := _play_games_ids("achievements")
+	var leaderboards := _play_games_ids("leaderboards")
+	for key in _pending_unlocks.keys():
+		var remote_id := str(achievements.get(key, "")).strip_edges()
+		if remote_id.is_empty() or _submitted_unlocks.get(key, "") == remote_id or _inflight_unlocks.has(remote_id):
+			continue
+		if _uncertain_unlock_ids.has(remote_id) and _pgs_clock - float(_last_unlock_attempts.get(remote_id, -PGS_RETRY_SECONDS)) < PGS_RETRY_SECONDS:
+			continue
+		_inflight_unlocks[remote_id] = {"key": key, "started": _pgs_clock}
+		_last_unlock_attempts[remote_id] = _pgs_clock
+		_achievements_client.unlock_achievement(remote_id)
+	for key in _pending_scores.keys():
+		var remote_id := str(leaderboards.get(key, "")).strip_edges()
+		var value := int(_pending_scores[key])
+		var sent: Dictionary = _submitted_scores.get(key, {})
+		if remote_id.is_empty() or _inflight_scores.has(remote_id):
+			continue
+		if sent.get("remote_id", "") == remote_id and int(sent.get("value", -1)) >= value:
+			continue
+		var last: Dictionary = _last_score_attempts.get(remote_id, {})
+		if _uncertain_score_ids.has(remote_id) and value <= int(last.get("value", -1)) and _pgs_clock - float(last.get("started", -PGS_RETRY_SECONDS)) < PGS_RETRY_SECONDS:
+			continue
+		_inflight_scores[remote_id] = {"key": key, "value": value, "started": _pgs_clock}
+		_last_score_attempts[remote_id] = {"value": value, "started": _pgs_clock}
+		_leaderboards_client.submit_score(remote_id, value)
+
+func _achievement_submitted(success: bool, remote_id: String) -> void:
+	if not success:
+		for key in _play_games_ids("achievements"):
+			if str(_play_games_ids("achievements")[key]).strip_edges() == remote_id:
+				_submitted_unlocks.erase(key)
+				_pgs_needs_auth_check = true
+	if not _inflight_unlocks.has(remote_id):
+		return
+	var key := str(_inflight_unlocks[remote_id].key)
+	_inflight_unlocks.erase(remote_id)
+	if success:
+		if not _uncertain_unlock_ids.has(remote_id):
+			_submitted_unlocks[key] = remote_id
+	else:
+		_pgs_needs_auth_check = true
+		_pgs_notice("An achievement upload is pending. Play Games will retry; device progress is unchanged.")
+
+func _score_submitted(success: bool, remote_id: String) -> void:
+	if not success:
+		# A late failure still schedules retry even if a timeout replaced its flight.
+		var recognized := false
+		for key in _play_games_ids("leaderboards"):
+			if str(_play_games_ids("leaderboards")[key]).strip_edges() == remote_id:
+				_submitted_scores.erase(key)
+				recognized = true
+		_pgs_needs_auth_check = _pgs_needs_auth_check or recognized
+	if not _inflight_scores.has(remote_id):
+		return
+	var request: Dictionary = _inflight_scores[remote_id]
+	_inflight_scores.erase(remote_id)
+	var key := str(request.key)
+	if success:
+		if not _uncertain_score_ids.has(remote_id):
+			_submitted_scores[key] = {"remote_id": remote_id, "value": int(request.value)}
+		if int(_pending_scores.get(key, 0)) > int(request.value):
+			_queue_progress_flush()
+	else:
+		_pgs_notice("A leaderboard upload is pending. Play Games will retry; device records are unchanged.")
+	# Desired progress stays durable even after success. Retry/reconnect is
+	# idempotent; the backend keeps the larger score, including whole seconds.
 
 func open_achievements() -> void:
 	if _pgs_ready and _signed_in:
 		_achievements_client.show_achievements()
 	else:
-		_set_notice("Local achievements remain available; online achievements need Play Games sign-in.")
+		_pgs_pending_view = "achievements"
+		sign_in()
 
 func open_leaderboards(key: String = "") -> void:
 	if not _pgs_ready or not _signed_in:
-		_set_notice("Local records remain available; online leaderboards need Play Games sign-in.")
+		_pgs_pending_view = "leaderboard:" + key
+		sign_in()
 		return
-	var remote_id := str(settings.get("play_games", {}).get("leaderboards", {}).get(key, ""))
-	if remote_id.is_empty():
+	var remote_id := str(_play_games_ids("leaderboards").get(key, "")).strip_edges()
+	if key.is_empty():
 		_leaderboards_client.show_all_leaderboards()
+	elif remote_id.is_empty():
+		_pgs_notice("This leaderboard has no configured Play Games ID. Its record remains local.")
 	else:
 		_leaderboards_client.show_leaderboard(remote_id)
 
 func _load_pending() -> void:
-	if not FileAccess.file_exists(PENDING_PATH):
-		return
-	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(PENDING_PATH))
-	if parsed is Dictionary:
-		_pending_unlocks = parsed.get("unlocks", {})
-		_pending_scores = parsed.get("scores", {})
+	_pending_unlocks.clear()
+	_pending_scores.clear()
+	# Recover the union/best records from an interrupted write or last good file.
+	for path in [PENDING_PATH, PENDING_PATH + ".bak", PENDING_PATH + ".tmp"]:
+		if not FileAccess.file_exists(path):
+			continue
+		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+		if not parsed is Dictionary:
+			continue
+		var unlocks: Variant = parsed.get("unlocks", {})
+		var scores: Variant = parsed.get("scores", {})
+		if unlocks is Dictionary:
+			for key in unlocks:
+				if key is String and unlocks[key] is bool and unlocks[key] and _play_games_ids("achievements").has(key):
+					_pending_unlocks[key] = true
+		if scores is Dictionary:
+			for key in scores:
+				var value: Variant = scores[key]
+				if key is String and _play_games_ids("leaderboards").has(key) and (value is int or value is float):
+					if is_finite(float(value)) and float(value) >= 0.0 and float(value) < 9223372036854775807.0 and floorf(float(value)) == float(value):
+						_pending_scores[key] = maxi(int(value), int(_pending_scores.get(key, 0)))
 
 func _save_pending() -> void:
-	var file := FileAccess.open(PENDING_PATH, FileAccess.WRITE)
-	if file:
-		file.store_string(JSON.stringify({"unlocks": _pending_unlocks, "scores": _pending_scores}))
+	var data := JSON.stringify({"unlocks": _pending_unlocks, "scores": _pending_scores})
+	var file := FileAccess.open(PENDING_PATH + ".tmp", FileAccess.WRITE)
+	if file == null:
+		_pgs_notice("The Play Games retry file could not be written. Your device save is separate.")
+		return
+	file.store_string(data)
+	file.flush()
+	var error := file.get_error()
+	file.close()
+	if error != OK:
+		_pgs_notice("The Play Games retry file could not be written. Your device save is separate.")
+		return
+	if FileAccess.file_exists(PENDING_PATH):
+		var old := FileAccess.get_file_as_string(PENDING_PATH)
+		var parsed: Variant = JSON.parse_string(old)
+		if parsed is Dictionary and parsed.get("unlocks") is Dictionary and parsed.get("scores") is Dictionary:
+			var backup := FileAccess.open(PENDING_PATH + ".bak", FileAccess.WRITE)
+			if backup:
+				backup.store_string(old)
+				backup.close()
+	if DirAccess.rename_absolute(ProjectSettings.globalize_path(PENDING_PATH + ".tmp"), ProjectSettings.globalize_path(PENDING_PATH)) != OK:
+		_pgs_notice("Play Games retry storage is pending. Your device save is separate.")
 
 func _exit_tree() -> void:
 	if is_instance_valid(_banner):

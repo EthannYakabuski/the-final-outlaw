@@ -61,7 +61,9 @@ jobs:
           fi
           for script in "${game_tests[@]}"; do
             log="/tmp/game-$(basename "$script").log"
-            timeout 120s godot --headless --verbose --path . --script "$script" 2>&1 | tee "$log"
+            test_data="$(mktemp -d)"
+            XDG_DATA_HOME="$test_data/data" XDG_CONFIG_HOME="$test_data/config" OUTLAW_PGS_TEST_ISOLATED=1 OUTLAW_PGS_TEST_ROOT="$test_data" \
+              timeout 120s godot --headless --verbose --path . --script "$script" 2>&1 | tee "$log"
             if grep -Eq 'SCRIPT ERROR|Parse Error|ERROR:|Assertion failed' "$log"; then
               exit 1
             fi

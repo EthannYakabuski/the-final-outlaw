@@ -1,5 +1,13 @@
 # The Final Outlaw
 
+## 2026-10-28: Play Games source integration
+
+The owner has supplied all 21 achievement IDs and five leaderboard IDs in `platform/config.json`, enabled `play_games.enabled`, and supplied the matching Android export game ID. This flag enables Play Games authentication, achievements and leaderboards; it does not enable cloud saves. Saves remain local to the device. Enabling Saved Games in Play Console does not implement the unused Snapshot API in this game.
+
+All achievements use **Standard** unlocks. All leaderboards use **Numeric**, **0 decimal places**, **Larger is better**; `survival_seconds` sends whole seconds. Existing earned unlock flags, including a seven-day streak whose current counter has rolled over, are backfilled without granting gameplay rewards. The adapter retains validated desired unlocks and best scores, handles native result callbacks, coalesces requests, rechecks authentication on resume and retries failures with a 30-second backoff. Interactive sign-in follows a player action. See [the current configuration and device checklist](docs/PLATFORM_SETUP.md#2026-10-28-play-games-integration).
+
+Local Godot 4.5.1 checks passed: 96 focused Play Games checks plus the existing model, fullscreen lifecycle, balance, touch, UI and service smoke suites, with clean strict diagnostics. See [the sanitized source validation](docs/PLAY_GAMES_VALIDATION.json). The containing commit's Actions run provides its hosted Android/Web build result; neither these source checks nor exports establish real signed-in backend acceptance. No local replacement binary was built. The artifacts below remain tied to their dated source revisions and do not contain this integration. AdMob configuration and gameplay rules are unchanged.
+
 ## Round Four: qualified Android App Bundle
 
 The accepted debug/test AAB is `build/round-four-aab-002/the-final-outlaw-debug.aab` (95934834 bytes), SHA256 `3BA42538514249C8EFC905C98DFB056ED665EDEB9C40232F0D9189AD04CBFF7D`. Build source: `c9c600099db3f381202f0e5c240d7cc22bd4940c`. The preset used minimum API 24/target API 36; Godot 4.5.1 Compatibility exported it successfully. The actual bundle passed six native ELF-header checks and matching 32/64-bit library coverage for ARM64, x86 and x86_64.
@@ -61,7 +69,7 @@ Choose a new unused build version directory and create its web/android subfolder
 
 ## Integration and handoff
 
-AdMob uses Google's official test IDs. Menus support a banner, every two completed rounds create an interstitial opportunity, and rewarded benefits require the earned-reward callback. Unavailable ads or consent leave normal play usable. Google Play Games uses symbolic achievement/leaderboard maps with empty production IDs and is disabled until the owner configures them. See platform/config.json and docs/PLATFORM_SETUP.md.
+AdMob uses Google's official test IDs. Menus support a banner, every two completed rounds create an interstitial opportunity, and rewarded benefits require the earned-reward callback. Unavailable ads or consent leave normal play usable. Google Play Games now has owner-supplied achievement/leaderboard ID maps and is enabled in the source configuration. Matching package, OAuth/signing, testers and resource configuration still require real Android verification. See platform/config.json and docs/PLATFORM_SETUP.md.
 
 New illustrated app/feature and all 26 catalog images, exact originals/prompts and source-aligned store copy are in marketing/. Eighteen current native images are selected under marketing/screenshots/round-three-f292447f/; nine9673 menu views and earlier first-pass/1D73 images remain separately qualified. The current evidence, limitations and exact next owner actions are in HANDOFF.txt. Production backend testing, human playtesting and Google Play publication are human-owned.
 

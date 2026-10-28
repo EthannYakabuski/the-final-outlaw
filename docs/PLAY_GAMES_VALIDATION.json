@@ -1,0 +1,71 @@
+{
+  "date_utc": "2026-10-28",
+  "environment": "Windows, Godot 4.5.1 Compatibility; isolated process user data; synthetic service clients",
+  "source_checks": [
+    {
+      "script": "tests/test_play_games.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "platform/tests/services_smoke.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_models.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_fullscreen_lifecycle.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_round_three.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_touch_input.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_ui.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    }
+  ],
+  "focused_play_games_checks": 96,
+  "android_preset_check": "PASS: AAB, arm64-v8a/x86/x86_64",
+  "configured_mapping_contract": {
+    "achievements": 21,
+    "leaderboards": 5,
+    "all_keys_mapped_to_distinct_nonempty_IDs": true,
+    "export_game_ID_matches_runtime": true,
+    "all_achievements": "Standard",
+    "all_leaderboards": "Numeric, zero decimals, larger is better",
+    "survival_seconds_unit": "whole seconds"
+  },
+  "runtime_SHA256": {
+    "platform/services.gd": "866A154FDDFBE9B528C0ACE0023631430616236FFB90B12300A4D8E370F88D0F",
+    "game/main.gd": "4E0ABF1B6F31D5E7A3025FE11D8A5C375B7626E50D3FF470C3DBFD9D6949722D",
+    "platform/config.json": "73CE306177D690B8F0936C0CBAEE39ED1B249EF02622DD5B2923081FB4B9B0D9",
+    "export_presets.cfg": "E131F7926400DF16BB6A44E626EB84CB99287CA1D4101EE9E4B8E900400F35E6"
+  },
+  "qualifications": [
+    "No real Google sign-in, achievement unlock or leaderboard submission was exercised.",
+    "No cloud-save/Snapshot implementation was added; device saves remain separate.",
+    "Old native-tested APK/AAB evidence does not apply to this changed source.",
+    "Hosted Android/Web export results must be matched to the containing source commit."
+  ]
+}
