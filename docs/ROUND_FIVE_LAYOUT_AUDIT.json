@@ -1,0 +1,910 @@
+{
+  "scope": "All100campaigntowns; endless selects these same towns by seed. Static preflight only, not native gameplay acceptance.",
+  "original_layouts_SHA256": "7798FC84CD8095058E8182FD1459A6A4CFC0138DF91E7B44E7F2A52CC2B18383",
+  "reviewed_layouts_SHA256": "A39CBFC15240B5BF06E9E4FB5C34E17DC8955A62AA8669A9E46753BD4752CDC1",
+  "house_count_before": 650,
+  "house_count_after": 650,
+  "rows": [
+    {
+      "id": 1,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1601
+    },
+    {
+      "id": 2,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1526
+    },
+    {
+      "id": 3,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1612
+    },
+    {
+      "id": 4,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1618
+    },
+    {
+      "id": 5,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1552
+    },
+    {
+      "id": 6,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1512
+    },
+    {
+      "id": 7,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1642
+    },
+    {
+      "id": 8,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1568
+    },
+    {
+      "id": 9,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1546
+    },
+    {
+      "id": 10,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1572
+    },
+    {
+      "id": 11,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1547
+    },
+    {
+      "id": 12,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1477
+    },
+    {
+      "id": 13,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1481
+    },
+    {
+      "id": 14,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1546
+    },
+    {
+      "id": 15,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1511
+    },
+    {
+      "id": 16,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1485
+    },
+    {
+      "id": 17,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1524
+    },
+    {
+      "id": 18,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1507
+    },
+    {
+      "id": 19,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1530
+    },
+    {
+      "id": 20,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1534
+    },
+    {
+      "id": 21,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1507
+    },
+    {
+      "id": 22,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1409
+    },
+    {
+      "id": 23,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1547
+    },
+    {
+      "id": 24,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1490
+    },
+    {
+      "id": 25,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1470
+    },
+    {
+      "id": 26,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1458
+    },
+    {
+      "id": 27,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1520
+    },
+    {
+      "id": 28,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1468
+    },
+    {
+      "id": 29,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1506
+    },
+    {
+      "id": 30,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1439
+    },
+    {
+      "id": 31,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1526
+    },
+    {
+      "id": 32,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1564
+    },
+    {
+      "id": 33,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1583
+    },
+    {
+      "id": 34,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1526
+    },
+    {
+      "id": 35,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1500
+    },
+    {
+      "id": 36,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1570
+    },
+    {
+      "id": 37,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1580
+    },
+    {
+      "id": 38,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1515
+    },
+    {
+      "id": 39,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1522
+    },
+    {
+      "id": 40,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1592
+    },
+    {
+      "id": 41,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1441
+    },
+    {
+      "id": 42,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1381
+    },
+    {
+      "id": 43,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1411
+    },
+    {
+      "id": 44,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1435
+    },
+    {
+      "id": 45,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1417
+    },
+    {
+      "id": 46,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1379
+    },
+    {
+      "id": 47,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1462
+    },
+    {
+      "id": 48,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1405
+    },
+    {
+      "id": 49,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1412
+    },
+    {
+      "id": 50,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1425
+    },
+    {
+      "id": 51,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1414
+    },
+    {
+      "id": 52,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1397
+    },
+    {
+      "id": 53,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1419
+    },
+    {
+      "id": 54,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1444
+    },
+    {
+      "id": 55,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1397
+    },
+    {
+      "id": 56,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1395
+    },
+    {
+      "id": 57,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1439
+    },
+    {
+      "id": 58,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1416
+    },
+    {
+      "id": 59,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1405
+    },
+    {
+      "id": 60,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1399
+    },
+    {
+      "id": 61,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1468
+    },
+    {
+      "id": 62,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1430
+    },
+    {
+      "id": 63,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1405
+    },
+    {
+      "id": 64,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1462
+    },
+    {
+      "id": 65,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1421
+    },
+    {
+      "id": 66,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1423
+    },
+    {
+      "id": 67,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1491
+    },
+    {
+      "id": 68,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1401
+    },
+    {
+      "id": 69,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1397
+    },
+    {
+      "id": 70,
+      "houses_before": 6,
+      "houses_after": 6,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1460
+    },
+    {
+      "id": 71,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1367
+    },
+    {
+      "id": 72,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1384
+    },
+    {
+      "id": 73,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1389
+    },
+    {
+      "id": 74,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1405
+    },
+    {
+      "id": 75,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1387
+    },
+    {
+      "id": 76,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1331
+    },
+    {
+      "id": 77,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1412
+    },
+    {
+      "id": 78,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1385
+    },
+    {
+      "id": 79,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1318
+    },
+    {
+      "id": 80,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1375
+    },
+    {
+      "id": 81,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1443
+    },
+    {
+      "id": 82,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1476
+    },
+    {
+      "id": 83,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1443
+    },
+    {
+      "id": 84,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1442
+    },
+    {
+      "id": 85,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1479
+    },
+    {
+      "id": 86,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1408
+    },
+    {
+      "id": 87,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1451
+    },
+    {
+      "id": 88,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1463
+    },
+    {
+      "id": 89,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1401
+    },
+    {
+      "id": 90,
+      "houses_before": 7,
+      "houses_after": 7,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1437
+    },
+    {
+      "id": 91,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1263
+    },
+    {
+      "id": 92,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1288
+    },
+    {
+      "id": 93,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1304
+    },
+    {
+      "id": 94,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1275
+    },
+    {
+      "id": 95,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1307
+    },
+    {
+      "id": 96,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1176
+    },
+    {
+      "id": 97,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1280
+    },
+    {
+      "id": 98,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1288
+    },
+    {
+      "id": 99,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1218
+    },
+    {
+      "id": 100,
+      "houses_before": 8,
+      "houses_after": 8,
+      "footprints_roofs_doors_preserved": true,
+      "minimum_house_edge_clearance_px": 62,
+      "static_navigation_components": 1,
+      "static_free_cells": 1202
+    }
+  ],
+  "road_serialization_note": "Retained cell order preserved; road cell sets and collider data identical to the locally tested layout geometry."
+}

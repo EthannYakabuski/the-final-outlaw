@@ -1,3 +1,13 @@
+THE FINAL OUTLAW - ROUND FIVE SOURCE UPDATE
+Updated 2026-10-29. Four requested source changes are implemented: equal adjacent DASH/SHOOT controls; 15% slower fast runners; widened campaign/endless house-edge routes without removing houses; gentler first 60 seconds of endless. See docs/ROUND_FIVE.md and docs/ROUND_FIVE_LAYOUT_AUDIT.json for exact behavior and acceptance cases.
+
+SOURCE VERIFICATION STATUS
+Godot 4.5.1 isolated strict source checks PASS: Round Five 23,823, models 25,925, Round Three 5,337, pointer 22, UI 2,508, fullscreen 31, Play Games 96, service smoke and import. See docs/ROUND_FIVE_ACCEPTANCE.json. Exact-current-commit hosted CI is a separate verification gate available in the containing commit's Actions run. No new local APK/AAB or native acceptance is asserted by this section. The separately modified owner export preset remains preserved and excluded from this gameplay commit. Existing 21 Standard achievement and five numeric leaderboard mappings/transport remain unchanged.
+
+CURRENT-BUILD LIMITS
+The older artifact identities below retain their original source/build dates and do not contain Round Five. Actual updated device touch, corner combat, human endless balance, audible output and signed-in backend acceptance remain separate from model/viewport fixtures and hosted exports. Root coordinates fresh affected visual review; no old screenshot is relabelled as current.
+
+PRESERVED PRE-ROUND-FIVE HISTORY
 THE FINAL OUTLAW - PLAY GAMES SOURCE INTEGRATION
 Updated 2026-10-28. Current source integration passes local Godot 4.5.1 checks. No local replacement binary or real signed-in Play Games acceptance is claimed. Match hosted Android/Web results to the containing commit in Actions; all older artifact identities and results are preserved below.
 

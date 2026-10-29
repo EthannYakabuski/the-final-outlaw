@@ -1,5 +1,9 @@
 # The Final Outlaw
 
+## Round Five: controls, clear edge routes and gentler endless opening
+
+DASH now sits immediately left of SHOOT with a matching large touch target. Fast runners move 15% slower after stage/rule scaling. Every campaign/endless town keeps its houses while opening a two-tile perimeter route, and enemy waypoint following avoids cutting blocked corners. Endless introduces basic drifters first and builds toward its established challenge over 60 seconds. See [the acceptance checklist](docs/ROUND_FIVE.md) and [all 100layout preservation audit](docs/ROUND_FIVE_LAYOUT_AUDIT.json). Existing Play Games IDs, Standard unlocks, numeric score units and local saves remain unchanged; older artifacts below retain their original provenance.
+
 ## 2026-10-28: Play Games source integration
 
 The owner has supplied all 21 achievement IDs and five leaderboard IDs in `platform/config.json`, enabled `play_games.enabled`, and supplied the matching Android export game ID. This flag enables Play Games authentication, achievements and leaderboards; it does not enable cloud saves. Saves remain local to the device. Enabling Saved Games in Play Console does not implement the unused Snapshot API in this game.

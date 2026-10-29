@@ -322,7 +322,7 @@ func _show_brief(number: int) -> void:
 func _definition(number: int) -> Dictionary:
 	if number > 0:
 		return campaign[clampi(number - 1, 0, 99)]
-	return {"id": 0, "chapter": 10, "chapter_name": "The endless badlands", "name": "One more sunset", "description": "A fresh frontier every time. The longer you last, the faster the badlands answer.", "objective": "Survive and build your highest score", "tip": "Keep moving, collect power-ups, and watch the outer lanes.", "mode": "survive", "target": 100000, "time_limit": 100000, "difficulty": 2.0, "spawn": 1.45, "enemies": ["drifter", "runner", "gunner", "tank", "sniper"], "hazard": "sandburst", "layout": 42, "palette": 7, "rule": "steady"}
+	return {"id": 0, "chapter": 10, "chapter_name": "The endless badlands", "name": "One more sunset", "description": "A fresh frontier every time. The first minute builds from wandering drifters into the full badlands challenge.", "objective": "Survive and build your highest score", "tip": "Keep moving, collect power-ups, and watch the outer lanes.", "mode": "survive", "target": 100000, "time_limit": 100000, "difficulty": 2.0, "spawn": 1.45, "enemies": ["drifter", "runner", "gunner", "tank", "sniper"], "hazard": "sandburst", "layout": 42, "palette": 7, "rule": "steady"}
 
 func _show_workshop() -> void:
 	_clear("workshop")
@@ -490,7 +490,7 @@ func _build_hud() -> void:
 	fire_button.button_down.connect(_press_fire)
 	fire_button.button_up.connect(func():fire_held = false)
 	reload_button = _button("RELOAD",Vector2(359,908),Vector2(153,40),func():reload_request = true)
-	dash_button = _button("DASH",Vector2(226,839),Vector2(112,61),_request_dash)
+	dash_button = _button("DASH",Vector2(194,805),Vector2(153,89),_request_dash)
 	_update_ammo_hud()
 	if selected_level <= 2 and selected_level > 0:
 		var hint_text: String = "Move left thumb; hold SHOOT\nRELOAD: %d-round magazine" % battle.magazine if selected_level == 1 else "DASH: evade attackers\nRELOAD: use cover"

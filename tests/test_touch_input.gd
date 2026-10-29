@@ -32,6 +32,8 @@ func run() -> void:
 	game=load("res://main.tscn").instantiate();game.smoke=true;game.set_process(false);root.add_child(game);game.set_process(false);await frames()
 	check(not game.is_processing(),"pointer fixture owns simulation clock after scene ready")
 	game._start_level(1,false);await frames()
+	check(game.dash_button.size == game.fire_button.size, "DASH and SHOOT have equal large touch targets")
+	check(game.dash_button.position.y == game.fire_button.position.y and is_equal_approx(game.fire_button.position.x - game.dash_button.get_rect().end.x, 12.0), "DASH is immediately left of SHOOT with a distinct gap")
 	await touch(0,Vector2(95,850),true)
 	check(game.joystick_active and game.joystick_index==0,"first pointer owns movement by actual touch ID")
 	await drag(0,Vector2(145,850));check(game._movement().x>0,"owned drag moves the stick")

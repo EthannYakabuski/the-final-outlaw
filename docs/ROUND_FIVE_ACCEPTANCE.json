@@ -1,0 +1,127 @@
+{
+  "date_utc": "2026-10-29",
+  "engine": "Godot4.5.1 Compatibility",
+  "mode": "Process-isolated headless source and real Viewport pointer fixtures; no native/production acceptance",
+  "criteria": {
+    "A": {
+      "status": "SOURCE_AND_VIEWPORT_PASS",
+      "buttons": "DASH/SHOOT equal153x89 logical units, y805, gap12; independent touch ownership"
+    },
+    "B": {
+      "status": "SOURCE_PASS",
+      "fast_archetype": "runner",
+      "final_speed_factor": 0.85,
+      "other_archetype_speeds_unchanged": true
+    },
+    "C": {
+      "status": "SOURCE_MODEL_PASS",
+      "campaign_layouts": 100,
+      "endless_layout_seeds": 100,
+      "houses_preserved": 650,
+      "minimum_horizontal_edge_clearance_px": 62,
+      "minimum_vertical_edge_clearance_px": 64,
+      "controlled_corner_attack_trials": 976,
+      "all_cases_attacked_player": true,
+      "all_archetypes_sampled_on_maps": [
+        1,
+        11,
+        21,
+        31,
+        41,
+        51,
+        61,
+        71,
+        81,
+        91,
+        100
+      ],
+      "runner_and_tank_tested_on_every_map": true
+    },
+    "D": {
+      "status": "SOURCE_MODEL_PASS",
+      "warmup_seconds": 60,
+      "first_spawn_delay_seconds": 3,
+      "basic_only_seconds": 20,
+      "runners_from_seconds": 20,
+      "gunners_from_seconds": 40,
+      "heavy_and_sniper_from_seconds": 60,
+      "hazards_from_seconds": 30,
+      "prior_endless_curve_rejoined_seconds": 60
+    }
+  },
+  "tests": [
+    {
+      "script": "tests/test_round_five.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_models.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_round_three.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_touch_input.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_ui.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_fullscreen_lifecycle.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "tests/test_play_games.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    },
+    {
+      "script": "platform/tests/services_smoke.gd",
+      "exit_code": 0,
+      "strict_errors": [],
+      "result": "PASS"
+    }
+  ],
+  "check_counts": {
+    "round_five": 23823,
+    "models": 25925,
+    "round_three": 5337,
+    "touch": 22,
+    "UI": 2508,
+    "fullscreen": 31,
+    "PGS": 96
+  },
+  "input_hash_scope": "SHA256 of LF-normalized text inputs, matching Git text normalization",
+  "runtime_text_SHA256": {
+    "game/main.gd": "C7B78A2BDD69D3857EB17F72993AE41B6BF4E9F616ED00A0B7BBCF5B3321796A",
+    "game/combat.gd": "EFC7E42E70AE378D2FC164ED45634D4A8A575D9C3A9B598C0EA95099F479EF0A",
+    "game/arena_layouts.json": "685FF9C8A2518A61BB9688DC5A19E6404963541F1B931AD5144C1C0184503B07"
+  },
+  "PGS_config_adapter_and_existing_service_contract_preserved": true,
+  "owner_export_preset_edit_preserved_and_not_part_of_commit": true,
+  "limitations": [
+    "No current Android/native or intended physical-device gameplay validation.",
+    "No audible output or new real signed-in backend/ad validation.",
+    "Controlled source pursuit and input fixtures are not human balance or native two-thumb acceptance.",
+    "Existing old APK/AABs and screenshots retain their named original provenance; no new local export is claimed.",
+    "Root coordinates affected Web visual review and available supported device route; hosted CI must match the containing commit."
+  ],
+  "road_serialization_equivalence": "After local source checks, retained road-cell order was restored to reduce diff noise. All100 road-cell sets, collider data and other town fields are identical; nonoverlapping equal-texture road tiles render equivalently. Hosted CI verifies the final exact serialized source."
+}

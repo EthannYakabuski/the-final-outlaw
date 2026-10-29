@@ -1,6 +1,6 @@
 # The Final Outlaw: working agreement
 
-This folder is the canonical Git working copy. Work only on this game and the requested update; do not launch another game or treat archived publication copies as parallel development locations. The 2026-10-28 iteration concerns Play Games achievements, leaderboards and their owner-supplied configuration. Preserve unrelated gameplay, export/signing settings and user edits; do not expand into another game or cloud-save implementation without a new request.
+This folder is the canonical Git working copy. Work only on this game and the requested update; do not launch another game or treat archived publication copies as parallel development locations. The current Round Five request covers combat button placement, runner speed, safe house-edge routes and the endless opening ramp; read docs/ROUND_FIVE.md. Preserve the existing Play Games integration, owner IDs, local saves, unrelated export/signing settings and user edits. Do not expand into another game or cloud-save implementation without a new request.
 
 Before editing, read README.md, HANDOFF.txt and docs/PLATFORM_SETUP.md, then inspect git status, branch/upstream and origin. A fresh task must load these files; prior chat history is not assumed. Preserve user edits and local artifacts. Do not reset/clean an existing worktree or delete backups.
 

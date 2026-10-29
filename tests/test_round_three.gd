@@ -72,7 +72,9 @@ func _assert_spawn(combat, kind: String, label: String) -> void:
 	combat._spawn_enemy(kind, Vector2(270, 350))
 	var enemy: Dictionary = combat.enemies[0]
 	var info: Dictionary = Combat.TYPES[kind]
-	var difficulty: float = float(combat.level.get("difficulty", 1.0)) + (combat.elapsed / 180.0 if combat.survival else 0.0)
+	var difficulty: float = float(combat.level.get("difficulty", 1.0))
+	if combat.survival:
+		difficulty = lerpf(1.0, difficulty + 60.0 / 180.0, combat.elapsed / 60.0) if combat.elapsed < 60.0 else difficulty + combat.elapsed / 180.0
 	var rule := str(combat.level.get("rule", "steady"))
 	# Match the original arithmetic order: armor modifies the multiplier before base HP.
 	var health_multiplier: float = 1.0 + (difficulty - 1.0) * 0.22
@@ -81,7 +83,7 @@ func _assert_spawn(combat, kind: String, label: String) -> void:
 	close(enemy.hp, original_hp + 15.0, "%s %s additive post-scale HP" % [label, kind])
 	close(enemy.max_hp, enemy.hp, "%s %s max HP agrees" % [label, kind])
 	check(ceili(float(enemy.hp) / 5.0) - ceili(original_hp / 5.0) == 3, "%s %s exactly three extra baseline shots" % [label, kind])
-	close(enemy.speed, float(info.speed) * minf(1.7, 1.0 + difficulty * 0.04) * (1.2 if rule == "swift" else 1.0) * 1.25, "%s %s speed buff once" % [label, kind])
+	close(enemy.speed, float(info.speed) * minf(1.7, 1.0 + difficulty * 0.04) * (1.2 if rule == "swift" else 1.0) * 1.25 * (0.85 if kind == "runner" else 1.0), "%s %s speed buffs once" % [label, kind])
 	close(enemy.damage, float(info.damage) * minf(2.0, 1.0 + difficulty * 0.07) * 1.15, "%s %s damage buff once" % [label, kind])
 
 func _test_actual_shots() -> void:

@@ -3,6 +3,9 @@ extends RefCounted
 
 const Town = preload("res://game/town.gd")
 const ARENA = Rect2(22, 140, 496, 608)
+const PLAYER_RADIUS = 15.0
+const ENEMY_RADIUS = 14.0
+const ENDLESS_WARMUP_SECONDS = 60.0
 const TYPES = {
 	"drifter": {"speed": 64.0, "hp": 18.0, "damage": 9.0, "sprite": 4, "shot": 0.0},
 	"runner": {"speed": 128.0, "hp": 12.0, "damage": 7.0, "sprite": 0, "shot": 0.0},
@@ -72,7 +75,7 @@ func start(definition: Dictionary, player_stats: Dictionary, seed_value: int = 1
 	if str(level.get("mode", "clear")) == "supply":
 		for i in range(3):
 			pickups.append({"p": _free_point(Vector2(105 + i * 165, 355 + (i % 2) * 140)), "kind": "supply", "life": 600.0})
-	spawn_timer = 2.0 if int(level.get("id", 1)) < 3 else 0.8
+	spawn_timer = 3.0 if survival else (2.0 if int(level.get("id", 1)) < 3 else 0.8)
 
 func _build_obstacles() -> void:
 	town = Town.for_stage(int(level.get("id",1)) if int(level.get("id",1))>0 else 1+int(rng.seed)%100)
@@ -87,7 +90,7 @@ func _build_obstacles() -> void:
 		for x in range(48):
 			var cell := Vector2i(x,y)
 			var point := navigation.get_point_position(cell)
-			var solid := blocked(point,15.0) or not ARENA.grow(-15).has_point(point)
+			var solid := blocked(point,PLAYER_RADIUS) or not ARENA.grow(-PLAYER_RADIUS).has_point(point)
 			navigation.set_point_solid(cell,solid)
 			if not solid:
 				free_cells.append(cell)
@@ -112,7 +115,7 @@ func actor_line_clear(origin: Vector2,target: Vector2) -> bool:
 	var steps := maxi(1,ceili(origin.distance_to(target)/7.0))
 	for i in range(1,steps+1):
 		var point := origin.lerp(target,float(i)/steps)
-		if blocked(point,14.0) or not ARENA.grow(-14.0).has_point(point): return false
+		if blocked(point,ENEMY_RADIUS) or not ARENA.grow(-ENEMY_RADIUS).has_point(point): return false
 	return true
 
 func route(origin: Vector2,target: Vector2) -> PackedVector2Array:
@@ -148,7 +151,7 @@ func step(delta: float, movement: Vector2, request_dash: bool = false, request_f
 		events.append({"kind": "dash", "p": player})
 	var direction: Vector2 = dash_direction if dash_time > 0.0 else movement.limit_length(1.0)
 	var speed: float = float(stats.get("speed", 165.0)) * (3.7 if dash_time > 0.0 else 1.0)
-	player = move_actor(player, direction * speed * delta, 15.0)
+	player = move_actor(player, direction * speed * delta, PLAYER_RADIUS)
 	spawn_timer -= delta
 	if str(level.get("mode", "")) == "duel" and not boss_spawned:
 		_spawn_enemy("boss", _edge_spawn())
@@ -185,9 +188,9 @@ func step(delta: float, movement: Vector2, request_dash: bool = false, request_f
 	score = kills * 100 + int(elapsed) * 3 + supplies * 30
 
 func _spawn_wave() -> void:
-	if spawn_timer > 0.0 or enemies.size() >= 18:
+	if spawn_timer > 0.0 or enemies.size() >= (endless_enemy_limit() if survival else 18):
 		return
-	var roster: Array = level.get("enemies", ["drifter"])
+	var roster: Array = endless_roster() if survival else level.get("enemies", ["drifter"])
 	var gap: float = float(level.get("spawn", 1.8))
 	if not survival and level.has("waves"):
 		var waves: Array = level.waves
@@ -204,8 +207,27 @@ func _spawn_wave() -> void:
 			wave_index += 1
 	_spawn_enemy(str(roster[rng.randi_range(0, roster.size() - 1)]), _edge_spawn())
 	total_spawned += 1
-	var ramp: float = 1.0 + elapsed / 120.0 if survival else 1.0
-	spawn_timer = maxf(0.4, gap / ramp)
+	spawn_timer = endless_spawn_gap() if survival else maxf(0.4, gap)
+
+## First minute joins the established endless curve continuously at 60s.
+func endless_difficulty() -> float:
+	var baseline := float(level.get("difficulty", 2.0))
+	if elapsed < ENDLESS_WARMUP_SECONDS:
+		return lerpf(1.0, baseline + ENDLESS_WARMUP_SECONDS / 180.0, clampf(elapsed / ENDLESS_WARMUP_SECONDS, 0.0, 1.0))
+	return baseline + elapsed / 180.0
+
+func endless_spawn_gap() -> float:
+	var established := maxf(0.4, float(level.get("spawn", 1.45)) / (1.0 + elapsed / 120.0))
+	return lerpf(3.2, established, clampf(elapsed / ENDLESS_WARMUP_SECONDS, 0.0, 1.0))
+
+func endless_enemy_limit() -> int:
+	return floori(lerpf(4.0, 18.0, clampf(elapsed / ENDLESS_WARMUP_SECONDS, 0.0, 1.0)))
+
+func endless_roster() -> Array:
+	if elapsed < 20.0: return ["drifter"]
+	if elapsed < 40.0: return ["drifter", "drifter", "runner"]
+	if elapsed < ENDLESS_WARMUP_SECONDS: return ["drifter", "drifter", "runner", "gunner"]
+	return level.get("enemies", ["drifter", "runner", "gunner", "tank", "sniper"])
 
 func hold_center() -> Vector2:
 	return _free_point(Vector2(270.0 + float(int(level.get("layout", 0)) % 3 - 1) * 28.0, 455.0))
@@ -237,13 +259,14 @@ func _spawn_enemy(kind: String, point: Vector2) -> void:
 	var info: Dictionary = TYPES[kind]
 	var difficulty: float = float(level.get("difficulty", 1.0))
 	if survival:
-		difficulty += elapsed / 180.0
+		difficulty = endless_difficulty()
 	var health_multiplier: float = 1.0 + (difficulty - 1.0) * 0.22
 	var rule: String = str(level.get("rule", "steady"))
 	if rule == "armored": health_multiplier *= 1.25
 	# Three additional unupgraded five-damage shots, after stage/endless/armor scaling.
 	var hp: float = float(info.hp) * health_multiplier + 15.0
 	var enemy_speed: float = float(info.speed) * minf(1.7, 1.0 + difficulty * 0.04) * (1.2 if rule == "swift" else 1.0) * 1.25
+	if kind == "runner": enemy_speed *= 0.85
 	enemies.append({"p": point, "kind": kind, "hp": hp, "max_hp": hp, "speed": enemy_speed, "damage": float(info.damage) * minf(2.0, 1.0 + difficulty * 0.07) * 1.15, "timer": rng.randf_range(0.8, 2.0), "flash": 0.0, "path":PackedVector2Array(), "repath":0.0, "skin":rng.randi_range(0,1)})
 
 func _update_enemies(delta: float) -> void:
@@ -254,19 +277,26 @@ func _update_enemies(delta: float) -> void:
 		var info: Dictionary = TYPES[str(enemy.kind)]
 		var wanted: Vector2 = direction
 		var visible := actor_line_clear(point,player)
+		var travel := float(enemy.speed) * delta
 		if visible and float(info.shot)>0.0 and distance<205.0:
 			wanted = direction.rotated(PI*0.5)*0.55 if distance>125.0 else -direction
-		if not visible or blocked(point+wanted*20.0,14.0):
+		if not visible or blocked(point+wanted*20.0,ENEMY_RADIUS):
 			enemy.repath = float(enemy.repath)-delta
 			if float(enemy.repath)<=0.0 or enemy.path.is_empty():
 				enemy.path = route(point,player)
 				enemy.repath = 0.35
-			while not enemy.path.is_empty() and point.distance_to(enemy.path[0])<8.0:
+			# Skip a nearby waypoint only when the following segment is actually
+			# actor-clear; otherwise rounding the turn early can wedge on a house.
+			while not enemy.path.is_empty():
+				var at_point := point.distance_to(enemy.path[0]) < 0.75
+				var shortcut: bool = enemy.path.size() > 1 and point.distance_to(enemy.path[0]) < 8.0 and actor_line_clear(point, enemy.path[1])
+				if not at_point and not shortcut: break
 				enemy.path.remove_at(0)
 			wanted = point.direction_to(enemy.path[0]) if not enemy.path.is_empty() else Vector2.ZERO
+			if not enemy.path.is_empty(): travel = minf(travel, point.distance_to(enemy.path[0]))
 		else:
 			enemy.path = PackedVector2Array()
-		var next: Vector2 = move_actor(point,wanted*float(enemy.speed)*delta,14.0)
+		var next: Vector2 = move_actor(point,wanted*travel,ENEMY_RADIUS)
 
 		enemy.p = next
 		enemy.flash = maxf(0.0, float(enemy.flash) - delta)
@@ -417,9 +447,10 @@ func _update_hazard(delta: float) -> void:
 
 func hazard_points() -> Array[Vector2]:
 	var points: Array[Vector2] = []
+	if survival and elapsed < 30.0: return points
 	var shape: int = int(level.get("layout", 0))
 	points.append(Vector2(130 + (shape % 4) * 80, 355))
-	if int(level.get("chapter", 1)) > 4:
+	if int(level.get("chapter", 1)) > 4 and (not survival or elapsed >= ENDLESS_WARMUP_SECONDS):
 		points.append(Vector2(410 - (shape % 4) * 75, 595))
 	return points
 
