@@ -1,3 +1,10 @@
+GITHUB PAGES WEB HOSTING - 2026-11-05
+Stable project URL: https://ethannyakabuski.github.io/the-final-outlaw/
+The requested workflow now configures public main-branch Web deployment only after the existing strict source/service/game, Web and Android build gates pass. build-info.json identifies the deployed commit. See docs/WEB_PAGES.md for publishing, controls, iframe and browser-storage limitations. The owner's website, gameplay, native service IDs, debug ad routing, genuine saves and unrelated export/artwork edits remain unchanged.
+
+Verify the containing commit's terminal Actions/Pages result and the live build-info.json before claiming availability. HTTP resource serving, actual browser interaction, cross-origin iframe operation, save retention, audible output and physical/native production acceptance are separate checks. This entry does not transfer any dated APK/screenshot QA to the Web site. No Play release, signing or Library action is included.
+
+PRESERVED PRE-PAGES HANDOFF - ALL DATED EVIDENCE RETAINS ITS ORIGINAL SCOPE
 THE FINAL OUTLAW - ADMOB PRODUCTION ID CONFIGURATION
 Updated 2026-11-05. Owner-supplied production App ID is set in project.godot's admob/general/android/app_id and the JSON reference. All three production unit IDs are in platform/config.json; test_mode=false enables them for release builds. Debug/editor builds always substitute Google's sample units, and test_mode=true also forces samples in release builds. Consent gates, earned-only reward callbacks and Play Games settings remain unchanged.
 

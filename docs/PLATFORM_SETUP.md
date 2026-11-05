@@ -111,7 +111,7 @@ The Android preset intentionally uses `runnable=false`. CLI exports still work; 
 
 Enable `rendering/textures/vram_compression/import_etc2_astc=true` in project settings before importing assets for Android. Keep desktop texture import enabled for Web. Tests, test-only platform scripts, captures, marketing packages, helper scripts, logs and documentation are excluded from shipping resource packs. Copy the app icon to `platform/app-icon-512.png` and point the project icon setting there so excluding `marketing/` does not remove its runtime resource. Game catalogs and runtime art/audio remain included.
 
-Hosted Actions verifies pinned Godot download digests, builds and validates the native Android AAB, validates Web/editor service fallback behavior, discovers and runs `tests/test_*.gd`, `tests/*_test.gd`, and `tests/smoke.gd` (requiring at least one), exports Web, retains Android artifacts seven days, and leaves Pages deployment explicitly disabled. Test processes have bounded timeouts; logs containing script/parse/assertion errors fail even if Godot exits0. CI does not substitute for human playtesting or verify unpublished Google service IDs. Do not enable Pages or change deployment settings as part of an ordinary code or ID update.
+Hosted Actions verifies pinned Godot download digests, builds and validates the native Android AAB, validates Web/editor service fallback behavior, discovers and runs `tests/test_*.gd`, `tests/*_test.gd`, and `tests/smoke.gd` (requiring at least one), exports Web, retains Android artifacts seven days, and deploys the validated main-branch Web artifact through the separately authorized Pages workflow (see `WEB_PAGES.md`). Test processes have bounded timeouts; logs containing script/parse/assertion errors fail even if Godot exits0. CI does not substitute for human playtesting or verify unpublished Google service IDs. Changes to Pages publishing must follow `WEB_PAGES.md` and the current explicit deployment scope; ordinary ID updates do not authorize wider settings changes.
 
 ## Vendored dependencies and notices
 
@@ -156,3 +156,9 @@ Later documentation commits require their own CI result; this dated result does 
 Runtime `e22050edf4787f550dc74e8b1b8777a00077f661` passed exact-source hosted CI39719414433. The Android/Web test artifacts were compiled from frozen raw committed Git files, including the committed test-build preset. A separately edited local export preset was preserved and excluded from compilation and source packaging. Keep that local edit; do not reset or stage it merely to make the tree clean. A later owner build using changed IDs/settings is a distinct binary and needs its own verification.
 
 The owned audio drain now measures its existing target against monotonic elapsed time. The31-check fixture verifies the minimum real duration; the early focused-result JSON remains the original30-check subset. Current native Back returns Home and does not exercise graceful audio shutdown. Passing CI does not replace audible Android or graceful-exit verification.
+
+## Web deployment
+
+See [GitHub Pages and iframe guidance](WEB_PAGES.md) for this repository's
+main-branch Web publishing. Native services and real Android/device/backend
+acceptance remain separate; Web never simulates a successful native ad.

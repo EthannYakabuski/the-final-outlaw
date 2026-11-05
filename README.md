@@ -1,5 +1,14 @@
 # The Final Outlaw
 
+## Web hosting (2026-11-05)
+
+The validated main-branch Web build is configured for **https://ethannyakabuski.github.io/the-final-outlaw/**.
+See [deployment, controls and iframe guidance](docs/WEB_PAGES.md). The containing
+commit's Actions deployment and live `build-info.json` establish which revision
+is served; this configuration alone does not claim browser interaction or native
+acceptance. The owner's website is unchanged.
+
+
 ## Round Five: controls, clear edge routes and gentler endless opening
 
 DASH now sits immediately left of SHOOT with a matching large touch target. Fast runners move 15% slower after stage/rule scaling. Every campaign/endless town keeps its houses while opening a two-tile perimeter route, and enemy waypoint following avoids cutting blocked corners. Endless introduces basic drifters first and builds toward its established challenge over 60 seconds. See [the acceptance checklist](docs/ROUND_FIVE.md) and [all 100layout preservation audit](docs/ROUND_FIVE_LAYOUT_AUDIT.json). Existing Play Games IDs, Standard unlocks, numeric score units and local saves remain unchanged; older artifacts below retain their original provenance.
@@ -79,7 +88,7 @@ New illustrated app/feature and all 26 catalog images, exact originals/prompts a
 
 ## CI and Web
 
-Hosted GitHub Actions imports resources, runs game/service tests, exports Web and an Android debug AAB, and retains export artifacts. Pages deployment remains explicitly disabled. Build outputs, caches and signing keys are excluded from source. Confirm actual run results in HANDOFF.txt; workflow presence alone is not a passing CI claim.
+Hosted GitHub Actions imports resources, runs game/service tests, exports Web and an Android debug AAB, and retains export artifacts. Main-branch Pages deployment is configured after the existing validation/build gates; see [Web hosting and iframe guidance](docs/WEB_PAGES.md). Build outputs, caches and signing keys are excluded from source. Confirm actual run results in HANDOFF.txt; workflow presence alone is not a passing CI claim.
 
 ## Future extension
 
@@ -97,7 +106,7 @@ Android artifact.
 
 The public repository contains source, assets, notices and sanitized verification summaries. Original local QA APKs, raw SDK logs, real saves, signing material and private evidence stay outside tracked public content. Local restored build outputs remain ignored. Hosted export artifacts are separate binaries from the APK named in HANDOFF.txt and have not received that original native QA.
 
-Pages remains disabled; no live deployment, Library action or Google Play publication is part of this handoff. Keep the complete third-party notices with redistributed source and builds.
+The separately authorized Pages workflow publishes the validated Web export; see [Web hosting](docs/WEB_PAGES.md). Library actions and Google Play publication remain outside this handoff. Keep the complete third-party notices with redistributed source and builds.
 
 ## Screenshot verification
 
