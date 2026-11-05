@@ -48,6 +48,15 @@ var _menu_metric_elapsed := 0.0
 var _menu_metric_key := ""
 var _menu_metric_signal_pending := false
 
+# Google sample units are selected for every debug build, even when release
+# configuration contains production IDs. No device registration is needed for
+# these sample units; test_mode also opts release builds into this safe path.
+const TEST_AD_UNIT_IDS := {
+	"banner": "ca-app-pub-3940256099942544/6300978111",
+	"interstitial": "ca-app-pub-3940256099942544/1033173712",
+	"rewarded": "ca-app-pub-3940256099942544/5224354917",
+}
+
 const PENDING_PATH := "user://platform_pending_v1.json"
 const PGS_RETRY_SECONDS := 30.0
 const PGS_REQUEST_TIMEOUT_SECONDS := 20.0
@@ -221,10 +230,21 @@ func _on_ads_initialized(_initialization: InitializationStatus) -> void:
 	_load_banner()
 	_load_interstitial()
 	_load_rewarded()
-	_set_notice("Android test ads are enabled." if bool(settings.get("admob", {}).get("test_mode", true)) else "Android ad services are ready.")
+	_set_notice("Android test ads are enabled." if _use_test_ads() else "Android ad services are ready.")
+
+func _use_test_ads() -> bool:
+	return Engine.is_editor_hint() or OS.is_debug_build() or bool(settings.get("admob", {}).get("test_mode", true))
 
 func _ad_id(kind: String) -> String:
-	return str(settings.get("admob", {}).get(kind + "_unit_id", ""))
+	return _ad_id_for_build(settings, kind, Engine.is_editor_hint() or OS.is_debug_build())
+
+static func _ad_id_for_build(config: Dictionary, kind: String, development_build: bool) -> String:
+	if not TEST_AD_UNIT_IDS.has(kind):
+		return ""
+	var admob: Dictionary = config.get("admob", {})
+	if development_build or bool(admob.get("test_mode", true)):
+		return str(TEST_AD_UNIT_IDS[kind])
+	return str(admob.get(kind + "_unit_id", ""))
 
 func set_menu_visible(visible: bool) -> void:
 	_menu_visible = visible

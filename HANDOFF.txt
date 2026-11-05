@@ -1,3 +1,11 @@
+THE FINAL OUTLAW - ADMOB PRODUCTION ID CONFIGURATION
+Updated 2026-11-05. Owner-supplied production App ID is set in project.godot's admob/general/android/app_id and the JSON reference. All three production unit IDs are in platform/config.json; test_mode=false enables them for release builds. Debug/editor builds always substitute Google's sample units, and test_mode=true also forces samples in release builds. Consent gates, earned-only reward callbacks and Play Games settings remain unchanged.
+
+This is a source configuration/update, not a new accepted binary. See docs/PLATFORM_SETUP.md and tests/test_admob_config.gd for the routing contract. Actual Android/UMP/production fill, impression reporting and earned-callback acceptance have not been exercised by this change. Existing APK/AAB identities and dated QA below retain their original provenance. No live-ad requests/clicks, store submission or public push are part of this change.
+
+Local isolated Godot4.5.1 verification PASS: project import, 34 AdMob ID-routing/configuration checks, service smoke, 31 fullscreen lifecycle checks and 96 Play Games checks; strict diagnostics clean. No new Android export, native SDK, live-ad request, audible output or production acceptance is claimed.
+
+PRESERVED PRE-ADMOB-CONFIGURATION HANDOFF
 THE FINAL OUTLAW - ROUND FIVE SOURCE UPDATE
 Updated 2026-10-29. Four requested source changes are implemented: equal adjacent DASH/SHOOT controls; 15% slower fast runners; widened campaign/endless house-edge routes without removing houses; gentler first 60 seconds of endless. See docs/ROUND_FIVE.md and docs/ROUND_FIVE_LAYOUT_AUDIT.json for exact behavior and acceptance cases.
 

@@ -8,6 +8,10 @@
 
 config_version=5
 
+[admob]
+
+general/android/app_id="ca-app-pub-7719473349082950~3597270042"
+
 [application]
 
 config/name="The Final Outlaw"
